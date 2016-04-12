@@ -1,0 +1,62 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Dot {
+ name Dot6
+ selected true
+ xpos 3264
+ ypos 989
+}
+set N2c44ba40 [stack 0]
+add_layer {_pointCamera _pointCamera.red _pointCamera.green _pointCamera.blue _pointCamera.alpha}
+ML_pointDistanceSelection {
+ name ML_pointDistanceSelection2
+ selected true
+ xpos 3409
+ ypos 986
+ in_1 _pointCamera
+ radius 1.1
+ color {-2.847990036 0.2046462595 -12.86783314 0.8421964645}
+ color_1 {15 15 5 1}
+ 
+}
+set N6eb6e1f0 [stack 0]
+push $N6eb6e1f0
+EdgeIntruder {
+ inputs 2
+ name EdgeIntruder1
+ selected true
+ xpos 3409
+ ypos 1035
+ lut {A {}
+   B {}}
+}
+Clamp {
+ name Clamp1
+ selected true
+ xpos 3409
+ ypos 1059
+}
+push $N2c44ba40
+ShuffleCopy {
+ inputs 2
+ alpha alpha2
+ black red
+ out2 depth
+ name ShuffleCopy1
+ selected true
+ xpos 3230
+ ypos 1065
+}
+ZDefocus2 {
+ serializeKnob ""
+ math depth
+ center 1
+ focal_point {0 0}
+ dof 0.1000000015
+ name ZDefocus1
+ note_font Helvetica
+ selected true
+ xpos 3230
+ ypos 1107
+}

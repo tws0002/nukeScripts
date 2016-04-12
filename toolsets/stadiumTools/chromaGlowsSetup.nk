@@ -1,0 +1,105 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Dot {
+ name Dot7
+ selected true
+ xpos 1322
+ ypos 1614
+}
+set N3485c550 [stack 0]
+add_layer {emission emission.red emission.green emission.blue emission.alpha}
+Shuffle {
+ in emission
+ name Shuffle2
+ label "\[value in]"
+ selected true
+ xpos 1554
+ ypos 1611
+}
+set N3485c8c0 [stack 0]
+push $N3485c8c0
+add_layer {_m_soccerBall_all _m_soccerBall_all.red}
+Shuffle {
+ in _m_soccerBall_all
+ name Shuffle3
+ label "\[value in]"
+ selected true
+ xpos 1664
+ ypos 1611
+}
+Merge2 {
+ inputs 2
+ operation multiply
+ name Merge9
+ selected true
+ xpos 1554
+ ypos 1664
+}
+Grade {
+ white 1.6
+ multiply 3.05
+ name Grade5
+ selected true
+ xpos 1554
+ ypos 1719
+}
+set N3485d310 [stack 0]
+push $N3485c550
+lumaOnly_Grade {
+ name lumaOnly_Grade1
+ selected true
+ xpos 1427
+ ypos 1643
+ LumaOnly_Grade_multiply 0.65
+ LumaOnly_Grade_gamma 0.2
+}
+Clamp {
+ maximum 3
+ name Clamp1
+ selected true
+ xpos 1427
+ ypos 1681
+}
+Merge2 {
+ inputs 2
+ name Merge10
+ selected true
+ xpos 1427
+ ypos 1774
+}
+compoundGlow {
+ name compoundGlow1
+ selected true
+ xpos 1427
+ ypos 1791
+}
+chromaAb {
+ name chromaAb1
+ selected true
+ xpos 1427
+ ypos 1828
+ aberration 1
+ mode Backward
+ area {653 366 668 368}
+ pos {-2555 360}
+}
+push $N3485d310
+push $N3485c550
+Merge2 {
+ inputs 2
+ operation plus
+ mix 0.295
+ name Merge1
+ selected true
+ xpos 1288
+ ypos 1719
+}
+Merge2 {
+ inputs 2
+ operation plus
+ name Merge8
+ selected true
+ xpos 1288
+ ypos 1828
+}

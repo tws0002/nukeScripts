@@ -1,0 +1,14 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push 0
+push $cut_paste_input
+Viewer {
+ inputs 2
+ frame 101
+ input_process false
+ translate {1.266000032 -0.8880000114}
+ name Viewer1
+ selected true
+ xpos 12698
+ ypos 3649
+}

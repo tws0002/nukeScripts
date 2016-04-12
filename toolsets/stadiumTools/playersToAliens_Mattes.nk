@@ -1,0 +1,147 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Group {
+ name alienMattesSwitch1
+ selected true
+ xpos 2669
+ ypos -446
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+  ypos -276
+ }
+set N1fc9c790 [stack 0]
+add_layer {_m_players_A _m_players_A.red _m_players_A.green _m_players_A.blue _m_players_A.alpha}
+ Shuffle {
+  in _m_players_A
+  name Shuffle1
+  label "\[value in]"
+  xpos 160
+  ypos -184
+ }
+set N1fc9cb00 [stack 0]
+push $N1fc9cb00
+add_layer {_playerId_lennox _playerId_lennox.red _playerId_lennox.green _playerId_lennox.blue _playerId_lennox.alpha}
+ Shuffle {
+  in _playerId_lennox
+  green red
+  blue red
+  alpha red
+  name Shuffle2
+  label "\[value in]"
+  xpos 287
+  ypos -184
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 287
+  ypos -148
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge1
+  xpos 160
+  ypos -96
+ }
+push $N1fc9c790
+add_layer {_m_aliens_A _m_aliens_A.red _m_aliens_A.green _m_aliens_A.blue _m_aliens_A.alpha}
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 _m_aliens_A
+  name ShuffleCopy1
+  xpos 0
+  ypos -96
+ }
+set N1fc9d8c0 [stack 0]
+add_layer {_m_players_B _m_players_B.red _m_players_B.green _m_players_B.blue _m_players_B.alpha}
+ Shuffle {
+  in _m_players_B
+  name Shuffle3
+  label "\[value in]"
+  xpos 156
+  ypos -15
+ }
+set N1fc9dc30 [stack 0]
+push $N1fc9dc30
+ Shuffle {
+  in _playerId_lennox
+  green red
+  blue red
+  alpha red
+  name Shuffle4
+  label "\[value in]"
+  xpos 283
+  ypos -15
+ }
+ Unpremult {
+  name Unpremult2
+  xpos 283
+  ypos 21
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge2
+  xpos 156
+  ypos 73
+ }
+push $N1fc9d8c0
+add_layer {_m_aliens_B _m_aliens_B.red _m_aliens_B.green _m_aliens_B.blue _m_aliens_B.alpha}
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 _m_aliens_B
+  name ShuffleCopy2
+  selected true
+  xpos 0
+  ypos 73
+ }
+add_layer {_t_players_metalBits _t_players_metalBits.red _t_players_metalBits.green _t_players_metalBits.blue _t_players_metalBits.alpha}
+add_layer {_t_aliens_metalBits _t_aliens_metalBits.red _t_aliens_metalBits.green _t_aliens_metalBits.blue _t_aliens_metalBits.alpha}
+ Shuffle {
+  in _t_players_metalBits
+  out _t_aliens_metalBits
+  name Shuffle5
+  label "\[value in]"
+  xpos 0
+  ypos 120
+ }
+add_layer {_t_players_designsA _t_players_designsA.red _t_players_designsA.green _t_players_designsA.blue _t_players_designsA.alpha}
+add_layer {_t_aliens_designsA _t_aliens_designsA.red _t_aliens_designsA.green _t_aliens_designsA.blue _t_aliens_designsA.alpha}
+ Shuffle {
+  in _t_players_designsA
+  out _t_aliens_designsA
+  name Shuffle6
+  label "\[value in]"
+  xpos 0
+  ypos 183
+ }
+add_layer {_t_players_lightsA _t_players_lightsA.red _t_players_lightsA.green _t_players_lightsA.blue _t_players_lightsA.alpha}
+add_layer {_t_aliens_lightsA _t_aliens_lightsA.red _t_aliens_lightsA.green _t_aliens_lightsA.blue _t_aliens_lightsA.alpha}
+ Shuffle {
+  in _t_players_lightsA
+  out _t_aliens_lightsA
+  name Shuffle7
+  label "\[value in]"
+  xpos 0
+  ypos 238
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 388
+ }
+end_group

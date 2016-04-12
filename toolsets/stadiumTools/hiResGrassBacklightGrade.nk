@@ -1,0 +1,846 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Group {
+ name BeautyRebuild_Stadium
+ tile_color 0x2bffff
+ selected true
+ xpos 2850
+ ypos 707
+}
+ BackdropNode {
+  inputs 0
+  name sss_BACKDROP
+  tile_color 0x7f7f7fff
+  label sss
+  note_font_size 42
+  xpos 266
+  ypos -324
+  bdwidth 300
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp sss_OUT
+  addUserKnob {1 merge}
+  merge sss_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name color_BACKDROP
+  tile_color 0x7e5858ff
+  label color
+  note_font_size 42
+  xpos 666
+  ypos -324
+  bdwidth 300
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp color_OUT
+  addUserKnob {1 merge}
+  merge color_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name spec_BACKDROP
+  tile_color 0x4b667fff
+  label spec
+  note_font_size 42
+  xpos 1066
+  ypos -324
+  bdwidth 500
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp spec_OUT
+  addUserKnob {1 merge}
+  merge spec_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name refr_BACKDROP
+  tile_color 0x4b587fff
+  label refr
+  note_font_size 42
+  xpos 1666
+  ypos -324
+  bdwidth 300
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp refr_OUT
+  addUserKnob {1 merge}
+  merge refr_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name emission_BACKDROP
+  tile_color 0x4c4d80ff
+  label emission
+  note_font_size 42
+  xpos 2066
+  ypos -324
+  bdwidth 300
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp emission_OUT
+  addUserKnob {1 merge}
+  merge emission_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name lighting_BACKDROP
+  tile_color 0x666666ff
+  label lighting
+  note_font_size 42
+  xpos -334
+  ypos -324
+  bdwidth 500
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp lighting_OUT
+  addUserKnob {1 merge}
+  merge lighting_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name hair_BACKDROP
+  tile_color 0x524c80ff
+  label hair
+  note_font_size 42
+  xpos 2448
+  ypos -322
+  bdwidth 292
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp hair_OUT
+  addUserKnob {1 merge}
+  merge hair_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name atmos_BACKDROP
+  tile_color 0x524c80ff
+  label atmos
+  note_font_size 42
+  xpos 3204
+  ypos -325
+  bdwidth 300
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp atmos_OUT
+  addUserKnob {1 merge}
+  merge atmos_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name atmos_BACKDROP1
+  tile_color 0x524c80ff
+  label fresnel
+  note_font_size 42
+  xpos 2824
+  ypos -322
+  bdwidth 292
+  bdheight 735
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp fresnel_OUT
+  addUserKnob {1 merge}
+  merge fresnel_Grade
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -314
+  ypos -603
+ }
+ Dot {
+  name Dot1
+  xpos -280
+  ypos -453
+ }
+set N458d6f80 [stack 0]
+push $N458d6f80
+add_layer {stadiumLightMult stadiumLightMult.red}
+ Shuffle {
+  red white
+  out stadiumLightMult
+  name createLightMult
+  xpos -172
+  ypos -389
+ }
+ Switch {
+  inputs 2
+  which {{"\[python \"len(\\\[n for n in nuke.channels(nuke.thisNode().input(1)) if n.find(\\\"stadiumLightMult\\\") != -1])>0\"]\n\n" x220 0}}
+  name forceStadiumLightMultExists
+  xpos -314
+  ypos -389
+ }
+add_layer {direct_diffuse direct_diffuse.red direct_diffuse.green direct_diffuse.blue direct_diffuse.alpha}
+ Shuffle {
+  in direct_diffuse
+  name Shuffle1
+  label "\[value in]"
+  xpos -314
+  ypos -244
+ }
+set N458d7660 [stack 0]
+add_layer {indirect_diffuse indirect_diffuse.red indirect_diffuse.green indirect_diffuse.blue indirect_diffuse.alpha}
+ Shuffle {
+  in indirect_diffuse
+  name Shuffle2
+  label "\[value in]"
+  xpos -172
+  ypos -244
+ }
+set N458d79d0 [stack 0]
+add_layer {indirect_backlight indirect_backlight.red indirect_backlight.green indirect_backlight.blue indirect_backlight.alpha}
+ Shuffle {
+  in indirect_backlight
+  name Shuffle14
+  label "\[value in]"
+  xpos -62
+  ypos -246
+ }
+set N458d7d40 [stack 0]
+add_layer {direct_backlight direct_backlight.red direct_backlight.green direct_backlight.blue direct_backlight.alpha}
+ Shuffle {
+  in direct_backlight
+  name Shuffle15
+  label "\[value in]"
+  xpos 44
+  ypos -246
+ }
+set N458d80b0 [stack 0]
+add_layer {sss sss.red sss.green sss.blue sss.alpha}
+ Shuffle {
+  in sss
+  name Shuffle3
+  label "\[value in]"
+  xpos 286
+  ypos -246
+ }
+set N458d8420 [stack 0]
+add_layer {diffuse_color diffuse_color.red diffuse_color.green diffuse_color.blue diffuse_color.alpha}
+ Shuffle {
+  in diffuse_color
+  name Shuffle4
+  label "\[value in]"
+  xpos 686
+  ypos -246
+ }
+set N458d8790 [stack 0]
+add_layer {spec spec.red spec.green spec.blue spec.alpha}
+ Shuffle {
+  in spec
+  name Shuffle5
+  label "\[value in]"
+  xpos 1086
+  ypos -246
+ }
+set N458d8b00 [stack 0]
+add_layer {indirect_spec indirect_spec.red indirect_spec.green indirect_spec.blue indirect_spec.alpha}
+ Shuffle {
+  in indirect_spec
+  name Shuffle6
+  label "\[value in]"
+  xpos 1286
+  ypos -246
+ }
+set N458d8e70 [stack 0]
+add_layer {refraction refraction.red refraction.green refraction.blue refraction.alpha}
+ Shuffle {
+  in refraction
+  name Shuffle7
+  label "\[value in]"
+  xpos 1686
+  ypos -246
+ }
+set N458d91e0 [stack 0]
+add_layer {emission emission.red emission.green emission.blue emission.alpha}
+ Shuffle {
+  in emission
+  name Shuffle8
+  label "\[value in]"
+  xpos 2086
+  ypos -246
+ }
+set N458d9550 [stack 0]
+add_layer {startRGBA startRGBA.red startRGBA.green startRGBA.blue startRGBA.alpha}
+ Shuffle {
+  in startRGBA
+  name Shuffle16
+  label "\[value in]"
+  xpos 2468
+  ypos -246
+ }
+set N458d98c0 [stack 0]
+add_layer {_h_all _h_all.red}
+ Shuffle {
+  in _h_all
+  name Shuffle17
+  label "\[value in]"
+  xpos 2607
+  ypos -245
+ }
+set N458d9c30 [stack 0]
+add_layer {_fresnel _fresnel.red _fresnel.green _fresnel.blue _fresnel.alpha}
+ Shuffle {
+  in _fresnel
+  green red
+  blue red
+  name Shuffle19
+  label "\[value in]"
+  xpos 2844
+  ypos -245
+ }
+set N458d9fa0 [stack 0]
+add_layer {_pointCamera _pointCamera.red _pointCamera.green _pointCamera.blue _pointCamera.alpha}
+ Shuffle {
+  in _pointCamera
+  name Shuffle9
+  label "\[value in]"
+  xpos 3224
+  ypos -245
+ }
+ Unpremult {
+  name Shuffle9_unpremult
+  xpos 3224
+  ypos -205
+ }
+ ML_normalizeDepth {
+  name ML_normalizeDepth
+  xpos 3224
+  ypos -181
+  whitepoint -208.75
+ }
+ Grade {
+  white 0.4
+  multiply {0.6155999899 0.6842073798 0.7599999905 1}
+  gamma 0.235
+  name atmos_Grade
+  xpos 3224
+  ypos -157
+ }
+ NoOp {
+  name atmos_OUT
+  xpos 3224
+  ypos 290
+ }
+push $N458d9fa0
+ Unpremult {
+  name Shuffle10_unpremult
+  xpos 2844
+  ypos -209
+ }
+ Grade {
+  gamma 0.24
+  name Grade5
+  xpos 2844
+  ypos -185
+ }
+ NoOp {
+  name fresnel_OUT
+  xpos 2844
+  ypos 293
+ }
+push $N458d98c0
+push $N458d9c30
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 2607
+  ypos -165
+ }
+ Unpremult {
+  name Shuffle9_unpremult2
+  xpos 2607
+  ypos -137
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle18
+  label "\[value in]"
+  xpos 2607
+  ypos -113
+ }
+push $N458d98c0
+ Unpremult {
+  name Shuffle9_unpremult1
+  xpos 2468
+  ypos -182
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge13
+  xpos 2468
+  ypos -107
+ }
+ NoOp {
+  name hair_OUT
+  xpos 2468
+  ypos 293
+ }
+push $N458d9550
+ Unpremult {
+  name Shuffle8_unpremult
+  xpos 2086
+  ypos -204
+ }
+ alienGoalie_emission {
+  name alienGoalie_emission1
+  ypos -174
+ }
+ alienPlayer_emission {
+  name alienPlayer_emission1
+  ypos -144
+ }
+ messi_emission {
+  name messi_emission1
+  xpos 2086
+  ypos -120
+ }
+ podAlien_emission {
+  name podAlien_emission1
+  xpos 2086
+  ypos -84
+  alienPodVents_gain {0.8656666279 {curve x170 1.26666677} {curve x170 0.8676666021} {curve x170 1}}
+ }
+ soccerBall_emission {
+  name soccerBall_emission1
+  xpos 2086
+  ypos -54
+ }
+ spaceStadium_emission {
+  name spaceStadium_emission1
+  selected false
+  ypos -24
+ }
+ players_emission {
+  name players_emission1
+  xpos 2086
+  ypos 6
+ }
+ NoOp {
+  name emission_OUT
+  xpos 2086
+  ypos 291
+ }
+push $N458d91e0
+ Unpremult {
+  name Shuffle7_unpremult
+  xpos 1686
+  ypos -191
+ }
+set N3bf2af60 [stack 0]
+ Shuffle {
+  in stadiumLightMult
+  name Shuffle13
+  label "\[value in]"
+  xpos 1832
+  ypos -153
+ }
+push $N3bf2af60
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  mix 0.7
+  name Merge8
+  xpos 1686
+  ypos -147
+ }
+ messi_refr {
+  name messi_refr1
+  xpos 1686
+  ypos -112
+ }
+ soccerBall_refr {
+  name soccerBall_refr1
+  ypos -69
+ }
+ alienGoalie_refr {
+  name alienGoalie_refr1
+  xpos 1686
+  ypos -39
+ }
+ alienPlayer_refr {
+  name alienPlayer_refr1
+  ypos -9
+ }
+ players_refr {
+  name players_refr1
+  xpos 1686
+  ypos 21
+ }
+ NoOp {
+  name refr_OUT
+  xpos 1686
+  ypos 291
+ }
+push $N458d8e70
+ Unpremult {
+  name Shuffle6_unpremult
+  xpos 1286
+  ypos -204
+ }
+push $N458d8b00
+ Unpremult {
+  name Shuffle5_unpremult
+  xpos 1086
+  ypos -210
+ }
+set N3bf33fc0 [stack 0]
+add_layer {_m_spaceStadiumField_A _m_spaceStadiumField_A.red _m_spaceStadiumField_A.green _m_spaceStadiumField_A.blue _m_spaceStadiumField_A.alpha}
+ Shuffle {
+  in _m_spaceStadiumField_A
+  name Shuffle10
+  label "\[value in]"
+  xpos 964
+  ypos -159
+ }
+push $N3bf33fc0
+ Grade {
+  inputs 1+1
+  multiply 0.03
+  maskChannelMask rgba.red
+  name Grade1
+  xpos 1086
+  ypos -153
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge5
+  xpos 1086
+  ypos -74
+ }
+set N3bf34330 [stack 0]
+ Shuffle {
+  in stadiumLightMult
+  name Shuffle12
+  label "\[value in]"
+  xpos 1241
+  ypos -46
+ }
+push $N3bf34330
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  mix 0.7
+  name Merge7
+  xpos 1086
+  ypos -40
+ }
+ soccerBall_spec {
+  name soccerBall_spec1
+  xpos 1086
+  ypos -5
+ }
+ spaceStadiumField_spec {
+  name spaceStadiumField_spec2
+  ypos 48
+ }
+ spaceStadium_spec {
+  name spaceStadium_spec1
+  ypos 115
+ }
+ alienPlayer_spec {
+  name alienPlayer_spec1
+  ypos 187
+ }
+ alienGoalie_spec {
+  name alienGoalie_spec
+  ypos 252
+ }
+ NoOp {
+  name spec_OUT
+  xpos 1086
+  ypos 291
+ }
+push $N458d8790
+ Unpremult {
+  name Shuffle4_unpremult
+  xpos 686
+  ypos -204
+ }
+ alienGoalie_color {
+  name alienGoalie_color1
+  xpos 809
+  ypos -155
+ }
+ spaceStadiumField_color {
+  name spaceStadiumField_color1
+  ypos -121
+ }
+ spaceStadium_color {
+  name spaceStadium_color1
+  selected false
+  ypos -85
+ }
+ alienPlayer_color {
+  name alienPlayer_color1
+  ypos -29
+ }
+ messi_color {
+  name messi_color1
+  ypos 1
+ }
+ players_color {
+  name players_color
+  ypos 32
+ }
+ NoOp {
+  name color_OUT
+  xpos 686
+  ypos 291
+ }
+push $N458d8420
+push $N458d8420
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge4
+  xpos 286
+  ypos -204
+ }
+ alienGoalie_sss {
+  name alienGoalie_sss
+  ypos -174
+ }
+ alienPlayer_sss {
+  name alienPlayer_sss
+  ypos -144
+ }
+ NoOp {
+  name sss_OUT
+  xpos 286
+  ypos 291
+ }
+push $N458d80b0
+push $N458d80b0
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge10
+  xpos 44
+  ypos -206
+ }
+push $N458d7d40
+push $N458d7d40
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge9
+  xpos -62
+  ypos -204
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge12
+  xpos -62
+  ypos -41
+ }
+ Grade {
+  multiply {0.430555582 0.5 0.4652778208 0.123999998}
+  name hiResGrass_BacklightGrade
+  selected true
+  xpos -62
+  ypos 3
+ }
+push $N458d79d0
+push $N458d79d0
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge2
+  xpos -172
+  ypos -204
+ }
+push $N458d7660
+push $N458d7660
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge1
+  xpos -314
+  ypos -204
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge3
+  xpos -314
+  ypos -49
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge11
+  xpos -314
+  ypos 3
+ }
+ spaceStadium_lighting {
+  name spaceStadium_lighting1
+  selected false
+  ypos 33
+ }
+ alienPlayer_lighting {
+  name alienPlayer_lighting1
+  xpos -314
+  ypos 63
+ }
+ spaceStadiumField_lighting {
+  name spaceStadiumField_lighting
+  ypos 93
+ }
+ alienGoalie_lighting {
+  name alienGoalie_lighting1
+  xpos -314
+  ypos 142
+ }
+ NoOp {
+  name lighting_OUT
+  xpos -314
+  ypos 291
+ }
+set N44ceedb0 [stack 0]
+push $N44ceedb0
+ Merge2 {
+  inputs 2
+  output rgb
+  name lighting_MERGE
+  xpos -314
+  ypos 381
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE
+  xpos 286
+  ypos 381
+ }
+set N44cef490 [stack 0]
+ Shuffle {
+  in stadiumLightMult
+  name Shuffle11
+  label "\[value in]"
+  xpos 465
+  ypos 320
+ }
+push $N44cef490
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  name Merge6
+  xpos 465
+  ypos 381
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  name color_MERGE
+  xpos 686
+  ypos 381
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name spec_MERGE
+  xpos 1086
+  ypos 381
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name refr_MERGE
+  xpos 1686
+  ypos 381
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE
+  xpos 2086
+  ypos 381
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name hair_MERGE
+  xpos 2468
+  ypos 383
+ }
+set N44cf0ca0 [stack 0]
+ Grade {
+  inputs 1+1
+  multiply 1.44
+  gamma 1.18
+  maskChannelMask rgba.red
+  name fresnel_Grade
+  xpos 2844
+  ypos 383
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name atmos_MERGE
+  xpos 3224
+  ypos 383
+  disable true
+ }
+ Premult {
+  name rebuildPremult
+  xpos 3224
+  ypos 521
+ }
+ spaceStadiumField_glass {
+  name spaceStadiumField_glass
+  xpos 3224
+  ypos 595
+  GlassFalloff_multiply -0.5
+ }
+ Output {
+  name Output1
+  xpos 3224
+  ypos 703
+ }
+push $N44cf0ca0
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 444
+  ypos -22
+ }
+end_group

@@ -1,0 +1,559 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+Read {
+ inputs 0
+ file P:/projects/samgalaxyfifa_6464P/dailies/2014-05-23/.jpg
+ format "3200 1900 0 0 3200 1900 1 "
+ origset true
+ on_error "nearest frame"
+ auto_alpha true
+ name Read10
+ selected true
+ xpos -867
+ ypos 1201
+}
+Group {
+ name Group6
+ selected true
+ xpos -867
+ ypos 1319
+}
+ Camera2 {
+  inputs 0
+  translate {{Camera1.translate} {Camera1.translate} {Camera1.translate}}
+  rotate {{Camera1.rotate} {Camera1.rotate} {Camera1.rotate}}
+  focal {{Camera1.focal}}
+  haperture {{Camera1.haperture}}
+  vaperture {{Camera1.vaperture}}
+  near {{Camera1.near}}
+  far {{Camera1.far}}
+  name refCamera
+  xpos -109
+  ypos 1176
+ }
+set N8d05e020 [stack 0]
+ Input {
+  inputs 0
+  name Input1
+  xpos -458
+  ypos 288
+ }
+ jumboTronLook {
+  name jumboTronLook2
+  note_font Verdana
+  xpos -458
+  ypos 380
+  spacing 1
+  blink 1
+  Led 1
+  led_shape circles2
+  mix_1 0.465
+  mix_2 0.95
+  which 0.98
+  TransChroma_look 1
+  TransChroma_size 1
+  transchroma_on false
+  fx_size 7
+  mix 0
+ }
+set N8e887f10 [stack 0]
+ exponential_Glow {
+  name exponential_Glow1
+  xpos -288
+  ypos 462
+  falloff 0.74
+  intensity 1.4
+  blur_amount 0.26
+ }
+push $N8e887f10
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  mix 0.08
+  name Merge19
+  xpos -458
+  ypos 462
+ }
+ Grade {
+  channels alpha
+  add 0.52
+  white_clamp true
+  name Grade6
+  xpos -458
+  ypos 510
+ }
+ Grade {
+  channels alpha
+  multiply 0.92
+  name Grade18
+  xpos -458
+  ypos 554
+ }
+set N8dbaea70 [stack 0]
+ Radial {
+  replace true
+  area {-760 -508 3950 2390}
+  softness 0.84
+  name Radial1
+  xpos -357
+  ypos 601
+ }
+push $N8dbaea70
+ Grade {
+  inputs 1+1
+  channels alpha
+  multiply 1.2
+  invert_mask true
+  name Grade7
+  xpos -458
+  ypos 595
+ }
+ Dot {
+  name Dot6
+  xpos -424
+  ypos 682
+ }
+set N8dbaf4c0 [stack 0]
+ Transform {
+  translate {2000 0}
+  rotate 90
+  scale {0.61 1.72}
+  center {640 360}
+  name Transform2
+  xpos -331
+  ypos 788
+ }
+ ReadGeo2 {
+  file P:/projects/samgalaxyfifa_6464P/sequences/tg/shots/tg1415/steps/composite/nuke/geo/tg1415_jumboTronScreens.abc
+  read_on_each_frame true
+  range_first 101
+  range_last 140
+  scene_view {{0} imported: 0 1 2 3 selected: 3 items: /root/jumboTron:JunboTronScreens_01/jumboTron:JunboTronScreens_0Shape1 /root/jumboTron:JunboTronScreens_02/jumboTron:JunboTronScreens_0Shape2 /root/jumboTron:JunboTronScreens_03/jumboTron:JunboTronScreens_0Shape3 /root/jumboTron:JunboTronScreens_04/jumboTron:JunboTronScreens_0Shape4}
+  name ReadGeo4
+  xpos -331
+  ypos 883
+ }
+push $N8dbaf4c0
+ ReadGeo2 {
+  file P:/projects/samgalaxyfifa_6464P/sequences/tg/shots/tg1415/steps/composite/nuke/geo/tg1415_jumboTronScreens.abc
+  read_on_each_frame true
+  range_first 101
+  range_last 140
+  scene_view {{0} imported: 0 1 2 3 selected: 2 items: /root/jumboTron:JunboTronScreens_01/jumboTron:JunboTronScreens_0Shape1 /root/jumboTron:JunboTronScreens_02/jumboTron:JunboTronScreens_0Shape2 /root/jumboTron:JunboTronScreens_03/jumboTron:JunboTronScreens_0Shape3 /root/jumboTron:JunboTronScreens_04/jumboTron:JunboTronScreens_0Shape4}
+  name ReadGeo3
+  xpos -458
+  ypos 886
+ }
+push $N8dbaf4c0
+ Transform {
+  translate {2000 0}
+  rotate 90
+  scale {0.61 1.72}
+  center {640 360}
+  name Transform1
+  xpos -679
+  ypos 786
+ }
+ ReadGeo2 {
+  file P:/projects/samgalaxyfifa_6464P/sequences/tg/shots/tg1415/steps/composite/nuke/geo/tg1415_jumboTronScreens.abc
+  read_on_each_frame true
+  range_first 101
+  range_last 140
+  scene_view {{0} imported: 0 1 2 3 selected: 1 items: /root/jumboTron:JunboTronScreens_01/jumboTron:JunboTronScreens_0Shape1 /root/jumboTron:JunboTronScreens_02/jumboTron:JunboTronScreens_0Shape2 /root/jumboTron:JunboTronScreens_03/jumboTron:JunboTronScreens_0Shape3 /root/jumboTron:JunboTronScreens_04/jumboTron:JunboTronScreens_0Shape4}
+  name ReadGeo2
+  xpos -679
+  ypos 880
+ }
+push $N8dbaf4c0
+ Transform {
+  translate {2000 0}
+  rotate 90
+  scale {0.61 1.72}
+  center {640 360}
+  name Transform3
+  xpos -833
+  ypos 784
+ }
+ ReadGeo2 {
+  file P:/projects/samgalaxyfifa_6464P/sequences/tg/shots/tg1415/steps/composite/nuke/geo/tg1415_jumboTronScreens.abc
+  read_on_each_frame true
+  range_first 101
+  range_last 140
+  scene_view {{0} imported: 0 1 2 3 selected: 0 items: /root/jumboTron:JunboTronScreens_01/jumboTron:JunboTronScreens_0Shape1 /root/jumboTron:JunboTronScreens_02/jumboTron:JunboTronScreens_0Shape2 /root/jumboTron:JunboTronScreens_03/jumboTron:JunboTronScreens_0Shape3 /root/jumboTron:JunboTronScreens_04/jumboTron:JunboTronScreens_0Shape4}
+  name ReadGeo1
+  xpos -833
+  ypos 879
+ }
+ Scene {
+  inputs 4
+  name Scene1
+  xpos -648
+  ypos 1079
+ }
+set N8dbb1e00 [stack 0]
+push 0
+add_layer {_pointWorld _pointWorld.red _pointWorld.green _pointWorld.blue _pointWorld.alpha}
+add_layer {_normalsWorld _normalsWorld.red _normalsWorld.green _normalsWorld.blue _normalsWorld.alpha}
+ ScanlineRender {
+  inputs 3
+  antialiasing high
+  motion_vectors_type distance
+  output_shader_vectors true
+  P_channel _pointWorld
+  N_channel _normalsWorld
+  name ScanlineRender4
+  xpos -580
+  ypos 1397
+ }
+set N8dbb2170 [stack 0]
+ Shuffle {
+  in _pointWorld
+  name Shuffle5
+  label "\[value in]"
+  xpos -376
+  ypos 1485
+ }
+set N8dbb7080 [stack 0]
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle6
+  label "\[value in]"
+  xpos -266
+  ypos 1618
+ }
+ Grade {
+  blackpoint 740
+  whitepoint 590
+  gamma 0.335
+  name Grade20
+  xpos -266
+  ypos 1662
+ }
+push $N8dbb2170
+ Shuffle {
+  in _normalsWorld
+  name Shuffle3
+  label "\[value in]"
+  xpos -11
+  ypos 1445
+ }
+ ColorMatrix {
+  matrix {
+      {{parent.refCamera.world_matrix.0} {parent.refCamera.world_matrix.1} {parent.refCamera.world_matrix.2}}
+      {{parent.refCamera.world_matrix.4} {parent.refCamera.world_matrix.5} {parent.refCamera.world_matrix.6}}
+      {{parent.refCamera.world_matrix.8} {parent.refCamera.world_matrix.9} {parent.refCamera.world_matrix.10}}
+    }
+  invert true
+  name ColorMatrix2
+  xpos -11
+  ypos 1502
+ }
+ ML_pointDistanceSelection {
+  name ML_pointDistanceSelection1
+  xpos -11
+  ypos 1553
+  in_1 rgb
+  color {-0.2127582431 0.3625769615 1 0}
+  radius 1.4
+  multiply 1
+  gamma 1.74
+ }
+set N8e88aa30 [stack 0]
+push $N8e88aa30
+push $N8dbb7080
+ Expression {
+  channel0 rgb
+  expr0 cos(g*3)
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  name Expression1
+  xpos -376
+  ypos 1545
+ }
+set N8dbb73f0 [stack 0]
+ Grade {
+  multiply 0.02
+  black_clamp false
+  name Grade4
+  xpos -376
+  ypos 1646
+ }
+push $N8d05e020
+push $N8dbb1e00
+ TransformGeo {
+  scaling {{scaling.FG.z} 1 0.96}
+  name TransformGeo5
+  xpos -1024
+  ypos 1285
+ }
+push 0
+ ScanlineRender {
+  inputs 3
+  antialiasing high
+  motion_vectors_type distance
+  output_shader_vectors true
+  P_channel _pointWorld
+  N_channel _normalsWorld
+  name ScanlineRender7
+  xpos -1024
+  ypos 1390
+ }
+ Grade {
+  multiply {4 0 0 1}
+  name Grade15
+  xpos -1024
+  ypos 1414
+ }
+push $N8d05e020
+push $N8dbb1e00
+ TransformGeo {
+  scaling {{scaling.FG.z} 1 0.97}
+  name TransformGeo4
+  xpos -905
+  ypos 1285
+ }
+push 0
+ ScanlineRender {
+  inputs 3
+  antialiasing high
+  motion_vectors_type distance
+  output_shader_vectors true
+  P_channel _pointWorld
+  N_channel _normalsWorld
+  name ScanlineRender6
+  xpos -904
+  ypos 1395
+ }
+ Grade {
+  multiply {3.199999809 4 0 1}
+  name Grade14
+  xpos -904
+  ypos 1419
+ }
+push $N8d05e020
+push $N8dbb1e00
+ TransformGeo {
+  scaling {{scaling.FG.z} 1 0.98}
+  name TransformGeo3
+  xpos -791
+  ypos 1291
+ }
+push 0
+ ScanlineRender {
+  inputs 3
+  antialiasing high
+  motion_vectors_type distance
+  output_shader_vectors true
+  P_channel _pointWorld
+  N_channel _normalsWorld
+  name ScanlineRender5
+  xpos -791
+  ypos 1396
+ }
+ Grade {
+  multiply {0 4 1.600000381 1}
+  name Grade13
+  xpos -791
+  ypos 1420
+ }
+push $N8d05e020
+push $N8dbb1e00
+ TransformGeo {
+  scaling {{scaling.FG.z} 1 0.99}
+  name TransformGeo2
+  xpos -679
+  ypos 1290
+ }
+push 0
+ ScanlineRender {
+  inputs 3
+  antialiasing high
+  motion_vectors_type distance
+  output_shader_vectors true
+  P_channel _pointWorld
+  N_channel _normalsWorld
+  name ScanlineRender2
+  xpos -679
+  ypos 1398
+ }
+ Grade {
+  multiply {3.199999809 4 0 1}
+  name Grade12
+  xpos -679
+  ypos 1422
+ }
+push $N8dbb2170
+ Grade {
+  multiply {0 1.599999428 4 1}
+  name Grade10
+  xpos -580
+  ypos 1430
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge14
+  xpos -679
+  ypos 1509
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge15
+  xpos -791
+  ypos 1553
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge16
+  xpos -904
+  ypos 1595
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge17
+  xpos -1024
+  ypos 1636
+ }
+ Grade {
+  multiply 0.18
+  name Grade16
+  xpos -1024
+  ypos 1660
+ }
+ Grade {
+  white {0.4878456295 0.4800000191 1.920000076 1}
+  name Grade21
+  xpos -1024
+  ypos 1710
+ }
+push $N8dbb7080
+ Expression {
+  temp_name0 R
+  temp_expr0 Camera1.world_matrix.3
+  temp_name1 G
+  temp_expr1 Camera1.world_matrix.7
+  temp_name2 B
+  temp_expr2 Camera1.world_matrix.11
+  expr0 r-R
+  expr1 g-G
+  expr2 b-B
+  name Expression14
+  label "translate Pworld to camera"
+  xpos -160
+  ypos 1485
+ }
+ ColorMatrix {
+  matrix {
+      {{parent.refCamera.world_matrix.0} {parent.refCamera.world_matrix.1} {parent.refCamera.world_matrix.2}}
+      {{parent.refCamera.world_matrix.4} {parent.refCamera.world_matrix.5} {parent.refCamera.world_matrix.6}}
+      {{parent.refCamera.world_matrix.8} {parent.refCamera.world_matrix.9} {parent.refCamera.world_matrix.10}}
+    }
+  invert true
+  name ColorMatrix1
+  xpos -160
+  ypos 1536
+ }
+ Multiply {
+  channels {-rgba.red -rgba.green rgba.blue}
+  value -1
+  name Multiply13
+  label "reverse Z"
+  xpos -160
+  ypos 1567
+  disable true
+ }
+push $N8dbb73f0
+push $N8dbb2170
+ Grade {
+  white 6
+  multiply 1.84
+  name Grade19
+  xpos -516
+  ypos 1510
+ }
+ Grade {
+  inputs 1+1
+  multiply 0.41
+  maskChannelMask rgba.red
+  name Grade22
+  xpos -516
+  ypos 1564
+ }
+add_layer {_pointCamera _pointCamera.red _pointCamera.green _pointCamera.blue _pointCamera.alpha}
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 _pointCamera
+  name ShuffleCopy1
+  xpos -516
+  ypos 1623
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge18
+  xpos -516
+  ypos 1710
+ }
+ Grade {
+  inputs 1+1
+  channels alpha
+  multiply 0.82
+  maskChannelMask rgba.red
+  name Grade25
+  xpos -376
+  ypos 1704
+ }
+ Grade {
+  black 0.002
+  gamma {0.8149999976 1.00999999 1.245000005 1}
+  unpremult rgba.alpha
+  name Grade24
+  xpos -138
+  ypos 1704
+ }
+ Grade {
+  inputs 1+1
+  multiply 0.24
+  maskChannelMask rgba.red
+  invert_mask true
+  name Grade23
+  xpos -11
+  ypos 1710
+ }
+ Grade {
+  inputs 1+1
+  add {0.03143517673 0.06941282004 0.1075474694 128}
+  maskChannelMask rgba.red
+  invert_mask true
+  unpremult rgba.alpha
+  mix 0.21
+  name Grade26
+  xpos 99
+  ypos 1704
+ }
+set N8dbbe1f0 [stack 0]
+ Output {
+  name Output1
+  xpos 99
+  ypos 1827
+ }
+push $N8dbbe1f0
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -516
+  ypos 1534
+ }
+end_group

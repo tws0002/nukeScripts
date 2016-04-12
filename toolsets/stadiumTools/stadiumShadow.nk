@@ -1,0 +1,9 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+addStadiumFieldShadows {
+ name addStadiumFieldShadows1
+ selected true
+ xpos 1417
+ ypos -1376
+}

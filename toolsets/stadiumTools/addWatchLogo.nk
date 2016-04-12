@@ -1,0 +1,225 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+add_layer {_uv _uv.red _uv.green _uv.blue _uv.alpha}
+Shuffle {
+in _uv
+name Shuffle3
+label "\[value in]"
+selected true
+xpos 2299
+ypos 312
+}
+set N32d28ca0 [stack 0]
+add_layer {_pointCamera _pointCamera.red _pointCamera.green _pointCamera.blue _pointCamera.alpha}
+Shuffle {
+in _pointCamera
+name Shuffle4
+label "\[value in]"
+selected true
+xpos 2437
+ypos 461
+}
+Blur {
+size 58.5
+name Blur2
+selected true
+xpos 2437
+ypos 506
+}
+set N32d2e290 [stack 0]
+TimeOffset {
+time_offset -1
+name TimeOffset2
+selected true
+xpos 2569
+ypos 553
+}
+push $N32d2e290
+Merge2 {
+inputs 2
+operation minus
+name Merge9
+selected true
+xpos 2437
+ypos 553
+}
+Grade {
+multiply 100
+name Grade12
+selected true
+xpos 2437
+ypos 588
+}
+push $cut_paste_input
+add_layer {_m_ronaldo_E _m_ronaldo_E.red _m_ronaldo_E.green _m_ronaldo_E.blue _m_ronaldo_E.alpha}
+Shuffle {
+in _m_ronaldo_E
+name Shuffle2
+label "\[value in]"
+selected true
+xpos 2199
+ypos 313
+}
+set N32d28930 [stack 0]
+add_layer {_fresnel _fresnel.red _fresnel.green _fresnel.blue _fresnel.alpha}
+Shuffle {
+in _fresnel
+green red
+blue red
+alpha red
+name Shuffle5
+label "\[value in]"
+selected true
+xpos 2199
+ypos 497
+}
+Grade {
+channels rgba
+multiply 1.54
+gamma 0.6
+name Grade13
+selected true
+xpos 2199
+ypos 533
+}
+push $N32d28930
+FilterErode {
+channels rgba
+size 10.5
+filter gaussian
+name FilterErode1
+selected true
+xpos 2163
+ypos 359
+}
+set N32d2c710 [stack 0]
+push $N32d2c710
+push $N32d28ca0
+Grade {
+inputs 1+1
+channels rgba
+multiply 0
+maskChannelMask rgba.blue
+invert_mask true
+name Grade9
+selected true
+xpos 2299
+ypos 359
+}
+Unpremult {
+name Unpremult1
+selected true
+xpos 2299
+ypos 389
+}
+Read {
+inputs 0
+file P:/projects/samgalaxyfifa_6464P/assets/design/elements/galaxy11Logo/Galaxy11_logo.psd
+format "2029 2252 0 0 2029 2252 1 "
+origset true
+on_error "nearest frame"
+name Read3
+selected true
+xpos 2615
+ypos 230
+}
+Grade {
+multiply 0.48
+gamma 0.73
+name Grade11
+selected true
+xpos 2615
+ypos 319
+}
+Transform {
+scale {0.92 1.57}
+center {1014.5 1126}
+name Transform4
+selected true
+xpos 2615
+ypos 343
+}
+Transform {
+translate {123 -725}
+rotate 90
+scale 0.066
+center {1014.5 1126}
+name Transform3
+selected true
+xpos 2615
+ypos 376
+}
+Constant {
+inputs 0
+channels rgb
+name Constant1
+selected true
+xpos 2738
+ypos 311
+}
+Merge2 {
+inputs 2
+name Merge7
+selected true
+xpos 2651
+ypos 427
+}
+STMap {
+inputs 2
+uv rgb
+name STMap1
+selected true
+xpos 2299
+ypos 421
+}
+Grade {
+inputs 1+1
+multiply 0
+maskChannelMask rgba.blue
+invert_mask true
+name Grade10
+selected true
+xpos 2299
+ypos 470
+}
+Merge2 {
+inputs 2
+operation multiply
+name Merge10
+selected true
+xpos 2299
+ypos 533
+}
+add_layer {fakeMV fakeMV.red fakeMV.green fakeMV.blue fakeMV.alpha}
+ShuffleCopy {
+inputs 2
+alpha alpha2
+black red
+white green
+red2 blue
+green2 alpha
+out2 fakeMV
+name ShuffleCopy2
+selected true
+xpos 2299
+ypos 588
+}
+VectorBlur {
+uv fakeMV
+scale 36.5
+name VectorBlur2
+selected true
+xpos 2299
+ypos 630
+}
+push $cut_paste_input
+Merge2 {
+inputs 2
+operation plus
+mix {{curve x155 0 x159 0.375 x165 1 x188 0.415 x192 0}}
+name Merge6
+selected true
+xpos 2120
+ypos 636
+}

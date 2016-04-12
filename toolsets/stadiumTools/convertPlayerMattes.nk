@@ -1,0 +1,2917 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Group {
+name convertPlayerMattes
+selected true
+xpos 1911
+ypos -508
+}
+Input {
+inputs 0
+name Input1
+xpos 0
+ypos -321
+}
+Dot {
+name Dot2
+xpos 34
+ypos -266
+}
+set N38e2ff90 [stack 0]
+add_layer {_playerId_messi _playerId_messi.red _playerId_messi.green _playerId_messi.blue _playerId_messi.alpha}
+Shuffle {
+in _playerId_messi
+name Shuffle17
+label "\[value in]"
+xpos 205
+ypos -277
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression1
+xpos 205
+ypos -241
+}
+Unpremult {
+name Unpremult1
+xpos 205
+ypos -217
+}
+push $N38e2ff90
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade1
+xpos 137
+ypos -183
+}
+add_layer {_m_players_A _m_players_A.red _m_players_A.green _m_players_A.blue _m_players_A.alpha}
+Shuffle {
+in _m_players_A
+name Shuffle1
+label "\[value in]"
+xpos 137
+ypos -147
+}
+set N38e283d0 [stack 0]
+add_layer {_m_players_B _m_players_B.red _m_players_B.green _m_players_B.blue _m_players_B.alpha}
+Shuffle {
+in _m_players_B
+name Shuffle2
+label "\[value in]"
+xpos 137
+ypos -96
+}
+set N38e2a9a0 [stack 0]
+add_layer {_m_players_C _m_players_C.red _m_players_C.green _m_players_C.blue _m_players_C.alpha}
+Shuffle {
+in _m_players_C
+name Shuffle3
+label "\[value in]"
+xpos 137
+ypos -48
+}
+set N38e2ad10 [stack 0]
+add_layer {_m_players_D _m_players_D.red _m_players_D.green _m_players_D.blue _m_players_D.alpha}
+Shuffle {
+in _m_players_D
+name Shuffle4
+label "\[value in]"
+xpos 137
+ypos 1
+}
+set N38e2b080 [stack 0]
+add_layer {_m_players_E _m_players_E.red _m_players_E.green _m_players_E.blue _m_players_E.alpha}
+Shuffle {
+in _m_players_E
+name Shuffle5
+label "\[value in]"
+xpos 137
+ypos 56
+}
+set N38e2b3f0 [stack 0]
+add_layer {_m_players_F _m_players_F.red _m_players_F.green _m_players_F.blue _m_players_F.alpha}
+Shuffle {
+in _m_players_F
+name Shuffle6
+label "\[value in]"
+xpos 137
+ypos 105
+}
+set N38e2b760 [stack 0]
+add_layer {_m_players_G _m_players_G.red _m_players_G.green _m_players_G.blue _m_players_G.alpha}
+Shuffle {
+in _m_players_G
+name Shuffle7
+label "\[value in]"
+xpos 137
+ypos 166
+}
+set N38e2bad0 [stack 0]
+add_layer {_m_players_H _m_players_H.red _m_players_H.green _m_players_H.blue _m_players_H.alpha}
+Shuffle {
+in _m_players_H
+name Shuffle8
+label "\[value in]"
+xpos 137
+ypos 224
+}
+set N38e2be40 [stack 0]
+add_layer {_m_players_all _m_players_all.red}
+Shuffle {
+in _m_players_all
+name Shuffle18
+label "\[value in]"
+xpos 137
+ypos 278
+}
+push $N38e2be40
+push $N38e2bad0
+push $N38e2b760
+push $N38e2b3f0
+push $N38e2b080
+push $N38e2ad10
+push $N38e2a9a0
+push $N38e283d0
+push $N38e2ff90
+add_layer {_m_messi_A _m_messi_A.red _m_messi_A.green _m_messi_A.blue _m_messi_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_messi_A
+name ShuffleCopy1
+xpos 0
+ypos -141
+}
+add_layer {_m_messi_B _m_messi_B.red _m_messi_B.green _m_messi_B.blue _m_messi_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_B
+name ShuffleCopy2
+xpos 0
+ypos -90
+}
+add_layer {_m_messi_C _m_messi_C.red _m_messi_C.green _m_messi_C.blue _m_messi_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_C
+name ShuffleCopy3
+xpos 0
+ypos -42
+}
+add_layer {_m_messi_D _m_messi_D.red _m_messi_D.green _m_messi_D.blue _m_messi_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_D
+name ShuffleCopy4
+xpos 0
+ypos 7
+}
+add_layer {_m_messi_E _m_messi_E.red _m_messi_E.green _m_messi_E.blue _m_messi_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_E
+name ShuffleCopy5
+xpos 0
+ypos 62
+}
+add_layer {_m_messi_F _m_messi_F.red _m_messi_F.green _m_messi_F.blue _m_messi_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_F
+name ShuffleCopy6
+xpos 0
+ypos 111
+}
+add_layer {_m_messi_G _m_messi_G.red _m_messi_G.green _m_messi_G.blue _m_messi_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_G
+name ShuffleCopy7
+xpos 0
+ypos 172
+}
+add_layer {_m_messi_H _m_messi_H.red _m_messi_H.green _m_messi_H.blue _m_messi_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_H
+name ShuffleCopy8
+xpos 0
+ypos 230
+}
+add_layer {_m_messi_all _m_messi_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_messi_all
+name ShuffleCopy9
+xpos 0
+ypos 284
+}
+Dot {
+name Dot1
+xpos 34
+ypos 453
+}
+set N38e31430 [stack 0]
+add_layer {_playerId_casillas _playerId_casillas.red _playerId_casillas.green _playerId_casillas.blue _playerId_casillas.alpha}
+Shuffle {
+in _playerId_casillas
+name Shuffle9
+label "\[value in]"
+xpos 205
+ypos 442
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression2
+xpos 205
+ypos 478
+}
+Unpremult {
+name Unpremult2
+xpos 205
+ypos 502
+}
+push $N38e31430
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade2
+xpos 137
+ypos 536
+}
+Shuffle {
+in _m_players_A
+name Shuffle10
+label "\[value in]"
+xpos 137
+ypos 572
+}
+set N38e32560 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle11
+label "\[value in]"
+xpos 137
+ypos 623
+}
+set N38e328d0 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle12
+label "\[value in]"
+xpos 137
+ypos 671
+}
+set N38e32c40 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle13
+label "\[value in]"
+xpos 137
+ypos 720
+}
+set N38e32fb0 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle14
+label "\[value in]"
+xpos 137
+ypos 775
+}
+set N38e33320 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle15
+label "\[value in]"
+xpos 137
+ypos 824
+}
+set N38e33690 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle16
+label "\[value in]"
+xpos 137
+ypos 885
+}
+set N38e33a00 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle19
+label "\[value in]"
+xpos 137
+ypos 943
+}
+set N38e33d70 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle20
+label "\[value in]"
+xpos 137
+ypos 997
+}
+push $N38e33d70
+push $N38e33a00
+push $N38e33690
+push $N38e33320
+push $N38e32fb0
+push $N38e32c40
+push $N38e328d0
+push $N38e32560
+push $N38e31430
+add_layer {_m_casillas_A _m_casillas_A.red _m_casillas_A.green _m_casillas_A.blue _m_casillas_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_casillas_A
+name ShuffleCopy10
+xpos 0
+ypos 578
+}
+add_layer {_m_casillas_B _m_casillas_B.red _m_casillas_B.green _m_casillas_B.blue _m_casillas_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_B
+name ShuffleCopy11
+xpos 0
+ypos 629
+}
+add_layer {_m_casillas_C _m_casillas_C.red _m_casillas_C.green _m_casillas_C.blue _m_casillas_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_C
+name ShuffleCopy12
+xpos 0
+ypos 677
+}
+add_layer {_m_casillas_D _m_casillas_D.red _m_casillas_D.green _m_casillas_D.blue _m_casillas_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_D
+name ShuffleCopy13
+xpos 0
+ypos 726
+}
+add_layer {_m_casillas_E _m_casillas_E.red _m_casillas_E.green _m_casillas_E.blue _m_casillas_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_E
+name ShuffleCopy14
+xpos 0
+ypos 781
+}
+add_layer {_m_casillas_F _m_casillas_F.red _m_casillas_F.green _m_casillas_F.blue _m_casillas_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_F
+name ShuffleCopy15
+xpos 0
+ypos 830
+}
+add_layer {_m_casillas_G _m_casillas_G.red _m_casillas_G.green _m_casillas_G.blue _m_casillas_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_G
+name ShuffleCopy16
+xpos 0
+ypos 891
+}
+add_layer {_m_casillas_H _m_casillas_H.red _m_casillas_H.green _m_casillas_H.blue _m_casillas_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_H
+name ShuffleCopy17
+xpos 0
+ypos 949
+}
+add_layer {_m_casillas_all _m_casillas_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_casillas_all
+name ShuffleCopy18
+xpos 0
+ypos 1003
+}
+Dot {
+name Dot3
+xpos 34
+ypos 1119
+}
+set N38e36340 [stack 0]
+add_layer {_playerId_ronaldo _playerId_ronaldo.red _playerId_ronaldo.green _playerId_ronaldo.blue _playerId_ronaldo.alpha}
+Shuffle {
+in _playerId_ronaldo
+name Shuffle21
+label "\[value in]"
+xpos 205
+ypos 1108
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression3
+xpos 205
+ypos 1144
+}
+Unpremult {
+name Unpremult3
+xpos 205
+ypos 1168
+}
+push $N38e36340
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade3
+xpos 137
+ypos 1202
+}
+Shuffle {
+in _m_players_A
+name Shuffle22
+label "\[value in]"
+xpos 137
+ypos 1238
+}
+set N38e37100 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle23
+label "\[value in]"
+xpos 137
+ypos 1289
+}
+set N38e377e0 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle24
+label "\[value in]"
+xpos 137
+ypos 1337
+}
+set N38e37b50 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle25
+label "\[value in]"
+xpos 137
+ypos 1386
+}
+set N38e37ec0 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle26
+label "\[value in]"
+xpos 137
+ypos 1441
+}
+set N38e38230 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle27
+label "\[value in]"
+xpos 137
+ypos 1490
+}
+set N38e385a0 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle28
+label "\[value in]"
+xpos 137
+ypos 1551
+}
+set N38e38910 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle29
+label "\[value in]"
+xpos 137
+ypos 1609
+}
+set N38e38c80 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle30
+label "\[value in]"
+xpos 137
+ypos 1663
+}
+push $N38e38c80
+push $N38e38910
+push $N38e385a0
+push $N38e38230
+push $N38e37ec0
+push $N38e37b50
+push $N38e377e0
+push $N38e37100
+push $N38e36340
+add_layer {_m_ronaldo_A _m_ronaldo_A.red _m_ronaldo_A.green _m_ronaldo_A.blue _m_ronaldo_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_ronaldo_A
+name ShuffleCopy19
+xpos 0
+ypos 1244
+}
+add_layer {_m_ronaldo_B _m_ronaldo_B.red _m_ronaldo_B.green _m_ronaldo_B.blue _m_ronaldo_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_B
+name ShuffleCopy20
+xpos 0
+ypos 1295
+}
+add_layer {_m_ronaldo_C _m_ronaldo_C.red _m_ronaldo_C.green _m_ronaldo_C.blue _m_ronaldo_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_C
+name ShuffleCopy21
+xpos 0
+ypos 1343
+}
+add_layer {_m_ronaldo_D _m_ronaldo_D.red _m_ronaldo_D.green _m_ronaldo_D.blue _m_ronaldo_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_D
+name ShuffleCopy22
+xpos 0
+ypos 1392
+}
+add_layer {_m_ronaldo_E _m_ronaldo_E.red _m_ronaldo_E.green _m_ronaldo_E.blue _m_ronaldo_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_E
+name ShuffleCopy23
+xpos 0
+ypos 1447
+}
+add_layer {_m_ronaldo_F _m_ronaldo_F.red _m_ronaldo_F.green _m_ronaldo_F.blue _m_ronaldo_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_F
+name ShuffleCopy24
+xpos 0
+ypos 1496
+}
+add_layer {_m_ronaldo_G _m_ronaldo_G.red _m_ronaldo_G.green _m_ronaldo_G.blue _m_ronaldo_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_G
+name ShuffleCopy25
+xpos 0
+ypos 1557
+}
+add_layer {_m_ronaldo_H _m_ronaldo_H.red _m_ronaldo_H.green _m_ronaldo_H.blue _m_ronaldo_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_H
+name ShuffleCopy26
+xpos 0
+ypos 1615
+}
+add_layer {_m_ronaldo_all _m_ronaldo_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_ronaldo_all
+name ShuffleCopy27
+xpos 0
+ypos 1669
+}
+Dot {
+name Dot4
+xpos 34
+ypos 1748
+}
+set N38e3b5c0 [stack 0]
+add_layer {_m_falcoa_B _m_falcoa_B.red _m_falcoa_B.green _m_falcoa_B.blue _m_falcoa_B.alpha}
+Shuffle {
+in _m_falcoa_B
+name Shuffle31
+label "\[value in]"
+xpos 205
+ypos 1737
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression4
+xpos 205
+ypos 1773
+}
+Unpremult {
+name Unpremult4
+xpos 205
+ypos 1797
+}
+push $N38e3b5c0
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade4
+xpos 137
+ypos 1831
+}
+Shuffle {
+in _m_players_A
+name Shuffle32
+label "\[value in]"
+xpos 137
+ypos 1867
+}
+set N38e3c6f0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle33
+label "\[value in]"
+xpos 137
+ypos 1918
+}
+set N38e3ca60 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle34
+label "\[value in]"
+xpos 137
+ypos 1966
+}
+set N38e3cdd0 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle35
+label "\[value in]"
+xpos 137
+ypos 2015
+}
+set N38e3d140 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle36
+label "\[value in]"
+xpos 137
+ypos 2070
+}
+set N38e3d4b0 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle37
+label "\[value in]"
+xpos 137
+ypos 2119
+}
+set N38e3d820 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle38
+label "\[value in]"
+xpos 137
+ypos 2180
+}
+set N38e3db90 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle39
+label "\[value in]"
+xpos 137
+ypos 2238
+}
+set N38e3df00 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle40
+label "\[value in]"
+xpos 137
+ypos 2292
+}
+push $N38e3df00
+push $N38e3db90
+push $N38e3d820
+push $N38e3d4b0
+push $N38e3d140
+push $N38e3cdd0
+push $N38e3ca60
+push $N38e3c6f0
+push $N38e3b5c0
+add_layer {_m_donovan_A _m_donovan_A.red _m_donovan_A.green _m_donovan_A.blue _m_donovan_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_donovan_A
+name ShuffleCopy28
+xpos 0
+ypos 1873
+}
+add_layer {_m_donovan_B _m_donovan_B.red _m_donovan_B.green _m_donovan_B.blue _m_donovan_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_B
+name ShuffleCopy29
+xpos 0
+ypos 1924
+}
+add_layer {_m_donovan_C _m_donovan_C.red _m_donovan_C.green _m_donovan_C.blue _m_donovan_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_C
+name ShuffleCopy30
+xpos 0
+ypos 1972
+}
+add_layer {_m_donovan_D _m_donovan_D.red _m_donovan_D.green _m_donovan_D.blue _m_donovan_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_D
+name ShuffleCopy31
+xpos 0
+ypos 2021
+}
+add_layer {_m_donovan_E _m_donovan_E.red _m_donovan_E.green _m_donovan_E.blue _m_donovan_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_E
+name ShuffleCopy32
+xpos 0
+ypos 2076
+}
+add_layer {_m_donovan_F _m_donovan_F.red _m_donovan_F.green _m_donovan_F.blue _m_donovan_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_F
+name ShuffleCopy33
+xpos 0
+ypos 2125
+}
+add_layer {_m_donovan_G _m_donovan_G.red _m_donovan_G.green _m_donovan_G.blue _m_donovan_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_G
+name ShuffleCopy34
+xpos 0
+ypos 2186
+}
+add_layer {_m_donovan_H _m_donovan_H.red _m_donovan_H.green _m_donovan_H.blue _m_donovan_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_H
+name ShuffleCopy35
+xpos 0
+ypos 2244
+}
+add_layer {_m_donovan_all _m_donovan_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_donovan_all
+name ShuffleCopy36
+xpos 0
+ypos 2298
+}
+Dot {
+name Dot5
+xpos 34
+ypos 2366
+}
+set N38e423c0 [stack 0]
+add_layer {_playerId_rooney _playerId_rooney.red _playerId_rooney.green _playerId_rooney.blue _playerId_rooney.alpha}
+Shuffle {
+in _playerId_rooney
+name Shuffle41
+label "\[value in]"
+xpos 205
+ypos 2355
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression5
+xpos 205
+ypos 2391
+}
+Unpremult {
+name Unpremult5
+xpos 205
+ypos 2415
+}
+push $N38e423c0
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade5
+xpos 137
+ypos 2449
+}
+Shuffle {
+in _m_players_A
+name Shuffle42
+label "\[value in]"
+xpos 137
+ypos 2485
+}
+set N38e434f0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle43
+label "\[value in]"
+xpos 137
+ypos 2536
+}
+set N38e43860 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle44
+label "\[value in]"
+xpos 137
+ypos 2584
+}
+set N38e43bd0 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle45
+label "\[value in]"
+xpos 137
+ypos 2633
+}
+set N38e43f40 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle46
+label "\[value in]"
+xpos 137
+ypos 2688
+}
+set N38e442b0 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle47
+label "\[value in]"
+xpos 137
+ypos 2737
+}
+set N38e44620 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle48
+label "\[value in]"
+xpos 137
+ypos 2798
+}
+set N38e44990 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle49
+label "\[value in]"
+xpos 137
+ypos 2856
+}
+set N38e44d00 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle50
+label "\[value in]"
+xpos 137
+ypos 2910
+}
+push $N38e44d00
+push $N38e44990
+push $N38e44620
+push $N38e442b0
+push $N38e43f40
+push $N38e43bd0
+push $N38e43860
+push $N38e434f0
+push $N38e423c0
+add_layer {_m_rooney_A _m_rooney_A.red _m_rooney_A.green _m_rooney_A.blue _m_rooney_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_rooney_A
+name ShuffleCopy37
+xpos 0
+ypos 2491
+}
+add_layer {_m_rooney_B _m_rooney_B.red _m_rooney_B.green _m_rooney_B.blue _m_rooney_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_B
+name ShuffleCopy38
+xpos 0
+ypos 2542
+}
+add_layer {_m_rooney_C _m_rooney_C.red _m_rooney_C.green _m_rooney_C.blue _m_rooney_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_C
+name ShuffleCopy39
+xpos 0
+ypos 2590
+}
+add_layer {_m_rooney_D _m_rooney_D.red _m_rooney_D.green _m_rooney_D.blue _m_rooney_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_D
+name ShuffleCopy40
+xpos 0
+ypos 2639
+}
+add_layer {_m_rooney_E _m_rooney_E.red _m_rooney_E.green _m_rooney_E.blue _m_rooney_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_E
+name ShuffleCopy41
+xpos 0
+ypos 2694
+}
+add_layer {_m_rooney_F _m_rooney_F.red _m_rooney_F.green _m_rooney_F.blue _m_rooney_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_F
+name ShuffleCopy42
+xpos 0
+ypos 2743
+}
+add_layer {_m_rooney_G _m_rooney_G.red _m_rooney_G.green _m_rooney_G.blue _m_rooney_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_G
+name ShuffleCopy43
+xpos 0
+ypos 2804
+}
+add_layer {_m_rooney_H _m_rooney_H.red _m_rooney_H.green _m_rooney_H.blue _m_rooney_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_H
+name ShuffleCopy44
+xpos 0
+ypos 2862
+}
+add_layer {_m_rooney_all _m_rooney_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_rooney_all
+name ShuffleCopy45
+xpos 0
+ypos 2916
+}
+Dot {
+name Dot6
+xpos 34
+ypos 2986
+}
+set N38e47640 [stack 0]
+add_layer {_playerId_chungYong _playerId_chungYong.red _playerId_chungYong.green _playerId_chungYong.blue _playerId_chungYong.alpha}
+Shuffle {
+in _playerId_chungYong
+name Shuffle51
+label "\[value in]"
+xpos 205
+ypos 2975
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression6
+xpos 205
+ypos 3011
+}
+Unpremult {
+name Unpremult6
+xpos 205
+ypos 3035
+}
+push $N38e47640
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade6
+xpos 137
+ypos 3069
+}
+Shuffle {
+in _m_players_A
+name Shuffle52
+label "\[value in]"
+xpos 137
+ypos 3105
+}
+set N38e48770 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle53
+label "\[value in]"
+xpos 137
+ypos 3156
+}
+set N38e48ae0 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle54
+label "\[value in]"
+xpos 137
+ypos 3204
+}
+set N38e48e50 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle55
+label "\[value in]"
+xpos 137
+ypos 3253
+}
+set N38e491c0 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle56
+label "\[value in]"
+xpos 137
+ypos 3308
+}
+set N38e49530 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle57
+label "\[value in]"
+xpos 137
+ypos 3357
+}
+set N38e498a0 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle58
+label "\[value in]"
+xpos 137
+ypos 3418
+}
+set N38e49c10 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle59
+label "\[value in]"
+xpos 137
+ypos 3476
+}
+set N38e49f80 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle60
+label "\[value in]"
+xpos 137
+ypos 3530
+}
+push $N38e49f80
+push $N38e49c10
+push $N38e498a0
+push $N38e49530
+push $N38e491c0
+push $N38e48e50
+push $N38e48ae0
+push $N38e48770
+push $N38e47640
+add_layer {_m_chungYong_A _m_chungYong_A.red _m_chungYong_A.green _m_chungYong_A.blue _m_chungYong_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_chungYong_A
+name ShuffleCopy46
+xpos 0
+ypos 3111
+}
+add_layer {_m_chungYong_B _m_chungYong_B.red _m_chungYong_B.green _m_chungYong_B.blue _m_chungYong_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_B
+name ShuffleCopy47
+xpos 0
+ypos 3162
+}
+add_layer {_m_chungYong_C _m_chungYong_C.red _m_chungYong_C.green _m_chungYong_C.blue _m_chungYong_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_C
+name ShuffleCopy48
+xpos 0
+ypos 3210
+}
+add_layer {_m_chungYong_D _m_chungYong_D.red _m_chungYong_D.green _m_chungYong_D.blue _m_chungYong_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_D
+name ShuffleCopy49
+xpos 0
+ypos 3259
+}
+add_layer {_m_chungYong_E _m_chungYong_E.red _m_chungYong_E.green _m_chungYong_E.blue _m_chungYong_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_E
+name ShuffleCopy50
+xpos 0
+ypos 3314
+}
+add_layer {_m_chungYong_F _m_chungYong_F.red _m_chungYong_F.green _m_chungYong_F.blue _m_chungYong_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_F
+name ShuffleCopy51
+xpos 0
+ypos 3363
+}
+add_layer {_m_chungYong_G _m_chungYong_G.red _m_chungYong_G.green _m_chungYong_G.blue _m_chungYong_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_G
+name ShuffleCopy52
+xpos 0
+ypos 3424
+}
+add_layer {_m_chungYong_H _m_chungYong_H.red _m_chungYong_H.green _m_chungYong_H.blue _m_chungYong_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_H
+name ShuffleCopy53
+xpos 0
+ypos 3482
+}
+add_layer {_m_chungYong_all _m_chungYong_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_chungYong_all
+name ShuffleCopy54
+xpos 0
+ypos 3536
+}
+Dot {
+name Dot7
+xpos 34
+ypos 3646
+}
+set N38e4c550 [stack 0]
+add_layer {_playerId_shaarawy _playerId_shaarawy.red _playerId_shaarawy.green _playerId_shaarawy.blue _playerId_shaarawy.alpha}
+Shuffle {
+in _playerId_shaarawy
+name Shuffle61
+label "\[value in]"
+xpos 205
+ypos 3635
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression7
+xpos 205
+ypos 3671
+}
+Unpremult {
+name Unpremult7
+xpos 205
+ypos 3695
+}
+push $N38e4c550
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade7
+xpos 137
+ypos 3729
+}
+Shuffle {
+in _m_players_A
+name Shuffle62
+label "\[value in]"
+xpos 137
+ypos 3765
+}
+set N38e4d680 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle63
+label "\[value in]"
+xpos 137
+ypos 3816
+}
+set N38e4d9f0 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle64
+label "\[value in]"
+xpos 137
+ypos 3864
+}
+set N38e4dd60 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle65
+label "\[value in]"
+xpos 137
+ypos 3913
+}
+set N38e4e0d0 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle66
+label "\[value in]"
+xpos 137
+ypos 3968
+}
+set N38e4e440 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle67
+label "\[value in]"
+xpos 137
+ypos 4017
+}
+set N38e4e7b0 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle68
+label "\[value in]"
+xpos 137
+ypos 4078
+}
+set N38e4eb20 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle69
+label "\[value in]"
+xpos 137
+ypos 4136
+}
+set N38e4ee90 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle70
+label "\[value in]"
+xpos 137
+ypos 4190
+}
+push $N38e4ee90
+push $N38e4eb20
+push $N38e4e7b0
+push $N38e4e440
+push $N38e4e0d0
+push $N38e4dd60
+push $N38e4d9f0
+push $N38e4d680
+push $N38e4c550
+add_layer {_m_shaarawy_A _m_shaarawy_A.red _m_shaarawy_A.green _m_shaarawy_A.blue _m_shaarawy_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_shaarawy_A
+name ShuffleCopy55
+xpos 0
+ypos 3771
+}
+add_layer {_m_shaarawy_B _m_shaarawy_B.red _m_shaarawy_B.green _m_shaarawy_B.blue _m_shaarawy_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_B
+name ShuffleCopy56
+xpos 0
+ypos 3822
+}
+add_layer {_m_shaarawy_C _m_shaarawy_C.red _m_shaarawy_C.green _m_shaarawy_C.blue _m_shaarawy_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_C
+name ShuffleCopy57
+xpos 0
+ypos 3870
+}
+add_layer {_m_shaarawy_D _m_shaarawy_D.red _m_shaarawy_D.green _m_shaarawy_D.blue _m_shaarawy_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_D
+name ShuffleCopy58
+xpos 0
+ypos 3919
+}
+add_layer {_m_shaarawy_E _m_shaarawy_E.red _m_shaarawy_E.green _m_shaarawy_E.blue _m_shaarawy_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_E
+name ShuffleCopy59
+xpos 0
+ypos 3974
+}
+add_layer {_m_shaarawy_F _m_shaarawy_F.red _m_shaarawy_F.green _m_shaarawy_F.blue _m_shaarawy_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_F
+name ShuffleCopy60
+xpos 0
+ypos 4023
+}
+add_layer {_m_shaarawy_G _m_shaarawy_G.red _m_shaarawy_G.green _m_shaarawy_G.blue _m_shaarawy_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_G
+name ShuffleCopy61
+xpos 0
+ypos 4084
+}
+add_layer {_m_shaarawy_H _m_shaarawy_H.red _m_shaarawy_H.green _m_shaarawy_H.blue _m_shaarawy_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_H
+name ShuffleCopy62
+xpos 0
+ypos 4142
+}
+add_layer {_m_shaarawy_all _m_shaarawy_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_shaarawy_all
+name ShuffleCopy63
+xpos 0
+ypos 4196
+}
+Dot {
+name Dot8
+xpos 34
+ypos 4274
+}
+set Nb4641670 [stack 0]
+add_layer {_playerId_gotze _playerId_gotze.red _playerId_gotze.green _playerId_gotze.blue _playerId_gotze.alpha}
+Shuffle {
+in _playerId_gotze
+name Shuffle71
+label "\[value in]"
+xpos 205
+ypos 4263
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression8
+xpos 205
+ypos 4299
+}
+Unpremult {
+name Unpremult8
+xpos 205
+ypos 4323
+}
+push $Nb4641670
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade8
+xpos 137
+ypos 4357
+}
+Shuffle {
+in _m_players_A
+name Shuffle72
+label "\[value in]"
+xpos 137
+ypos 4393
+}
+set Nb46427a0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle73
+label "\[value in]"
+xpos 137
+ypos 4444
+}
+set Nb4642b10 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle74
+label "\[value in]"
+xpos 137
+ypos 4492
+}
+set Nb4642e80 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle75
+label "\[value in]"
+xpos 137
+ypos 4541
+}
+set Nb46431f0 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle76
+label "\[value in]"
+xpos 137
+ypos 4596
+}
+set Nb4643560 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle77
+label "\[value in]"
+xpos 137
+ypos 4645
+}
+set Nb46438d0 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle78
+label "\[value in]"
+xpos 137
+ypos 4706
+}
+set Nb4643c40 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle79
+label "\[value in]"
+xpos 137
+ypos 4764
+}
+set Nb4643fb0 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle80
+label "\[value in]"
+xpos 137
+ypos 4818
+}
+push $Nb4643fb0
+push $Nb4643c40
+push $Nb46438d0
+push $Nb4643560
+push $Nb46431f0
+push $Nb4642e80
+push $Nb4642b10
+push $Nb46427a0
+push $Nb4641670
+add_layer {_m_gotze_A _m_gotze_A.red _m_gotze_A.green _m_gotze_A.blue _m_gotze_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_gotze_A
+name ShuffleCopy64
+xpos 0
+ypos 4399
+}
+add_layer {_m_gotze_B _m_gotze_B.red _m_gotze_B.green _m_gotze_B.blue _m_gotze_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_B
+name ShuffleCopy65
+xpos 0
+ypos 4450
+}
+add_layer {_m_gotze_C _m_gotze_C.red _m_gotze_C.green _m_gotze_C.blue _m_gotze_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_C
+name ShuffleCopy66
+xpos 0
+ypos 4498
+}
+add_layer {_m_gotze_D _m_gotze_D.red _m_gotze_D.green _m_gotze_D.blue _m_gotze_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_D
+name ShuffleCopy67
+xpos 0
+ypos 4547
+}
+add_layer {_m_gotze_E _m_gotze_E.red _m_gotze_E.green _m_gotze_E.blue _m_gotze_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_E
+name ShuffleCopy68
+xpos 0
+ypos 4602
+}
+add_layer {_m_gotze_F _m_gotze_F.red _m_gotze_F.green _m_gotze_F.blue _m_gotze_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_F
+name ShuffleCopy69
+xpos 0
+ypos 4651
+}
+add_layer {_m_gotze_G _m_gotze_G.red _m_gotze_G.green _m_gotze_G.blue _m_gotze_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_G
+name ShuffleCopy70
+xpos 0
+ypos 4712
+}
+add_layer {_m_gotze_H _m_gotze_H.red _m_gotze_H.green _m_gotze_H.blue _m_gotze_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_H
+name ShuffleCopy71
+xpos 0
+ypos 4770
+}
+add_layer {_m_gotze_all _m_gotze_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_gotze_all
+name ShuffleCopy72
+xpos 0
+ypos 4824
+}
+Dot {
+name Dot9
+xpos 34
+ypos 4889
+}
+set Nb4646580 [stack 0]
+add_layer {_playerId_wuLei _playerId_wuLei.red _playerId_wuLei.green _playerId_wuLei.blue _playerId_wuLei.alpha}
+Shuffle {
+in _playerId_wuLei
+name Shuffle81
+label "\[value in]"
+xpos 205
+ypos 4878
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression9
+xpos 205
+ypos 4914
+}
+Unpremult {
+name Unpremult9
+xpos 205
+ypos 4938
+}
+push $Nb4646580
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade9
+xpos 137
+ypos 4972
+}
+Shuffle {
+in _m_players_A
+name Shuffle82
+label "\[value in]"
+xpos 137
+ypos 5008
+}
+set Nb46476b0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle83
+label "\[value in]"
+xpos 137
+ypos 5059
+}
+set Nb4647a20 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle84
+label "\[value in]"
+xpos 137
+ypos 5107
+}
+set Nb4647d90 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle85
+label "\[value in]"
+xpos 137
+ypos 5156
+}
+set Nb4648100 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle86
+label "\[value in]"
+xpos 137
+ypos 5211
+}
+set Nb4648470 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle87
+label "\[value in]"
+xpos 137
+ypos 5260
+}
+set Nb46487e0 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle88
+label "\[value in]"
+xpos 137
+ypos 5321
+}
+set Nb4648b50 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle89
+label "\[value in]"
+xpos 137
+ypos 5379
+}
+set Nb4648ec0 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle90
+label "\[value in]"
+xpos 137
+ypos 5433
+}
+push $Nb4648ec0
+push $Nb4648b50
+push $Nb46487e0
+push $Nb4648470
+push $Nb4648100
+push $Nb4647d90
+push $Nb4647a20
+push $Nb46476b0
+push $Nb4646580
+add_layer {_m_wuLei_A _m_wuLei_A.red _m_wuLei_A.green _m_wuLei_A.blue _m_wuLei_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_wuLei_A
+name ShuffleCopy73
+xpos 0
+ypos 5014
+}
+add_layer {_m_wuLei_B _m_wuLei_B.red _m_wuLei_B.green _m_wuLei_B.blue _m_wuLei_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_B
+name ShuffleCopy74
+xpos 0
+ypos 5065
+}
+add_layer {_m_wuLei_C _m_wuLei_C.red _m_wuLei_C.green _m_wuLei_C.blue _m_wuLei_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_C
+name ShuffleCopy75
+xpos 0
+ypos 5113
+}
+add_layer {_m_wuLei_D _m_wuLei_D.red _m_wuLei_D.green _m_wuLei_D.blue _m_wuLei_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_D
+name ShuffleCopy76
+xpos 0
+ypos 5162
+}
+add_layer {_m_wuLei_E _m_wuLei_E.red _m_wuLei_E.green _m_wuLei_E.blue _m_wuLei_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_E
+name ShuffleCopy77
+xpos 0
+ypos 5217
+}
+add_layer {_m_wuLei_F _m_wuLei_F.red _m_wuLei_F.green _m_wuLei_F.blue _m_wuLei_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_F
+name ShuffleCopy78
+xpos 0
+ypos 5266
+}
+add_layer {_m_wuLei_G _m_wuLei_G.red _m_wuLei_G.green _m_wuLei_G.blue _m_wuLei_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_G
+name ShuffleCopy79
+xpos 0
+ypos 5327
+}
+add_layer {_m_wuLei_H _m_wuLei_H.red _m_wuLei_H.green _m_wuLei_H.blue _m_wuLei_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_H
+name ShuffleCopy80
+xpos 0
+ypos 5385
+}
+add_layer {_m_wuLei_all _m_wuLei_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_wuLei_all
+name ShuffleCopy81
+xpos 0
+ypos 5439
+}
+Dot {
+name Dot10
+xpos 34
+ypos 5510
+}
+set Nb4660fc0 [stack 0]
+add_layer {_playerId_falcao _playerId_falcao.red _playerId_falcao.green _playerId_falcao.blue _playerId_falcao.alpha}
+Shuffle {
+in _playerId_falcao
+name Shuffle91
+label "\[value in]"
+xpos 205
+ypos 5499
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression10
+xpos 205
+ypos 5535
+}
+Unpremult {
+name Unpremult10
+xpos 205
+ypos 5559
+}
+push $Nb4660fc0
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade10
+xpos 137
+ypos 5593
+}
+Shuffle {
+in _m_players_A
+name Shuffle92
+label "\[value in]"
+xpos 137
+ypos 5629
+}
+set Nb46620f0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle93
+label "\[value in]"
+xpos 137
+ypos 5680
+}
+set Nb4662460 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle94
+label "\[value in]"
+xpos 137
+ypos 5728
+}
+set Nb46627d0 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle95
+label "\[value in]"
+xpos 137
+ypos 5777
+}
+set Nb4662b40 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle96
+label "\[value in]"
+xpos 137
+ypos 5832
+}
+set Nb4662eb0 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle97
+label "\[value in]"
+xpos 137
+ypos 5881
+}
+set Nb4663220 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle98
+label "\[value in]"
+xpos 137
+ypos 5942
+}
+set Nb4663590 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle99
+label "\[value in]"
+xpos 137
+ypos 6000
+}
+set Nb4663900 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle100
+label "\[value in]"
+xpos 137
+ypos 6054
+}
+push $Nb4663900
+push $Nb4663590
+push $Nb4663220
+push $Nb4662eb0
+push $Nb4662b40
+push $Nb46627d0
+push $Nb4662460
+push $Nb46620f0
+push $Nb4660fc0
+add_layer {_m_falcao_A _m_falcao_A.red _m_falcao_A.green _m_falcao_A.blue _m_falcao_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_falcao_A
+name ShuffleCopy82
+xpos 0
+ypos 5635
+}
+add_layer {_m_falcao_B _m_falcao_B.red _m_falcao_B.green _m_falcao_B.blue _m_falcao_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_B
+name ShuffleCopy83
+xpos 0
+ypos 5686
+}
+add_layer {_m_falcao_C _m_falcao_C.red _m_falcao_C.green _m_falcao_C.blue _m_falcao_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_C
+name ShuffleCopy84
+xpos 0
+ypos 5734
+}
+add_layer {_m_falcao_D _m_falcao_D.red _m_falcao_D.green _m_falcao_D.blue _m_falcao_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_D
+name ShuffleCopy85
+xpos 0
+ypos 5783
+}
+add_layer {_m_falcao_E _m_falcao_E.red _m_falcao_E.green _m_falcao_E.blue _m_falcao_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_E
+name ShuffleCopy86
+xpos 0
+ypos 5838
+}
+add_layer {_m_falcao_F _m_falcao_F.red _m_falcao_F.green _m_falcao_F.blue _m_falcao_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_F
+name ShuffleCopy87
+xpos 0
+ypos 5887
+}
+add_layer {_m_falcao_G _m_falcao_G.red _m_falcao_G.green _m_falcao_G.blue _m_falcao_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_G
+name ShuffleCopy88
+xpos 0
+ypos 5948
+}
+add_layer {_m_falcao_H _m_falcao_H.red _m_falcao_H.green _m_falcao_H.blue _m_falcao_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_H
+name ShuffleCopy89
+xpos 0
+ypos 6006
+}
+add_layer {_m_falcao_all _m_falcao_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_falcao_all
+name ShuffleCopy90
+xpos 0
+ypos 6060
+}
+Dot {
+name Dot11
+xpos 34
+ypos 6126
+}
+set Nb46503a0 [stack 0]
+add_layer {_playerId_oscar _playerId_oscar.red _playerId_oscar.green _playerId_oscar.blue _playerId_oscar.alpha}
+Shuffle {
+in _playerId_oscar
+name Shuffle101
+label "\[value in]"
+xpos 205
+ypos 6117
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression11
+xpos 205
+ypos 6153
+}
+Unpremult {
+name Unpremult11
+xpos 205
+ypos 6177
+}
+push $Nb46503a0
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade11
+xpos 137
+ypos 6211
+}
+Shuffle {
+in _m_players_A
+name Shuffle102
+label "\[value in]"
+xpos 137
+ypos 6247
+}
+set Nb46514d0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle103
+label "\[value in]"
+xpos 137
+ypos 6298
+}
+set Nb4651840 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle104
+label "\[value in]"
+xpos 137
+ypos 6346
+}
+set Nb4651bb0 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle105
+label "\[value in]"
+xpos 137
+ypos 6395
+}
+set Nb4651f20 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle106
+label "\[value in]"
+xpos 137
+ypos 6450
+}
+set Nb4652290 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle107
+label "\[value in]"
+xpos 137
+ypos 6499
+}
+set Nb4652600 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle108
+label "\[value in]"
+xpos 137
+ypos 6560
+}
+set Nb4652970 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle109
+label "\[value in]"
+xpos 137
+ypos 6618
+}
+set Nb4652ce0 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle110
+label "\[value in]"
+xpos 137
+ypos 6672
+}
+push $Nb4652ce0
+push $Nb4652970
+push $Nb4652600
+push $Nb4652290
+push $Nb4651f20
+push $Nb4651bb0
+push $Nb4651840
+push $Nb46514d0
+push $Nb46503a0
+add_layer {_m_oscar_A _m_oscar_A.red _m_oscar_A.green _m_oscar_A.blue _m_oscar_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_oscar_A
+name ShuffleCopy91
+xpos 0
+ypos 6253
+}
+add_layer {_m_oscar_B _m_oscar_B.red _m_oscar_B.green _m_oscar_B.blue _m_oscar_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_B
+name ShuffleCopy92
+xpos 0
+ypos 6304
+}
+add_layer {_m_oscar_C _m_oscar_C.red _m_oscar_C.green _m_oscar_C.blue _m_oscar_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_C
+name ShuffleCopy93
+xpos 0
+ypos 6352
+}
+add_layer {_m_oscar_D _m_oscar_D.red _m_oscar_D.green _m_oscar_D.blue _m_oscar_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_D
+name ShuffleCopy94
+xpos 0
+ypos 6401
+}
+add_layer {_m_oscar_E _m_oscar_E.red _m_oscar_E.green _m_oscar_E.blue _m_oscar_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_E
+name ShuffleCopy95
+xpos 0
+ypos 6456
+}
+add_layer {_m_oscar_F _m_oscar_F.red _m_oscar_F.green _m_oscar_F.blue _m_oscar_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_F
+name ShuffleCopy96
+xpos 0
+ypos 6505
+}
+add_layer {_m_oscar_G _m_oscar_G.red _m_oscar_G.green _m_oscar_G.blue _m_oscar_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_G
+name ShuffleCopy97
+xpos 0
+ypos 6566
+}
+add_layer {_m_oscar_H _m_oscar_H.red _m_oscar_H.green _m_oscar_H.blue _m_oscar_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_H
+name ShuffleCopy98
+xpos 0
+ypos 6624
+}
+add_layer {_m_oscar_all _m_oscar_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_oscar_all
+name ShuffleCopy99
+xpos 0
+ypos 6678
+}
+Dot {
+name Dot12
+xpos 34
+ypos 6739
+}
+set Nb46552b0 [stack 0]
+add_layer {_playerId_moses _playerId_moses.red _playerId_moses.green _playerId_moses.blue _playerId_moses.alpha}
+Shuffle {
+in _playerId_moses
+name Shuffle111
+label "\[value in]"
+xpos 205
+ypos 6728
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression12
+xpos 205
+ypos 6764
+}
+Unpremult {
+name Unpremult12
+xpos 205
+ypos 6788
+}
+push $Nb46552b0
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade12
+xpos 137
+ypos 6822
+}
+Shuffle {
+in _m_players_A
+name Shuffle112
+label "\[value in]"
+xpos 137
+ypos 6858
+}
+set Nb46563e0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle113
+label "\[value in]"
+xpos 137
+ypos 6909
+}
+set Nb4656750 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle114
+label "\[value in]"
+xpos 137
+ypos 6957
+}
+set Nb4656ac0 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle115
+label "\[value in]"
+xpos 137
+ypos 7006
+}
+set Nb4656e30 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle116
+label "\[value in]"
+xpos 137
+ypos 7061
+}
+set Nb46571a0 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle117
+label "\[value in]"
+xpos 137
+ypos 7110
+}
+set Nb4657510 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle118
+label "\[value in]"
+xpos 137
+ypos 7171
+}
+set Nb4657880 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle119
+label "\[value in]"
+xpos 137
+ypos 7229
+}
+set Nb4657bf0 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle120
+label "\[value in]"
+xpos 137
+ypos 7283
+}
+push $Nb4657bf0
+push $Nb4657880
+push $Nb4657510
+push $Nb46571a0
+push $Nb4656e30
+push $Nb4656ac0
+push $Nb4656750
+push $Nb46563e0
+push $Nb46552b0
+add_layer {_m_moses_A _m_moses_A.red _m_moses_A.green _m_moses_A.blue _m_moses_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_moses_A
+name ShuffleCopy100
+xpos 0
+ypos 6864
+}
+add_layer {_m_moses_B _m_moses_B.red _m_moses_B.green _m_moses_B.blue _m_moses_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_B
+name ShuffleCopy101
+xpos 0
+ypos 6915
+}
+add_layer {_m_moses_C _m_moses_C.red _m_moses_C.green _m_moses_C.blue _m_moses_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_C
+name ShuffleCopy102
+xpos 0
+ypos 6963
+}
+add_layer {_m_moses_D _m_moses_D.red _m_moses_D.green _m_moses_D.blue _m_moses_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_D
+name ShuffleCopy103
+xpos 0
+ypos 7012
+}
+add_layer {_m_moses_E _m_moses_E.red _m_moses_E.green _m_moses_E.blue _m_moses_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_E
+name ShuffleCopy104
+xpos 0
+ypos 7067
+}
+add_layer {_m_moses_F _m_moses_F.red _m_moses_F.green _m_moses_F.blue _m_moses_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_F
+name ShuffleCopy105
+xpos 0
+ypos 7116
+}
+add_layer {_m_moses_G _m_moses_G.red _m_moses_G.green _m_moses_G.blue _m_moses_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_G
+name ShuffleCopy106
+xpos 0
+ypos 7177
+}
+add_layer {_m_moses_H _m_moses_H.red _m_moses_H.green _m_moses_H.blue _m_moses_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_H
+name ShuffleCopy107
+xpos 0
+ypos 7235
+}
+add_layer {_m_moses_all _m_moses_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_moses_all
+name ShuffleCopy108
+xpos 0
+ypos 7289
+}
+Dot {
+name Dot13
+xpos 34
+ypos 7379
+}
+set Nb465a1c0 [stack 0]
+add_layer {_playerId_kerzhakov _playerId_kerzhakov.red _playerId_kerzhakov.green _playerId_kerzhakov.blue _playerId_kerzhakov.alpha}
+Shuffle {
+in _playerId_kerzhakov
+name Shuffle121
+label "\[value in]"
+xpos 205
+ypos 7368
+}
+Expression {
+channel0 {rgba.red rgba.green rgba.blue rgba.alpha}
+expr0 clamp(r+b+g)
+channel1 {-rgba.red -rgba.green -rgba.blue}
+channel2 {-rgba.red -rgba.green -rgba.blue}
+name Expression13
+xpos 205
+ypos 7404
+}
+Unpremult {
+name Unpremult13
+xpos 205
+ypos 7428
+}
+push $Nb465a1c0
+Grade {
+inputs 1+1
+channels all
+multiply 0
+maskChannelMask rgba.red
+invert_mask true
+name Grade13
+xpos 137
+ypos 7462
+}
+Shuffle {
+in _m_players_A
+name Shuffle122
+label "\[value in]"
+xpos 137
+ypos 7498
+}
+set Nb465b2f0 [stack 0]
+Shuffle {
+in _m_players_B
+name Shuffle123
+label "\[value in]"
+xpos 137
+ypos 7549
+}
+set Nb465b660 [stack 0]
+Shuffle {
+in _m_players_C
+name Shuffle124
+label "\[value in]"
+xpos 137
+ypos 7597
+}
+set Nb465b9d0 [stack 0]
+Shuffle {
+in _m_players_D
+name Shuffle125
+label "\[value in]"
+xpos 137
+ypos 7646
+}
+set Nb465bd40 [stack 0]
+Shuffle {
+in _m_players_E
+name Shuffle126
+label "\[value in]"
+xpos 137
+ypos 7701
+}
+set Nb465c0b0 [stack 0]
+Shuffle {
+in _m_players_F
+name Shuffle127
+label "\[value in]"
+xpos 137
+ypos 7750
+}
+set Nb465c420 [stack 0]
+Shuffle {
+in _m_players_G
+name Shuffle128
+label "\[value in]"
+xpos 137
+ypos 7811
+}
+set Nb465c790 [stack 0]
+Shuffle {
+in _m_players_H
+name Shuffle129
+label "\[value in]"
+xpos 137
+ypos 7869
+}
+set Nb465cb00 [stack 0]
+Shuffle {
+in _m_players_all
+name Shuffle130
+label "\[value in]"
+xpos 137
+ypos 7923
+}
+push $Nb465cb00
+push $Nb465c790
+push $Nb465c420
+push $Nb465c0b0
+push $Nb465bd40
+push $Nb465b9d0
+push $Nb465b660
+push $Nb465b2f0
+push $Nb465a1c0
+add_layer {_m_kerzhakov_A _m_kerzhakov_A.red _m_kerzhakov_A.green _m_kerzhakov_A.blue _m_kerzhakov_A.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+black red
+white green
+red2 blue
+green2 alpha
+out _m_kerzhakov_A
+name ShuffleCopy109
+xpos 0
+ypos 7504
+}
+add_layer {_m_kerzhakov_B _m_kerzhakov_B.red _m_kerzhakov_B.green _m_kerzhakov_B.blue _m_kerzhakov_B.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_B
+name ShuffleCopy110
+xpos 0
+ypos 7555
+}
+add_layer {_m_kerzhakov_C _m_kerzhakov_C.red _m_kerzhakov_C.green _m_kerzhakov_C.blue _m_kerzhakov_C.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_C
+name ShuffleCopy111
+xpos 0
+ypos 7603
+}
+add_layer {_m_kerzhakov_D _m_kerzhakov_D.red _m_kerzhakov_D.green _m_kerzhakov_D.blue _m_kerzhakov_D.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_D
+name ShuffleCopy112
+xpos 0
+ypos 7652
+}
+add_layer {_m_kerzhakov_E _m_kerzhakov_E.red _m_kerzhakov_E.green _m_kerzhakov_E.blue _m_kerzhakov_E.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_E
+name ShuffleCopy113
+xpos 0
+ypos 7707
+}
+add_layer {_m_kerzhakov_F _m_kerzhakov_F.red _m_kerzhakov_F.green _m_kerzhakov_F.blue _m_kerzhakov_F.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_F
+name ShuffleCopy114
+xpos 0
+ypos 7756
+}
+add_layer {_m_kerzhakov_G _m_kerzhakov_G.red _m_kerzhakov_G.green _m_kerzhakov_G.blue _m_kerzhakov_G.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_G
+name ShuffleCopy115
+xpos 0
+ypos 7817
+}
+add_layer {_m_kerzhakov_H _m_kerzhakov_H.red _m_kerzhakov_H.green _m_kerzhakov_H.blue _m_kerzhakov_H.alpha}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_H
+name ShuffleCopy116
+xpos 0
+ypos 7875
+}
+add_layer {_m_kerzhakov_all _m_kerzhakov_all.red}
+ShuffleCopy {
+inputs 2
+red red
+green green
+blue blue
+out _m_kerzhakov_all
+name ShuffleCopy117
+xpos 0
+ypos 7929
+}
+Output {
+name Output1
+selected true
+xpos 0
+ypos 8001
+}
+end_group

@@ -1,0 +1,259 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Group {
+ name LutLook
+ selected true
+ xpos 4553
+ ypos 2958
+ addUserKnob {20 User}
+ addUserKnob {41 white l gain T PreGain.white}
+ addUserKnob {41 gamma T PreGain.gamma}
+ addUserKnob {41 which l Look T Switch1.which}
+ addUserKnob {41 which_1 l BlendOriginal T Dissolve.which}
+ addUserKnob {41 contrast T RolloffContrast1.contrast}
+ addUserKnob {41 center T RolloffContrast1.center}
+ addUserKnob {41 soft_clip l "soft clip" T RolloffContrast1.soft_clip}
+ addUserKnob {41 mix l cool/Warm T Grade7.mix}
+ addUserKnob {41 viewOriginal T Switch2.viewOriginal}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 408
+  ypos -251
+ }
+set Nd8e972f0 [stack 0]
+ Dot {
+  name Dot1
+  xpos 442
+  ypos -165
+ }
+ Grade {
+  name PreGain
+  xpos 408
+  ypos -131
+ }
+ Grain2 {
+  name Grain2_1
+  label "Kodak 5248"
+  selected true
+  xpos 408
+  ypos -92
+  disable true
+  red_size 1.3
+  green_size 0.55
+  blue_size 1.3
+  black {0 0 0}
+  minimum {0 0 0}
+ }
+set N3ccba210 [stack 0]
+ Dot {
+  name Dot2
+  xpos 197
+  ypos -132
+ }
+ Dot {
+  name Dot3
+  xpos 197
+  ypos 193
+ }
+push $N3ccba210
+ Grade {
+  gamma {{parent.Grade17.gamma x1 0.395}}
+  reverse true
+  name Grade16
+  xpos 655
+  ypos 3
+ }
+ Colorspace {
+  colorspace_out Cineon
+  name Colorspace4
+  xpos 655
+  ypos 27
+ }
+ Truelight3 {
+  commands {title{Fuji 3513}
+print{internal-Fuji3513}
+greyValue{445}
+whiteValue{1023}
+aimGamma{0.966,1.063,1.082}
+greyStatusA{1.09,1.06,1.03}}
+  input_is_log true
+  profile "C:/Program Files/Nuke7.0v2/plugins/truelight3/profiles/Fuji3513"
+  display monitor
+  display_file P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v8/plugins/truelight3/displays/monitor
+  print internal-Fuji3513
+  lamp internal-Xenon
+  printer_points {0 0 0}
+  brightness 1
+  flare_correction 0.009999999776
+  white_u 0.1977999955
+  white_v 0.4683000147
+  name Fuji3513
+  label "Truelight v3.0"
+  xpos 655
+  ypos 63
+ }
+ Grade {
+  gamma 0.6
+  name Grade17
+  xpos 655
+  ypos 99
+ }
+push $N3ccba210
+ Grade {
+  gamma {{parent.Grade2.gamma x1 0.395}}
+  reverse true
+  name Grade1
+  xpos 408
+  ypos 5
+ }
+ Colorspace {
+  colorspace_out Cineon
+  name Colorspace1
+  xpos 408
+  ypos 29
+ }
+ Truelight3 {
+  commands {title{Fuji 3510}
+print{internal-Fuji3510}
+greyValue{445}
+whiteValue{1023}
+aimGamma{0.966,1.063,1.082}
+greyStatusA{1.09,1.06,1.03}}
+  input_is_log true
+  profile "C:/Program Files/Nuke7.0v2/plugins/truelight3/profiles/Fuji3510"
+  display monitor
+  display_file P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v8/plugins/truelight3/displays/monitor
+  print internal-Fuji3510
+  lamp internal-Xenon
+  printer_points {0 0 0}
+  brightness 1
+  flare_correction 0.009999999776
+  white_u 0.1977999955
+  white_v 0.4683000147
+  name Fuji3510
+  label "Truelight v3.0"
+  xpos 408
+  ypos 65
+ }
+ Grade {
+  gamma 0.6
+  name Grade2
+  xpos 408
+  ypos 101
+ }
+push $N3ccba210
+ Grade {
+  gamma {{parent.Grade6.gamma x1 0.395}}
+  reverse true
+  name Grade5
+  xpos 281
+  ypos 5
+ }
+ Colorspace {
+  colorspace_out Cineon
+  name Colorspace2
+  xpos 281
+  ypos 29
+ }
+ Truelight3 {
+  commands {title{Agfa CP30}
+print{internal-AgfaCP30}
+greyValue{445}
+whiteValue{1023}
+aimGamma{0.966,1.063,1.082}
+greyStatusA{1.09,1.06,1.03}}
+  input_is_log true
+  profile "C:/Program Files/Nuke7.0v2/plugins/truelight3/profiles/AgfaCP30"
+  display monitor
+  display_file P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v8/plugins/truelight3/displays/monitor
+  print internal-AgfaCP30
+  lamp internal-Xenon
+  printer_points {0 0 0}
+  brightness 1
+  flare_correction 0.009999999776
+  white_u 0.1977999955
+  white_v 0.4683000147
+  name agfaCP30
+  label "Truelight v3.0"
+  xpos 281
+  ypos 65
+ }
+ Grade {
+  gamma 0.6
+  name Grade6
+  xpos 281
+  ypos 101
+ }
+ Switch {
+  inputs 3
+  which 1.355
+  name Switch1
+  xpos 489
+  ypos 183
+ }
+ Dissolve {
+  inputs 2
+  which 0.205
+  name Dissolve
+  xpos 489
+  ypos 242
+ }
+ Grade {
+  gamma 0.45
+  reverse true
+  name Grade3
+  xpos 489
+  ypos 307
+ }
+ RolloffContrast {
+  range 16
+  contrast 1.3
+  center 0.195
+  soft_clip 0.39
+  slope_mag_low1 0.5659999847
+  black_low 0.06698585302
+  slope_mag_high2 0.5659999847
+  white_high 0.06698585302
+  name RolloffContrast1
+  xpos 489
+  ypos 331
+ }
+ Grade {
+  gamma {{parent.Grade3.gamma}}
+  name Grade4
+  xpos 489
+  ypos 355
+ }
+ Grade {
+  white {1.029999971 1 0.969999969 1}
+  gamma {1.209666729 1.000666618 0.7896667719 1}
+  mix 0.22
+  name Grade7
+  xpos 489
+  ypos 379
+ }
+push $Nd8e972f0
+ Switch {
+  inputs 2
+  which {{!viewOriginal}}
+  name Switch2
+  xpos 620
+  ypos 405
+  addUserKnob {20 User}
+  addUserKnob {6 viewOriginal +STARTLINE}
+ }
+ Output {
+  name Output1
+  xpos 620
+  ypos 489
+ }
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 840
+  ypos 451
+ }
+end_group

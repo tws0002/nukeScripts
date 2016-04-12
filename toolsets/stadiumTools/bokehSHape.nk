@@ -1,0 +1,60 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+Group {
+ inputs 0
+ name BokehShape
+ selected true
+ xpos 2908
+ ypos 1491
+ addUserKnob {20 User}
+ addUserKnob {41 box_height l size -STARTLINE T Reformat2.box_height}
+ addUserKnob {41 softness_1 l soft T Radial1.softness}
+ addUserKnob {41 opacity l innerDarken T Radial2.opacity}
+ addUserKnob {41 softness l innerSoft T Radial2.softness}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 378
+  ypos 426
+ }
+ Reformat {
+  type "to box"
+  box_width 50
+  box_height 50
+  box_fixed true
+  name Reformat2
+  xpos 378
+  ypos 504
+ }
+ Radial {
+  area {0 0 {width} {height}}
+  softness 0.87
+  name Radial1
+  xpos 378
+  ypos 528
+ }
+ Radial {
+  opacity 0.48
+  area {0 0 {width x242 50} {height x242 50}}
+  softness 0.995
+  color 0
+  name Radial2
+  xpos 378
+  ypos 552
+ }
+set Na23e1de0 [stack 0]
+ Crop {
+  box {0 0 {width x242 50} {height x242 50}}
+  name Crop1
+  xpos 378
+  ypos 578
+ }
+push $Na23e1de0
+ Output {
+  name Output1
+  xpos 378
+  ypos 652
+ }
+end_group

@@ -1,0 +1,66 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+add_layer {stadiumLightMult stadiumLightMult.red}
+Shuffle {
+ in stadiumLightMult
+ name Shuffle7
+ label "\[value in]"
+ selected true
+ xpos 1973
+ ypos 198
+}
+set N3fda2e20 [stack 0]
+add_layer {_m_spaceStadiumField_B _m_spaceStadiumField_B.red _m_spaceStadiumField_B.green _m_spaceStadiumField_B.blue _m_spaceStadiumField_B.alpha}
+Shuffle {
+ in _m_spaceStadiumField_B
+ name Shuffle10
+ label "\[value in]"
+ selected true
+ xpos 2122
+ ypos 242
+}
+push $N3fda2e20
+Grade {
+ inputs 1+1
+ channels rgba
+ multiply 0
+ maskChannelMask rgba.blue
+ invert_mask true
+ name Grade14
+ selected true
+ xpos 1973
+ ypos 248
+}
+CurveTool {
+ operation "Auto Crop"
+ ROI {0 0 1280 720}
+ autocropdata {{curve x101 0 x120 0} {curve x101 0 x120 0} {curve x101 1280 x120 1280} {curve x101 177 x120 47}}
+ intensitydata {{curve}}
+ name setBBox
+ selected true
+ xpos 1973
+ ypos 293
+}
+CurveTool {
+ ROI {{parent.setBBox.autocropdata.MG2} {parent.setBBox.autocropdata.MG2} {parent.setBBox.autocropdata.MG2} {parent.setBBox.autocropdata.MG2}}
+ autocropdata {320 180 960 540}
+ intensitydata {{curve x101 0.6147022864 x120 0.5953372366} {curve x101 0.6147022864 x120 0.5953372366} {curve x101 0.6147022864 x120 0.5953372366} {curve x101 0}}
+ name getAvg
+ selected true
+ xpos 1973
+ ypos 333
+}
+NoOp {
+ name vals
+ selected true
+ xpos 1973
+ ypos 376
+ addUserKnob {20 User}
+ addUserKnob {7 multResult}
+ multResult {{targetVal/avgVal x120 0}}
+ addUserKnob {7 avgVal}
+ avgVal {{parent.getAvg.intensitydata.MG2.r}}
+ addUserKnob {7 targetVal}
+ targetVal 0.85
+}

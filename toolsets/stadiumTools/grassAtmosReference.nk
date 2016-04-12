@@ -1,0 +1,236 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Group {
+ name grassAtmosReference
+ selected true
+ xpos -227
+ ypos 181
+}
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/tg/shots/tg0022/steps/composite/_renders/nuke/tg0022_composite_v010/comp/exr/tg0022_comp_v010.%04d.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 101
+  before black
+  last 161
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 101
+  origlast 161
+  origset true
+  on_error black
+  colorspace linear
+  auto_alpha true
+  name Read194
+  xpos 370
+  ypos -498
+ }
+ TimeWarp {
+  lookup 15
+  name TimeWarp7
+  xpos 370
+  ypos -395
+ }
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/gb/shots/gb0210/steps/composite/_renders/nuke/gb0210_composite_v010/comp/exr/gb0210_comp_v010.%04d.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 100
+  before black
+  last 161
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 100
+  origlast 161
+  origset true
+  on_error black
+  colorspace linear
+  auto_alpha true
+  name Read190
+  xpos 335
+  ypos -665
+ }
+ TimeWarp {
+  lookup 10
+  name TimeWarp1
+  xpos 335
+  ypos -569
+ }
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/gb/shots/gb0225/steps/composite/_renders/nuke/gb0225_composite_v014/comp/exr/gb0225_comp_v014.%04d.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 101
+  before black
+  last 165
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 101
+  origlast 165
+  origset true
+  on_error black
+  colorspace linear
+  auto_alpha true
+  name Read188
+  selected true
+  xpos 166
+  ypos -705
+ }
+ TimeWarp {
+  lookup 11
+  name TimeWarp6
+  xpos 175
+  ypos -570
+ }
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/tg/shots/tg0020/steps/composite/_renders/nuke/tg0020_composite_v017/comp/exr/tg0020_comp_v017.####.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 101
+  before black
+  last 160
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 101
+  origlast 160
+  origset true
+  on_error "nearest frame"
+  version 3
+  auto_alpha true
+  name Read185
+  xpos 274
+  ypos -417
+ }
+ TimeWarp {
+  lookup 10
+  name TimeWarp8
+  xpos 274
+  ypos -317
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 63
+  ypos -809
+ }
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/tg/shots/tg0082/steps/composite/_renders/nuke/tg0082_composite_v013/comp/exr/tg0082_comp_v013.%04d.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 101
+  before black
+  last 133
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 101
+  origlast 133
+  origset true
+  on_error black
+  auto_alpha true
+  name Read181
+  xpos -300
+  ypos -513
+ }
+ TimeWarp {
+  lookup 9
+  name TimeWarp2
+  xpos -300
+  ypos -429
+ }
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/gr/shots/gr0580/steps/composite/_renders/nuke/gr0580_composite_v006/comp/exr/gr0580_comp_v006.%04d.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 105
+  before black
+  last 156
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 105
+  origlast 156
+  origset true
+  on_error black
+  colorspace linear
+  auto_alpha true
+  name Read182
+  xpos -228
+  ypos -626
+ }
+ TimeWarp {
+  lookup 9
+  name TimeWarp3
+  xpos -228
+  ypos -530
+ }
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/gb/shots/gb0226/steps/composite/_renders/nuke/gb0226_composite_v006/comp/exr/gb0226_comp_v006.%04d.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 119
+  before black
+  last 143
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 119
+  origlast 143
+  origset true
+  on_error black
+  colorspace linear
+  auto_alpha true
+  name Read183
+  xpos -126
+  ypos -654
+ }
+ TimeWarp {
+  lookup 9
+  name TimeWarp4
+  xpos -126
+  ypos -558
+ }
+ Read {
+  inputs 0
+  file P:/projects/samgalaxyfifa_6464P/sequences/gr/shots/gr0103/steps/composite/_renders/nuke/gr0103_composite_v014/comp/exr/gr0103_comp_v014.%04d.exr
+  format "1280 720 0 0 1280 720 1 720p"
+  first 155
+  before black
+  last 198
+  after black
+  frame_mode "start at"
+  frame 1
+  origfirst 155
+  origlast 198
+  origset true
+  on_error black
+  auto_alpha true
+  name Read184
+  xpos 5
+  ypos -633
+ }
+ TimeWarp {
+  lookup 21
+  name TimeWarp5
+  xpos 5
+  ypos -549
+ }
+ ContactSheet {
+  inputs 9
+  height 1730
+  columns 3
+  name ContactSheet7
+  xpos 63
+  ypos -387
+ }
+ Output {
+  name Output1
+  xpos 63
+  ypos -287
+ }
+end_group

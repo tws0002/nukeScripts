@@ -1,0 +1,72 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push 0
+add_layer {_pointCamera _pointCamera.red _pointCamera.green _pointCamera.blue _pointCamera.alpha}
+Shuffle {
+ in _pointCamera
+ red blue
+ green blue
+ name Shuffle2
+ label "\[value in]"
+ selected true
+ xpos 605
+ ypos 1589
+}
+Constant {
+ inputs 0
+ channels rgb
+ color -200
+ name Constant1
+ selected true
+ xpos 705
+ ypos 1637
+}
+Merge2 {
+ inputs 2
+ name Merge9
+ selected true
+ xpos 605
+ ypos 1661
+}
+Grade {
+ blackpoint -10.4
+ whitepoint -0.6
+ gamma 0.2
+ name Grade2
+ selected true
+ xpos 605
+ ypos 1726
+}
+push $cut_paste_input
+ML_createFog {
+ name ML_createFog1
+ selected true
+ xpos 410
+ ypos 1600
+ translate {-48.59999847 16.20000076 0}
+ cardScale 3.98
+}
+Grade {
+ gamma 0.53
+ name Grade6
+ selected true
+ xpos 410
+ ypos 1665
+}
+Grade {
+ inputs 1+1
+ multiply 0
+ maskChannelMask rgba.red
+ name Grade5
+ selected true
+ xpos 410
+ ypos 1726
+}
+Grade {
+ white 1.15
+ multiply {0.6949999928 1.019999981 1.345000029 1.019999981}
+ name stadiumAtmosphereGrade
+ selected true
+ xpos 410
+ ypos 1779
+}

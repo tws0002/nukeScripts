@@ -1,0 +1,3388 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+Group {
+ inputs 0
+ name stadiumLightRays
+ selected true
+ xpos 2135
+ ypos 2046
+}
+ Camera2 {
+  inputs 0
+  translate {{Camera1.translate} {Camera1.translate} {Camera1.translate}}
+  rotate {{Camera1.rotate.x} {Camera1.rotate.y x1 128.4 x30 139.4} {Camera1.rotate.z}}
+  focal {{Camera1.focal}}
+  haperture {{Camera1.haperture}}
+  vaperture {{Camera1.vaperture}}
+  near {{Camera1.near}}
+  far {{Camera1.far}}
+  name RefCamera1
+  label "\[lrange \[split \[value file] /] 11 11]"
+  xpos -687
+  ypos 335
+ }
+ Dot {
+  name Dot1
+  xpos -424
+  ypos 359
+ }
+set N7cfb1b10 [stack 0]
+ Light2 {
+  inputs 0
+  translate {788.8440552 1336.739136 1904.072388}
+  depthmap_slope_bias 0.01
+  name Light22
+  xpos 872
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay16
+  xpos 859
+  ypos -28
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfb2560 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfb28d0 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfb28d0
+push $N7cfb28d0
+push $N7cfb2560
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfb3690 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfb3690
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{888*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {1457.255737 1336.739868 -1457.453369}
+  depthmap_slope_bias 0.01
+  name Light17
+  xpos 542
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay13
+  xpos 532
+  ypos -32
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfb77e0 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfb7b50 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfb7b50
+push $N7cfb7b50
+push $N7cfb77e0
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfb8910 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfb8910
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{54*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {788.5853271 1336.73999 -1904.178955}
+  depthmap_slope_bias 0.01
+  name Light32
+  xpos 652
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay14
+  xpos 642
+  ypos -33
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfbca60 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfbcdd0 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfbcdd0
+push $N7cfbcdd0
+push $N7cfbca60
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfbdb90 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfbdb90
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{36*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {0.1400251091 1336.739136 2061.010986}
+  depthmap_slope_bias 0.01
+  name Light23
+  xpos 762
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay15
+  xpos 752
+  ypos -29
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfc1ce0 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfc2050 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfc2050
+push $N7cfc2050
+push $N7cfc1ce0
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfc2e10 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfc2e10
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{555*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {1457.453735 1336.739258 1457.255981}
+  depthmap_slope_bias 0.01
+  name Light21
+  xpos 102
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay9
+  xpos 92
+  ypos -34
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfc6f60 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfc72d0 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfc72d0
+push $N7cfc72d0
+push $N7cfc6f60
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfc8090 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfc8090
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{77*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {1904.179199 1336.73938 788.5856323}
+  depthmap_slope_bias 0.01
+  name Light20
+  xpos 212
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay10
+  xpos 202
+  ypos -30
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfcc1e0 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfcc550 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfcc550
+push $N7cfcc550
+push $N7cfcc1e0
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfcd310 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfcd310
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{56*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {2061.010742 1336.739624 -0.1397068799}
+  depthmap_slope_bias 0.01
+  name Light19
+  xpos 322
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay11
+  xpos 312
+  ypos -29
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfd1460 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfd17d0 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfd17d0
+push $N7cfd17d0
+push $N7cfd1460
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfd2590 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfd2590
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{74*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {1904.072144 1336.739746 -788.843689}
+  depthmap_slope_bias 0.01
+  name Light18
+  xpos 432
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay12
+  xpos 422
+  ypos -28
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfd66e0 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfd6a50 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfd6a50
+push $N7cfd6a50
+push $N7cfd66e0
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfd7810 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfd7810
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{22*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-1457.453613 1336.739868 -1457.255371}
+  depthmap_slope_bias 0.01
+  name Light29
+  xpos -558
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay3
+  xpos -568
+  ypos -34
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfdb960 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfdbcd0 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfdbcd0
+push $N7cfdbcd0
+push $N7cfdb960
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfdca90 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfdca90
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{15*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-1904.179199 1336.739746 -788.585022}
+  depthmap_slope_bias 0.01
+  name Light28
+  xpos -448
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay4
+  xpos -458
+  ypos -35
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfe0be0 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfe0f50 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfe0f50
+push $N7cfe0f50
+push $N7cfe0be0
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfe1d10 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfe1d10
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{55*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-2061.010742 1336.739624 0.1402916014}
+  depthmap_slope_bias 0.01
+  name Light27
+  xpos -338
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay5
+  xpos -348
+  ypos -33
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set N7cfe5e60 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set N7cfe61d0 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $N7cfe61d0
+push $N7cfe61d0
+push $N7cfe5e60
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set N7cfe6f90 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $N7cfe6f90
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{33*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-1904.072021 1336.73938 788.8442993}
+  depthmap_slope_bias 0.01
+  name Light26
+  xpos -228
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay6
+  xpos -238
+  ypos -31
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set Nbd37f010 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set Nbd37f380 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $Nbd37f380
+push $Nbd37f380
+push $Nbd37f010
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set Nbd380140 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $Nbd380140
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{65*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-1457.255615 1336.739258 1457.453979}
+  depthmap_slope_bias 0.01
+  name Light25
+  xpos -118
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay7
+  xpos -128
+  ypos -32
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set Nbd384290 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set Nbd384600 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $Nbd384600
+push $Nbd384600
+push $Nbd384290
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set Nbd3853c0 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $Nbd3853c0
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{87*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-788.5852661 1336.739136 1904.179565}
+  depthmap_slope_bias 0.01
+  name Light24
+  xpos -8
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay8
+  xpos -18
+  ypos -32
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set Nbd389510 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set Nbd389880 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $Nbd389880
+push $Nbd389880
+push $Nbd389510
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set Nbd38a640 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $Nbd38a640
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{99*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push 0
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-0.1399733573 1336.73999 -2061.010498}
+  depthmap_slope_bias 0.01
+  name Light31
+  xpos -668
+  ypos -251
+ }
+ Group {
+  inputs 2
+  name lightRay2
+  xpos -678
+  ypos -39
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set Nbd38e790 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set Nbd38eb00 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $Nbd38eb00
+push $Nbd38eb00
+push $Nbd38e790
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set Nbd38f8c0 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $Nbd38f8c0
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size {{parent.parent.lightRay1.Sparkles.size}}
+   anamorphic 1.005
+   ray_nb {{parent.parent.lightRay1.Sparkles.ray_nb}}
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff {{parent.parent.lightRay1.Sparkles.ray_falloff}}
+   seed {{10*lightRay1.randomAll}}
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size {{parent.parent.lightRay1.sparkleBlur.size}}
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply {{parent.parent.lightRay1.sparklePreRay.multiply}}
+   gamma {{parent.parent.lightRay1.sparklePreRay.gamma}}
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale {{parent.parent.lightRay1.Card2.uniform_scale}}
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale {{parent.parent.lightRay1.GodRays1.scale}}
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma {{parent.parent.lightRay1.GodRays1.gamma}}
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   white {{parent.parent.lightRay1.sparklePostRay.white}}
+   gamma {{parent.parent.lightRay1.sparklePostRay.gamma}}
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+push $N7cfb1b10
+ Light2 {
+  inputs 0
+  translate {-788.8439941 1336.73999 -1904.071777}
+  depthmap_slope_bias 0.01
+  name Light30
+  xpos -788
+  ypos -256
+ }
+ Group {
+  inputs 2
+  name lightRay1
+  selected true
+  xpos -798
+  ypos -35
+  addUserKnob {20 lightRays}
+  addUserKnob {26 sparklePreRay_divider l sparklePreRay}
+  addUserKnob {41 sparklePreRay_multiply T sparklePreRay.multiply}
+  addUserKnob {41 sparklePreRay_gamma T sparklePreRay.gamma}
+  addUserKnob {26 sparklePostRay_divider l sparklePostRay}
+  addUserKnob {41 sparklePostRay_white T sparklePostRay.white}
+  addUserKnob {41 sparklePostRay_gamma T sparklePostRay.gamma}
+  addUserKnob {26 GodRays1_divider l GodRays1}
+  addUserKnob {41 GodRays1_scale T GodRays1.scale}
+  addUserKnob {41 GodRays1_gamma T GodRays1.gamma}
+  addUserKnob {26 Card2_divider l Card2}
+  addUserKnob {41 Card2_uniform_scale T Card2.uniform_scale}
+  addUserKnob {26 sparkleBlur_divider l sparkleBlur}
+  addUserKnob {41 sparkleBlur_size T sparkleBlur.size}
+  addUserKnob {26 Sparkles_divider l Sparkles}
+  addUserKnob {41 Sparkles_ray_falloff T Sparkles.ray_falloff}
+  addUserKnob {41 Sparkles_ray_nb T Sparkles.ray_nb}
+  addUserKnob {41 Sparkles_size T Sparkles.size}
+  addUserKnob {41 seed T Sparkles.seed}
+  addUserKnob {3 randomAll}
+  randomAll 5
+ }
+  Input {
+   inputs 0
+   name axis
+   xpos -964
+   ypos 817
+  }
+set Nbd393a10 [stack 0]
+  Input {
+   inputs 0
+   name cam
+   xpos -801
+   ypos 692
+   number 1
+  }
+set Nbd393d80 [stack 0]
+push 0
+  Reconcile3D {
+   inputs 3
+   calc_output true
+   output {{curve x102 738.9945679 738.9229736 738.7562256 738.4848022 738.0994873 737.59021 736.947876 736.1624146 735.2249756 734.1262207 732.8574829 731.4223022 729.8215332 728.0429077 726.0749512 723.9075928 721.531311 718.9329834 716.111084 712.8859863 709.8602295 x124 704.5290527 x125 702.1340332 700.3100586 699.0281982 697.7113037 696.3909302 695.0363159 693.6799927 692.2901611 690.8994751 689.4760742 688.0527954 686.5963745 685.1409302 683.6517334 682.1639404 680.6402588 679.116272 677.5541992 675.9910278 674.3873901 672.765625 671.1347046 669.4653931 667.7946167 666.0806274 664.3651123 662.6055298 660.8449097 659.0516357 657.2720337 655.4630127 652.7753296 650.0424194 647.3290405 644.567688 641.8251953 639.0331421 636.2592163 633.4345093} {curve x102 504.0114136 505.1698914 506.4051819 507.6806946 508.9598083 510.2056885 511.3809509 512.4485474 513.3706665 514.1100464 514.6292114 515.0237427 515.3583984 515.5455933 515.4987183 515.1312256 514.3579712 513.0256348 511.1011353 508.6654358 506.2279968 503.7762451 501.3780212 499.1904907 497.363678 495.7630615 494.122406 492.4595032 490.7857361 489.1183777 487.4685364 485.8532104 484.2836609 482.776001 481.341095 479.9953003 478.7546387 477.6239319 476.5891724 475.6419983 474.7688599 473.9610901 473.2055664 472.4931335 471.8275146 471.2243652 470.6968384 470.2538452 469.9083252 469.6697693 469.5505676 469.5348816 469.6500549 469.941803 470.5038757 471.3749084 472.4150391 473.6434021 475.0235596 476.5831604 478.2779236 480.143219}}
+   outputxyz {{curve x102 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 x124 -1904.072021 x125 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021 -1904.072021} {curve x102 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938 1336.73938} {curve x102 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993 788.8442993}}
+   offset {-92 98}
+   name Reconcile3D
+   xpos -801
+   ypos 1011
+  }
+push $Nbd393d80
+push $Nbd393d80
+push $Nbd393a10
+  Constant {
+   inputs 0
+   channels rgb
+   name Constant4
+   xpos -458
+   ypos 401
+  }
+  Reformat {
+   type "to box"
+   box_width 1000
+   box_height 1000
+   box_fixed true
+   name Reformat3
+   xpos -458
+   ypos 473
+  }
+set Nbd394b40 [stack 0]
+  Noise {
+   zoffset {{frame/60}}
+   center {500 500}
+   name Noise4
+   xpos -611
+   ypos 554
+  }
+push $Nbd394b40
+  Sparkles {
+   triangle_thick true
+   position {{width/2} {height/2}}
+   size 685
+   anamorphic 1.005
+   ray_nb 104
+   ray_thick 6.5
+   spark_falloff 0.31
+   ray_falloff 9.1
+   seed 22
+   brightness 1.19
+   chroma_shift 1.16
+   chroma_spread -0.115
+   motion {{curve x101 10 x131 490}}
+   direction 108
+   fadeTolerance 294
+   broken_affected 100
+   broken_start 0.017
+   broken_holes 0.268
+   sparks_direction 173
+   sparks_angle 350
+   name Sparkles
+   xpos -458
+   ypos 530
+  }
+  Grade {
+   inputs 1+1
+   multiply 0
+   name Grade7
+   xpos -458
+   ypos 554
+  }
+  Blur {
+   size 21
+   name sparkleBlur
+   xpos -455
+   ypos 578
+  }
+  Grade {
+   multiply 1.88
+   gamma 0.95
+   name sparklePreRay
+   xpos -455
+   ypos 629
+  }
+  Card2 {
+   rotate {0 {curve} {curve}}
+   scaling {1000 1000 1000}
+   uniform_scale 0.52
+   control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+   name Card2
+   xpos -455
+   ypos 699
+  }
+  TransformGeo {
+   inputs 3
+   name TransformGeo1
+   xpos -455
+   ypos 817
+  }
+push 0
+  ScanlineRender {
+   inputs 3
+   transparency false
+   ztest_enabled false
+   ambient 1
+   motion_vectors_type distance
+   name ScanlineRender2
+   xpos -455
+   ypos 1038
+   disable {{"!(Reconcile3D.output.x>(-100) && Reconcile3D.output.x < (width+100) && Reconcile3D.output.y>(-100) && Reconcile3D.output.y < (height + 100))"}}
+  }
+  Crop {
+   box {-182 -140 1478 884}
+   softness 200
+   name Crop1
+   xpos -455
+   ypos 1083
+  }
+  GodRays {
+   channels rgba
+   scale 10
+   center {{Reconcile3D.output.x x146 671.1347046} {Reconcile3D.output.y x146 460}}
+   to_color 0
+   gamma 1.44
+   steps 20
+   max true
+   name GodRays1
+   xpos -455
+   ypos 1107
+  }
+  Crop {
+   box {0 0 1280 720}
+   name Crop2
+   xpos -455
+   ypos 1131
+  }
+  Grade {
+   gamma 0.65
+   name sparklePostRay
+   xpos -455
+   ypos 1169
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -455
+   ypos 1233
+  }
+ end_group
+ Merge2 {
+  inputs 16+1
+  operation plus
+  name Merge3
+  xpos 859
+  ypos 338
+ }
+ Output {
+  name Output1
+  xpos 859
+  ypos 443
+ }
+end_group

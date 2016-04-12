@@ -1,0 +1,276 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Group {
+ name Group6
+ selected true
+ xpos 2294
+ ypos 1547
+}
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Spots.png"
+  format "288 288 0 0 288 288 1 "
+  origset true
+  on_error "nearest frame"
+  name Read4
+  xpos 378
+  ypos 426
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Specks.png"
+  format "386 386 0 0 386 386 1 "
+  origset true
+  on_error "nearest frame"
+  name Read3
+  xpos 271
+  ypos 387
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Soft.png"
+  format "458 458 0 0 458 458 1 "
+  origset true
+  on_error "nearest frame"
+  name Read5
+  xpos 139
+  ypos 382
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Soft.png"
+  format "458 458 0 0 458 458 1 "
+  origset true
+  on_error "nearest frame"
+  name Read37
+  xpos -136
+  ypos 436
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Obscured.png"
+  format "434 434 0 0 434 434 1 "
+  origset true
+  on_error "nearest frame"
+  name Read30
+  xpos -296
+  ypos 752
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Refractive.png"
+  format "231 231 0 0 231 231 1 "
+  origset true
+  on_error "nearest frame"
+  name Read35
+  xpos -295
+  ypos 672
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Disc.png"
+  format "93 93 0 0 93 93 1 "
+  origset true
+  on_error "nearest frame"
+  name Read24
+  xpos 211
+  ypos 481
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Blurry.png"
+  format "409 409 0 0 409 409 1 "
+  origset true
+  on_error "nearest frame"
+  name Read20
+  xpos -193
+  ypos 771
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Silk.png"
+  format "266 266 0 0 266 266 1 "
+  origset true
+  on_error "nearest frame"
+  name Read36
+  xpos -33
+  ypos 436
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Moon.png"
+  format "269 269 0 0 269 269 1 "
+  origset true
+  on_error "nearest frame"
+  name Read29
+  xpos 173
+  ypos 614
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Spotty.png"
+  format "195 195 0 0 195 195 1 "
+  origset true
+  on_error "nearest frame"
+  name Read6
+  xpos -169
+  ypos 596
+ }
+ Grade {
+  white 2.46
+  multiply 4
+  name Grade5
+  xpos -169
+  ypos 710
+ }
+ Noise {
+  inputs 0
+  size 640
+  zoffset 0.8
+  lacunarity 1.25
+  gain 0.735
+  gamma 0.245
+  center {640 360}
+  name Noise1
+  xpos 385
+  ypos 1018
+ }
+ Grade {
+  white 2.45
+  gamma 0.67
+  name Grade10
+  xpos 385
+  ypos 1042
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Wave.png"
+  format "119 119 0 0 119 119 1 "
+  origset true
+  on_error "nearest frame"
+  name Read1
+  xpos 10
+  ypos 517
+ }
+ Reformat {
+  type "to box"
+  box_width {{parent.Reformat3.box_width}}
+  box_height 80
+  scale 0.27
+  name Reformat4
+  xpos 28
+  ypos 803
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 400
+  ypos 764
+ }
+ Dot {
+  name Dot2
+  xpos 434
+  ypos 838
+ }
+set N3208d2f0 [stack 0]
+ Convolve2 {
+  inputs 2
+  channels rgb
+  serializeKnob ""
+  filter_channel rgba.red
+  filter_bounds format
+  normalize false
+  name Convolve2
+  xpos 28
+  ypos 915
+ }
+ Grade {
+  multiply 0.001
+  name Grade6
+  xpos 28
+  ypos 952
+ }
+ Read {
+  inputs 0
+  file "P:/global/apps/TheFoundry/Nuke/win64/plugins/limited/OpticalFlares/Optical Flares Textures/Elements/Iris_Confusion.png"
+  format "175 175 0 0 175 175 1 "
+  origset true
+  on_error "nearest frame"
+  name Read23
+  xpos 308
+  ypos 578
+ }
+ Reformat {
+  type "to box"
+  box_width 150
+  box_height 80
+  scale 0.27
+  name Reformat3
+  xpos 173
+  ypos 837
+ }
+push $N3208d2f0
+ Convolve2 {
+  inputs 2
+  channels rgb
+  serializeKnob ""
+  filter_channel rgba.red
+  filter_bounds format
+  normalize false
+  name Convolve1
+  xpos 179
+  ypos 927
+ }
+ Grade {
+  multiply 0.0017
+  name Grade7
+  xpos 179
+  ypos 951
+ }
+ Keymix {
+  inputs 3
+  maskChannel rgba.red
+  name Keymix1
+  xpos 111
+  ypos 1036
+ }
+set N3208eb00 [stack 0]
+ lumaOnly_Grade {
+  name lumaOnly_Grade2
+  xpos 12
+  ypos 1125
+  LumaOnly_Grade_multiply 0.68
+  LumaOnly_Grade_gamma 0.31
+ }
+ chromaAb {
+  name chromaAb3
+  xpos 12
+  ypos 1171
+  aberration 2
+  extraBlur 0.38
+  mode Backward
+  area {653 366 668 368}
+  pos {-3890 370}
+ }
+push $N3208eb00
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge3
+  xpos 111
+  ypos 1233
+ }
+ Grade {
+  multiply 0.33
+  name Grade11
+  xpos 111
+  ypos 1257
+  disable true
+ }
+ Output {
+  name Output1
+  xpos 111
+  ypos 1357
+ }
+end_group

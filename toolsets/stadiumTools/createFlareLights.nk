@@ -1,0 +1,14 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+NoOp {
+ name createLight
+ selected true
+ xpos 989
+ ypos 559
+ addUserKnob {20 User}
+ addUserKnob {12 queryPosition}
+ queryPosition {561.5 445}
+ addUserKnob {22 createLight T "n= nuke.thisNode()\n\nx,y=n\['queryPosition'].value()\nr=nuke.sample(n,'red',int(x),int(y))\ng=nuke.sample(n,'green',int(x),int(y))\nb=nuke.sample(n,'blue',int(x),int(y))\n\nL=nuke.nodes.Light2()\nL\['translate'].setValue(\[r,g,b])\n\nL.setXYpos(n.xpos(),n.ypos()+100)\n\nlightScene=nuke.toNode(\"FlareScene\")\nif lightScene:\n    count=lightScene.inputs()\n    lightScene.setInput(count,L)" +STARTLINE}
+ addUserKnob {22 createScene T "lightScene=nuke.toNode(\"FlareScene\")\nif not lightScene:\n    s=nuke.nodes.Scene()\n    s\['name'].setValue('FlareScene')" +STARTLINE}
+}

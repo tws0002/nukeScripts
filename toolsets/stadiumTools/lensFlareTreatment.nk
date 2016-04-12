@@ -1,0 +1,46 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+chromaAb {
+ name chromaAb2
+ selected true
+ xpos 3021
+ ypos 2263
+ mode Backward
+ area {653 366 668 368}
+ pos {-2555 360}
+}
+lumaOnly_Grade {
+ name lumaOnly_Grade1
+ selected true
+ xpos 3021
+ ypos 2287
+ LumaOnly_Grade_multiply 1.7
+ LumaOnly_Grade_gamma 0.8
+}
+set N97b53030 [stack 0]
+Ramp {
+ replace true
+ p0 {95 695}
+ p1 {100 -4}
+ name Ramp1
+ selected true
+ xpos 3133
+ ypos 2317
+}
+Grade {
+ gamma 0.235
+ name Grade9
+ selected true
+ xpos 3133
+ ypos 2341
+}
+push $N97b53030
+Grade {
+ inputs 1+1
+ multiply 0
+ name Grade8
+ selected true
+ xpos 3021
+ ypos 2341
+}

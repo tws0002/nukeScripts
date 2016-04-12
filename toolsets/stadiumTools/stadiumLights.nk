@@ -1,0 +1,153 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+Light2 {
+ inputs 0
+ translate {1457.255737 1336.739868 -1457.453369}
+ depthmap_slope_bias 0.01
+ name Light16
+ selected true
+ xpos 1950
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {1904.072144 1336.739746 -788.843689}
+ depthmap_slope_bias 0.01
+ name Light15
+ selected true
+ xpos 1840
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {2061.010742 1336.739624 -0.1397068799}
+ depthmap_slope_bias 0.01
+ name Light14
+ selected true
+ xpos 1730
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {1904.179199 1336.73938 788.5856323}
+ depthmap_slope_bias 0.01
+ name Light13
+ selected true
+ xpos 1620
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {1457.453735 1336.739258 1457.255981}
+ depthmap_slope_bias 0.01
+ name Light12
+ selected true
+ xpos 1510
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {788.8440552 1336.739136 1904.072388}
+ depthmap_slope_bias 0.01
+ name Light11
+ selected true
+ xpos 2280
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {0.1400251091 1336.739136 2061.010986}
+ depthmap_slope_bias 0.01
+ name Light10
+ selected true
+ xpos 2170
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {-788.5852661 1336.739136 1904.179565}
+ depthmap_slope_bias 0.01
+ name Light9
+ selected true
+ xpos 1400
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {-1457.255615 1336.739258 1457.453979}
+ depthmap_slope_bias 0.01
+ name Light8
+ selected true
+ xpos 1290
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {-1904.072021 1336.73938 788.8442993}
+ depthmap_slope_bias 0.01
+ name Light7
+ selected true
+ xpos 1180
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {-2061.010742 1336.739624 0.1402916014}
+ depthmap_slope_bias 0.01
+ name Light6
+ selected true
+ xpos 1070
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {-1904.179199 1336.739746 -788.585022}
+ depthmap_slope_bias 0.01
+ name Light5
+ selected true
+ xpos 960
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {-1457.453613 1336.739868 -1457.255371}
+ depthmap_slope_bias 0.01
+ name Light4
+ selected true
+ xpos 850
+ ypos -198
+}
+Light2 {
+ inputs 0
+ translate {-788.8439941 1336.73999 -1904.071777}
+ depthmap_slope_bias 0.01
+ name Light3
+ selected true
+ xpos 630
+ ypos -200
+}
+Light2 {
+ inputs 0
+ translate {-0.1399733573 1336.73999 -2061.010498}
+ depthmap_slope_bias 0.01
+ name Light2
+ selected true
+ xpos 740
+ ypos -198
+}
+push $cut_paste_input
+Light2 {
+ translate {788.5853271 1336.73999 -1904.178955}
+ depthmap_slope_bias 0.01
+ name Light1
+ selected true
+ xpos 2060
+ ypos -198
+}
+Scene {
+ inputs 16
+ name Scene1
+ selected true
+ xpos 630
+ ypos -27
+}

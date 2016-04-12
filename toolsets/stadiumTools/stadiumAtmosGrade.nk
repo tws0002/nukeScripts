@@ -1,0 +1,11 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+push $cut_paste_input
+Grade {
+ white 1.5
+ multiply {0.6949999928 1.019999981 1.345000029 1.019999981}
+ name stadiumAtmosphereGrade
+ selected true
+ xpos 1603
+ ypos 1686
+}

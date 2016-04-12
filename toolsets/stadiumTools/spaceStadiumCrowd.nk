@@ -1,0 +1,17 @@
+set cut_paste_input [stack 0]
+version 7.0 v8
+spaceStadium_geoSetup {
+ inputs 0
+ name spaceStadium_geoSetup
+ selected true
+ xpos 443
+ ypos 359
+}
+Write {
+ channels all
+ file_type exr
+ name crowd
+ selected true
+ xpos 443
+ ypos 383
+}
