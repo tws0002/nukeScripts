@@ -1,0 +1,601 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Group {
+ name REBUILD1
+ label "\[lindex \[split \[lindex \[split \[value input0.file] /] end] .] 0]\n\[lindex \[split \[lindex \[split \[value input1.file] /] end] .] 0]"
+ selected true
+ xpos 91
+ ypos 123
+ addUserKnob {20 rebuild}
+ addUserKnob {22 match l matchAovs T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.matchAovs()" +STARTLINE}
+ addUserKnob {20 info}
+ addUserKnob {22 addAssetGizmos -STARTLINE T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.addAssetGizmos()"}
+ addUserKnob {22 printCryptoInfo T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.showData()" +STARTLINE}
+ addUserKnob {43 assetList l "" +STARTLINE}
+ assetList "Assets:\n"
+ addUserKnob {43 existList l "" -STARTLINE}
+ existList "Existing:\n"
+ addUserKnob {43 matList l "" -STARTLINE}
+ matList "Materials:\n"
+ addUserKnob {26 spacer l "" -STARTLINE T "\t"}
+ addUserKnob {20 endGroup n -1}
+}
+ Input {
+  inputs 0
+  name lAll
+  xpos -2097
+  ypos -1093
+ }
+ Input {
+  inputs 0
+  name uBasic
+  xpos -1871
+  ypos -1242
+  number 1
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy1
+  xpos -1871
+  ypos -1105
+ }
+add_layer {diffuse_color diffuse_color.red diffuse_color.green diffuse_color.blue diffuse_color.alpha}
+ Clamp {
+  channels diffuse_color
+  minimum 0.001
+  name Clamp2
+  xpos -1871
+  ypos -883
+ }
+add_layer {startRGBA startRGBA.red startRGBA.green startRGBA.blue startRGBA.alpha}
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle8
+  label "\[value in]"
+  xpos -1871
+  ypos -816
+ }
+set N53582530 [stack 0]
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle9
+  label "\[value in]"
+  xpos -1540
+  ypos -816
+ }
+set N535828a0 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle3
+  label "\[value in]"
+  xpos -1229
+  ypos -816
+ }
+set N53581090 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle4
+  label "\[value in]"
+  xpos -898
+  ypos -816
+ }
+set N53583d40 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle11
+  label "\[value in]"
+  xpos -446
+  ypos -816
+ }
+set N53582c10 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle10
+  label "\[value in]"
+  xpos 49
+  ypos -816
+ }
+set N53584790 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle12
+  label "\[value in]"
+  xpos 549
+  ypos -816
+ }
+set N535839d0 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle13
+  label "\[value in]"
+  xpos 892
+  ypos -816
+ }
+set N535832f0 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle14
+  label "\[value in]"
+  xpos 1324
+  ypos -816
+ }
+set N53583660 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle15
+  label "\[value in]"
+  xpos 1724
+  ypos -816
+ }
+set N53581770 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle23
+  label "\[value in]"
+  xpos 2064
+  ypos -816
+ }
+set N53582f80 [stack 0]
+add_layer {uPointCamera uPointCamera.red uPointCamera.green uPointCamera.blue uPointCamera.alpha}
+ Shuffle {
+  in uPointCamera
+  in2 startRGBA
+  red blue
+  green blue
+  alpha alpha2
+  name Shuffle17
+  label "\[value in]"
+  xpos 2454
+  ypos -816
+ }
+ Unpremult {
+  name Shuffle9_unpremult
+  xpos 2454
+  ypos -765
+ }
+ ml_AtmosControl {
+  name ml_AtmosControl
+  xpos 2454
+  ypos -681
+ }
+ NoOp {
+  name atmos_OUT
+  note_font_size 20
+  xpos 2454
+  ypos 284
+ }
+push $N53582f80
+add_layer {remainderRGBA remainderRGBA.red remainderRGBA.green remainderRGBA.blue remainderRGBA.alpha}
+ Shuffle {
+  in remainderRGBA
+  name Shuffle21
+  label "\[value in]"
+  xpos 2215
+  ypos -704
+  postage_stamp true
+ }
+set N53585550 [stack 0]
+push $N53582f80
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy1
+  xpos 2064
+  ypos -674
+ }
+ Clamp {
+  name Clamp1
+  xpos 2064
+  ypos -650
+ }
+ NoOp {
+  name remainder_OUT
+  note_font_size 20
+  xpos 2064
+  ypos 284
+ }
+push $N53581770
+add_layer {emission emission.red emission.green emission.blue emission.alpha}
+ Shuffle {
+  in emission
+  name Shuffle20
+  label "\[value in]"
+  xpos 1852
+  ypos -730
+  postage_stamp true
+ }
+push $N53581770
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy3
+  xpos 1724
+  ypos -700
+ }
+ Unpremult {
+  name Shuffle8_unpremult
+  xpos 1724
+  ypos -676
+ }
+ NoOp {
+  name emission_OUT
+  note_font_size 20
+  xpos 1724
+  ypos 284
+ }
+push $N53583660
+add_layer {refraction refraction.red refraction.green refraction.blue refraction.alpha}
+ Shuffle {
+  in refraction
+  name Shuffle19
+  label "\[value in]"
+  xpos 1469
+  ypos -729
+  postage_stamp true
+ }
+push $N53583660
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy5
+  xpos 1324
+  ypos -699
+ }
+ Unpremult {
+  name Shuffle7_unpremult
+  xpos 1324
+  ypos -675
+ }
+ NoOp {
+  name refr_OUT
+  note_font_size 20
+  xpos 1324
+  ypos 284
+ }
+push $N535832f0
+add_layer {indirect_spec indirect_spec.red indirect_spec.green indirect_spec.blue indirect_spec.alpha}
+ Shuffle {
+  in indirect_spec
+  name Shuffle18
+  label "\[value in]"
+  xpos 1024
+  ypos -682
+  postage_stamp true
+ }
+push $N535832f0
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy6
+  xpos 892
+  ypos -652
+ }
+ Unpremult {
+  name Shuffle6_unpremult
+  xpos 892
+  ypos -616
+ }
+ Dot {
+  name Dot1
+  xpos 926
+  ypos -301
+ }
+push $N535839d0
+add_layer {spec spec.red spec.green spec.blue spec.alpha}
+ Shuffle {
+  in spec
+  name Shuffle16
+  label "\[value in]"
+  xpos 678
+  ypos -684
+  postage_stamp true
+ }
+push $N535839d0
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy7
+  xpos 549
+  ypos -654
+ }
+ Unpremult {
+  name Shuffle5_unpremult
+  xpos 549
+  ypos -606
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge9
+  xpos 549
+  ypos -304
+ }
+ NoOp {
+  name spec_OUT
+  note_font_size 20
+  xpos 549
+  ypos 284
+ }
+push $N53584790
+add_layer {sss sss.red sss.green sss.blue sss.alpha}
+ Shuffle {
+  in sss
+  name Shuffle7
+  label "\[value in]"
+  xpos 183
+  ypos -738
+  postage_stamp true
+ }
+push $N53584790
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy8
+  xpos 49
+  ypos -708
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 49
+  ypos -684
+ }
+ NoOp {
+  name sss_OUT
+  note_font_size 20
+  xpos 49
+  ypos 282
+ }
+push $N53582c10
+ Unpremult {
+  name Shuffle4_unpremult
+  xpos -446
+  ypos -780
+ }
+ NoOp {
+  name color_OUT
+  note_font_size 20
+  xpos -446
+  ypos 284
+ }
+push $N53583d40
+add_layer {indirect_backlight indirect_backlight.red indirect_backlight.green indirect_backlight.blue indirect_backlight.alpha}
+ Shuffle {
+  in indirect_backlight
+  name Shuffle6
+  label "\[value in]"
+  xpos -769
+  ypos -728
+  postage_stamp true
+ }
+push $N53583d40
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge13
+  xpos -898
+  ypos -698
+ }
+ Dot {
+  name Dot4
+  xpos -864
+  ypos -304
+ }
+push $N53581090
+add_layer {direct_backlight direct_backlight.red direct_backlight.green direct_backlight.blue direct_backlight.alpha}
+ Shuffle {
+  in direct_backlight
+  name Shuffle5
+  label "\[value in]"
+  xpos -1103
+  ypos -731
+  postage_stamp true
+ }
+push $N53581090
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge14
+  xpos -1229
+  ypos -701
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge15
+  xpos -1229
+  ypos -307
+ }
+ NoOp {
+  name backlight_OUT
+  note_font_size 20
+  xpos -1229
+  ypos 284
+ }
+push $N535828a0
+add_layer {indirect_diffuse indirect_diffuse.red indirect_diffuse.green indirect_diffuse.blue indirect_diffuse.alpha}
+ Shuffle {
+  in indirect_diffuse
+  name Shuffle2
+  label "\[value in]"
+  xpos -1404
+  ypos -728
+  postage_stamp true
+ }
+push $N535828a0
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge3
+  xpos -1540
+  ypos -698
+ }
+ Dot {
+  name Dot2
+  xpos -1506
+  ypos -307
+ }
+push $N53582530
+add_layer {direct_diffuse direct_diffuse.red direct_diffuse.green direct_diffuse.blue direct_diffuse.alpha}
+ Shuffle {
+  in direct_diffuse
+  name Shuffle1
+  label "\[value in]"
+  xpos -1720
+  ypos -731
+  postage_stamp true
+ }
+push $N53582530
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge4
+  xpos -1871
+  ypos -701
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge5
+  xpos -1871
+  ypos -310
+ }
+ NoOp {
+  name lighting_OUT
+  note_font_size 20
+  xpos -1871
+  ypos 287
+ }
+ Dot {
+  name Dot3
+  xpos -1837
+  ypos 321
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE1
+  xpos -1229
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  name color_MERGE
+  xpos -446
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE
+  xpos 49
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name spec_MERGE
+  xpos 549
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name refr_MERGE
+  xpos 1324
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE
+  xpos 1724
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE2
+  selected true
+  xpos 2064
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name atmos_MERGE
+  xpos 2454
+  ypos 318
+  disable true
+ }
+ Premult {
+  name rebuildPremult
+  xpos 2454
+  ypos 616
+ }
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+add_layer {uNormalWorld uNormalWorld.red uNormalWorld.green uNormalWorld.blue uNormalWorld.alpha}
+ Remove {
+  operation keep
+  channels rgba
+  channels2 uPointWorld
+  channels3 uNormalWorld
+  channels4 uPointCamera
+  name Remove1
+  xpos 2454
+  ypos 657
+ }
+ Output {
+  name Output1
+  xpos 2454
+  ypos 824
+ }
+push $N53585550
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 2280
+  ypos 672
+ }
+end_group

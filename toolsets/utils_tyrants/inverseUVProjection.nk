@@ -1,0 +1,128 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Dot {
+ name Dot5
+ selected true
+ xpos -1547
+ ypos -342
+}
+set N1c4d3870 [stack 0]
+Camera2 {
+ inputs 0
+ translate {0.5 0.5 1}
+ projection_mode orthographic
+ focal 25
+ haperture 25
+ vaperture 25
+ near 0.5
+ far 1.5
+ name Camera2
+ selected true
+ xpos -1691
+ ypos -374
+}
+push $N1c4d3870
+push 0
+ShuffleCopy {
+ inputs 2
+ alpha alpha2
+ black red
+ white green
+ red2 black
+ green2 white
+ out2 forward
+ name ShuffleCopy4
+ selected true
+ xpos -1863
+ ypos -622
+}
+Unpremult {
+ name Unpremult2
+ selected true
+ xpos -1863
+ ypos -519
+}
+Unpremult {
+ channels forward
+ name Unpremult3
+ selected true
+ xpos -1863
+ ypos -484
+}
+PositionToPoints2 {
+ display textured
+ render_mode textured
+ P_channel forward
+ detail 1
+ pointSize 0.5
+ name PositionToPoints1
+ selected true
+ xpos -1863
+ ypos -423
+}
+Reformat {
+ inputs 0
+ type "to box"
+ format "1024 1024 0 0 1024 1024 1 square_1K"
+ box_width 3000
+ box_height 3000
+ box_fixed true
+ name Reformat1
+ selected true
+ xpos -2000
+ ypos -353
+}
+ScanlineRender {
+ inputs 3
+ max_tessellation 1
+ motion_vectors_type off
+ name ScanlineRender1
+ selected true
+ xpos -1863
+ ypos -353
+}
+Premult {
+ name Premult1
+ selected true
+ xpos -1863
+ ypos -312
+}
+Dot {
+ name Dot2
+ selected true
+ xpos -1829
+ ypos -255
+}
+set N4dfa3c10 [stack 0]
+Blur {
+ size 1.6
+ name Blur2
+ selected true
+ xpos -1756
+ ypos -264
+}
+Unpremult {
+ name Unpremult4
+ selected true
+ xpos -1756
+ ypos -226
+}
+push $N4dfa3c10
+Merge2 {
+ inputs 2
+ operation under
+ name Merge5
+ selected true
+ xpos -1863
+ ypos -226
+ disable {{1-fill_gap}}
+}
+STMap {
+ inputs 2
+ uv rgb
+ name STMap2
+ selected true
+ xpos -1863
+ ypos -51
+}

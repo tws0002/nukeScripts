@@ -1,0 +1,453 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Group {
+ name speed_crops
+ tile_color 0xaa56ffff
+ note_font_size 21
+ selected true
+ xpos -847
+ ypos 2575
+ addUserKnob {20 User}
+ addUserKnob {41 reformat T Crop_view01.reformat}
+ addUserKnob {41 crop l "black outside" T Crop_view01.crop}
+ addUserKnob {41 disable_HD l "disable HD" T Reformat93.disable}
+ addUserKnob {26 ""}
+ addUserKnob {41 offSetSmall T offsetCrops1.offSetSmall}
+ addUserKnob {41 offsetLarge T offsetCrops1.offsetLarge}
+ addUserKnob {26 ""}
+ addUserKnob {41 box l "small initial position" T Crop_view01.box}
+ addUserKnob {41 box_1 l "large initial position" T Crop_view05.box}
+ addUserKnob {20 User_1 l User}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 559
+  ypos -587
+ }
+ Dot {
+  name Dot63
+  xpos 593
+  ypos -547
+ }
+set Nc4702ac0 [stack 0]
+ Dot {
+  name Dot85
+  xpos 703
+  ypos -547
+ }
+set Nc4700f40 [stack 0]
+ Dot {
+  name Dot86
+  xpos 802
+  ypos -547
+ }
+set Nc47031a0 [stack 0]
+ Dot {
+  name Dot87
+  xpos 1054
+  ypos -547
+ }
+set Nc47012b0 [stack 0]
+ Dot {
+  name Dot88
+  xpos 1164
+  ypos -547
+ }
+set Nc47023e0 [stack 0]
+ Dot {
+  name Dot89
+  xpos 1507
+  ypos -547
+ }
+set Nc4701620 [stack 0]
+ Dot {
+  name Dot90
+  xpos 1606
+  ypos -547
+ }
+set Nc4701990 [stack 0]
+ Dot {
+  name Dot91
+  xpos 1716
+  ypos -547
+ }
+set Nc4702750 [stack 0]
+ Dot {
+  name Dot92
+  xpos 1826
+  ypos -547
+ }
+set Nc4702e30 [stack 0]
+ Dot {
+  name Dot93
+  xpos 1936
+  ypos -547
+ }
+set Nc4703510 [stack 0]
+ Dot {
+  name Dot94
+  xpos 2046
+  ypos -547
+ }
+set Nc4703880 [stack 0]
+ Dot {
+  name Dot95
+  xpos 2156
+  ypos -547
+ }
+ Crop {
+  box {{"parent.Crop_view10.box.x + offsetCrops1.offsetLarge + offsetHoriz + offsetX"} {parent.Crop_view05.box.y} {"rint(Crop_view11.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view05.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  intersect true
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view11
+  xpos 2122
+  ypos -462
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  offsetX 0.4
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat92
+  xpos 2122
+  ypos -438
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_11
+  name OneView13
+  label view_11
+  xpos 2122
+  ypos -402
+ }
+push $Nc4703880
+ Crop {
+  box {{"parent.Crop_view09.box.x + offsetCrops1.offsetLarge + offsetHoriz + offsetX"} {parent.Crop_view05.box.y} {"rint(Crop_view10.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view05.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view10
+  xpos 2012
+  ypos -462
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  offsetX 0.6
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat87
+  xpos 2012
+  ypos -438
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_10
+  name OneView14
+  label view_10
+  xpos 2012
+  ypos -402
+ }
+push $Nc4703510
+ Crop {
+  box {{"parent.Crop_view08.box.x + offsetCrops1.offsetLarge + offsetHoriz + offsetX"} {parent.Crop_view05.box.y} {"rint(Crop_view09.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view05.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view09
+  xpos 1902
+  ypos -462
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat86
+  xpos 1902
+  ypos -438
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_09
+  name OneView15
+  label view_09
+  xpos 1902
+  ypos -402
+ }
+push $Nc4702e30
+ Crop {
+  box {{"parent.Crop_view07.box.x + offsetCrops1.offsetLarge + offsetHoriz + offsetX"} {parent.Crop_view05.box.y} {"rint(Crop_view08.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view05.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view08
+  xpos 1792
+  ypos -462
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  offsetHoriz 0.45
+  addUserKnob {7 offsetX R -1 1}
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat84
+  xpos 1792
+  ypos -438
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_08
+  name OneView16
+  label view_08
+  xpos 1792
+  ypos -402
+ }
+push $Nc4702750
+ Crop {
+  box {{"parent.Crop_view06.box.x + offsetCrops1.offsetLarge + offsetHoriz + offsetX"} {parent.Crop_view05.box.y} {"rint(Crop_view07.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view05.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view07
+  xpos 1682
+  ypos -462
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  offsetX 0.5
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat89
+  xpos 1682
+  ypos -438
+  disable {{parent.Reformat93.disable.view_07}}
+ }
+ OneView {
+  view view_07
+  name OneView17
+  label view_07
+  xpos 1682
+  ypos -402
+ }
+push $Nc4701990
+ Crop {
+  box {{"parent.Crop_view05.box.x + offsetCrops1.offsetLarge + offsetHoriz + offsetX"} {parent.Crop_view05.box.y} {"rint(Crop_view06.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view05.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view06
+  xpos 1572
+  ypos -462
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat88
+  xpos 1572
+  ypos -438
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_06
+  name OneView18
+  label view_06
+  xpos 1572
+  ypos -402
+ }
+push $Nc4701620
+ Crop {
+  box {{"1270 + offsetHoriz + offsetX "} 620 {"rint(Crop_view05.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} 1766}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  intersect true
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view05
+  xpos 1473
+  ypos -462
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat91
+  xpos 1473
+  ypos -438
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_05
+  name OneView19
+  label view_05
+  xpos 1473
+  ypos -402
+ }
+push $Nc47023e0
+ Transform {
+  translate {{width} 0}
+  center {9129 1134}
+  name Transform2
+  xpos 1232
+  ypos -498
+ }
+push $Nc47023e0
+ Crop {
+  box {0 0 18258 2268}
+  name Crop1
+  xpos 1130
+  ypos -487
+ }
+ Merge2 {
+  inputs 2
+  name Merge1
+  xpos 1130
+  ypos -463
+ }
+ Crop {
+  box {{"parent.Crop_view03.box.x + offsetCrops1.offSetSmall + offsetHoriz + offsetX"} {parent.Crop_view01.box.y} {"rint(Crop_view04.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view01.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  intersect true
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view04
+  selected true
+  xpos 1130
+  ypos -439
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  offsetX 1
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat90
+  xpos 1130
+  ypos -372
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_04
+  name OneView20
+  label view_04
+  xpos 1130
+  ypos -336
+ }
+push $Nc47012b0
+ Crop {
+  box {{"parent.Crop_view02.box.x + offsetCrops1.offSetSmall + offsetHoriz + offsetX"} {parent.Crop_view01.box.y} {"rint(Crop_view03.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view01.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  intersect {{parent.Crop_view01.crop.view_06}}
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view03
+  xpos 1020
+  ypos -497
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  offsetHoriz 0.5
+  addUserKnob {7 offsetX R -1 1}
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat83
+  xpos 1020
+  ypos -432
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_03
+  name OneView21
+  label view_03
+  xpos 1020
+  ypos -396
+ }
+push $Nc47031a0
+ Crop {
+  box {{"parent.Crop_view01.box.x + offsetCrops1.offSetSmall + offsetHoriz + offsetX"} {parent.Crop_view01.box.y} {"rint(Crop_view02.box.x + 1/.94*1920)  + offsetHoriz+ offsetY"} {parent.Crop_view01.box.t}}
+  reformat {{parent.Crop_view01.reformat.view_01}}
+  crop {{parent.Crop_view01.crop.view_06}}
+  name Crop_view02
+  xpos 768
+  ypos -431
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -1 1}
+  addUserKnob {7 offsetX R -1 1}
+  addUserKnob {7 offsetY R -1 1}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat85
+  xpos 768
+  ypos -407
+  disable {{parent.Reformat93.disable.view_01}}
+ }
+ OneView {
+  view view_02
+  name OneView22
+  label view_02
+  xpos 768
+  ypos -371
+ }
+push $Nc4700f40
+ Crop {
+  box {{"12800 + offsetHoriz"} 620 {"14842 + offsetHoriz"} 1766}
+  reformat true
+  name Crop_view01
+  xpos 669
+  ypos -431
+  addUserKnob {20 User}
+  addUserKnob {7 offsetHoriz R -2 2}
+ }
+ Reformat {
+  format "1920 1080 0 0 1920 1080 1 HD"
+  name Reformat93
+  xpos 669
+  ypos -407
+ }
+ OneView {
+  view view_01
+  name OneView23
+  label view_01
+  xpos 669
+  ypos -371
+ }
+push $Nc4702ac0
+ OneView {
+  name OneView24
+  label main
+  xpos 559
+  ypos -267
+ }
+ JoinViews {
+  inputs 12
+  name JoinViews2
+  xpos 669
+  ypos -185
+  viewassoc "main\nview_01\nview_02\nview_03\nview_04\nview_05\nview_06\nview_07\nview_08\nview_09\nview_10\nview_11"
+ }
+ Output {
+  name Output1
+  xpos 669
+  ypos -161
+ }
+ NoOp {
+  inputs 0
+  name offsetCrops1
+  xpos 1320
+  ypos -753
+  addUserKnob {20 User}
+  addUserKnob {7 offsetLarge}
+  offsetLarge 1489
+  addUserKnob {7 offSetSmall}
+  offSetSmall 1414
+ }
+end_group

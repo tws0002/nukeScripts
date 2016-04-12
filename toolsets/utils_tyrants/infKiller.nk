@@ -1,0 +1,1834 @@
+set cut_paste_input [stack 0]
+version 8.0 v6
+push 0
+push $cut_paste_input
+Group {
+ inputs 2
+ name REBUILD2
+ knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.matchAovs()"
+ label "\[lindex \[split \[lindex \[split \[value input0.file] /] end] .] 0]\n\[lindex \[split \[lindex \[split \[value input1.file] /] end] .] 0]"
+ selected true
+ xpos 883
+ ypos 82
+ addUserKnob {20 rebuild}
+ addUserKnob {22 match l matchAovs T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.matchAovs()" +STARTLINE}
+ addUserKnob {20 info}
+ addUserKnob {22 addAssetGizmos -STARTLINE T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.addAssetGizmos()"}
+ addUserKnob {22 printCryptoInfo T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.showData()" +STARTLINE}
+ addUserKnob {43 assetList l "" +STARTLINE}
+ assetList "Assets:\n"
+ addUserKnob {43 existList l "" -STARTLINE}
+ existList "Existing:\n"
+ addUserKnob {43 matList l "" -STARTLINE}
+ matList "Materials:\n"
+ addUserKnob {26 spacer l "" -STARTLINE T "\t"}
+ addUserKnob {20 endGroup n -1}
+}
+ Camera2 {
+  inputs 0
+  translate {{curve x99 746.1256939 747.0669695 748.0081888 748.9492964 749.8903394 750.8314213 751.7726194 752.7138858 753.6551508 754.5974661 755.542831 756.4911087 757.4421144 758.3955901 759.3511855 760.3085515 761.267435 762.227655 763.1890254 764.1512815 765.1141661 766.0774004 767.0407328 768.0039199 768.9667271 769.9289232 770.8902243 771.8503232 772.8089445 773.7658538 774.7207992 775.6735274 776.6237821 777.5713184 778.5158435 779.4571079 780.3949256 781.3291166 782.2594279 783.1854866 784.1069176 785.0234619 785.934973 786.841305 787.7422123 788.6373838 789.5264805 790.4092508 791.2855824 792.1579166 793.0273552 793.8939579 794.7577882 795.6188945 796.4773553 797.3332856 798.1868013 799.0379414 799.8866938 800.7330281 801.5770479 802.4188954 803.2587066 804.0965355 804.9323807 805.7662429 806.5981866 807.4283333 808.2568037 809.0836632 809.9089622 810.7327277 811.5550417 812.3759644 813.195544 814.0138309 814.8309092 815.6468748 816.4618121 817.2757695 818.0887895 818.9009206 819.7122388 820.5228353 821.3327763 822.1421346 822.9509312 823.7591857 824.5669651 825.374398 826.1816091 826.9886513 827.7955716 828.6024259 829.4092939 830.2162285 831.0232427 831.8304178 832.6378177 833.4454911 834.2534919 835.0619} {curve x99 10.15392405 10.15197526 10.1499832 10.14788029 10.1457256 10.14361615 10.14163176 10.13972614 10.13779777 10.13572194 10.13346462 10.13112116 10.12879009 10.12647123 10.12402582 10.12131226 10.11832282 10.11519572 10.11206823 10.10892823 10.10573965 10.10248928 10.09918043 10.09581375 10.09238404 10.08893247 10.0854159 10.08172871 10.07779315 10.073679 10.06950364 10.06534168 10.06114418 10.05687098 10.05249016 10.04801576 10.04347732 10.03890317 10.03429197 10.02961215 10.02483193 10.01995039 10.01499929 10.01001287 10.00500898 9.99994239 9.9947592 9.989453006 9.984046948 9.978545716 9.972948171 9.967253384 9.961467177 9.955584782 9.949613555 9.9435812 9.937503396 9.931372415 9.925191857 9.918964959 9.91269315 9.906380424 9.900036503 9.89367183 9.887251788 9.880731147 9.874083599 9.867419201 9.860867567 9.854489895 9.848122292 9.84157099 9.834803298 9.827916202 9.820989599 9.81403467 9.807036138 9.800011268 9.792931767 9.785821639 9.778792391 9.771935539 9.76520122 9.758478951 9.751708864 9.744943096 9.738120819 9.731171667 9.724097661 9.717009512 9.710008239 9.703062793 9.696174191 9.689364357 9.682666983 9.676017489 9.669330441 9.662584144 9.655835404 9.649142082 9.642541775 9.635991951} {curve x99 2.868286175 2.867126125 2.866472258 2.866871404 2.867833688 2.868677122 2.868871448 2.868735299 2.868874991 2.869783965 2.871259644 2.872893678 2.874470049 2.876275254 2.877701716 2.87808179 2.877443136 2.876269646 2.874974386 2.873232534 2.871459929 2.870352024 2.870159467 2.870362553 2.870371295 2.869929982 2.869382807 2.869101794 2.869330521 2.869851605 2.870351183 2.870638429 2.870845514 2.871053895 2.871315385 2.871598906 2.871907976 2.87228112 2.872764439 2.873151953 2.873214808 2.872914367 2.8725317 2.872366221 2.872464441 2.872605634 2.872559205 2.872187729 2.871742505 2.871554105 2.871797592 2.872244662 2.872604968 2.872713887 2.872721931 2.872797311 2.873073781 2.873471962 2.87383116 2.874040821 2.87416305 2.874210231 2.874135814 2.873862121 2.873709108 2.874045612 2.874971336 2.875943671 2.87635275 2.875967852 2.875490397 2.875745371 2.877185243 2.878967939 2.88001026 2.879981744 2.879359268 2.878467697 2.87712083 2.875428614 2.874318651 2.874492939 2.875522981 2.876658172 2.877423407 2.878124338 2.878630779 2.87878733 2.87861777 2.878274664 2.877882995 2.877368243 2.876805835 2.876301071 2.87581658 2.87537423 2.875032099 2.874786817 2.874630316 2.874573725 2.874639294 2.874801093}}
+  rotate {{curve x99 3.13657402 3.109180283 3.074596052 3.037063498 2.998338611 2.961350169 2.928305895 2.901698614 2.88546112 2.883561231 2.885250006 2.878086492 2.852428079 2.809414594 2.762299642 2.724443379 2.695218546 2.668631693 2.640531041 2.610134535 2.577047111 2.540435099 2.501921517 2.452832869 2.380884613 2.276089157 2.149592245 2.027103124 1.921642753 1.833223903 1.758324216 1.695684067 1.649925985 1.621103403 1.60971927 1.614902072 1.627878005 1.639505995 1.647637616 1.659203339 1.680044225 1.704238315 1.730694209 1.753810643 1.767911371 1.771437566 1.762423621 1.746074121 1.718564069 1.669978948 1.593248182 1.498964129 1.40663984 1.324548956 1.247922018 1.174535262 1.104263452 1.039655428 0.9801043726 0.9268342699 0.889780851 0.8686887346 0.8592017363 0.8613147173 0.8808076158 0.9225459055 0.9835502364 1.060162883 1.139917992 1.206470676 1.259571156 1.300152838 1.335371503 1.364527341 1.378568497 1.371649267 1.351042014 1.328623316 1.306056626 1.279251291 1.250851167 1.22449713 1.198351958 1.165007865 1.118998796 1.068454303 1.02251625 0.9940780938 0.9886151379 0.998649771 1.015275672 1.036374834 1.074207644 1.134862426 1.203559034 1.268296984 1.317622668 1.348062624 1.358920631 1.347354123 1.310741434 1.246290695} {curve x99 89.93891523 89.94417928 89.95417807 89.97066508 89.99249899 90.01521381 90.03458287 90.05147159 90.06482882 90.07301858 90.07577422 90.07683845 90.07938016 90.08204743 90.08406649 90.08489912 90.08424986 90.08349993 90.08413253 90.08713821 90.08991623 90.08942658 90.08620109 90.08020875 90.07004233 90.05463889 90.03536674 90.01434093 89.99259861 89.97081411 89.95181029 89.9351042 89.92096318 89.91003916 89.90264148 89.89824723 89.89683761 89.89819439 89.90168404 89.90778629 89.91708383 89.92835934 89.93780468 89.94379031 89.94585015 89.94572668 89.94547963 89.94697168 89.9473717 89.94260759 89.93073805 89.91477195 89.89837019 89.88471142 89.87478708 89.86719362 89.86099998 89.85674891 89.85452965 89.85378718 89.85387769 89.85651784 89.86329392 89.87346356 89.8847167 89.89428963 89.90110742 89.90705531 89.91407931 89.92317931 89.93297407 89.94179087 89.94973442 89.95795146 89.96726789 89.97755776 89.98951011 90.0037275 90.01910523 90.03469565 90.04907531 90.06182974 90.07358788 90.08327308 90.08963727 90.09307938 90.0950526 90.09649526 90.09671656 90.09767812 90.10134383 90.10726721 90.113732 90.11909016 90.12288615 90.12555644 90.12748336 90.12810626 90.12733582 90.12556056 90.12479415 90.12294343} {curve x99 -0.1330174827 -0.1370133132 -0.1390029006 -0.1365002037 -0.1312971198 -0.1271183002 -0.1260326517 -0.1262942114 -0.1274943724 -0.1285777084 -0.129099275 -0.1323788457 -0.1420977059 -0.158119606 -0.1737178112 -0.1826710315 -0.18568786 -0.1855987242 -0.1848655899 -0.1841154157 -0.1807962403 -0.1721138849 -0.1580424497 -0.1391002853 -0.1150395953 -0.08532130652 -0.05335739058 -0.02331493668 0.001903856417 0.02466120846 0.04873809931 0.07692232215 0.1073379212 0.136659661 0.1633132532 0.1887502525 0.2096786213 0.22260069 0.2276754634 0.2291886295 0.2310676132 0.2321719716 0.231735266 0.2294262918 0.2238732128 0.2178115985 0.2150454791 0.2181309912 0.2226147468 0.2223920916 0.2137597309 0.201330222 0.1914115458 0.1872318949 0.1858566651 0.1847906045 0.183304529 0.1822664489 0.1796212737 0.1743602102 0.1674842622 0.1570215209 0.1411089256 0.1202346227 0.09554650898 0.06758311685 0.0347144083 0.000372830902 -0.03116985455 -0.05895082236 -0.08661557687 -0.1181182893 -0.1549489612 -0.192422173 -0.2246739724 -0.2507015813 -0.2719512541 -0.289250421 -0.3033819591 -0.3137688604 -0.3191884484 -0.3178702103 -0.3106853902 -0.3019383424 -0.2941635041 -0.2855858687 -0.2782647536 -0.2742639353 -0.273207264 -0.2738520283 -0.2757910471 -0.2815423271 -0.2859962181 -0.2829657907 -0.2723208401 -0.2576290197 -0.2419869711 -0.2254691299 -0.2105780539 -0.2002415435 -0.1971147184 -0.1979138526}}
+  scaling {{curve x99 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} {curve x99 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} {curve x99 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+  uniform_scale {{curve x99 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+  skew {{curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  pivot {{curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  focal {{curve x99 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35 35}}
+  haperture {{curve x99 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055}}
+  vaperture {{curve x99 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931}}
+  near {{curve x99 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+  far {{curve x99 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000}}
+  win_translate {{curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x99 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  focal_point {{curve x99 746.3051147 747.2460327 748.1870117 749.1279297 750.0688477 751.0098267 751.9507446 752.8916626 753.8325806 754.7746582 755.7198486 756.6679688 757.6186523 758.5717773 759.5270386 760.4841919 761.4428101 762.4029541 763.3641357 764.3262329 765.2888794 766.2518921 767.2150269 768.1779785 769.1405029 770.102356 771.0632935 772.0230103 772.9813232 773.9379272 774.8925781 775.8450317 776.7950439 777.7423096 778.6866455 779.6277466 780.5653687 781.4992676 782.4291382 783.3547974 784.2759399 785.1923218 786.1037598 787.0099487 787.9104614 788.8052979 789.6941528 790.5766602 791.4528198 792.3248901 793.1940918 794.0604858 794.9240723 795.7849731 796.6432495 797.4990234 798.3521729 799.2029419 800.0513306 800.8973999 801.741272 802.5829468 803.4224854 804.2600098 805.09552 805.9291992 806.7609253 807.5908813 808.4191284 809.2457275 810.0708008 810.8942871 811.7163086 812.5369873 813.3562622 814.1743774 814.991272 815.8069458 816.6216431 817.4353638 818.2481079 819.0599365 819.8710327 820.6813965 821.4910278 822.3001099 823.1086426 823.916687 824.7243042 825.5316162 826.338623 827.1454468 827.9520874 828.758667 829.5652466 830.3718872 831.1786499 831.9855347 832.7926636 833.6001587 834.40802 835.2163696}}
+  fstop {{curve x99 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2}}
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/cache/camera/renderCam/v009/alembic/wan0090_renderCam_cmra.abc
+  frame_rate 25
+  name Camera2
+  label "\[lrange \[split \[value file] /] 11 11]"
+  xpos 3055
+  ypos -324
+ }
+set N48b03770 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/diffuse_color/wan0090_mg_lAll_diffuse_color_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name diffuse_color
+  xpos -2119
+  ypos -1063
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Clamp {
+  minimum 0.001
+  name Clamp1
+  xpos -2119
+  ypos -969
+ }
+ Reformat {
+  name Reformat3
+  xpos -2119
+  ypos -933
+ }
+ Input {
+  inputs 0
+  name lAll
+  xpos -2125
+  ypos -1216
+ }
+ Reformat {
+  name Reformat1
+  xpos -2125
+  ypos -1131
+ }
+ Input {
+  inputs 0
+  name uBasic
+  xpos -3153
+  ypos -1585
+  number 1
+ }
+ Reformat {
+  name Reformat13
+  xpos -3153
+  ypos -1469
+ }
+set N48b003e0 [stack 0]
+ Read {
+  inputs 0
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 144
+  origfirst 100
+  origlast 144
+  origset true
+  name uAO
+  xpos -1871
+  ypos -1700
+  disable true
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat2
+  xpos -1871
+  ypos -1615
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uUVI/wan0090_mg_uBasic_uUVI_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uUVI
+  xpos -1981
+  ypos -1699
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat22
+  xpos -1981
+  ypos -1615
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uPRef/wan0090_mg_uBasic_uPRef_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uPRef
+  xpos -2099
+  ypos -1701
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat21
+  xpos -2099
+  ypos -1617
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uPointWorld/wan0090_mg_uBasic_uPointWorld_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uPointWorld
+  xpos -2208
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat14
+  xpos -2208
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uPointCamera/wan0090_mg_uBasic_uPointCamera_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uPointCamera
+  xpos -2318
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat15
+  xpos -2318
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uNormalWorld/wan0090_mg_uBasic_uNormalWorld_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uNormalWorld
+  xpos -2428
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat17
+  xpos -2428
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uNormalCamera/wan0090_mg_uBasic_uNormalCamera_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uNormalCamera
+  xpos -2538
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat18
+  xpos -2538
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uCryptoMaterial/wan0090_mg_uBasic_uCryptoMaterial_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uCryptoMaterial
+  xpos -2700
+  ypos -2124
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+set N48b01510 [stack 0]
+ Reformat {
+  name Reformat19
+  xpos -2700
+  ypos -2000
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_uBasic/v001/exr/uCryptoAsset/wan0090_mg_uBasic_uCryptoAsset_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name uCryptoAsset
+  xpos -2912
+  ypos -2085
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+set N48b05660 [stack 0]
+ Reformat {
+  name Reformat20
+  xpos -2912
+  ypos -2001
+ }
+push $N48b003e0
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy2
+  xpos -2912
+  ypos -1481
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy1
+  xpos -2700
+  ypos -1481
+ }
+add_layer {uNormalCamera uNormalCamera.red uNormalCamera.green uNormalCamera.blue uNormalCamera.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uNormalCamera
+  name ShuffleCopy25
+  label "\[value out2]"
+  xpos -2538
+  ypos -1475
+ }
+add_layer {uNormalWorld uNormalWorld.red uNormalWorld.green uNormalWorld.blue uNormalWorld.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uNormalWorld
+  name ShuffleCopy26
+  label "\[value out2]"
+  xpos -2428
+  ypos -1475
+ }
+add_layer {uPointCamera uPointCamera.red uPointCamera.green uPointCamera.blue uPointCamera.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPointCamera
+  name ShuffleCopy28
+  label "\[value out2]"
+  xpos -2318
+  ypos -1475
+ }
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPointWorld
+  name ShuffleCopy29
+  label "\[value out2]"
+  xpos -2208
+  ypos -1475
+ }
+add_layer {uPRef uPRef.red uPRef.green uPRef.blue uPRef.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPRef
+  name ShuffleCopy10
+  label "\[value out2]"
+  xpos -2098
+  ypos -1475
+ }
+add_layer {uUVI uUVI.red uUVI.green uUVI.blue uUVI.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uUVI
+  name ShuffleCopy15
+  label "\[value out2]"
+  xpos -1981
+  ypos -1475
+ }
+add_layer {uAO uAO.red uAO.green uAO.blue uAO.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uAO
+  name ShuffleCopy9
+  label "\[value out2]"
+  xpos -1871
+  ypos -1475
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox2
+  xpos -1871
+  ypos -1370
+ }
+add_layer {startRGBA startRGBA.red startRGBA.green startRGBA.blue startRGBA.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 startRGBA
+  name ShuffleCopy4
+  label "\[value out2]"
+  xpos -1871
+  ypos -1137
+ }
+add_layer {diffuse_color diffuse_color.red diffuse_color.green diffuse_color.blue diffuse_color.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 diffuse_color
+  name ShuffleCopy2
+  label "\[value out2]"
+  xpos -1871
+  ypos -939
+ }
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle8
+  label "\[value in]"
+  xpos -1871
+  ypos -816
+ }
+set N48b078c0 [stack 0]
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle9
+  label "\[value in]"
+  xpos -1540
+  ypos -816
+ }
+set N48b090d0 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle3
+  label "\[value in]"
+  xpos -1229
+  ypos -816
+ }
+set N48b08310 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle4
+  label "\[value in]"
+  xpos -898
+  ypos -816
+ }
+set N48b09b20 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle11
+  label "\[value in]"
+  xpos -446
+  ypos -816
+ }
+set N48b07fa0 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle10
+  label "\[value in]"
+  xpos 49
+  ypos -816
+ }
+set N48b060b0 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle12
+  label "\[value in]"
+  xpos 549
+  ypos -816
+ }
+set N48b0a8e0 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle13
+  label "\[value in]"
+  xpos 892
+  ypos -816
+ }
+set N48b09e90 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle14
+  label "\[value in]"
+  xpos 1324
+  ypos -816
+ }
+set N48b0a200 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle15
+  label "\[value in]"
+  xpos 1724
+  ypos -816
+ }
+set N48b0a570 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle23
+  label "\[value in]"
+  xpos 2064
+  ypos -816
+ }
+set N48b0ac50 [stack 0]
+ Shuffle {
+  in uPointCamera
+  in2 startRGBA
+  red blue
+  green blue
+  alpha alpha2
+  name Shuffle17
+  label "\[value in]"
+  xpos 2454
+  ypos -816
+ }
+ Unpremult {
+  name Shuffle9_unpremult
+  xpos 2454
+  ypos -765
+ }
+ ml_AtmosControl {
+  name ml_AtmosControl
+  xpos 2454
+  ypos -688
+  whitepoint -1000
+  AtmosColor_white {0.788007 0.504057 0.229026 1}
+  AtmosColor_multiply 0.105
+ }
+ NoOp {
+  name atmos_OUT
+  note_font_size 20
+  xpos 2454
+  ypos 284
+ }
+push $N48b0ac50
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/indirect_backlight/wan0090_mg_lAll_indirect_backlight_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name indirect_backlight
+  xpos -765
+  ypos -782
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat16
+  xpos -765
+  ypos -698
+ }
+set N48b08d60 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/direct_backlight/wan0090_mg_lAll_direct_backlight_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name direct_backlight
+  xpos -1119
+  ypos -785
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat12
+  xpos -1119
+  ypos -701
+ }
+set N48b0ceb0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/direct_diffuse/wan0090_mg_lAll_direct_diffuse_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name direct_diffuse
+  xpos -1761
+  ypos -785
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat4
+  xpos -1761
+  ypos -701
+ }
+set N48b0d590 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/indirect_diffuse/wan0090_mg_lAll_indirect_diffuse_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name indirect_diffuse
+  xpos -1407
+  ypos -782
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat8
+  xpos -1407
+  ypos -698
+ }
+set N494b49c0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/sss/wan0090_mg_lAll_sss_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name sss
+  xpos 159
+  ypos -792
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat24
+  xpos 159
+  ypos -708
+ }
+set N494b3890 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/direct_specular_2/wan0090_mg_lAll_direct_specular_2_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name direct_specular_2
+  xpos 757
+  ypos -777
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat6
+  xpos 757
+  ypos -693
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/direct_specular/wan0090_mg_lAll_direct_specular_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name direct_specular
+  xpos 647
+  ypos -780
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat5
+  xpos 647
+  ypos -696
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge6
+  xpos 647
+  ypos -654
+ }
+set N494b3c00 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/indirect_specular_2/wan0090_mg_lAll_indirect_specular_2_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name indirect_specular_2
+  xpos 1103
+  ypos -776
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat10
+  xpos 1103
+  ypos -692
+ }
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/indirect_specular/wan0090_mg_lAll_indirect_specular_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name indirect_specular
+  xpos 993
+  ypos -789
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat9
+  xpos 993
+  ypos -705
+ }
+ Expression {
+  expr0 isinf(r)?0:r
+  expr1 isinf(g)?0:g
+  expr2 isinf(b)?0:b
+  name infKiller
+  selected true
+  xpos 993
+  ypos -681
+ }
+set N7d1e3950 [stack 0]
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge7
+  xpos 993
+  ypos -652
+ }
+set N494b50a0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/refraction/wan0090_mg_lAll_refraction_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name refraction
+  xpos 1497
+  ypos -783
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat11
+  xpos 1497
+  ypos -699
+ }
+set N494b31b0 [stack 0]
+push 0
+push 0
+push 0
+ Read {
+  inputs 0
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0090/publish/image/lighting/mg_lAll/v001/exr/emission/wan0090_mg_lAll_emission_v001.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 199
+  origfirst 100
+  origlast 199
+  origset true
+  name emission
+  xpos 1855
+  ypos -784
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat7
+  xpos 1855
+  ypos -700
+ }
+set N494b42e0 [stack 0]
+ Merge2 {
+  inputs 11+1
+  name CombineAll
+  xpos 2241
+  ypos -755
+  hide_input true
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 2241
+  ypos -674
+ }
+push $N48b0ac50
+ Merge2 {
+  inputs 2
+  operation from
+  name Merge11
+  xpos 2064
+  ypos -674
+ }
+ NoOp {
+  name remainder_OUT
+  note_font_size 20
+  xpos 2064
+  ypos 284
+ }
+push $N494b42e0
+push $N48b0a570
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy3
+  xpos 1724
+  ypos -700
+ }
+ Unpremult {
+  name Shuffle8_unpremult
+  xpos 1724
+  ypos -676
+ }
+ NoOp {
+  name emission_OUT
+  note_font_size 20
+  xpos 1724
+  ypos 284
+ }
+push $N494b31b0
+push $N48b0a200
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy5
+  xpos 1324
+  ypos -699
+ }
+ Unpremult {
+  name Shuffle7_unpremult
+  xpos 1324
+  ypos -675
+ }
+ NoOp {
+  name refr_OUT
+  note_font_size 20
+  xpos 1324
+  ypos 284
+ }
+push $N494b50a0
+push $N48b09e90
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy6
+  xpos 892
+  ypos -652
+ }
+ Unpremult {
+  name Shuffle6_unpremult
+  xpos 892
+  ypos -616
+ }
+ Dot {
+  name Dot1
+  xpos 926
+  ypos -301
+ }
+push $N494b3c00
+push $N48b0a8e0
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy7
+  xpos 549
+  ypos -654
+ }
+ Unpremult {
+  name Shuffle5_unpremult
+  xpos 549
+  ypos -606
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge9
+  xpos 549
+  ypos -304
+ }
+set N494b87a0 [stack 0]
+ Expression {
+  channel0 rgba
+  expr0 "((uCryptoMaterial00.red == 0.627321958542) ? uCryptoMaterial00.green : 0.0) + ((uCryptoMaterial00.blue == 0.627321958542) ? uCryptoMaterial00.alpha : 0.0) + ((uCryptoMaterial01.red == 0.627321958542) ? uCryptoMaterial01.green : 0.0) + ((uCryptoMaterial01.blue == 0.627321958542) ? uCryptoMaterial01.alpha : 0.0) + ((uCryptoMaterial02.red == 0.627321958542) ? uCryptoMaterial02.green : 0.0) + ((uCryptoMaterial02.blue == 0.627321958542) ? uCryptoMaterial02.alpha : 0.0) + 0"
+  name want_goldRim_sg
+  xpos 735
+  ypos -97
+ }
+push $N494b87a0
+ ColorCorrect {
+  inputs 1+1
+  shadows.gamma 1.5
+  midtones.gamma 1.74
+  highlights.gain 1.64
+  name ColorCorrect2
+  xpos 549
+  ypos -97
+ }
+ NoOp {
+  name spec_OUT
+  note_font_size 20
+  xpos 549
+  ypos 284
+ }
+push $N494b3890
+push $N48b060b0
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy8
+  xpos 49
+  ypos -708
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 49
+  ypos -684
+ }
+ NoOp {
+  name sss_OUT
+  note_font_size 20
+  xpos 49
+  ypos 282
+ }
+push $N48b07fa0
+ Unpremult {
+  name Shuffle4_unpremult
+  xpos -446
+  ypos -780
+ }
+ NoOp {
+  name color_OUT
+  note_font_size 20
+  xpos -446
+  ypos 284
+ }
+push $N48b08d60
+push $N48b09b20
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge13
+  xpos -898
+  ypos -698
+ }
+ Dot {
+  name Dot4
+  xpos -864
+  ypos -304
+ }
+push $N48b0ceb0
+push $N48b08310
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge14
+  xpos -1229
+  ypos -701
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge15
+  xpos -1229
+  ypos -307
+ }
+ NoOp {
+  name backlight_OUT
+  note_font_size 20
+  xpos -1229
+  ypos 284
+ }
+push $N48b078c0
+ ML_DistanceSelect_2dLocator {
+  name ML_DistanceSelect_2dLocator5
+  xpos -2410
+  ypos -469
+  in_1 uPointWorld
+  location {967 947}
+  color {122.022308 130.827591 5.625296 1}
+  color_2 {5 5 2 1}
+  radius 16.5
+  multiply 1.08
+  gamma 0.27
+ }
+ Grade {
+  multiply 1.66
+  white_clamp true
+  name Grade7
+  xpos -2410
+  ypos -445
+ }
+push $N48b078c0
+ ML_DistanceSelect_2dLocator {
+  name ML_DistanceSelect_2dLocator4
+  xpos -2223
+  ypos -443
+  in_1 uPointWorld
+  location {838 946.5}
+  color {72.30740356 126.344849 27.65654 1}
+  color_2 {5 5 9 1}
+  radius 16.5
+  multiply 1.08
+  gamma 0.27
+ }
+ Grade {
+  multiply 1.66
+  white_clamp true
+  name Grade5
+  xpos -2223
+  ypos -419
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge1
+  xpos -2224
+  ypos -381
+ }
+ Shuffle {
+  alpha red
+  name Shuffle1
+  label "\[value in]"
+  xpos -2224
+  ypos -347
+ }
+push $N494b49c0
+push $N48b090d0
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge3
+  xpos -1540
+  ypos -698
+ }
+ Grade {
+  multiply 0.8
+  name Grade1
+  xpos -1540
+  ypos -600
+ }
+ Dot {
+  name Dot2
+  xpos -1506
+  ypos -307
+ }
+push $N48b0d590
+push $N48b078c0
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge4
+  xpos -1871
+  ypos -701
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge5
+  xpos -1871
+  ypos -310
+ }
+ Grade {
+  inputs 1+1
+  white 0.36
+  multiply 0.68
+  name Grade6
+  xpos -1871
+  ypos -273
+ }
+ ColorCorrect {
+  saturation 0.8
+  name ColorCorrect1
+  xpos -1871
+  ypos -216
+ }
+set N494c6710 [stack 0]
+ ML_DistanceSelect_2dLocator {
+  name ML_DistanceSelect_2dLocator3
+  xpos -1671
+  ypos 160
+  in_1 uPointWorld
+  location {974 634}
+  color {-112.1899414 60.11259079 -0.6714978218 1}
+  color_2 {2 5 5 1}
+  radius 99.5
+ }
+push $N494c6710
+ ML_DistanceSelect_2dLocator {
+  name ML_DistanceSelect_2dLocator2
+  xpos -1676
+  ypos 43
+  in_1 uPointWorld
+  location {738 1011}
+  color {250.5752563 115.3684692 44.76145935 1}
+  color_2 {5 1 1 1}
+  radius 99.5
+ }
+push $N494c6710
+ ML_DistanceSelect_2dLocator {
+  name ML_DistanceSelect_2dLocator1
+  xpos -1659
+  ypos -65
+  in_1 uPointWorld
+  location {1772 694}
+  color {524.774231 34.24498367 -61.52429962 1}
+  color_2 {0.2 5 1 1}
+  radius 99.5
+ }
+push $N494c6710
+ Grade {
+  inputs 1+1
+  white 3.26
+  multiply 2.86
+  maskChannelMask rgba.red
+  name Grade2
+  xpos -1871
+  ypos -65
+ }
+ Grade {
+  inputs 1+1
+  white 3.26
+  multiply 2.86
+  maskChannelMask rgba.red
+  name Grade3
+  xpos -1871
+  ypos 43
+ }
+ Grade {
+  inputs 1+1
+  multiply 5
+  maskChannelMask rgba.red
+  name Grade4
+  xpos -1871
+  ypos 160
+ }
+ NoOp {
+  name lighting_OUT
+  note_font_size 20
+  xpos -1871
+  ypos 287
+ }
+ Dot {
+  name Dot3
+  xpos -1837
+  ypos 321
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE1
+  xpos -1229
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  name color_MERGE
+  xpos -446
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE
+  xpos 49
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name spec_MERGE
+  xpos 549
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name refr_MERGE
+  xpos 1324
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE
+  xpos 1724
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE2
+  xpos 2064
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name atmos_MERGE
+  xpos 2454
+  ypos 318
+ }
+set N4e856a40 [stack 0]
+ Group {
+  inputs 2
+  name stickyCamPointProjection
+  label "\[value cameraFrame]"
+  xpos 2587
+  ypos -339
+  addUserKnob {20 User}
+  addUserKnob {41 in_1 l worldPosition T Shuffle1.in}
+  addUserKnob {3 cameraFrame}
+  cameraFrame 110
+  addUserKnob {22 getSticky l setSticky -STARTLINE T "cam=nuke.thisNode().input(1)\n\ntrans=nuke.toNode(\"transExpr\")\nrot=nuke.toNode(\"ColorMatrix\")\ncamMatrix=cam\['world_matrix'].getValue()\nscreen=nuke.toNode(\"screenSpace\")\n\ntrans\['temp_expr0'].setValue(str(camMatrix\[3]))\ntrans\['temp_expr1'].setValue(str(camMatrix\[7]))\ntrans\['temp_expr2'].setValue(str(camMatrix\[11]))\nrot\['matrix'].clearAnimated()\nrot\['matrix'].setValue(camMatrix\[0],0)\nrot\['matrix'].setValue(camMatrix\[1],1)\nrot\['matrix'].setValue(camMatrix\[2],2)\nrot\['matrix'].setValue(camMatrix\[4],3)\nrot\['matrix'].setValue(camMatrix\[5],4)\nrot\['matrix'].setValue(camMatrix\[6],5)\nrot\['matrix'].setValue(camMatrix\[8],6)\nrot\['matrix'].setValue(camMatrix\[9],7)\nrot\['matrix'].setValue(camMatrix\[10],8)\nscreen\['focal'].clearAnimated()\nscreen\['h_apert'].clearAnimated()\nscreen\['v_apert'].clearAnimated()\nscreen\['focal'].setValue(cam\['focal'].value())\nscreen\['h_apert'].setValue(cam\['haperture'].value())\nscreen\['v_apert'].setValue(cam\['vaperture'].value())\nnuke.thisNode()\['cameraFrame'].setValue(nuke.frame())"}
+ }
+  Input {
+   inputs 0
+   name Cam
+   xpos -317
+   ypos -833
+   number 1
+  }
+  Axis2 {
+   matrix {
+       {0.03881313652 -0.007507786155 0.9992182255 -76.80277252}
+       {-0.01843571849 0.9997961521 0.008228236809 15.08117104}
+       {-0.9990763664 -0.01874066889 0.03866681829 2.531093597}
+       {0 0 0 1}
+     }
+   name Axis1
+   xpos -307
+   ypos -659
+   addUserKnob {20 User}
+   addUserKnob {7 focal}
+   focal {{"\[input \[node this.parent] 1].focal"}}
+   addUserKnob {7 h_apert}
+   h_apert {{"\[input \[node this.parent] 1].haperture"}}
+   addUserKnob {7 v_apert}
+   v_apert {{"\[input \[node this.parent] 1].vaperture"}}
+  }
+  Expression {
+   inputs 0
+   expr0 x/width
+   expr1 y/height
+   name Expression2
+   xpos -293
+   ypos -342
+  }
+  Input {
+   inputs 0
+   name aovs
+   xpos -536
+   ypos -835
+  }
+  Shuffle {
+   in uPointWorld
+   name Shuffle1
+   label "\[value in]"
+   xpos -536
+   ypos -795
+  }
+  Unpremult {
+   name Unpremult1
+   xpos -536
+   ypos -731
+  }
+  Expression {
+   temp_name0 R
+   temp_expr0 756.491088867
+   temp_name1 G
+   temp_expr1 10.1311216354
+   temp_name2 B
+   temp_expr2 2.87289357185
+   expr0 r-R
+   expr1 g-G
+   expr2 b-B
+   name transExpr
+   label "translate Pworld to camera"
+   xpos -536
+   ypos -664
+  }
+  ColorMatrix {
+   matrix {
+       {-0.001457034494 0.05020768568 0.9987377524}
+       {-0.00230753026 0.9987359643 -0.05021096393}
+       {-0.9999962449 -0.002377776662 -0.00133933709}
+     }
+   invert true
+   name ColorMatrix
+   label "Rotate to camera"
+   xpos -536
+   ypos -612
+  }
+  Multiply {
+   channels {-rgba.red -rgba.green rgba.blue none}
+   value -1
+   name Multiply13
+   label "reverse Z"
+   xpos -536
+   ypos -555
+  }
+  Premult {
+   name Premult7
+   xpos -536
+   ypos -495
+  }
+  Expression {
+   expr2 b<0?0:b
+   name Expression15
+   label "clip Z behind cam"
+   xpos -536
+   ypos -462
+  }
+  Expression {
+   temp_name0 h_tan
+   temp_expr0 "(h_apert /2) / focal"
+   temp_name1 v_tan
+   temp_expr1 "(v_apert /2)  / focal"
+   expr0 "0.5 + 0.5 * r / h_tan / b"
+   expr1 "0.5 + 0.5 * g / v_tan / b"
+   expr2 0
+   channel3 {none none none -rgba.alpha}
+   name screenSpace
+   label CameraUVs
+   xpos -536
+   ypos -426
+   addUserKnob {20 "" l User}
+   addUserKnob {26 "" l "camera settings"}
+   addUserKnob {7 focal l "focal length" t "Link to projecting camera's focal length" R 0 100}
+   focal 35
+   addUserKnob {7 h_apert l "horiz aperture" t "Link to projecting camera's horizontal aperture" R 0 50}
+   h_apert 23.74900055
+   addUserKnob {7 v_apert l "vert aperture" t "Link to projecting camera's vertical aperture" R 0 50}
+   v_apert 13.36465931
+  }
+  Expression {
+   expr3 "(r<0 || r>1 || g<0 || g>1)?0:a"
+   name Expression17
+   label "clamp projection to cam frustum"
+   xpos -536
+   ypos -380
+   disable {{!crop_to_frustum}}
+  }
+  Expression {
+   expr0 isnan(r)?0:r
+   expr1 isnan(g)?0:g
+   name Expression1
+   xpos -536
+   ypos -344
+  }
+set N4e85dbb0 [stack 0]
+  Premult {
+   name Premult1
+   xpos -466
+   ypos -303
+  }
+  Merge2 {
+   inputs 2
+   operation under
+   name Merge1
+   xpos -487
+   ypos -274
+  }
+push $N4e85dbb0
+  Output {
+   name Output1
+   xpos -536
+   ypos -216
+  }
+ end_group
+ Dot {
+  name Dot6
+  xpos 2621
+  ypos -101
+ }
+set N4e85d4d0 [stack 0]
+push $N4e85d4d0
+ RotoPaint {
+  inputs 0
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Bezier1 512 bezier
+     {{cc
+       {f 8192}
+       {px x42dc0000
+        {x40666700 x41533340}
+        {x4423999a x44760000}
+        {xc0666700 xc1533340}
+        {x3f4ccc00 x41133340}
+        {x44230ccd x446f7333}
+        {xbf4ccc00 xc1133340}
+        {xc1200000 x40866680}
+        {x4424599a x4469599a}
+        {x41200000 xc0866680}
+        {xc1800000 x408ccc80}
+        {x442e2666 x44642666}
+        {x41800000 xc08ccc80}
+        {xc1533340 xc1200000}
+        {x44360ccd x4464cccd}
+        {x41533340 x41200000}
+        {xc0c00000 xc0a66600}
+        {x44458000 x4470d99a}
+        {x40c00000 x40a66600}
+        {xc1300000 xc08ccc80}
+        {x444f2666 x44770ccd}
+        {x41300000 x408ccc80}
+        {xc1666680 xc0599a00}
+        {x44607333 x447ba666}
+        {x41666680 x40599a00}
+        {xc11999c0 xc0c00000}
+        {x4468b333 x447f0000}
+        {x411999c0 x40c00000}
+        {xc0999980 xc0e00000}
+        {x446db333 x4482199a}
+        {x40999980 x40e00000}
+        {xc1433300 xc08ccd00}
+        {x4471d99a x4484eccd}
+        {x41433300 x408ccd00}
+        {xc0666600 x41a00000}
+        {x44884ccd x4480199a}
+        {x40666600 xc1a00020}
+        {x3f199800 0}
+        {x447e2666 x444f8000}
+        {xbf199800 0}
+        {0 xbfe66600}
+        {x44117333 x44520000}
+        {0 x3fe66600}
+        {xc15999c0 xc1500000}
+        {x44107333 x4472d99a}
+        {x415999c0 x41500000}}}     idem}
+     {tx x42dc0000 x444858be x4470dc2b}
+     {a osw x41200000 osf 0 str 1 spx x44700000 spy x44070000 sb 1 ltn x42dc0000 ltm x42dc0000 tt x40800000}}}}}}
+  toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {960 540}
+  colorOverlay {0 0 0 0}
+  lifetime_type "all frames"
+  lifetime_start 110
+  lifetime_end 110
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint1
+  xpos 2710
+  ypos -172
+ }
+ STMap {
+  inputs 2
+  channels rgb
+  uv rgb
+  maskChannel -rgba.alpha
+  name STMap2
+  xpos 2710
+  ypos 116
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy12
+  xpos 2587
+  ypos 116
+ }
+ Premult {
+  name Premult3
+  xpos 2587
+  ypos 186
+ }
+push $N4e856a40
+ ML_DistanceSelect_2dLocator {
+  name ML_DistanceSelect_2dLocator7
+  xpos 2774
+  ypos 318
+  in_1 uPointWorld
+  location {763.5 1068}
+  color {349.8088684 104.7111969 33.09754944 1}
+  color_2 {0.91 27.8 55.3 1}
+  radius 92.5
+  multiply 1.68
+  gamma 2.65
+ }
+push $N4e856a40
+ Expression {
+  channel0 rgba
+  expr0 "((uCryptoMaterial00.red == 0.0935318470001) ? uCryptoMaterial00.green : 0.0) + ((uCryptoMaterial00.blue == 0.0935318470001) ? uCryptoMaterial00.alpha : 0.0) + ((uCryptoMaterial01.red == 0.0935318470001) ? uCryptoMaterial01.green : 0.0) + ((uCryptoMaterial01.blue == 0.0935318470001) ? uCryptoMaterial01.alpha : 0.0) + ((uCryptoMaterial02.red == 0.0935318470001) ? uCryptoMaterial02.green : 0.0) + ((uCryptoMaterial02.blue == 0.0935318470001) ? uCryptoMaterial02.alpha : 0.0) + 0"
+  name want_ceilingBroken_sg
+  xpos 2772
+  ypos 215
+ }
+push $N48b03770
+ Constant {
+  inputs 0
+  color 1
+  name Constant1
+  xpos 3313
+  ypos -32
+ }
+ Card3D {
+  inputs 2
+  translate {245 119 35}
+  rotate {0 90 0}
+  scaling {10 10 10}
+  uniform_scale 6.3
+  name Card3D1
+  xpos 3103
+  ypos 175
+ }
+ Grade {
+  inputs 1+1
+  multiply 0
+  name Grade8
+  xpos 3103
+  ypos 271
+ }
+ Grade {
+  inputs 1+1
+  multiply 0
+  maskChannelMask rgba.red
+  name Grade10
+  xpos 3103
+  ypos 318
+ }
+ Grade {
+  inputs 1+1
+  multiply 0
+  maskChannelMask rgba.red
+  name Grade11
+  xpos 2688
+  ypos 450
+ }
+push $N4e856a40
+ Grade {
+  inputs 1+1
+  channels rgba
+  multiply 0
+  maskChannelMask rgba.red
+  name Grade9
+  xpos 2454
+  ypos 476
+ }
+ Crop {
+  box {{uBasic.bbox.x} {uBasic.bbox.y} {uBasic.bbox.r} {uBasic.bbox.t}}
+  name setBbox
+  xpos 2454
+  ypos 583
+ }
+ Premult {
+  name rebuildPremult
+  xpos 2454
+  ypos 616
+ }
+ Remove {
+  operation keep
+  channels rgba
+  channels2 uPointWorld
+  channels3 uNormalWorld
+  channels4 uPointCamera
+  name Remove1
+  xpos 2454
+  ypos 659
+ }
+ Output {
+  name Output1
+  xpos 2454
+  ypos 824
+ }
+push $N48b05660
+add_layer {uCryptoAsset uCryptoAsset.red uCryptoAsset.green uCryptoAsset.blue}
+add_layer {uCryptoAsset00 uCryptoAsset00.red uCryptoAsset00.green uCryptoAsset00.blue uCryptoAsset00.alpha}
+ cryptomatte_multi {
+  name cryptomatte_multi2
+  xpos -2912
+  ypos -2208
+  matteList ""
+  expression ""
+  keyedName ""
+  previewChannel uCryptoAsset
+  in00 uCryptoAsset00
+ }
+push $N48b01510
+add_layer {uCryptoMaterial uCryptoMaterial.red uCryptoMaterial.green uCryptoMaterial.blue}
+add_layer {uCryptoMaterial00 uCryptoMaterial00.red uCryptoMaterial00.green uCryptoMaterial00.blue uCryptoMaterial00.alpha}
+ cryptomatte_multi {
+  name cryptomatte_multi1
+  xpos -2700
+  ypos -2219
+  matteList want_ceilingBroken_sg
+  expression "((uCryptoMaterial00.red == 0.0935318470001) ? uCryptoMaterial00.green : 0.0) + ((uCryptoMaterial00.blue == 0.0935318470001) ? uCryptoMaterial00.alpha : 0.0) + ((uCryptoMaterial01.red == 0.0935318470001) ? uCryptoMaterial01.green : 0.0) + ((uCryptoMaterial01.blue == 0.0935318470001) ? uCryptoMaterial01.alpha : 0.0) + ((uCryptoMaterial02.red == 0.0935318470001) ? uCryptoMaterial02.green : 0.0) + ((uCryptoMaterial02.blue == 0.0935318470001) ? uCryptoMaterial02.alpha : 0.0) + 0"
+  keyedName want_ceilingBroken_sg
+  previewChannel uCryptoMaterial
+  in00 uCryptoMaterial00
+ }
+ Camera2 {
+  inputs 0
+  read_from_file true
+  translate {{curve x96 -74.36980669 -74.39329472 -74.41685114 -74.44047357 -74.46415967 -74.48790705 -74.51171336 -74.53557651 -74.55949357 -74.58346245 -74.60748078 -74.63154622 -74.65565637 -74.7040014 -74.72823154 -74.75249694 -74.77679524 -74.80112407 -74.82548135 -74.84986413 -74.87427035 -74.89869764 -74.92314362 -74.94760594 -74.97208222 -74.9965701 -75.02106722 -75.0455712 -75.07007969 -75.09459032 -75.11910071 -75.1436088 -75.16811163 -75.19260714 -75.21709295 -75.24156671 -75.26602603 -75.31489193 -75.33929378 -75.36367174 -75.38802344 -75.41234651 -75.43663889 -75.46089762 -75.48512062 -75.50930554 -75.53345001 -75.55755165 -75.58160811 -75.60561702 -75.62957601 -75.65348271 -75.67733476 -75.70112979 -75.72486545 -75.74853963 -75.77214942 -75.79569272 -75.81916718 -75.84257042 -75.86590008 -75.9123292 -75.93542393 -75.95843561 -75.98136188 -76.00420038 -76.026949 -76.04960484 -76.07216581 -76.09462954 -76.11699365 -76.1392558 -76.1614136 -76.1834647 -76.20540673 -76.22723732 -76.24895411 -76.27055472 -76.2920368 -76.31339824 -76.33463614 -76.35574842 -76.37673269 -76.39758659 -76.41830776 -76.45934244 -76.47965122 -76.4998178 -76.51984269 -76.53975724 -76.55952962 -76.57910605 -76.59843346 -76.61745855 -76.63612799 -76.65438849 -76.67218674 -76.68946942 -76.70618324 -76.72227488 -76.73769102 -76.75237836 -76.76628358 -76.77935336 -76.7915344 -76.80277337 -76.81301697 -76.82221188 -76.83030479 -76.84297152 -76.84743858 -76.85059043 -76.85237378 -76.84993359 -76.80369825 -76.76418419 -76.74675883 -76.73409745 -76.72635338 -76.72371529 -76.74309003 -76.78987795 -76.84701365 -76.89741273 -76.92397407 -76.92358495 -76.91846578 -76.91033577 -76.900075 -76.88856379 -76.87668271 -76.86531252 -76.85533411 -76.84307681 -76.84254819 -76.84604333 -76.85217602 -76.85943848 -76.86632292 -76.87132155 -76.87296391 -76.87296997 -76.87297521 -76.87297971 -76.87298352 -76.87298669 -76.87298929 -76.87299137 -76.87299298 -76.87299419 -76.87299505 -76.87299562 -76.87299596 -76.87299612 -76.87299616} {curve x96 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97170905 14.97243608 14.97456602 14.97802187 14.98272632 14.98860169 14.99556995 15.00355266 15.01247106 15.02224595 15.03279779 15.04404665 15.05591224 15.0683139 15.08117064 15.09440112 15.10792371 15.12165648 15.14942391 15.1632932 15.17704263 15.1905893 15.20044338 15.16115619 15.14384733 15.1788935 15.2323733 15.2834941 15.31146298 15.30361966 15.27104225 15.22880911 15.19204026 15.17558405 15.18132684 15.18856472 15.19627173 15.20421052 15.21214465 15.21983849 15.22705706 15.23356595 15.24351908 15.24659459 15.2492243 15.25166066 15.2538967 15.25592485 15.2577371 15.25932565 15.26073138 15.26199437 15.2631298 15.26415287 15.26507877 15.26592267 15.26669978 15.26742527 15.26811434 15.26878218 15.26944398 15.27011492 15.2708102 15.271545} {curve x96 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531093496 2.531349851 2.535273031 2.53732774 2.527499131 2.504689305 2.471183342 2.429266324 2.370688731 2.29541151 2.218035431 2.153161268 2.115389792 2.104699376 2.09675042 2.090446587 2.085597139 2.082011336 2.079498441 2.077867714 2.076928418 2.076361159 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398 2.076353398}}
+  rotate {{curve x96 -0.2221016586 -0.2293885946 -0.2324751019 -0.230181098 -0.2219510972 -0.2073182166 -0.1859020293 -0.1574123204 -0.1216453314 -0.07863262296 -0.03330007195 0.01145231724 0.05501961708 0.1364713311 0.1734439731 0.2074080706 0.2380596399 0.2651540637 0.2885075212 0.3079966307 0.3235595226 0.3351929784 0.3429558277 0.3469662666 0.3473922014 0.3440111876 0.3366122246 0.3251538277 0.3096202612 0.2901960611 0.26702106 0.2401140332 0.2094946504 0.1751847267 0.1372092962 0.09559553862 0.05037206411 -0.05077716708 -0.1066328287 -0.1657489836 -0.2208181322 -0.2682782114 -0.3081689179 -0.3405763507 -0.3656443655 -0.3835667074 -0.3945908546 -0.3990167677 -0.3971969783 -0.3895381093 -0.3764978349 -0.3585882783 -0.3363737762 -0.3104701638 -0.2815481722 -0.2504684329 -0.2224584818 -0.1998403966 -0.1825691164 -0.1705726683 -0.1637524366 -0.1651112437 -0.172958672 -0.1853186488 -0.2019583583 -0.2226174474 -0.2470103502 -0.2748224437 -0.305713892 -0.3393167853 -0.3750905693 -0.4075289369 -0.4338735938 -0.454020381 -0.4679635763 -0.4757993817 -0.4777223468 -0.4740260839 -0.4651039839 -0.451448679 -0.433652401 -0.4124066234 -0.3885015249 -0.362694025 -0.3355472088 -0.2795354426 -0.2542180717 -0.2323975861 -0.2133642733 -0.1964300573 -0.1809309125 -0.1662242711 -0.1501713042 -0.1307657948 -0.1064966477 0.3890212203 0.9214665242 1.01414172 1.087613195 1.149357531 1.205944865 1.139423488 0.7752110774 0.2717519416 -0.200578999 -0.4714486077 -0.4348899035 -0.2794151509 -0.04880628758 0.5717091377 0.9278208229 1.292463562 1.649228588 1.981747732 2.273693916 2.509104352 2.691940016 2.834950122 2.944472284 3.026426923 3.086756664 3.131429875 3.163331708 3.181061752 3.185769464 3.178641377 3.160879881 3.133701185 3.098337615 3.056035262 3.00805702 2.955681712 2.900290713 2.795257469 2.745362463 2.696019415 2.647946838 2.60213659 2.562001008 2.526276742 2.495586879 2.470439852 2.451241405 2.438275533 2.431712063 2.431607728 2.43790482 2.45043066 2.468813547 2.492571279 2.521233814 2.554327533 2.591374528 2.631890676 2.675391694} {curve x96 85.35065057 85.35163611 85.35231176 85.35264752 85.35262037 85.3522141 85.35141915 85.35023308 85.34866011 85.34671135 85.3444048 85.34176515 85.33882406 85.33219799 85.32878218 85.32577776 85.32328513 85.32138614 85.3201505 85.31963575 85.31988791 85.32094062 85.32281592 85.32552372 85.32906198 85.33341701 85.33856275 85.34446165 85.35106353 85.35830683 85.3661181 85.37441156 85.38308966 85.39204382 85.40115121 85.41027895 85.41928209 85.43627293 85.44391041 85.45072305 85.45650462 85.46103884 85.46409666 85.46543754 85.46480831 85.46235434 85.45886181 85.45455664 85.44963326 85.44427754 85.43866789 85.43297376 85.42735712 85.42197131 85.41696187 85.41246611 85.40861255 85.40552237 85.40330827 85.40207469 85.40191793 85.40517933 85.40874935 85.41370007 85.42008667 85.42795655 85.43734895 85.44829455 85.46081697 85.47492986 85.49064021 85.50794585 85.52683765 85.54729731 85.56929827 85.592807 85.61692618 85.63996992 85.66186782 85.68259734 85.70213666 85.72046867 85.73757536 85.75344395 85.76806471 85.79353144 85.80436955 85.8139431 85.82225545 85.82931032 85.83511598 85.83968324 85.84302519 85.84515809 85.84430425 85.08750649 84.33008042 84.4098935 84.63835135 84.96178653 85.32938439 85.76741444 86.34874979 86.95903862 87.47772238 87.783928 87.81803635 87.77984312 87.70390278 87.50573873 87.39273056 87.27465417 87.15468346 87.03600063 86.92179761 86.81526663 86.71936457 86.64588768 86.6002585 86.58128983 86.57645335 86.57409627 86.57408732 86.57597755 86.57956534 86.58464051 86.59098494 86.5983755 86.60658836 86.61540404 86.62461316 86.63402472 86.64347178 86.66207765 86.67109156 86.67973499 86.68785951 86.69512668 86.70109163 86.70574001 86.70795422 86.70151781 86.69471441 86.68765663 86.68045859 86.6732349 86.66610041 86.65917099 86.65256271 86.64639115 86.64077599 86.63583354 86.63168211 86.62848515 86.62659152} {curve x96 -0.1297146112 -0.1290427297 -0.1282195568 -0.127241683 -0.1261054277 -0.1248077691 -0.12334584 -0.1217169285 -0.1199186325 -0.1179489762 -0.1158060223 -0.1134879887 -0.1109939456 -0.1054728717 -0.1024446785 -0.09923757017 -0.09585131407 -0.09228629768 -0.08854314089 -0.08462219238 -0.08052496314 -0.07625238299 -0.07180607915 -0.0671877563 -0.06239970028 -0.057443887 -0.05233879685 -0.04729337096 -0.04237258136 -0.03757879138 -0.03291277587 -0.02837658823 -0.0239712745 -0.01969842315 -0.01555873156 -0.01155409813 -0.007684716582 -0.0003572106361 0.0030995965 0.006417161226 0.009595251083 0.01263285875 0.01553021669 0.01828608513 0.02090100646 0.02337412834 0.0257058382 0.02789590359 0.02994401455 0.03185086846 0.03361615539 0.03524072766 0.03672435284 0.0380681932 0.03927209377 0.04033729434 0.04126425982 0.04205345511 0.04270604253 0.04322333932 0.04360612035 0.04397247434 0.04395844936 0.04381533265 0.04354413152 0.04314624071 0.04262344241 0.04197790623 0.04121118188 0.04032466412 0.03930897713 0.03812599778 0.03677650094 0.03526405096 0.03359159231 0.0317629993 0.02978199124 0.02765151262 0.0253745079 0.02295469642 0.02039502263 0.01769858599 0.01486833096 0.01190712452 0.008830308914 0.002906733751 0.000109487772 -0.002581098676 -0.005167815089 -0.007653063536 -0.01003959477 -0.01232988834 -0.01463710236 -0.01706594497 -0.01761636282 0.8185014407 1.654235633 1.018946833 -0.497790653 -2.112315524 -3.041554478 -2.96522479 -2.57497802 -2.034365912 -1.481884679 -1.056384419 -0.8414975977 -0.675138873 -0.5319490078 -0.3103399674 -0.229594492 -0.1673075851 -0.1222701324 -0.09325584394 -0.07902299981 -0.07951565825 -0.1415924788 -0.2664564937 -0.4218003737 -0.5753862594 -0.6951150879 -0.7489007834 -0.7382914559 -0.7005152752 -0.6413851446 -0.5664806583 -0.4813825088 -0.3916724868 -0.302932888 -0.2207457519 -0.1506926858 -0.09835504017 -0.06931262043 -0.07240272615 -0.08212794757 -0.09369709344 -0.105292771 -0.1131528229 -0.1141191874 -0.115126863 -0.116193357 -0.1174188822 -0.1187213523 -0.1201071869 -0.1215652117 -0.1230856186 -0.1246577392 -0.1262705559 -0.1279140227 -0.1295779408 -0.1312513171 -0.132923063 -0.1345836815 -0.136219435 -0.1378098829}}
+  scaling {{curve x96 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} {curve x96 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1} {curve x96 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+  uniform_scale {{curve x96 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+  skew {{curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  pivot {{curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  focal {{curve x96 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21 21}}
+  haperture {{curve x96 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055 23.74900055}}
+  vaperture {{curve x96 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931 13.36465931}}
+  near {{curve x96 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1}}
+  far {{curve x96 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000 100000000}}
+  win_translate {{curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0} {curve x96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}}
+  focal_point {{curve x96 76.8898468 76.91256714 76.93534851 76.95819855 76.98110962 77.00408936 77.02710724 77.05019379 77.07333374 77.09651947 77.11975861 77.14303589 77.16635895 77.21313477 77.2365799 77.26005554 77.28356171 77.30710602 77.33067322 77.35426331 77.37788391 77.40151978 77.42517853 77.44884491 77.47254181 77.49623108 77.51993561 77.5436554 77.56737518 77.5911026 77.61482239 77.63854218 77.66225433 77.68596649 77.70967102 77.73335266 77.75702667 77.80432892 77.82794952 77.85154724 77.87512207 77.89866638 77.92218781 77.94567108 77.96912384 77.99254608 78.01591492 78.03924561 78.06253815 78.08578491 78.1089859 78.13213348 78.15522766 78.17827606 78.20124817 78.22418213 78.24703979 78.26983643 78.29257202 78.31523132 78.33782959 78.38278961 78.40516663 78.42744446 78.44965363 78.47177124 78.49380493 78.51574707 78.53759766 78.55935669 78.58102417 78.60258484 78.62405396 78.64540863 78.66666412 78.68781281 78.7088623 78.72977448 78.75058746 78.77128601 78.79186249 78.81230927 78.8326416 78.85284424 78.8729248 78.91268158 78.93236542 78.95189667 78.97130585 78.99060059 79.009758 79.02872467 79.04759216 79.06643677 79.08518219 79.1037674 79.12212372 79.14019012 79.15790558 79.17518616 79.19198608 79.20821381 79.22382355 79.23873901 79.25289917 79.26623535 79.27867889 79.29016113 79.30062103 79.31819916 79.32517242 79.33085632 79.33518219 79.33473969 79.28305054 79.24178314 79.23005676 79.22445679 79.2215271 79.21777344 79.2258606 79.25318909 79.28846741 79.32029724 79.33712006 79.33621216 79.3314209 79.3240509 79.314888 79.30470276 79.29427338 79.28440094 79.27583313 79.26576996 79.26584625 79.26973724 79.27615356 79.28363037 79.29068756 79.29588318 79.2977829 79.29805756 79.2983017 79.29853058 79.29872894 79.29891205 79.2990799 79.29923248 79.29936981 79.29949951 79.29962921 79.29975891 79.29988861 79.30001831 79.30016327}}
+  fstop {{curve x96 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2}}
+  file P:/projects/riseoftyrants_7841P/sequences/want/shots/wan0020//publish/cache/camera/renderCam/v003/alembic/wan0020_renderCam_cmra.abc
+  name Camera1
+  label "\[lrange \[split \[value file] /] 11 11]"
+  xpos 3411
+  ypos 329
+ }
+push $N7d1e3950
+ Viewer {
+  colour_sample_bbox {-0.3739583194 -0.5302083492 -0.3729166687 -0.5291666389}
+  input_process false
+  name Viewer1
+  xpos 620
+  ypos -9
+ }
+end_group

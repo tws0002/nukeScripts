@@ -1,0 +1,123 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Dot {
+ name Dot12
+ selected true
+ xpos 756
+ ypos 1123
+}
+set N59e37c60 [stack 0]
+OneView {
+ name OneView6
+ label main
+ selected true
+ xpos 312
+ ypos 1216
+ disable true
+}
+BurnIn {
+ name BurnIn1
+ selected true
+ xpos 312
+ ypos 1331
+ disable true
+}
+Write {
+ channels all
+ file P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal_v004/comp/jpeg/mag0100_comp_v004.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal_v003/comp/jpeg_proxy/mag0100_comp_v03.%04d.jpg
+ views {main}
+ file_type jpeg
+ checkHashOnRead false
+ afterFrameRender makeCurrent()
+ name comp
+ selected true
+ xpos 312
+ ypos 1355
+ disable true
+}
+push $N59e37c60
+OneView {
+ view Italian
+ name OneView8
+ label Italian
+ selected true
+ xpos 722
+ ypos 1223
+}
+Write {
+ channels all
+ file P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compItalian/exr/mag0100_compItalian_v004.%04d.exr
+ proxy P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compItalian/exr_proxy/mag0100_compItalian_v03.%04d.exr
+ views {Italian}
+ file_type exr
+ afterFrameRender makeCurrent()
+ name comp_Italian
+ selected true
+ xpos 722
+ ypos 1362
+}
+push $N59e37c60
+OneView {
+ view French
+ name OneView7
+ label French
+ selected true
+ xpos 531
+ ypos 1221
+}
+Write {
+ channels all
+ file P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compFrench/exr/mag0100_compFrench_v004.%04d.exr
+ proxy P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compFrench/exr_proxy/mag0100_compFrench_v03.%04d.exr
+ views {French}
+ file_type exr
+ afterFrameRender makeCurrent()
+ name comp_French
+ selected true
+ xpos 531
+ ypos 1365
+}
+push $N59e37c60
+OneView {
+ view Korean
+ name OneView9
+ label Korean
+ selected true
+ xpos 917
+ ypos 1226
+}
+Write {
+ channels all
+ file P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compKorean/exr/mag0100_compKorean_v004.%04d.exr
+ proxy P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compKorean/exr_proxy/mag0100_compKorean_v03.%04d.exr
+ views {Korean}
+ file_type exr
+ afterFrameRender makeCurrent()
+ name comp_Korean
+ selected true
+ xpos 917
+ ypos 1352
+}
+push $N59e37c60
+OneView {
+ view Spanish
+ name OneView10
+ label Spanish
+ selected true
+ xpos 1094
+ ypos 1220
+}
+Write {
+ channels all
+ file P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compSpanish/exr/mag0100_compSpanish_v004.%04d.exr
+ proxy P:/projects/supclashspring_7606P/sequences/magnificent60/shots/mag0100/steps/composite/_renders/nuke/mag0100_compositeLocal/compSpanish/exr_proxy/mag0100_compSpanish_v03.%04d.exr
+ views {Spanish}
+ file_type exr
+ afterFrameRender makeCurrent()
+ name comp_Spanish
+ selected true
+ xpos 1094
+ ypos 1354
+}

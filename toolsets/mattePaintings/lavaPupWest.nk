@@ -1,0 +1,1166 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+Group {
+ inputs 0
+ name lavaPupWest
+ selected true
+ xpos 760
+ ypos -177
+ postage_stamp true
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode10
+  tile_color 0x68685800
+  label sunGrad
+  note_font_size 18
+  xpos -575
+  ypos -742
+  bdwidth 150
+  bdheight 415
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode11
+  tile_color 0x68685800
+  label wispsA
+  note_font_size 18
+  xpos -426
+  ypos -742
+  bdwidth 150
+  bdheight 415
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode12
+  tile_color 0xa8a89800
+  label wispsB
+  note_font_size 18
+  xpos -276
+  ypos -742
+  bdwidth 150
+  bdheight 415
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode13
+  tile_color 0x68685800
+  label stars
+  note_font_size 18
+  xpos -126
+  ypos -742
+  bdwidth 150
+  bdheight 415
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode14
+  tile_color 0xa8a89800
+  label sun
+  note_font_size 18
+  xpos 24
+  ypos -742
+  bdwidth 150
+  bdheight 415
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  tile_color 0xa8a89800
+  label BG
+  note_font_size 18
+  xpos -725
+  ypos -742
+  bdwidth 150
+  bdheight 415
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/photoshop/LP_MP_west_Large.exr
+  origset true
+  name Read17
+  xpos -814
+  ypos -864
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud0/exr/lavaPupWest_cloud0_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud0/exr_proxy/lavaPupWest_cloud0_v001.%04d.exr
+  name Read49
+  xpos -940
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult3
+  xpos -940
+  ypos -982
+ }
+set Ndc69c170 [stack 0]
+ Transform {
+  center {6630 1540}
+  name Transform1
+  xpos -940
+  ypos -945
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud32/exr/lavaPupWest_cloud32_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud32/exr_proxy/lavaPupWest_cloud32_v001.%04d.exr
+  name Read81
+  xpos 2580
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult35
+  xpos 2580
+  ypos -982
+ }
+ Transform {
+  center {4290 3780}
+  name Transform33
+  xpos 2580
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud31/exr/lavaPupWest_cloud31_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud31/exr_proxy/lavaPupWest_cloud31_v001.%04d.exr
+  name Read80
+  xpos 2473
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult34
+  xpos 2473
+  ypos -982
+ }
+ Transform {
+  center {5020 3670}
+  name Transform32
+  xpos 2473
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud30/exr/lavaPupWest_cloud30_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud30/exr_proxy/lavaPupWest_cloud30_v001.%04d.exr
+  name Read79
+  xpos 2360
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult33
+  xpos 2360
+  ypos -982
+ }
+ Transform {
+  center {6980 3670}
+  name Transform31
+  xpos 2360
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud29/exr/lavaPupWest_cloud29_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud29/exr_proxy/lavaPupWest_cloud29_v001.%04d.exr
+  name Read78
+  xpos 2250
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult32
+  xpos 2250
+  ypos -982
+ }
+ Transform {
+  center {6560 3350}
+  name Transform30
+  xpos 2250
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud27/exr/lavaPupWest_cloud27_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud27/exr_proxy/lavaPupWest_cloud27_v001.%04d.exr
+  name Read76
+  xpos 2030
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult30
+  xpos 2030
+  ypos -982
+ }
+ Transform {
+  center {1250 2290}
+  name Transform28
+  xpos 2030
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud28/exr/lavaPupWest_cloud28_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud28/exr_proxy/lavaPupWest_cloud28_v001.%04d.exr
+  name Read77
+  xpos 2142
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult31
+  xpos 2142
+  ypos -982
+ }
+ Transform {
+  center {1570 1520}
+  name Transform29
+  xpos 2142
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud25/exr/lavaPupWest_cloud25_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud25/exr_proxy/lavaPupWest_cloud25_v001.%04d.exr
+  name Read74
+  xpos 1810
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult28
+  xpos 1810
+  ypos -982
+ }
+ Transform {
+  center {1170 2080}
+  name Transform26
+  xpos 1810
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud26/exr/lavaPupWest_cloud26_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud26/exr_proxy/lavaPupWest_cloud26_v001.%04d.exr
+  name Read75
+  xpos 1920
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult29
+  xpos 1920
+  ypos -982
+ }
+ Transform {
+  center {1470 2120}
+  name Transform27
+  xpos 1920
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud24/exr/lavaPupWest_cloud24_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud24/exr_proxy/lavaPupWest_cloud24_v001.%04d.exr
+  name Read73
+  xpos 1700
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult27
+  xpos 1700
+  ypos -982
+ }
+ Transform {
+  center {1470 2800}
+  name Transform25
+  xpos 1700
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud22/exr/lavaPupWest_cloud22_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud22/exr_proxy/lavaPupWest_cloud22_v001.%04d.exr
+  name Read71
+  xpos 1480
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult25
+  xpos 1480
+  ypos -982
+ }
+ Transform {
+  center {2560 3220}
+  name Transform23
+  xpos 1480
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud23/exr/lavaPupWest_cloud23_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud23/exr_proxy/lavaPupWest_cloud23_v001.%04d.exr
+  name Read72
+  xpos 1590
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult26
+  xpos 1590
+  ypos -982
+ }
+ Transform {
+  center {7840 3040}
+  name Transform24
+  xpos 1590
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud20/exr/lavaPupWest_cloud20_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud20/exr_proxy/lavaPupWest_cloud20_v001.%04d.exr
+  name Read69
+  xpos 1260
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult23
+  xpos 1260
+  ypos -982
+ }
+ Transform {
+  center {10860 3200}
+  name Transform21
+  xpos 1260
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud21/exr/lavaPupWest_cloud21_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud21/exr_proxy/lavaPupWest_cloud21_v001.%04d.exr
+  name Read70
+  xpos 1370
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult24
+  xpos 1370
+  ypos -982
+ }
+ Transform {
+  center {8740 2900}
+  name Transform22
+  xpos 1370
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud18/exr/lavaPupWest_cloud18_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud18/exr_proxy/lavaPupWest_cloud18_v001.%04d.exr
+  name Read67
+  xpos 1040
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult21
+  xpos 1040
+  ypos -982
+ }
+ Transform {
+  center {3860 2550}
+  name Transform19
+  xpos 1040
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud19/exr/lavaPupWest_cloud19_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud19/exr_proxy/lavaPupWest_cloud19_v001.%04d.exr
+  name Read68
+  xpos 1150
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult22
+  xpos 1150
+  ypos -982
+ }
+ Transform {
+  center {9200 1800}
+  name Transform20
+  xpos 1150
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud15/exr/lavaPupWest_cloud15_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud15/exr_proxy/lavaPupWest_cloud15_v001.%04d.exr
+  name Read64
+  xpos 710
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult18
+  xpos 710
+  ypos -982
+ }
+ Transform {
+  center {11490 1710}
+  name Transform16
+  xpos 710
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud16/exr/lavaPupWest_cloud16_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud16/exr_proxy/lavaPupWest_cloud16_v001.%04d.exr
+  name Read65
+  xpos 820
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult19
+  xpos 820
+  ypos -982
+ }
+ Transform {
+  center {8210 2080}
+  name Transform17
+  xpos 820
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud17/exr/lavaPupWest_cloud17_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud17/exr_proxy/lavaPupWest_cloud17_v001.%04d.exr
+  origset true
+  name Read66
+  xpos 930
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult20
+  xpos 930
+  ypos -982
+ }
+ Transform {
+  center {8520 2640}
+  name Transform18
+  xpos 930
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud12/exr/lavaPupWest_cloud12_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud12/exr_proxy/lavaPupWest_cloud12_v001.%04d.exr
+  name Read61
+  xpos 380
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult15
+  xpos 380
+  ypos -982
+ }
+ Transform {
+  center {3705 2155}
+  name Transform13
+  xpos 380
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud13/exr/lavaPupWest_cloud13_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud13/exr_proxy/lavaPupWest_cloud13_v001.%04d.exr
+  name Read62
+  xpos 492
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult16
+  xpos 492
+  ypos -982
+ }
+ Transform {
+  center {10450 2000}
+  name Transform14
+  xpos 492
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud14/exr/lavaPupWest_cloud14_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud14/exr_proxy/lavaPupWest_cloud14_v001.%04d.exr
+  name Read63
+  xpos 600
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult17
+  xpos 600
+  ypos -982
+ }
+ Transform {
+  center {9445 1395}
+  name Transform15
+  xpos 600
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud9/exr/lavaPupWest_cloud9_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud9/exr_proxy/lavaPupWest_cloud9_v001.%04d.exr
+  origset true
+  name Read58
+  xpos 50
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult12
+  xpos 50
+  ypos -982
+ }
+ Transform {
+  center {9720 2855}
+  name Transform10
+  xpos 47
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud10/exr/lavaPupWest_cloud10_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud10/exr_proxy/lavaPupWest_cloud10_v001.%04d.exr
+  name Read59
+  xpos 160
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult13
+  xpos 160
+  ypos -982
+ }
+ Transform {
+  center {7950 2420}
+  name Transform11
+  xpos 160
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud11/exr/lavaPupWest_cloud11_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud11/exr_proxy/lavaPupWest_cloud11_v001.%04d.exr
+  name Read60
+  xpos 270
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult14
+  xpos 270
+  ypos -982
+ }
+ Transform {
+  center {6000 2500}
+  name Transform12
+  xpos 270
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud6/exr/lavaPupWest_cloud6_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud6/exr_proxy/lavaPupWest_cloud6_v001.%04d.exr
+  name Read55
+  xpos -280
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult9
+  xpos -280
+  ypos -982
+ }
+ Transform {
+  center {680 1425}
+  name Transform7
+  xpos -280
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud7/exr/lavaPupWest_cloud7_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud7/exr_proxy/lavaPupWest_cloud7_v001.%04d.exr
+  name Read56
+  xpos -170
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult10
+  xpos -170
+  ypos -982
+ }
+ Transform {
+  center {2760 1575}
+  name Transform8
+  xpos -170
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud8/exr/lavaPupWest_cloud8_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud8/exr_proxy/lavaPupWest_cloud8_v001.%04d.exr
+  name Read57
+  xpos -60
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult11
+  xpos -60
+  ypos -982
+ }
+ Transform {
+  center {6915 1750}
+  name Transform9
+  xpos -60
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud2/exr/lavaPupWest_cloud2_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud2/exr_proxy/lavaPupWest_cloud2_v001.%04d.exr
+  name Read51
+  xpos -720
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult5
+  xpos -720
+  ypos -982
+ }
+ Transform {
+  center {4145 1640}
+  name Transform3
+  xpos -720
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud3/exr/lavaPupWest_cloud3_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud3/exr_proxy/lavaPupWest_cloud3_v001.%04d.exr
+  name Read52
+  xpos -610
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult6
+  xpos -610
+  ypos -982
+ }
+ Transform {
+  center {7720 1670}
+  name Transform4
+  xpos -610
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud4/exr/lavaPupWest_cloud4_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud4/exr_proxy/lavaPupWest_cloud4_v001.%04d.exr
+  name Read53
+  xpos -500
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult7
+  xpos -500
+  ypos -982
+ }
+ Transform {
+  center {6100 1305}
+  name Transform5
+  xpos -500
+  ypos -958
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud5/exr/lavaPupWest_cloud5_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud5/exr_proxy/lavaPupWest_cloud5_v001.%04d.exr
+  name Read54
+  xpos -390
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult8
+  xpos -390
+  ypos -982
+ }
+ Transform {
+  center {6595 1375}
+  name Transform6
+  xpos -390
+  ypos -958
+ }
+push 0
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud1/exr/lavaPupWest_cloud1_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/_renders/nuke/lavaPupWest_mattepainting_v001/cloud1/exr_proxy/lavaPupWest_cloud1_v001.%04d.exr
+  origset true
+  name Read50
+  xpos -830
+  ypos -1066
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Premult {
+  name Premult4
+  xpos -830
+  ypos -982
+ }
+ Transform {
+  center {4590 1470}
+  name Transform2
+  xpos -830
+  ypos -958
+ }
+push $Ndc69c170
+ Merge2 {
+  inputs 33+1
+  name Merge1
+  xpos 2580
+  ypos -655
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupWest/steps/mattePainting/photoshop/LP_MP_west_Small.exr
+  origset true
+  name Read16
+  xpos -695
+  ypos -861
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Reformat {
+  type scale
+  scale 4
+  name Reformat1
+  xpos -695
+  ypos -761
+ }
+ Dot {
+  name Dot15
+  xpos -661
+  ypos -663
+ }
+set Nc9d3b6c0 [stack 0]
+ Dot {
+  name Dot16
+  xpos -511
+  ypos -663
+ }
+set Nc9d3ba30 [stack 0]
+ Dot {
+  name Dot17
+  xpos -362
+  ypos -663
+ }
+set Nc9d3bda0 [stack 0]
+ Dot {
+  name Dot18
+  xpos -212
+  ypos -663
+ }
+set Nc9d3c110 [stack 0]
+ Dot {
+  name Dot19
+  xpos -62
+  ypos -663
+ }
+set Nc9d3c480 [stack 0]
+ Dot {
+  name Dot20
+  xpos 88
+  ypos -663
+ }
+add_layer {sun sun.red sun.green sun.blue sun.alpha}
+ Shuffle {
+  in sun
+  name Shuffle11
+  label sun
+  xpos 54
+  ypos -597
+ }
+ Crop {
+  box {{4460*(width/12000)} {2200*(width/12000)} {6700*(width/12000)} {625*(width/12000)}}
+  name Crop12
+  xpos 54
+  ypos -527
+ }
+push $Nc9d3c480
+add_layer {stars stars.red stars.green stars.blue stars.alpha}
+ Shuffle {
+  in stars
+  name Shuffle12
+  label stars
+  xpos -96
+  ypos -597
+ }
+ Crop {
+  box {{0*(width/12000)} {5000*(width/12000)} {12000*(width/12000)} {1190*(width/12000)}}
+  name Crop13
+  xpos -96
+  ypos -527
+ }
+push $Nc9d3c110
+add_layer {wispsB wispsB.red wispsB.green wispsB.blue wispsB.alpha}
+ Shuffle {
+  in wispsB
+  name Shuffle13
+  label wispsB
+  xpos -246
+  ypos -597
+ }
+ Crop {
+  box {{410*(width/12000)} {4340*(width/12000)} {12000*(width/12000)} {1110*(width/12000)}}
+  name Crop14
+  xpos -246
+  ypos -526
+ }
+push $Nc9d3bda0
+add_layer {wispsA wispsA.red wispsA.green wispsA.blue wispsA.alpha}
+ Shuffle {
+  in wispsA
+  name Shuffle14
+  label wispsA
+  xpos -396
+  ypos -597
+ }
+ Crop {
+  box {{2280*(width/12000)} {3880*(width/12000)} {11600*(width/12000)} {1100*(width/12000)}}
+  name Crop15
+  xpos -396
+  ypos -527
+ }
+push $Nc9d3ba30
+add_layer {sunGrad sunGrad.red sunGrad.green sunGrad.blue sunGrad.alpha}
+ Shuffle {
+  in sunGrad
+  name Shuffle15
+  label sunGrad
+  xpos -545
+  ypos -606
+ }
+ Crop {
+  box {{3000*(width/12000)} {2175*(width/12000)} {8250*(width/12000)} {925*(width/12000)}}
+  name Crop16
+  xpos -545
+  ypos -527
+ }
+push $Nc9d3b6c0
+add_layer {BG BG.red BG.green BG.blue BG.alpha}
+ Shuffle {
+  in BG
+  name Shuffle16
+  label BG
+  xpos -695
+  ypos -608
+ }
+ Crop {
+  box {{0*(width/12000)} {5000*(width/12000)} {12000*(width/12000)} {930*(width/12000)}}
+  name Crop17
+  xpos -695
+  ypos -530
+ }
+ Dot {
+  name Dot23
+  xpos -661
+  ypos -383
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge2
+  note_font "Bitstream Vera Sans"
+  xpos -545
+  ypos -387
+  maskChannelInput none
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge9
+  note_font "Bitstream Vera Sans"
+  xpos -396
+  ypos -387
+  maskChannelInput none
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge10
+  note_font "Bitstream Vera Sans"
+  xpos -246
+  ypos -387
+  maskChannelInput none
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge11
+  note_font "Bitstream Vera Sans"
+  xpos -96
+  ypos -387
+  operation screen
+  maskChannelInput none
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge12
+  note_font "Bitstream Vera Sans"
+  xpos 54
+  ypos -387
+  operation screen
+  maskChannelInput none
+ }
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos 410
+  ypos -387
+ }
+ Output {
+  name Output1
+  xpos 410
+  ypos -309
+ }
+end_group

@@ -1,0 +1,253 @@
+#! C:/Temp/psyop_cache/apps/nuke/win64/8.0v5/nuke-8.0.v5.dll -nx
+version 8.0 v5
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="1920" y="0" w="1936" h="1170" screen="0">
+        <splitter orientation="1">
+            <split size="40"/>
+            <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                <page id="Toolbar.1"/>
+            </dock>
+            <split size="1876"/>
+            <splitter orientation="1">
+                <split size="583"/>
+                <dock id="" activePageId="Properties.1">
+                    <page id="Properties.1"/>
+                </dock>
+                <split size="1289"/>
+                <dock id="" activePageId="DAG.1">
+                    <page id="DAG.1"/>
+                    <page id="DopeSheet.1"/>
+                    <page id="Curve Editor.1"/>
+                </dock>
+            </splitter>
+        </splitter>
+    </window>
+    <window x="0" y="0" w="1920" h="1200" fullscreen="1" screen="1">
+        <splitter orientation="2">
+            <split size="1200"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name P:/projects/supclashspring_7606P/code/primary/addons/nuke/ToolSets/templates/shotSetup_v01.nk
+ luts {linear {}
+   sRGB {}
+   rec709 {}
+   Cineon {}
+   Gamma1.8 {}
+   Gamma2.2 {}
+   Panalog {}
+   REDLog {}
+   ViperLog {}
+   AlexaV3LogC {}
+   PLogLin {}
+   SLog {}
+   SLog1 {}
+   REDSpace {}
+   Gamma2.4 {"pow(x,2.4) "}
+   SLog2 {"(x>=0.030001222851889303) ? ((219.0*(pow(10.0, ((x-0.616596-0.04)/0.432699))-0.037584)/155.0)*0.9) : ((x-0.030001222851889303)*0.28258064516129*0.9) "}
+   SLog3 {"(x>=171.2102946929/1023.0) ? (pow(10.0, ((x*1023.0-420.0)/261.5))*(0.18+0.01))-0.01 : ((x*1023.0-95.0)*0.01125/(171.2102946929-95.0)) "}
+   CLog {"(pow(10,(x - 0.0730597)/0.529136) - 1)/10.1596 "}
+   Protune {"(pow(113.0, x)-1.0)/112.0 "}}
+ addUserKnob {20 User}
+ addUserKnob {6 ocio_viewer_use_metadata l "OCIO Viewer Use Metadata" -STARTLINE}
+ addUserKnob {20 on_demand_localization_tab l Localization}
+ addUserKnob {4 localize_on_demand l "Localize On Demand" M {Enabled Disabled}}
+ addUserKnob {1 localize_formats l "Localize Formats"}
+ localize_formats "dpx exr jpg psd tif iff tiff jpeg hdr png gif cin"
+}
+Dot {
+ inputs 0
+ name Dot1
+ xpos 1114
+ ypos 1828
+}
+CheckerBoard2 {
+ inputs 0
+ name CheckerBoard1
+ xpos 1290
+ ypos 1547
+}
+Card2 {
+ control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+ name ml_AutoplaceCard
+ xpos 1290
+ ypos 1687
+ addUserKnob {20 Autoplace}
+ addUserKnob {22 autoplace t "run script to place camera" T "import mlPipeline\nfrom mlPipeline import ml_cardAutoplace\nreload(mlPipeline.ml_cardAutoplace)\nmlPipeline.ml_cardAutoplace.placeCard()" +STARTLINE}
+ addUserKnob {7 distance R 0 10000}
+ distance 1000
+ addUserKnob {1 camName}
+ camName Camera1
+}
+push 0
+ScanlineRender {
+ inputs 3
+ motion_vectors_type distance
+ MB_channel forward
+ name ScanlineRender2
+ xpos 1290
+ ypos 1825
+}
+VectorBlur {
+ uv forward
+ offset 0
+ name VectorBlur1
+ xpos 1290
+ ypos 1896
+}
+Dot {
+ name Dot3
+ xpos 1690
+ ypos 1905
+}
+set N33485c80 [stack 0]
+push $N33485c80
+Dot {
+ inputs 0
+ name Dot6
+ xpos 2533
+ ypos 564
+}
+Dot {
+ name Dot2
+ xpos 2533
+ ypos 1545
+}
+Dot {
+ inputs 0
+ name Dot5
+ xpos 2228
+ ypos 572
+}
+Dot {
+ name Dot4
+ xpos 2228
+ ypos 1448
+}
+Dot {
+ inputs 0
+ name Dot7
+ xpos 1924
+ ypos 583
+}
+Merge2 {
+ inputs 2
+ also_merge all
+ name Merge3
+ xpos 1890
+ ypos 1445
+}
+Merge2 {
+ inputs 2
+ also_merge all
+ name Merge4
+ xpos 1890
+ ypos 1545
+}
+chromaLumaLightwrap {
+ inputs 2
+ name chromaLumaLightwrap1
+ xpos 1890
+ ypos 1745
+}
+Merge2 {
+ inputs 2
+ operation under
+ also_merge all
+ name Merge5
+ xpos 1890
+ ypos 1902
+}
+multiKeepChannels {
+ name multiKeepChannels1
+ xpos 1890
+ ypos 1936
+ channels rgba
+ channels2 none
+ channels3 none
+ channels4 none
+ channels_1 none
+ channels2_1 none
+ channels3_1 none
+ channels4_1 none
+ channels_2 none
+ channels2_2 none
+ channels3_2 none
+ channels4_2 none
+ channels_3 none
+ channels2_3 none
+ channels3_3 none
+ channels4_3 none
+ channels_4 none
+ channels2_4 none
+ channels3_4 none
+ channels4_4 none
+}
+LumaGrain2 {
+ name LumaGrain2_1
+ xpos 1890
+ ypos 1975
+}
+ModifyMetaData {
+ metadata {
+  {set frame "\[frame]"}
+ }
+ name ModifyMetaData1
+ xpos 1890
+ ypos 2006
+}
+Crop {
+ box {0 0 1920 1080}
+ crop false
+ name Crop1
+ xpos 1890
+ ypos 2039
+}
+OCIODisplay {
+ colorspace Working/linear
+ display PC
+ view RRT
+ key1 PROJECT
+ value1 "\[python -execlocal \{import os;m = nuke.thisNode().metadata();ret = m\['ocio/project'] if m and 'ocio/project' in m.keys() else 'None' if not 'PROJECT' in os.environ.keys() else os.environ\['PROJECT']\}]"
+ key2 SEQUENCE
+ value2 "\[python -execlocal \{import os;m = nuke.thisNode().metadata();ret = m\['ocio/sequence'] if m and 'ocio/sequence' in m.keys() else 'None' if not 'SEQUENCE' in os.environ.keys() else os.environ\['SEQUENCE']\}]"
+ key3 SHOT
+ value3 "\[python -execlocal \{import os;m = nuke.thisNode().metadata();ret = m\['ocio/shot'] if m and 'ocio/shot' in m.keys() else 'None' if not 'SHOT' in os.environ.keys() else os.environ\['SHOT']\}]"
+ key4 ASSET
+ value4 "\[python -execlocal \{import os;m = nuke.thisNode().metadata();ret = m\['ocio/asset'] if m and 'ocio/asset' in m.keys() else 'None' if not 'ASSET' in os.environ.keys() else os.environ\['ASSET']\}]"
+ name OCIODisplay1
+ xpos 1890
+ ypos 2117
+}
+Colorspace {
+ colorspace_in sRGB
+ name Colorspace1
+ xpos 1890
+ ypos 2151
+}
+Write {
+ channels all
+ file P:/projects/bloodbornehunt_7526P/sequences/bbh30/shots/s0010/steps/composite/_renders/nuke/s0010_composite_v020/comp/exr/s0010_comp_v020.%04d.exr
+ file_type exr
+ metadata "all metadata"
+ name comp
+ xpos 1890
+ ypos 2271
+}

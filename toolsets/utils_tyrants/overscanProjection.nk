@@ -1,0 +1,95 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push 0
+Camera2 {
+ inputs 0
+ translate {109.9857357 39.81240074 -544.0541394}
+ rotate {0.1290693259 160.2344069 -0.0003141835608}
+ focal 23.33324
+ haperture 23.74900055
+ vaperture 13.35881233
+ near 1
+ win_scale {0 1}
+ focal_point 546.713562
+ fstop 2
+ file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0040//publish/cache/camera/renderCam/v004/alembic/kyo0040_renderCam_cmra.abc
+ name Camera2
+ label "\[lrange \[split \[value file] /] 11 11]"
+ selected true
+ xpos 162
+ ypos -236
+}
+push $cut_paste_input
+Dot {
+ name Dot2
+ selected true
+ xpos 456
+ ypos -169
+}
+set N47593cb0 [stack 0]
+Expression {
+ expr0 x/width
+ expr1 y/height
+ expr2 0
+ name Expression1
+ selected true
+ xpos 422
+ ypos -115
+}
+push 0
+push $N47593cb0
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+Shuffle {
+ in uPointWorld
+ name Shuffle1
+ label "\[value in]"
+ selected true
+ xpos 300
+ ypos -178
+}
+pointCameraProjection {
+ inputs 4
+ name pointCameraProjection1
+ selected true
+ xpos 300
+ ypos -65
+ surface_point rgb
+ surface_alpha none
+ projected_matte none
+ imageAspect 1.777777778
+ projection_occlusion 1
+ shadow_point rgba
+ surface_normal none
+ exrcam 0
+ focal "\[value parent.\[full_name \[node this]].Shuffle2.focal]"
+ filmbackHeight "\[value parent.\[full_name \[node this]].Shuffle2.v_apert]"
+}
+Read {
+ inputs 0
+ file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0040/steps/lighting/_renders/maya/kyo0040_lightingProjTest_v001/SET_FG_Beauty/exr/beauty/kyo0040_SET_FG_Beauty_beauty.0100.exr
+ format "2304 1296 0 0 2304 1296 1 "
+ origset true
+ name Read16
+ selected true
+ xpos 157
+ ypos -15
+}
+STMap {
+ inputs 2
+ channels rgb
+ uv rgb
+ filter Mitchell
+ name STMap1
+ selected true
+ xpos 300
+ ypos 15
+}
+push $cut_paste_input
+Merge2 {
+ inputs 2+1
+ maskChannelMask rgba.red
+ name Merge5
+ selected true
+ xpos 538
+ ypos 15
+}

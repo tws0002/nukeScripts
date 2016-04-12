@@ -1,0 +1,88 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/design/elements/mattepainting/extended/clashxmas_southbeach_mp_v004extended_noSky.png
+ format "8000 3200 0 0 8000 3200 1 "
+ origset true
+ on_error "nearest frame"
+ name Read10
+ selected true
+ xpos -1798
+ ypos 609
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+ addUserKnob {43 description l Description}
+}
+Premult {
+ name Premult1
+ selected true
+ xpos -1798
+ ypos 719
+}
+Radial {
+ invert true
+ area {-290 1120 9408 4400}
+ name Radial1
+ selected true
+ xpos -1798
+ ypos 766
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/design/elements/mattepainting/extended/clashxmas_southbeach_mp_v004extended.jpg
+ format "8000 3200 0 0 8000 3200 1 "
+ origset true
+ on_error "nearest frame"
+ name Read12
+ selected true
+ xpos -1656
+ ypos 610
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+ addUserKnob {43 description l Description}
+}
+Grade {
+ inputs 1+1
+ white 1.44
+ gamma 1.64
+ maskChannelMask rgba.red
+ invert_mask true
+ name Grade1
+ selected true
+ xpos -1656
+ ypos 766
+}
+set Nbaf59140 [stack 0]
+Radial {
+ replace true
+ area {230 1180 9195 4584}
+ name Radial2
+ selected true
+ xpos -1800
+ ypos 858
+}
+push $Nbaf59140
+Grade {
+ inputs 1+1
+ white 1.14
+ gamma 1.26
+ name Grade2
+ selected true
+ xpos -1656
+ ypos 858
+}
+South_MattePaintingCC {
+ name South_MattePaintingCC2
+ selected true
+ xpos -1656
+ ypos 904
+}

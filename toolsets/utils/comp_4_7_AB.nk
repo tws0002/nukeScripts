@@ -1,0 +1,576 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small2/jpeg/mainAssembly_small2_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small2/jpeg_proxy/mainAssembly_small2_v058.%04d.jpg
+ first 100
+ last 7300
+ name Read22
+ selected true
+ xpos -1218
+ ypos 1006
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {1330 0}
+ center {960 540}
+ name Transform9
+ selected true
+ xpos -1218
+ ypos 1090
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small4/jpeg/mainAssembly_small4_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small4/jpeg_proxy/mainAssembly_small4_v058.%04d.jpg
+ first 100
+ last 7300
+ origfirst 100
+ origlast 7300
+ origset true
+ name Read25
+ selected true
+ xpos -1009
+ ypos 1003
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {{"parent.Transform9.translate.main.x *3"} 0}
+ center {960 540}
+ name Transform11
+ selected true
+ xpos -1009
+ ypos 1087
+}
+push 0
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small3/jpeg/mainAssembly_small3_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small3/jpeg_proxy/mainAssembly_small3_v058.%04d.jpg
+ first 100
+ last 7300
+ name Read24
+ selected true
+ xpos -1114
+ ypos 1005
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {{parent.Transform9.translate.main.x*2} 0}
+ center {960 540}
+ name Transform10
+ selected true
+ xpos -1114
+ ypos 1089
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small1/jpeg/mainAssembly_small1_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/small1/jpeg_proxy/mainAssembly_small1_v058.%04d.jpg
+ first 100
+ last 7300
+ origfirst 100
+ origlast 7300
+ origset true
+ name Read13
+ selected true
+ xpos -1326
+ ypos 1001
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Shuffle {
+ alpha white
+ name Shuffle4
+ label "\[value in]"
+ selected true
+ xpos -1326
+ ypos 1085
+}
+Crop {
+ box {0 0 {"1920 + parent.Transform11.translate.main.x"} 1080}
+ reformat true
+ intersect true
+ name Crop3
+ selected true
+ xpos -1326
+ ypos 1121
+}
+Merge2 {
+ inputs 4+1
+ name Merge37
+ selected true
+ xpos -1326
+ ypos 1166
+}
+Crop {
+ box {0 0 5910 1080}
+ name Crop4
+ selected true
+ xpos -1326
+ ypos 1190
+}
+wrapOffset {
+ name wrapOffset1
+ selected true
+ xpos -1326
+ ypos 1234
+ disable true
+ offset {2 0}
+}
+Transform {
+ center {2955 540}
+ name Transform18
+ selected true
+ xpos -1326
+ ypos 1258
+}
+set N9beefe90 [stack 0]
+Write {
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v062/comp4Pane/jpeg/mainAssembly_comp4Pane_v062.%V.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v062/comp4Pane/jpeg_proxy/mainAssembly_comp4Pane_v062.%V.%04d.jpg
+ views {main}
+ file_type jpeg
+ _jpeg_quality 1
+ checkHashOnRead false
+ name comp_4_pane
+ selected true
+ xpos -1326
+ ypos 1313
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large7/jpeg/mainAssembly_large7_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large7/jpeg_proxy/mainAssembly_large7_v058.%04d.jpg
+ first 100
+ last 7300
+ origfirst 100
+ origlast 7300
+ origset true
+ name Read28
+ selected true
+ xpos -776
+ ypos 1488
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {{"parent.Transform12.translate.main.x *6"} 0}
+ center {960 540}
+ name Transform13
+ selected true
+ xpos -776
+ ypos 1572
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large6/jpeg/mainAssembly_large6_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large6/jpeg_proxy/mainAssembly_large6_v058.%04d.jpg
+ first 100
+ last 7300
+ origfirst 100
+ origlast 7300
+ origset true
+ name Read31
+ selected true
+ xpos -864
+ ypos 1489
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {{"parent.Transform12.translate.main.x *5"} 0}
+ center {960 540}
+ name Transform17
+ selected true
+ xpos -864
+ ypos 1573
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large5/jpeg/mainAssembly_large5_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large5/jpeg_proxy/mainAssembly_large5_v058.%04d.jpg
+ first 100
+ last 7300
+ name Read32
+ selected true
+ xpos -958
+ ypos 1484
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {{"parent.Transform12.translate.main.x *4"} 0}
+ center {960 540}
+ name Transform16
+ selected true
+ xpos -958
+ ypos 1568
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large4/jpeg/mainAssembly_large4_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large4/jpeg_proxy/mainAssembly_large4_v058.%04d.jpg
+ first 100
+ last 7300
+ name Read33
+ selected true
+ xpos -1054
+ ypos 1494
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {{"parent.Transform12.translate.main.x *3"} 0}
+ center {960 540}
+ name Transform15
+ selected true
+ xpos -1054
+ ypos 1578
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large3/jpeg/mainAssembly_large3_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large3/jpeg_proxy/mainAssembly_large3_v058.%04d.jpg
+ first 100
+ last 7300
+ name Read35
+ selected true
+ xpos -1157
+ ypos 1489
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {{parent.Transform12.translate.main.x*2} 0}
+ center {960 540}
+ name Transform14
+ selected true
+ xpos -1157
+ ypos 1573
+}
+push 0
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large2/jpeg/mainAssembly_large2_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large2/jpeg_proxy/mainAssembly_large2_v058.%04d.jpg
+ first 100
+ last 7300
+ origfirst 100
+ origlast 7300
+ origset true
+ name Read27
+ selected true
+ xpos -1259
+ ypos 1487
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Transform {
+ translate {1400 0}
+ center {960 540}
+ name Transform12
+ selected true
+ xpos -1259
+ ypos 1571
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large1/jpeg/mainAssembly_large1_v058.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v058/large1/jpeg_proxy/mainAssembly_large1_v058.%04d.jpg
+ first 100
+ last 7300
+ name Read26
+ selected true
+ xpos -1357
+ ypos 1493
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+ addUserKnob {43 description l Description +DISABLED}
+ description "Polaris could not be loaded."
+}
+Shuffle {
+ alpha white
+ name Shuffle5
+ label "\[value in]"
+ selected true
+ xpos -1357
+ ypos 1577
+}
+Crop {
+ box {0 0 {"1920 + parent.Transform13.translate.main.x"} 1080}
+ reformat true
+ intersect true
+ name Crop11
+ selected true
+ xpos -1357
+ ypos 1613
+}
+Merge2 {
+ inputs 7+1
+ name Merge38
+ selected true
+ xpos -1357
+ ypos 1672
+}
+wrapOffset {
+ name wrapOffset3
+ selected true
+ xpos -1357
+ ypos 1696
+ disable true
+}
+set N43bb38d0 [stack 0]
+Write {
+ file P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v062/comp7Pane/jpeg/mainAssembly_comp7Pane_v062.%04d.jpg
+ proxy P:/projects/supclashspring_7606P/sequences/clashCon360/shots/mainAssembly/steps/composite/_renders/nuke/mainAssembly_composite_v062/comp7Pane/jpeg_proxy/mainAssembly_comp7Pane_v062.%V.%04d.jpg
+ views {main}
+ file_type jpeg
+ _jpeg_quality 1
+ checkHashOnRead false
+ version 4
+ name comp_7_pane
+ selected true
+ xpos -1357
+ ypos 1760
+}
+push $N9beefe90
+Dot {
+ name Dot42
+ selected true
+ xpos -1551
+ ypos 1461
+}
+Transform {
+ translate {0 1080}
+ center {2955 540}
+ name Transform19
+ selected true
+ xpos -1585
+ ypos 1479
+}
+Transform {
+ translate {4410 0}
+ center {2955 540}
+ name Transform20
+ selected true
+ xpos -1585
+ ypos 1503
+}
+push $N43bb38d0
+Merge2 {
+ inputs 2
+ name Merge39
+ selected true
+ xpos -1585
+ ypos 1711
+}
+Crop {
+ box {0 0 10320 2160}
+ reformat true
+ crop false
+ name Crop5
+ selected true
+ xpos -1585
+ ypos 1735
+}
+Roto {
+ output alpha
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x45a14000 x44870000}
+    {a}
+    {curvegroup RectangleCusped2 512 bezier
+     {{cc
+       {f 8192}
+       {px x44384000
+        {0 0}
+        {xc3960000 x450a8000}
+        {0 0}
+        {0 0}
+        {x42580000 x450a8000}
+        {0 0}
+        {0 0}
+        {x42580000 xc2780000}
+        {0 0}
+        {0 0}
+        {xc3960000 xc2780000}
+        {0 0}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}}}}
+     {tx x44384000 xc2f60000 x4486a000}
+     {a osw x41200000 osf 0 str 1 spx x45a14000 spy x44870000 sb 1 nv x41400000 view2 x40000000 view3 x40400000 view4 x40800000 view5 x40a00000 view6 x40c00000 view7 x40e00000 view8 x41000000 view9 x41100000 view10 x41200000 view11 x41300000 view12 x41400000 ltn x44384000 ltm x44384000 tt x41100000}}
+    {curvegroup RectangleCusped1 512 bezier
+     {{cc
+       {f 8192}
+       {px x44384000
+        {0 0}
+        {x46247000 x450a8000}
+        {0 0}
+        {0 0}
+        {x46206000 x450a8000}
+        {0 0}
+        {0 0}
+        {x46206000 xc2780000}
+        {0 0}
+        {0 0}
+        {x46247000 xc2780000}
+        {0 0}}}
+      {cc
+       {f 8192}
+       {p
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}
+        {{{x44384000 0}}
+      {{x44384000 0}}}}}}
+     {tx x44384000 x46226800 x4486a000}
+     {a osw x41200000 osf 0 str 1 spx x45a14000 spy x44870000 sb 1 nv x41400000 view2 x40000000 view3 x40400000 view4 x40800000 view5 x40a00000 view6 x40c00000 view7 x40e00000 view8 x41000000 view9 x41100000 view10 x41200000 view11 x41300000 view12 x41400000 ltn x44384000 ltm x44384000 tt x41100000}}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 tt 9 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {5160 1080}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 737
+ lifetime_end 737
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name Roto12
+ selected true
+ xpos -1585
+ ypos 1759
+}

@@ -1,0 +1,989 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Group {
+ name ContextContactSheet
+ selected true
+ xpos 1614
+ ypos 909
+ addUserKnob {20 User}
+ addUserKnob {68 currentShot M {kyo0010 kyo0020 kyo0030 kyo0040 kyo0050 kyo0060 kyo0070 kyo0080 kyo0090 kyo0100 kyo0110 kyo0120 kyo0130 kyo0140 kyo0150 kyo0160 kyo0170 kyo0180 kyo0190 kyo0200 kyo0210 kyo0220 kyo0230 kyo0240 kyo0245 kyo0250 kyo0260 kyo0270 kyo0280 kyo0290 kyo0300 kyo0310 kyo0320 kyo0330 kyo0340 kyo0350 kyo0360 kyo0370 kyo0380 "" ""}}
+ currentShot kyo0060
+}
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0380/steps/animation/_captures/maya/kyo0380_animation_v032_001/jpg/kyo0380_animation_v032_001.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 149
+  origfirst 100
+  origlast 149
+  origset true
+  on_error "nearest frame"
+  name Read1
+  xpos -540
+  ypos 493
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp39
+  xpos -540
+  ypos 577
+ }
+set N75f9b870 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0370/steps/animation/_captures/maya/kyo0370_animation_v006_001/jpg/kyo0370_animation_v006_001.####.jpg
+  format "960 540 0 0 960 540 1 "
+  first 100
+  last 144
+  origfirst 100
+  origlast 144
+  origset true
+  on_error "nearest frame"
+  name Read2
+  xpos -648
+  ypos 493
+ }
+ TimeWarp {
+  lookup 126
+  time ""
+  filter none
+  name TimeWarp40
+  xpos -648
+  ypos 577
+ }
+set N75f9bf50 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0360/steps/animation/_captures/maya/kyo0360_animation_v010_002/jpg/kyo0360_animation_v010_002.####.jpg
+  format "960 540 0 0 960 540 1 "
+  first 100
+  last 205
+  origfirst 100
+  origlast 205
+  origset true
+  on_error "nearest frame"
+  name Read3
+  xpos -758
+  ypos 493
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp41
+  xpos -758
+  ypos 577
+ }
+set N75f9c630 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0350/steps/composite/_renders/nuke/kyo0350_composite_current/comp/jpeg/kyo0350_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 183
+  origfirst 100
+  origlast 183
+  origset true
+  on_error "nearest frame"
+  name Read4
+  xpos -848
+  ypos 488
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp42
+  xpos -848
+  ypos 577
+ }
+set N75f9cd10 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0340/steps/animation/_captures/maya/kyo0340_animation_v007_004/jpg/kyo0340_animation_v007_004.####.jpg
+  format "960 540 0 0 960 540 1 "
+  first 100
+  last 188
+  origfirst 100
+  origlast 188
+  origset true
+  on_error "nearest frame"
+  name Read5
+  xpos -970
+  ypos 493
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp43
+  xpos -970
+  ypos 577
+ }
+set N75f9d3f0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0330/steps/composite/_renders/nuke/kyo0330_composite_current/comp/jpeg/kyo0330_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 183
+  origfirst 100
+  origlast 183
+  origset true
+  on_error "nearest frame"
+  name Read6
+  xpos -1068
+  ypos 493
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp44
+  xpos -1068
+  ypos 577
+ }
+set N75f9dad0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0320/steps/composite/_renders/nuke/kyo0320_composite_current/comp/jpeg/kyo0320_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 265
+  origfirst 100
+  origlast 265
+  origset true
+  on_error "nearest frame"
+  name Read7
+  xpos -1170
+  ypos 493
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp45
+  xpos -1170
+  ypos 577
+ }
+set N75f9e1b0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0310/steps/composite/_renders/nuke/kyo0310_composite_current/comp/jpeg/kyo0310_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 153
+  origfirst 100
+  origlast 153
+  origset true
+  on_error "nearest frame"
+  version 1
+  name Read8
+  xpos -1265
+  ypos 493
+ }
+ TimeWarp {
+  lookup 130
+  time ""
+  filter none
+  name TimeWarp46
+  xpos -1265
+  ypos 577
+ }
+set N75f9e890 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0300/steps/composite/_renders/nuke/kyo0300_composite_current/comp/jpeg/kyo0300_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 138
+  origfirst 100
+  origlast 138
+  origset true
+  on_error "nearest frame"
+  version 2
+  name Read9
+  xpos -1369
+  ypos 493
+ }
+ TimeWarp {
+  lookup 120
+  time ""
+  filter none
+  name TimeWarp47
+  xpos -1369
+  ypos 577
+ }
+set N75f9ef70 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0290/steps/composite/_renders/nuke/kyo0290_composite_current/comp/jpeg/kyo0290_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 179
+  origfirst 100
+  origlast 179
+  origset true
+  on_error "nearest frame"
+  name Read10
+  xpos -1478
+  ypos 493
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp48
+  xpos -1483
+  ypos 577
+ }
+set N75f9f650 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0280/steps/composite/_renders/nuke/kyo0280_composite_current/comp/jpeg/kyo0280_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 184
+  origfirst 100
+  origlast 184
+  origset true
+  on_error "nearest frame"
+  name Read11
+  xpos -1581
+  ypos 493
+ }
+ TimeWarp {
+  lookup 130
+  time ""
+  filter none
+  name TimeWarp49
+  xpos -1581
+  ypos 577
+ }
+set N75f9fd30 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0270/steps/composite/_renders/nuke/kyo0270_composite_current/comp/jpeg/kyo0270_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 176
+  origfirst 100
+  origlast 176
+  origset true
+  on_error "nearest frame"
+  name Read12
+  xpos -1686
+  ypos 493
+ }
+ TimeWarp {
+  lookup 100
+  time ""
+  filter none
+  name TimeWarp50
+  xpos -1686
+  ypos 577
+ }
+set N75fa0410 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0260/steps/composite/_renders/nuke/kyo0260_composite_current/comp/jpeg/kyo0260_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 132
+  origfirst 100
+  origlast 132
+  origset true
+  on_error "nearest frame"
+  name Read13
+  xpos -1799
+  ypos 493
+ }
+ TimeWarp {
+  lookup 130
+  time ""
+  filter none
+  name TimeWarp51
+  xpos -1799
+  ypos 577
+ }
+set N75fa0af0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0250/steps/composite/_renders/nuke/kyo0250_composite_current/comp/jpeg/kyo0250_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 244
+  origfirst 100
+  origlast 244
+  origset true
+  on_error "nearest frame"
+  name Read14
+  xpos -1910
+  ypos 493
+ }
+ TimeWarp {
+  lookup 147
+  time ""
+  filter none
+  name TimeWarp52
+  xpos -1910
+  ypos 577
+ }
+set N75fa11d0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0245/steps/composite/_renders/nuke/kyo0245_composite_current/comp/jpeg/kyo0245_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 127
+  origfirst 100
+  origlast 127
+  origset true
+  on_error "nearest frame"
+  name Read15
+  xpos -2011
+  ypos 493
+ }
+ TimeWarp {
+  lookup 120
+  time ""
+  filter none
+  name TimeWarp53
+  xpos -2011
+  ypos 577
+ }
+set N75fa18b0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0240/steps/composite/_renders/nuke/kyo0240_composite_current/comp/sgi/kyo0240_comp_current.####.sgi
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 125
+  origfirst 100
+  origlast 125
+  origset true
+  on_error "nearest frame"
+  name Read16
+  xpos -2128
+  ypos 493
+ }
+ TimeWarp {
+  lookup 100
+  time ""
+  filter none
+  name TimeWarp54
+  xpos -2128
+  ypos 577
+ }
+set N75fa1f90 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0230/steps/composite/_renders/nuke/kyo0230_composite_current/comp/jpeg/kyo0230_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 136
+  origfirst 100
+  origlast 136
+  origset true
+  on_error "nearest frame"
+  name Read17
+  xpos -2241
+  ypos 493
+ }
+ TimeWarp {
+  lookup 120
+  time ""
+  filter none
+  name TimeWarp55
+  xpos -2241
+  ypos 577
+ }
+set N75fa2670 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0220/steps/composite/_renders/nuke/kyo0220_composite_current/comp/jpeg/kyo0220_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 132
+  origfirst 100
+  origlast 132
+  origset true
+  on_error "nearest frame"
+  name Read18
+  xpos -2381
+  ypos 494
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp56
+  xpos -2381
+  ypos 578
+ }
+set N75fa2d50 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0210/steps/composite/_renders/nuke/kyo0210_composite_current/comp/jpeg/kyo0210_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 152
+  origfirst 100
+  origlast 152
+  origset true
+  on_error "nearest frame"
+  name Read19
+  xpos -2502
+  ypos 495
+ }
+ TimeWarp {
+  lookup 150
+  time ""
+  filter none
+  name TimeWarp57
+  xpos -2502
+  ypos 579
+ }
+set N764c1e70 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0200/steps/composite/_renders/nuke/kyo0200_composite_current/comp/jpeg/kyo0200_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 134
+  origfirst 100
+  origlast 134
+  origset true
+  on_error "nearest frame"
+  name Read20
+  xpos -2623
+  ypos 493
+ }
+ TimeWarp {
+  lookup 140
+  time ""
+  filter none
+  name TimeWarp58
+  xpos -2623
+  ypos 577
+ }
+set N764c2550 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0190/steps/composite/_renders/nuke/kyo0190_composite_current/comp/jpeg/kyo0190_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 153
+  origfirst 100
+  origlast 153
+  origset true
+  on_error "nearest frame"
+  name Read21
+  xpos -2770
+  ypos 493
+ }
+ TimeWarp {
+  lookup 130
+  time ""
+  filter none
+  name TimeWarp59
+  xpos -2770
+  ypos 577
+ }
+set N764c2c30 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0180/steps/composite/_renders/nuke/kyo0180_composite_current/comp/jpeg/kyo0180_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 134
+  origfirst 100
+  origlast 134
+  origset true
+  on_error "nearest frame"
+  name Read22
+  xpos -2893
+  ypos 493
+ }
+ TimeWarp {
+  lookup 100
+  time ""
+  filter none
+  name TimeWarp60
+  xpos -2893
+  ypos 577
+ }
+set N764c3310 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0170/steps/composite/_renders/nuke/kyo0170_composite_current/comp/jpeg/kyo0170_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 130
+  origfirst 100
+  origlast 130
+  origset true
+  on_error "nearest frame"
+  name Read23
+  xpos -3010
+  ypos 493
+ }
+ TimeWarp {
+  lookup 70
+  time ""
+  filter none
+  name TimeWarp61
+  xpos -3010
+  ypos 577
+ }
+set N764c39f0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0160/steps/composite/_renders/nuke/kyo0160_composite_current/comp/jpeg/kyo0160_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 161
+  origfirst 100
+  origlast 161
+  origset true
+  on_error "nearest frame"
+  name Read24
+  xpos -3120
+  ypos 493
+ }
+ TimeWarp {
+  lookup 150
+  time ""
+  filter none
+  name TimeWarp62
+  xpos -3120
+  ypos 577
+ }
+set N764c40d0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0150/steps/composite/_renders/nuke/kyo0150_composite_current/comp/jpeg/kyo0150_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 170
+  origfirst 100
+  origlast 170
+  origset true
+  on_error "nearest frame"
+  name Read25
+  xpos -3237
+  ypos 493
+ }
+ TimeWarp {
+  lookup 170
+  time ""
+  filter none
+  name TimeWarp63
+  xpos -3237
+  ypos 577
+ }
+set N764c47b0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0140/steps/composite/_renders/nuke/kyo0140_composite_current/comp/jpeg/kyo0140_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 121
+  origfirst 100
+  origlast 121
+  origset true
+  on_error "nearest frame"
+  name Read26
+  xpos -3351
+  ypos 493
+ }
+ TimeWarp {
+  lookup 110
+  time ""
+  filter none
+  name TimeWarp64
+  xpos -3351
+  ypos 577
+ }
+set N764c4e90 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0130/steps/composite/_renders/nuke/kyo0130_composite_current/comp/jpeg/kyo0130_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 116
+  origfirst 100
+  origlast 116
+  origset true
+  on_error "nearest frame"
+  version 1
+  name Read27
+  xpos -3452
+  ypos 493
+ }
+ TimeWarp {
+  lookup 80
+  time ""
+  filter none
+  name TimeWarp65
+  xpos -3452
+  ypos 577
+ }
+set N764c58e0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0120/steps/composite/_renders/nuke/kyo0120_composite_current/comp/jpeg/kyo0120_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 152
+  origfirst 100
+  origlast 152
+  origset true
+  on_error "nearest frame"
+  name Read28
+  xpos -3577
+  ypos 493
+ }
+ TimeWarp {
+  lookup 160
+  time ""
+  filter none
+  name TimeWarp66
+  xpos -3577
+  ypos 577
+ }
+set N764c5c50 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0110/steps/composite/_renders/nuke/kyo0110_composite_current/comp/jpeg/kyo0110_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 149
+  origfirst 100
+  origlast 149
+  origset true
+  on_error "nearest frame"
+  name Read29
+  xpos -3688
+  ypos 493
+ }
+ TimeWarp {
+  lookup 128
+  time ""
+  filter none
+  name TimeWarp67
+  xpos -3688
+  ypos 577
+ }
+set N764c6330 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0100/steps/composite/_renders/nuke/kyo0100_composite_current/comp/jpeg/kyo0100_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 118
+  origfirst 100
+  origlast 118
+  origset true
+  on_error "nearest frame"
+  name Read30
+  xpos -3802
+  ypos 493
+ }
+ TimeWarp {
+  lookup 150
+  time ""
+  filter none
+  name TimeWarp68
+  xpos -3802
+  ypos 577
+ }
+set N764c6a10 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0090/steps/composite/_renders/nuke/kyo0090_composite_current/comp/jpeg/kyo0090_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 137
+  origfirst 100
+  origlast 137
+  origset true
+  on_error "nearest frame"
+  name Read31
+  xpos -3903
+  ypos 490
+ }
+ TimeWarp {
+  lookup 150
+  time ""
+  filter none
+  name TimeWarp69
+  xpos -3903
+  ypos 574
+ }
+set N764c70f0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0080/steps/composite/_renders/nuke/kyo0080_composite_current/comp/jpeg/kyo0080_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 130
+  origfirst 100
+  origlast 130
+  origset true
+  on_error "nearest frame"
+  name Read32
+  xpos -4013
+  ypos 491
+ }
+ TimeWarp {
+  lookup 100
+  time ""
+  name TimeWarp77
+  xpos -4013
+  ypos 575
+ }
+set N764c77d0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0070/steps/composite/_renders/nuke/kyo0070_composite_current/comp/jpeg/kyo0070_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 167
+  origfirst 100
+  origlast 167
+  origset true
+  on_error "nearest frame"
+  name Read33
+  xpos -4134
+  ypos 490
+ }
+ TimeWarp {
+  lookup 100
+  time ""
+  name TimeWarp70
+  xpos -4134
+  ypos 574
+ }
+set N764c7eb0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0060/steps/composite/_renders/nuke/kyo0060_composite_current/comp/jpeg/kyo0060_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 167
+  origfirst 100
+  origlast 167
+  origset true
+  on_error "nearest frame"
+  version 1
+  name Read34
+  xpos -4243
+  ypos 493
+ }
+ TimeWarp {
+  lookup 100
+  time ""
+  name TimeWarp71
+  xpos -4243
+  ypos 577
+ }
+set N764c8590 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0050/steps/composite/_renders/nuke/kyo0050_composite_current/comp/jpeg/kyo0050_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 192
+  origfirst 100
+  origlast 192
+  origset true
+  on_error "nearest frame"
+  name Read35
+  xpos -4360
+  ypos 493
+ }
+ TimeWarp {
+  lookup 190
+  time ""
+  name TimeWarp72
+  xpos -4360
+  ypos 577
+ }
+set N764c8c70 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0040/steps/composite/_renders/nuke/kyo0040_composite_current/comp/jpeg/kyo0040_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 152
+  origfirst 100
+  origlast 152
+  origset true
+  on_error "nearest frame"
+  name Read36
+  xpos -4482
+  ypos 493
+ }
+ TimeWarp {
+  lookup 190
+  time ""
+  name TimeWarp73
+  xpos -4482
+  ypos 577
+ }
+set N764c9350 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0030/steps/composite/_renders/nuke/kyo0030_composite_current/comp/jpeg/kyo0030_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 181
+  origfirst 100
+  origlast 181
+  origset true
+  on_error "nearest frame"
+  name Read37
+  xpos -4591
+  ypos 493
+ }
+ TimeWarp {
+  lookup 190
+  time ""
+  name TimeWarp74
+  xpos -4591
+  ypos 577
+ }
+set N764c9a30 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0020/steps/composite/_renders/nuke/kyo0020_composite_current/comp/jpeg/kyo0020_comp_current.####.jpg
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 269
+  origfirst 100
+  origlast 269
+  origset true
+  on_error "nearest frame"
+  name Read38
+  xpos -4690
+  ypos 493
+ }
+ TimeWarp {
+  lookup 196
+  time ""
+  name TimeWarp75
+  xpos -4690
+  ypos 577
+ }
+set N898ae9a0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0010/steps/animation/_captures/maya/kyo0010_animation_v003_007/jpg/kyo0010_animation_v003_007.####.jpg
+  format "960 540 0 0 960 540 1 "
+  first 100
+  last 196
+  origfirst 100
+  origlast 196
+  origset true
+  on_error "nearest frame"
+  name Read39
+  xpos -4834
+  ypos 493
+ }
+ TimeWarp {
+  lookup 146
+  time ""
+  name TimeWarp76
+  xpos -4834
+  ypos 577
+ }
+set N898af080 [stack 0]
+ Switch {
+  inputs 39
+  which {{parent.Switch1.which+2}}
+  name Switch2
+  xpos -2183
+  ypos 1278
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -2784
+  ypos 1290
+ }
+push $N75f9b870
+push $N75f9bf50
+push $N75f9c630
+push $N75f9cd10
+push $N75f9d3f0
+push $N75f9dad0
+push $N75f9e1b0
+push $N75f9e890
+push $N75f9ef70
+push $N75f9f650
+push $N75f9fd30
+push $N75fa0410
+push $N75fa0af0
+push $N75fa11d0
+push $N75fa18b0
+push $N75fa1f90
+push $N75fa2670
+push $N75fa2d50
+push $N764c1e70
+push $N764c2550
+push $N764c2c30
+push $N764c3310
+push $N764c39f0
+push $N764c40d0
+push $N764c47b0
+push $N764c4e90
+push $N764c58e0
+push $N764c5c50
+push $N764c6330
+push $N764c6a10
+push $N764c70f0
+push $N764c77d0
+push $N764c7eb0
+push $N764c8590
+push $N764c8c70
+push $N764c9350
+push $N764c9a30
+push $N898ae9a0
+push $N898af080
+ Switch {
+  inputs 39
+  which {{parent.currentShot-1}}
+  name Switch1
+  xpos -3577
+  ypos 1285
+ }
+ ContactSheet {
+  inputs 3
+  width 1920
+  height 360
+  rows 1
+  columns 3
+  gap 2
+  name ContactSheet2
+  xpos -2784
+  ypos 1452
+ }
+set N898af760 [stack 0]
+ Output {
+  name Output1
+  xpos -2784
+  ypos 1535
+ }
+push $N898af760
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos -2460
+  ypos 1489
+ }
+end_group

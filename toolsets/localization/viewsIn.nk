@@ -1,0 +1,54 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+OneView {
+ view Spanish
+ name OneView5
+ label Spanish
+ selected true
+ xpos 1646
+ ypos 163
+}
+push $cut_paste_input
+OneView {
+ view Korean
+ name OneView4
+ label Korean
+ selected true
+ xpos 1546
+ ypos 163
+}
+push $cut_paste_input
+OneView {
+ view Italian
+ name OneView3
+ label Italian
+ selected true
+ xpos 1446
+ ypos 163
+}
+push $cut_paste_input
+OneView {
+ view French
+ name OneView2
+ label French
+ selected true
+ xpos 1346
+ ypos 163
+}
+push $cut_paste_input
+OneView {
+ name OneView1
+ label main
+ selected true
+ xpos 1246
+ ypos 163
+}
+JoinViews {
+ inputs 5
+ name JoinViews1
+ selected true
+ xpos 1446
+ ypos 253
+ viewassoc "main\nFrench\nItalian\nKorean\nSpanish"
+}

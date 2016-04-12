@@ -1,0 +1,1787 @@
+set cut_paste_input [stack 0]
+version 9.0 v8
+push 0
+push $cut_paste_input
+Group {
+ inputs 2
+ name REBUILD
+ knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.matchAovs()"
+ label "\[lindex \[split \[lindex \[split \[value input0.file] /] end] .] 0]\n\[lindex \[split \[lindex \[split \[value input1.file] /] end] .] 0]"
+ selected true
+ xpos -11
+ ypos 36
+ addUserKnob {20 rebuild}
+ addUserKnob {22 match l matchAovs T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.matchAovs()" +STARTLINE}
+ addUserKnob {22 toggleAovs T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.toggleAovs()" +STARTLINE}
+ addUserKnob {20 info}
+ addUserKnob {22 addAssetGizmos -STARTLINE T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.addAssetGizmos(\"\")"}
+ addUserKnob {22 printCryptoInfo T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.showData()" +STARTLINE}
+ addUserKnob {43 assetList l "" +STARTLINE}
+ assetList "Assets:\n/obj/BK_Brush_Hairball/OUTPUT_CURVES_TO_ASS/hair/objnet1/RENDER_GEO_FOR_ARNOLD/OUT\n/obj/FT_Brush_Hairball/OUTPUT_CURVES_TO_ASS/hair/objnet1/RENDER_GEO_FOR_ARNOLD/OUT\n/obj/Top_Brush_Hairball/OUTPUT_CURVES_TO_ASS/hair/objnet1/RENDER_GEO_FOR_ARNOLD/OUT\n/obj/carwash/condensation/objnet1/RENDER_GEO_FOR_ARNOLD\n/obj/droplets_noodles/droplets_noodles_ass/objnet1/RENDER_GEO_FOR_ARNOLD\ncarWash\ncarWash1\ndefault\ngordo\nl\nlGStylo\nsamsungS6\n"
+ addUserKnob {43 existList l "" -STARTLINE}
+ existList "Existing:\n"
+ addUserKnob {43 matList l "" -STARTLINE}
+ matList "Materials:\nDUPLICATED__alLayer42SG\nDUPLICATED__alSurface47SG\nDUPLICATED__alSurface48SG\nDUPLICATED__alSurface61SG\nDUPLICATED__blinn5SG\nDUPLICATED__cw_plasticTrafficCover_ALS_SG\nDUPLICATED__cw_plasticTrafficCover_ALS_SG1\nSET_SHADOW_CATCH_SG\naiStandard1SG\nai_bad_shader\nai_default_reflection_shader\nalCombineColor3SG\nalLayer10SG\nalLayer11SG\nalLayer12SG\nalLayer13SG\nalLayer15SG\nalLayer16SG\nalLayer17SG\nalLayer18SG\nalLayer19SG\nalLayer23SG\nalLayer25SG\nalLayer28SG\nalLayer2SG\nalLayer30SG\nalLayer31SG\nalLayer32SG\nalLayer33SG\nalLayer35SG\nalLayer36SG\nalLayer37SG\nalLayer38SG\nalLayer39SG\nalLayer3SG\nalLayer40SG\nalLayer41SG\nalLayer44SG\nalLayer49SG\nalLayer4SG\nalLayer5SG\nalLayer6SG\nalLayer7SG\nalLayer8SG\nalLayer9SG\nalSurface10SG\nalSurface12SG\nalSurface13SG\nalSurface14SG\nalSurface23SG\nalSurface29SG\nalSurface2SG\nalSurface3SG\nalSurface42SG\nalSurface43SG\nalSurface4SG\nalSurface51SG\nalSurface55SG\nalSurface5SG\nalSurface62SG\nalSurface63SG\nalSurface68SG\nalSurface73SG\nalSurface79SG\nalSurface7SG\nalSurface85SG\nalSurface89SG\nalSurface8SG\nalSurface90SG\nblackTestShaderSG\nblinn1SG\ncarWash_DUPLICATED__alLayer29SG\ncarWash_DUPLICATED__alLayer42SG\ncarWash_DUPLICATED__alSurface47SG\ncarWash_DUPLICATED__alSurface48SG\ncarWash_DUPLICATED__alSurface61SG\ncarWash_DUPLICATED__blinn5SG\ncarWash_DUPLICATED__cw_MainMetalEntr_ALSSG\ncarWash_DUPLICATED__cw_brushMetalArm_MASTER_AIL1SG\ncarWash_DUPLICATED__cw_converBeltCenter_ALSSG\ncarWash_DUPLICATED__cw_plasticTrafficCover_ALS_SG\ncarWash_DUPLICATED__cw_plasticTrafficCover_ALS_SG1\ncarWash_DUPLICATED__greenMetal_with_CLEARCOAT_mtl1SG\ncarWash_WHITE_METAL_MASTER_mtl1SG\ncarWash_YELLOW_METAL_MASTER_mtlSG\ncarWash_alLayer10SG\ncarWash_alLayer11SG\ncarWash_alLayer12SG\ncarWash_alLayer13SG\ncarWash_alLayer15SG\ncarWash_alLayer16SG\ncarWash_alLayer17SG\ncarWash_alLayer19SG\ncarWash_alLayer23SG\ncarWash_alLayer25SG\ncarWash_alLayer28SG\ncarWash_alLayer2SG\ncarWash_alLayer30SG\ncarWash_alLayer31SG\ncarWash_alLayer32SG\ncarWash_alLayer33SG\ncarWash_alLayer35SG\ncarWash_alLayer36SG\ncarWash_alLayer37SG\ncarWash_alLayer38SG\ncarWash_alLayer39SG\ncarWash_alLayer3SG\ncarWash_alLayer40SG\ncarWash_alLayer41SG\ncarWash_alLayer44SG\ncarWash_alLayer49SG\ncarWash_alLayer4SG\ncarWash_alLayer5SG\ncarWash_alLayer6SG\ncarWash_alLayer7SG\ncarWash_alLayer8SG\ncarWash_alLayer9SG\ncarWash_alSurface23SG\ncarWash_alSurface29SG\ncarWash_alSurface42SG\ncarWash_alSurface43SG\ncarWash_alSurface51SG\ncarWash_alSurface55SG\ncarWash_alSurface62SG\ncarWash_alSurface63SG\ncarWash_alSurface68SG\ncarWash_alSurface73SG\ncarWash_alSurface79SG\ncarWash_alSurface85SG\ncarWash_alSurface89SG\ncarWash_alSurface90SG\ncarWash_blinn1SG\ncarWash_cw_bgTemp_AIU_SG\ncarWash_cw_blackWires_ALS2SG\ncarWash_cw_brushMetalArm_MASTER_AIL1SG\ncarWash_cw_brushMetalArm_MASTER_AIL2SG\ncarWash_cw_brushMetalArm_MASTER_AIL3SG\ncarWash_cw_brushMetalArm_MASTER_AIL4SG\ncarWash_cw_chromeArm_ALS3SG\ncarWash_cw_chromePipes_ALS12SG\ncarWash_cw_chromePipes_ALS4SG\ncarWash_cw_chromePipes_ALS8SG\ncarWash_cw_controlBoxBtns_AIS1SG\ncarWash_cw_controlBoxStand_AIS1SG\ncarWash_cw_metalStructures_ALS1SG\ncarWash_cw_paintPlasticGreen_ALS4SG\ncarWash_cw_paintPlasticGreen_ALS5SG\ncarWash_cw_paintSupportBeams_MASTER_AIL2SG\ncarWash_cw_tileFloor_ALS_SG\ncarWash_cw_trafficlightBody_MASTER_AIL1SG\ncarWash_droplets_mtlSG\ncarWash_hardPlastic_mtlSG\ncarWash_jf_nested_dielectric5SG\ncarWash_lambert3SG\ncarWash_lambert9SG\ncw_bgTemp_AIU_SG\ncw_blackWires_ALS2SG\ncw_brushMetalArm_MASTER_AIL1SG\ncw_brushMetalArm_MASTER_AIL2SG\ncw_brushMetalArm_MASTER_AIL3SG\ncw_brushMetalArm_MASTER_AIL4SG\ncw_chromeArm_ALS3SG\ncw_chromePipes_ALS12SG\ncw_chromePipes_ALS4SG\ncw_chromePipes_ALS8SG\ncw_controlBoxBtns_AIS1SG\ncw_controlBoxStand_AIS1SG\ncw_glassWindows_MASTER_ALS_SG\ncw_metalStructures_ALS1SG\ncw_paintPlasticGreenJets_MASTER_AIL1SG\ncw_paintPlasticGreen_ALS4SG\ncw_paintPlasticGreen_ALS5SG\ncw_paintSupportBeams_MASTER_AIL2SG\ncw_plasticGSpiners_ALS_SG\ncw_plasticLGSpiners_ALS_SG\ncw_tileFloor_ALS_SG\ncw_tileWalls_ALS_SG\ncw_trafficlightBody_MASTER_AIL1SG\ngreyTestShaderSG\nhair_mtlSG\ninitialShadingGroup\njf_nested_dielectric1SG\njf_nested_dielectric5SG\nlambert3SG\nphone_backSpeaker_AISSG\nphone_cameraGlass_AISSG\nphone_chromeInt_AISSG\nphone_clearPlastic_AISSG\nphone_lgLogo_AISSG\npupils_mtlSG\ns6_backCombo_sg\ns6_bevelChrome_sg\ns6_bezelLights_sg\ns6_blackShiny_sg\ns6_blueBack_sg\ns6_brightChrome_sg\ns6_camLensGlass_sg\ns6_clearGlass_sg\ns6_flashLens_sg\ns6_frontCombo_sg\ns6_frontFace_sg\ns6_greyPlastic_sg\nskin_mtlSG\nteeth_mtlSG\nwhiteTestShaderSG\n"
+ addUserKnob {26 spacer l "" -STARTLINE T "\t"}
+ addUserKnob {20 endGroup n -1}
+}
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/diffuse_color/car0030_lighting_SET_FG_Beauty_diffuse_color_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name diffuse_color
+  xpos -1756
+  ypos -771
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Clamp {
+  minimum 0.001
+  name Clamp1
+  xpos -1756
+  ypos -677
+ }
+ Reformat {
+  name Reformat3
+  xpos -1756
+  ypos -641
+ }
+ Input {
+  inputs 0
+  name lAll
+  xpos -1735
+  ypos -955
+ }
+ Reformat {
+  name Reformat1
+  xpos -1735
+  ypos -839
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uCryptoMaterial/car0030_lighting_SET_FG_Util_uCryptoMaterial_v044.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uCryptoObject
+  xpos -1262
+  ypos -1236
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+set N8663a800 [stack 0]
+ Reformat {
+  name Reformat26
+  xpos -1262
+  ypos -1152
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uCryptoMaterial/car0030_lighting_SET_FG_Util_uCryptoMaterial_v044.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uCryptoMaterial
+  xpos -1264
+  ypos -1390
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+set N86631000 [stack 0]
+ Reformat {
+  name Reformat19
+  xpos -1264
+  ypos -1306
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uCryptoAsset/car0030_lighting_SET_FG_Util_uCryptoAsset_v044.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uCryptoAsset
+  xpos -1265
+  ypos -1541
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+set N86618800 [stack 0]
+ Reformat {
+  name Reformat20
+  xpos -1265
+  ypos -1457
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uAO/car0030_lighting_SET_FG_Util_uAO_v044.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uAO
+  xpos -1724
+  ypos -1809
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat2
+  xpos -1724
+  ypos -1723
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uuvDepth/car0030_lighting_SET_FG_Util_uuvDepth_v044.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uuvDepth
+  xpos -1724
+  ypos -1969
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat22
+  xpos -1724
+  ypos -1885
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uPRef/car0030_lighting_SET_FG_Util_uPRef_v044.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uPRef
+  xpos -1722
+  ypos -2134
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat21
+  xpos -1722
+  ypos -2050
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/P/car0030_lighting_SET_FG_Util_P_v044.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name P
+  xpos -1721
+  ypos -2287
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat14
+  xpos -1721
+  ypos -2201
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uPointCamera/car0030_lighting_SET_FG_Util_uPointCamera_v044.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uPointCamera
+  xpos -1724
+  ypos -2445
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat15
+  xpos -1724
+  ypos -2361
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uNormalWorld/car0030_lighting_SET_FG_Util_uNormalWorld_v044.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  name uNormalWorld
+  xpos -1721
+  ypos -2613
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat17
+  xpos -1721
+  ypos -2529
+ }
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Util/v044/exr/uNormalCamera/car0030_lighting_SET_FG_Util_uNormalCamera_v044.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name uNormalCamera
+  xpos -1724
+  ypos -2772
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat18
+  xpos -1724
+  ypos -2688
+ }
+ Input {
+  inputs 0
+  name uBasic
+  xpos -1866
+  ypos -2871
+  number 1
+ }
+ Reformat {
+  name Reformat13
+  xpos -1866
+  ypos -2834
+ }
+add_layer {uNormalCamera uNormalCamera.red uNormalCamera.green uNormalCamera.blue uNormalCamera.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uNormalCamera
+  name ShuffleCopy25
+  label "\[value out2]"
+  xpos -1866
+  ypos -2694
+ }
+add_layer {uNormalWorld uNormalWorld.red uNormalWorld.green uNormalWorld.blue uNormalWorld.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uNormalWorld
+  name ShuffleCopy26
+  label "\[value out2]"
+  xpos -1866
+  ypos -2535
+ }
+add_layer {uPointCamera uPointCamera.red uPointCamera.green uPointCamera.blue uPointCamera.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPointCamera
+  name ShuffleCopy28
+  label "\[value out2]"
+  xpos -1866
+  ypos -2367
+ }
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPointWorld
+  name ShuffleCopy29
+  label "\[value out2]"
+  xpos -1866
+  ypos -2207
+ }
+add_layer {uPRef uPRef.red uPRef.green uPRef.blue uPRef.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPRef
+  name ShuffleCopy10
+  label "\[value out2]"
+  xpos -1866
+  ypos -2056
+ }
+add_layer {uUVI uUVI.red uUVI.green uUVI.blue uUVI.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uUVI
+  name ShuffleCopy15
+  label "\[value out2]"
+  xpos -1866
+  ypos -1891
+ }
+add_layer {uAO uAO.red uAO.green uAO.blue uAO.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uAO
+  name ShuffleCopy9
+  label "\[value out2]"
+  xpos -1866
+  ypos -1729
+ }
+ Unpremult {
+  channels all
+  name Unpremult4
+  xpos -1866
+  ypos -1671
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy2
+  xpos -1866
+  ypos -1470
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy1
+  xpos -1866
+  ypos -1319
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy3
+  xpos -1866
+  ypos -1165
+ }
+add_layer {startRGBA startRGBA.red startRGBA.green startRGBA.blue startRGBA.alpha}
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 startRGBA
+  name ShuffleCopy4
+  label "\[value out2]"
+  xpos -1866
+  ypos -845
+ }
+set Nd5350000 [stack 0]
+add_layer {diffuse_color diffuse_color.red diffuse_color.green diffuse_color.blue diffuse_color.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 diffuse_color
+  name ShuffleCopy2
+  label "\[value out2]"
+  xpos -1866
+  ypos -647
+ }
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle8
+  label "\[value in]"
+  xpos -1866
+  ypos -524
+ }
+set N86645000 [stack 0]
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle9
+  label "\[value in]"
+  xpos -1535
+  ypos -524
+ }
+set N86644400 [stack 0]
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name Shuffle11
+  label "\[value in]"
+  xpos -1009
+  ypos -524
+ }
+set N86644800 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle3
+  label "\[value in]"
+  xpos -584
+  ypos -524
+ }
+set N86644c00 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle4
+  label "\[value in]"
+  xpos -253
+  ypos -524
+ }
+set N86637c00 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle10
+  label "\[value in]"
+  xpos 54
+  ypos -524
+ }
+set N86637800 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle12
+  label "\[value in]"
+  xpos 554
+  ypos -524
+ }
+set N86636000 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle13
+  label "\[value in]"
+  xpos 897
+  ypos -524
+ }
+set N86636400 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle2
+  label "\[value in]"
+  xpos 1303
+  ypos -524
+ }
+set N86637400 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle1
+  label "\[value in]"
+  xpos 1679
+  ypos -524
+ }
+set N86636c00 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle14
+  label "\[value in]"
+  xpos 2130
+  ypos -524
+ }
+set N86637000 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle15
+  label "\[value in]"
+  xpos 2530
+  ypos -524
+ }
+set N8662c800 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle23
+  label "\[value in]"
+  xpos 2870
+  ypos -524
+ }
+set N8662c400 [stack 0]
+ Shuffle {
+  in uPointCamera
+  in2 startRGBA
+  red blue
+  green blue
+  alpha alpha2
+  name Shuffle17
+  label "\[value in]"
+  xpos 3260
+  ypos -524
+ }
+ Unpremult {
+  name Shuffle9_unpremult
+  xpos 3260
+  ypos -473
+ }
+ ml_AtmosControl {
+  name ml_AtmosControl
+  xpos 3260
+  ypos -389
+ }
+ NoOp {
+  name atmos_OUt
+  note_font_size 20
+  xpos 3260
+  ypos 663
+ }
+push $N8662c400
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/direct_diffuse/car0030_lighting_SET_FG_Beauty_direct_diffuse_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name direct_diffuse
+  xpos -1756
+  ypos -495
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat4
+  xpos -1756
+  ypos -409
+ }
+set N86622400 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/indirect_diffuse/car0030_lighting_SET_FG_Beauty_indirect_diffuse_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name indirect_diffuse
+  xpos -1402
+  ypos -490
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat8
+  xpos -1402
+  ypos -406
+ }
+set N86618c00 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/direct_backlight/car0030_lighting_SET_FG_Beauty_direct_backlight_v051.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name direct_backlight
+  xpos -474
+  ypos -493
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat12
+  xpos -474
+  ypos -409
+ }
+set N86619800 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/indirect_backlight/car0030_lighting_SET_FG_Beauty_indirect_backlight_v051.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name indirect_backlight
+  xpos -120
+  ypos -490
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat16
+  xpos -120
+  ypos -406
+ }
+set N86610000 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/sss/car0030_lighting_SET_FG_Beauty_sss_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name sss
+  xpos 164
+  ypos -500
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat24
+  xpos 164
+  ypos -416
+ }
+set N86630000 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/direct_specular/car0030_lighting_SET_FG_Beauty_direct_specular_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name direct_specular
+  xpos 652
+  ypos -488
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat5
+  xpos 652
+  ypos -404
+ }
+set N8661c000 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/direct_specular_2/car0030_lighting_SET_FG_Beauty_direct_specular_2_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name direct_specular_2
+  xpos 762
+  ypos -485
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat6
+  xpos 762
+  ypos -401
+ }
+set N8661cc00 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/indirect_specular/car0030_lighting_SET_FG_Beauty_indirect_specular_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name indirect_specular
+  xpos 998
+  ypos -483
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat9
+  xpos 998
+  ypos -399
+ }
+set N86669000 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/indirect_specular_2/car0030_lighting_SET_FG_Beauty_indirect_specular_2_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name indirect_specular_2
+  xpos 1108
+  ypos -484
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat10
+  xpos 1108
+  ypos -400
+ }
+set N86668800 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/reflection/car0030_lighting_SET_FG_Beauty_reflection_v051.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name reflection
+  xpos 1403
+  ypos -477
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat25
+  xpos 1403
+  ypos -391
+ }
+set N8665bc00 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/sheen/car0030_lighting_SET_FG_Beauty_sheen_v051.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD_1080"
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name sheen
+  xpos 1779
+  ypos -477
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat23
+  xpos 1779
+  ypos -391
+ }
+set N8665b400 [stack 0]
+push 0
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/refraction/car0030_lighting_SET_FG_Beauty_refraction_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name refraction
+  xpos 2303
+  ypos -491
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat11
+  xpos 2303
+  ypos -407
+ }
+set N8665a800 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/crickettaxtime2_8070P/sequences/carWash/car0030/lighting/output/render/lighting_SET_FG_Beauty/v051/exr/emission/car0030_lighting_SET_FG_Beauty_emission_v051.%04d.exr
+  first 101
+  last 214
+  origfirst 100
+  origlast 100
+  origset true
+  name emission
+  xpos 2661
+  ypos -492
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+  addUserKnob {4 qube_priority l "Qube Priority" M {lowest low normal high highest}}
+  qube_priority normal
+ }
+ Reformat {
+  name Reformat7
+  xpos 2661
+  ypos -408
+ }
+set N8664f400 [stack 0]
+ Merge2 {
+  inputs 13+1
+  name CombineAll
+  xpos 3047
+  ypos -470
+  hide_input true
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 3047
+  ypos -382
+ }
+push $N8662c400
+ Merge2 {
+  inputs 2
+  operation from
+  name Merge11
+  xpos 2870
+  ypos -382
+ }
+add_layer {remainder remainder.red remainder.green remainder.blue remainder.alpha}
+ Shuffle {
+  out remainder
+  name remainder_IN
+  label "\[value in]"
+  xpos 2870
+  ypos -356
+ }
+ NoOp {
+  name remainder_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos 2870
+  ypos 676
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov remainder
+ }
+ aov_Compare {
+  name remainder_Compare
+  xpos 2870
+  ypos 710
+  in remainder
+ }
+push $N8664f400
+push $N8662c800
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy3
+  xpos 2530
+  ypos -408
+ }
+ Unpremult {
+  name Shuffle8_unpremult
+  xpos 2530
+  ypos -382
+ }
+add_layer {emission emission.red emission.green emission.blue emission.alpha}
+ Shuffle {
+  out emission
+  name emission_IN
+  label "\[value in]"
+  xpos 2530
+  ypos -356
+ }
+ NoOp {
+  name emission_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos 2530
+  ypos 676
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov emission
+ }
+ aov_Compare {
+  name emission_Compare
+  xpos 2530
+  ypos 710
+  in emission
+ }
+push $N8665a800
+push $N86637000
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy5
+  xpos 2130
+  ypos -407
+ }
+ Unpremult {
+  name Shuffle7_unpremult
+  xpos 2130
+  ypos -381
+ }
+add_layer {refraction refraction.red refraction.green refraction.blue refraction.alpha}
+ Shuffle {
+  out refraction
+  name refraction_IN
+  label "\[value in]"
+  xpos 2130
+  ypos -355
+ }
+ NoOp {
+  name refr_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos 2130
+  ypos 676
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov refr
+ }
+ aov_Compare {
+  name refraction_Compare
+  xpos 2130
+  ypos 710
+  in refraction
+ }
+push $N8665b400
+push $N86636c00
+add_layer {sheen sheen.red sheen.green sheen.blue sheen.alpha}
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  out2 sheen
+  name ShuffleCopy11
+  xpos 1679
+  ypos -391
+ }
+ Unpremult {
+  name Shuffle6_unpremult1
+  xpos 1679
+  ypos -365
+ }
+ Shuffle {
+  out sheen
+  name sheen_IN
+  label "\[value in]"
+  xpos 1679
+  ypos -339
+ }
+ NoOp {
+  name sheen_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos 1679
+  ypos 676
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov sheen
+ }
+ aov_Compare {
+  name sheen_Compare
+  xpos 1679
+  ypos 710
+  in sheen
+ }
+push $N8665bc00
+push $N86637400
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy12
+  xpos 1303
+  ypos -391
+ }
+ Unpremult {
+  name Shuffle6_unpremult2
+  xpos 1303
+  ypos -365
+ }
+add_layer {reflection reflection.red reflection.green reflection.blue reflection.alpha}
+ Shuffle {
+  out reflection
+  name reflection_IN
+  label "\[value in]"
+  xpos 1303
+  ypos -339
+ }
+ NoOp {
+  name reflection_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos 1303
+  ypos 676
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov reflection
+ }
+ aov_Compare {
+  name reflection_Compare
+  xpos 1303
+  ypos 710
+  in reflection
+ }
+push $N86668800
+push $N86669000
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge7
+  xpos 998
+  ypos -360
+ }
+push $N86636400
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy6
+  xpos 897
+  ypos -360
+ }
+ Unpremult {
+  name Shuffle6_unpremult
+  xpos 897
+  ypos -334
+ }
+add_layer {spec spec.red spec.green spec.blue spec.alpha}
+ Shuffle {
+  out spec
+  name spec_IN2
+  label "\[value in]"
+  xpos 897
+  ypos -308
+ }
+ Dot {
+  name Dot6
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos 931
+  ypos -9
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov spec
+ }
+push $N8661cc00
+push $N8661c000
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge6
+  xpos 652
+  ypos -361
+ }
+push $N86636000
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy7
+  xpos 554
+  ypos -362
+ }
+ Unpremult {
+  name Shuffle5_unpremult
+  xpos 554
+  ypos -336
+ }
+ Shuffle {
+  out spec
+  name spec_IN1
+  label "\[value in]"
+  xpos 554
+  ypos -310
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  also_merge spec
+  name Merge2
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos 554
+  ypos -13
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov spec
+ }
+ NoOp {
+  name spec_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos 554
+  ypos 661
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov spec
+ }
+ aov_Compare {
+  name spec_Compare
+  xpos 554
+  ypos 710
+  in spec
+ }
+push $N86630000
+push $N86637800
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy8
+  xpos 54
+  ypos -416
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 54
+  ypos -392
+ }
+add_layer {sss sss.red sss.green sss.blue sss.alpha}
+ Shuffle {
+  out sss
+  name sss_IN
+  label "\[value in]"
+  xpos 54
+  ypos -366
+ }
+ NoOp {
+  name sss_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos 54
+  ypos 654
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov sss
+ }
+ aov_Compare {
+  name sss_Compare
+  xpos 54
+  ypos 710
+  in sss
+ }
+push $N86610000
+push $N86637c00
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy14
+  xpos -253
+  ypos -406
+ }
+ Unpremult {
+  name Unpremult2
+  xpos -253
+  ypos -380
+ }
+add_layer {backlight backlight.red backlight.green backlight.blue backlight.alpha}
+ Shuffle {
+  out backlight
+  name backlight_IN2
+  label "\[value in]"
+  xpos -253
+  ypos -354
+ }
+ Dot {
+  name Dot5
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos -219
+  ypos -11
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov backlight
+ }
+push $N86619800
+push $N86644c00
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  name ShuffleCopy13
+  xpos -584
+  ypos -409
+ }
+ Unpremult {
+  name Unpremult3
+  xpos -584
+  ypos -383
+ }
+ Shuffle {
+  out backlight
+  name backlightIN1
+  label "\[value in]"
+  xpos -584
+  ypos -357
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  also_merge backlight
+  name Merge1
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos -584
+  ypos -15
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov backlight
+ }
+ NoOp {
+  name backlight_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos -584
+  ypos 660
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov backlight
+ }
+ aov_Compare {
+  name backlight_Compare
+  xpos -584
+  ypos 710
+  in backlight
+ }
+push $N86644800
+ Unpremult {
+  name Shuffle4_unpremult
+  xpos -1009
+  ypos -486
+ }
+add_layer {diffuse diffuse.red diffuse.green diffuse.blue diffuse.alpha}
+ Shuffle {
+  out diffuse
+  name diffuse_IN3
+  label "\[value out]"
+  xpos -1009
+  ypos -460
+ }
+ NoOp {
+  name color_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos -1009
+  ypos 405
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov diffuseLighting
+ }
+push $N86618c00
+push $N86644400
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  also_merge diffuse
+  name Merge3
+  xpos -1535
+  ypos -406
+ }
+ Shuffle {
+  out diffuse
+  name diffuse_IN2
+  label "\[value out]"
+  xpos -1535
+  ypos -380
+ }
+ Dot {
+  name Dot2
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos -1501
+  ypos -14
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov diffuseLighting
+ }
+push $N86622400
+push $N86645000
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge4
+  xpos -1866
+  ypos -409
+ }
+ Shuffle {
+  out diffuse
+  name diffuse_IN
+  label "\[value out]"
+  xpos -1866
+  ypos -383
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  also_merge {diffuse.red diffuse.green diffuse.blue -diffuse.alpha}
+  name Merge5
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos -1866
+  ypos -18
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov diffuseLighting
+ }
+ NoOp {
+  name lighting_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos -1866
+  ypos 391
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov diffuseLighting
+ }
+ Dot {
+  name Dot1
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos -1832
+  ypos 443
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov diffuseLighting
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  also_merge diffuse
+  name Merge8
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  xpos -1009
+  ypos 439
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov diffuseLighting
+ }
+ NoOp {
+  name diffuseLighting_OUT
+  knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.toggleThisAov()"
+  note_font_size 20
+  xpos -1009
+  ypos 660
+  addUserKnob {20 User}
+  addUserKnob {1 aov}
+  aov diffuseLighting
+ }
+ aov_Compare {
+  name diffuseLighting_Compare
+  xpos -1009
+  ypos 703
+  in diffuse
+ }
+push $Nd5350000
+ Unpremult {
+  name Unpremult5
+  xpos -2055
+  ypos -839
+ }
+ Dot {
+  name Dot4
+  xpos -2086
+  ypos -835
+ }
+ Dot {
+  name Dot3
+  xpos -2086
+  ypos 740
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name diffuseLighting_MERGE
+  xpos -1009
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name backlight_MERGE
+  xpos -584
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE
+  xpos 54
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name spec_MERGE
+  xpos 554
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name reflection_MERGE
+  xpos 1303
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sheen_MERGE
+  xpos 1679
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name refr_MERGE
+  xpos 2130
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE
+  xpos 2530
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name remainder_MERGE
+  xpos 2870
+  ypos 736
+  disable true
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name atmos_MERGE
+  xpos 3260
+  ypos 736
+  disable true
+ }
+ Premult {
+  name rebuildPremult
+  selected true
+  xpos 3260
+  ypos 1264
+ }
+ Remove {
+  operation keep
+  channels rgba
+  channels2 uPointWorld
+  channels3 uNormalWorld
+  channels4 uPointCamera
+  name Remove1
+  xpos 3260
+  ypos 1290
+  disable true
+ }
+ Output {
+  name Output1
+  xpos 3260
+  ypos 1316
+ }
+push $N86618800
+add_layer {uCryptoAsset uCryptoAsset.red uCryptoAsset.green uCryptoAsset.blue uCryptoAsset.alpha}
+add_layer {uCryptoAsset00 uCryptoAsset00.red uCryptoAsset00.green uCryptoAsset00.blue uCryptoAsset00.alpha}
+ cryptomatte_multi {
+  name cryptomatte_multi2
+  xpos -1062
+  ypos -1511
+  matteList ""
+  expression ""
+  keyedName ""
+  previewChannel uCryptoAsset
+  in00 uCryptoAsset00
+ }
+push $N86631000
+add_layer {uCryptoMaterial uCryptoMaterial.red uCryptoMaterial.green uCryptoMaterial.blue uCryptoMaterial.alpha}
+add_layer {uCryptoMaterial00 uCryptoMaterial00.red uCryptoMaterial00.green uCryptoMaterial00.blue uCryptoMaterial00.alpha}
+ cryptomatte_multi {
+  name cryptomatte_multi1
+  xpos -1058
+  ypos -1360
+  matteList ""
+  expression ""
+  keyedName ""
+  previewChannel uCryptoMaterial
+  in00 uCryptoMaterial00
+ }
+push $N8663a800
+ cryptomatte_multi {
+  name cryptomatte_multi3
+  xpos -1052
+  ypos -1206
+  matteList ""
+  expression ""
+  keyedName ""
+  previewChannel uCryptoMaterial
+  in00 uCryptoMaterial00
+ }
+end_group

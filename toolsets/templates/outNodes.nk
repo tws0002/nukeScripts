@@ -1,0 +1,30 @@
+set cut_paste_input [stack 0]
+version 9.0 v8
+push $cut_paste_input
+ApplyLook {
+ name ApplyLook1
+ selected true
+ xpos 525
+ ypos 592
+ look grade_warm
+}
+LumaGrain2 {
+ name LumaGrain2_1
+ selected true
+ xpos 525
+ ypos 618
+}
+BurnIn {
+ name BurnIn1
+ selected true
+ xpos 525
+ ypos 644
+}
+Crop {
+ box {0 0 1920 1080}
+ crop false
+ name Crop1
+ selected true
+ xpos 525
+ ypos 670
+}

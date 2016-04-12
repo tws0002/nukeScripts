@@ -1,0 +1,57 @@
+set cut_paste_input [stack 0]
+version 8.0 v6
+push $cut_paste_input
+RotoPaint {
+ curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44b40000 x444a8000}
+    {a}}}}}
+ toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+ toolbar_brush_hardness 0.200000003
+ toolbar_source_transform_scale {1 1}
+ toolbar_source_transform_center {1440 810}
+ colorOverlay {0 0 0 0}
+ lifetime_type "all frames"
+ lifetime_start 921777
+ lifetime_end 921777
+ view {}
+ motionblur_on true
+ motionblur_shutter_offset_type centred
+ source_black_outside true
+ createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+ name RotoPaint_Auto
+ selected true
+ xpos 2330
+ ypos -14
+ addUserKnob {20 User}
+ addUserKnob {22 createReferenceMasks T "import mlPipeline\nfrom mlPipeline import ml_vectorToRoto\nreload(mlPipeline.ml_vectorToRoto)\nmlPipeline.ml_vectorToRoto.createReferenceMasks()" +STARTLINE}
+ addUserKnob {7 size}
+ size 5
+ addUserKnob {3 chunk}
+ chunk 5
+ addUserKnob {22 trackFrameForward T "import mlPipeline\nfrom mlPipeline import ml_vectorToRoto\nreload(mlPipeline.ml_vectorToRoto)\nmlPipeline.ml_vectorToRoto.trackFrameForward()" +STARTLINE}
+ addUserKnob {22 trackChunkForward -STARTLINE T "import mlPipeline\nfrom mlPipeline import ml_vectorToRoto\nreload(mlPipeline.ml_vectorToRoto)\nmlPipeline.ml_vectorToRoto.trackChunkForward()"}
+ addUserKnob {22 trackRangeForward -STARTLINE T "import mlPipeline\nfrom mlPipeline import ml_vectorToRoto\nreload(mlPipeline.ml_vectorToRoto)\nmlPipeline.ml_vectorToRoto.trackRangeForward()"}
+ addUserKnob {22 eraseAllVals l eraseVals T "import mlPipeline\nfrom mlPipeline import ml_vectorToRoto\nreload(mlPipeline.ml_vectorToRoto)\nmlPipeline.ml_vectorToRoto.eraseAllVals()" +STARTLINE}
+ addUserKnob {22 eraseAllFeatherKeys T "import mlPipeline\nfrom mlPipeline import ml_vectorToRoto\nreload(mlPipeline.ml_vectorToRoto)\nmlPipeline.ml_vectorToRoto.eraseAllFeatherVals()" +STARTLINE}
+}

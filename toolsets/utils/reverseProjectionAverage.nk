@@ -1,0 +1,129 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+Expression {
+ inputs 0
+ expr0 x/width
+ expr1 y/height
+ name Expression1
+ selected true
+ xpos -160
+ ypos -320
+}
+set Nfba34570 [stack 0]
+Camera2 {
+ inputs 0
+ read_from_file true
+ translate {31.021661 5.100267 -47.287833}
+ rotate {6.574503379 147.0021422 -1.092057536}
+ scaling {1 1 1}
+ focal 22
+ haperture 23.74900055
+ vaperture 13.35881233
+ near 1
+ focal_point 48.77231598
+ fstop 2
+ file P:/projects/microsand_7514P/sequences/kyotoE3/shots/kyo0090//publish/cache/camera/renderCam/v003/alembic/kyo0090_renderCam_cmra.abc
+ name Camera3
+ label "\[lrange \[split \[value file] /] 11 11]"
+ selected true
+ xpos -204
+ ypos -543
+}
+push $Nfba34570
+push 0
+push $cut_paste_input
+Dot {
+ name Dot4
+ selected true
+ xpos 161
+ ypos -428
+}
+set Nfba48520 [stack 0]
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+Shuffle {
+ in uPointWorld
+ name Shuffle3
+ label "\[value in]"
+ selected true
+ xpos -1
+ ypos -437
+}
+pointCameraProjection {
+ inputs 4
+ name pointCameraProjection1
+ selected true
+ xpos -1
+ ypos -367
+ surface_point rgb
+ surface_alpha none
+ projected_matte none
+ imageAspect 1.777777778
+ projection_occlusion 1
+ shadow_point rgba
+ surface_normal none
+ exrcam 0
+ focal "\[value parent.\[full_name \[node this]].Shuffle2.focal]"
+ filmbackHeight "\[value parent.\[full_name \[node this]].Shuffle2.v_apert]"
+}
+Merge2 {
+ inputs 2
+ operation minus
+ name Merge4
+ selected true
+ xpos -1
+ ypos -320
+}
+push $Nfba48520
+add_layer {dist dist.red dist.green dist.blue dist.alpha}
+ShuffleCopy {
+ inputs 2
+ alpha alpha2
+ black red
+ white green
+ red2 blue
+ green2 alpha
+ out2 dist
+ name ShuffleCopy1
+ selected true
+ xpos -1
+ ypos -272
+}
+IDistort {
+ channels rgba
+ uv dist
+ uv_scale {1920 1080}
+ name IDistort1
+ selected true
+ xpos -1
+ ypos -240
+}
+FrameBlend {
+ channels rgba
+ numframes 38
+ startframe {{first_frame}}
+ endframe {{last_frame}}
+ userange true
+ name FrameBlend1
+ selected true
+ xpos -1
+ ypos -191
+}
+push 0
+STMap {
+ inputs 2
+ channels rgb
+ uv rgb
+ name STMap1
+ selected true
+ xpos -1
+ ypos -116
+}
+Write {
+ inputs 0
+ channels rgba
+ file_type exr
+ name frameBlend
+ selected true
+ xpos -99
+ ypos -116
+}

@@ -1,0 +1,88 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/design/elements/mattepainting/extended/clashxmas_east_mp_v010extended_noSky.png
+ format "8000 3200 0 0 8000 3200 1 "
+ origset true
+ on_error "nearest frame"
+ name Read29
+ selected true
+ xpos -2664
+ ypos 572
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+ addUserKnob {43 description l Description}
+}
+Premult {
+ name Premult5
+ selected true
+ xpos -2664
+ ypos 725
+}
+Radial {
+ invert true
+ area {-3410 1455 9770 4735}
+ name Radial10
+ selected true
+ xpos -2664
+ ypos 772
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/design/elements/mattepainting/extended/clashxmas_east_mp_v010extended.png
+ format "8000 3200 0 0 8000 3200 1 "
+ origset true
+ on_error "nearest frame"
+ name Read30
+ selected true
+ xpos -2559
+ ypos 571
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+ addUserKnob {43 description l Description}
+}
+Grade {
+ inputs 1+1
+ white 1.44
+ gamma 1.64
+ maskChannelMask rgba.red
+ invert_mask true
+ name Grade15
+ selected true
+ xpos -2559
+ ypos 772
+}
+set N763b6f80 [stack 0]
+Radial {
+ replace true
+ area {-2075 815 9725 4934}
+ name Radial11
+ selected true
+ xpos -2664
+ ypos 847
+}
+push $N763b6f80
+Grade {
+ inputs 1+1
+ white 1.14
+ gamma 1.26
+ name Grade16
+ selected true
+ xpos -2559
+ ypos 847
+}
+East_MattePaintingCC {
+ name East_MattePaintingCC1
+ selected true
+ xpos -2559
+ ypos 913
+}

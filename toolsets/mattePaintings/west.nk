@@ -1,0 +1,89 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/design/elements/mattepainting/extended/clashxmas_west_mp_v005extended_noSky.png
+ format "8000 3200 0 0 8000 3200 1 "
+ origset true
+ on_error "nearest frame"
+ name Read5
+ selected true
+ xpos -1418
+ ypos 592
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+ addUserKnob {43 description l Description}
+}
+Premult {
+ name Premult2
+ selected true
+ xpos -1418
+ ypos 748
+}
+Radial {
+ invert true
+ area {-1720 1110 7978 4390}
+ name Radial3
+ selected true
+ xpos -1418
+ ypos 794
+}
+Read {
+ inputs 0
+ file P:/projects/supclashspring_7606P/design/elements/mattepainting/extended/clashxmas_west_mp_v005extended.jpg
+ format "8000 3200 0 0 8000 3200 1 "
+ origset true
+ on_error "nearest frame"
+ name Read20
+ selected true
+ xpos -1324
+ ypos 593
+ addUserKnob {20 submit_tab l Submit}
+ addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+ submission_preset dailies
+ addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+ addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+ addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+ addUserKnob {43 description l Description}
+}
+Grade {
+ inputs 1+1
+ white 1.44
+ gamma 1.64
+ maskChannelMask rgba.red
+ invert_mask true
+ mix 0.495
+ name Grade3
+ selected true
+ xpos -1324
+ ypos 794
+}
+set Nbaf5b3a0 [stack 0]
+Radial {
+ replace true
+ area {-1600 1295 7365 4699}
+ name Radial4
+ selected true
+ xpos -1421
+ ypos 869
+}
+push $Nbaf5b3a0
+Grade {
+ inputs 1+1
+ white 1.5
+ gamma 1.46
+ name Grade6
+ selected true
+ xpos -1324
+ ypos 869
+}
+hgr_West_MattePaintingCC {
+ name hgr_West_MattePaintingCC3
+ selected true
+ xpos -1324
+ ypos 933
+}

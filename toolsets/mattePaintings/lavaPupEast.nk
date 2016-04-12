@@ -1,0 +1,1145 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+Group {
+ inputs 0
+ name lavaPupEast
+ selected true
+ xpos 1051
+ ypos -272
+ postage_stamp true
+}
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/photoshop/LP_MP_east_05.jpg
+  format "12000 5000 0 0 12000 5000 1 "
+  origset true
+  name Read1
+  xpos 461
+  ypos -567
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/photoshop/psd/LP_MP_east_Flattened.exr
+  name Read3
+  xpos 730
+  ypos -579
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/photoshop/psd/LP_MP_east_Flattened_Small.exr
+  name Read4
+  xpos 589
+  ypos -579
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +STARTLINE}
+  addUserKnob {43 description l Description}
+ }
+ Reformat {
+  type scale
+  scale 4
+  name Reformat3
+  xpos 589
+  ypos -495
+ }
+ Switch {
+  inputs 2
+  name Switch1
+  xpos 656
+  ypos -462
+ }
+set N522a5e80 [stack 0]
+ Radial {
+  replace true
+  area {-540 -441.25 12100 8801.25}
+  name Radial2
+  xpos 936
+  ypos -462
+ }
+set N4a445270 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud0/exr/lavaPupEast_cloud0_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud0/exr_proxy/lavaPupEast_cloud0_v001.%04d.exr
+  name Read24
+  xpos 915
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult1
+  xpos 915
+  ypos -726
+ }
+ Transform {
+  center {10880 2440}
+  name Transform1
+  xpos 915
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud1/exr/lavaPupEast_cloud1_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud1/exr_proxy/lavaPupEast_cloud1_v001.%04d.exr
+  name Read25
+  xpos 1025
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult2
+  xpos 1025
+  ypos -726
+ }
+ Transform {
+  center {3860 2560}
+  name Transform2
+  xpos 1025
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud2/exr/lavaPupEast_cloud2_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud2/exr_proxy/lavaPupEast_cloud2_v001.%04d.exr
+  name Read26
+  xpos 1135
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult3
+  xpos 1135
+  ypos -726
+ }
+ Transform {
+  center {3600 2220}
+  name Transform3
+  xpos 1135
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud3/exr/lavaPupEast_cloud3_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud3/exr_proxy/lavaPupEast_cloud3_v001.%04d.exr
+  name Read27
+  xpos 1245
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult4
+  xpos 1245
+  ypos -726
+ }
+ Transform {
+  center {7320 2600}
+  name Transform4
+  xpos 1245
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud4/exr/lavaPupEast_cloud4_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud4/exr_proxy/lavaPupEast_cloud4_v001.%04d.exr
+  name Read28
+  xpos 1355
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult5
+  xpos 1355
+  ypos -726
+ }
+ Transform {
+  center {5580 3420}
+  name Transform5
+  xpos 1355
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud6/exr/lavaPupEast_cloud6_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud6/exr_proxy/lavaPupEast_cloud6_v001.%04d.exr
+  name Read30
+  xpos 1575
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult7
+  xpos 1575
+  ypos -726
+ }
+ Transform {
+  center {8580 2520}
+  name Transform7
+  xpos 1575
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud5/exr/lavaPupEast_cloud5_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud5/exr_proxy/lavaPupEast_cloud5_v001.%04d.exr
+  name Read29
+  xpos 1465
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult6
+  xpos 1465
+  ypos -726
+ }
+ Transform {
+  center {5840 3680}
+  name Transform6
+  xpos 1465
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud8/exr/lavaPupEast_cloud8_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud8/exr_proxy/lavaPupEast_cloud8_v001.%04d.exr
+  name Read32
+  xpos 1795
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult9
+  xpos 1795
+  ypos -726
+ }
+ Transform {
+  center {9860 2860}
+  name Transform9
+  xpos 1795
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud9/exr/lavaPupEast_cloud9_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud9/exr_proxy/lavaPupEast_cloud9_v001.%04d.exr
+  name Read33
+  xpos 1905
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult10
+  xpos 1905
+  ypos -726
+ }
+ Transform {
+  center {1540 2560}
+  name Transform10
+  xpos 1905
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud7/exr/lavaPupEast_cloud7_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud7/exr_proxy/lavaPupEast_cloud7_v001.%04d.exr
+  name Read31
+  xpos 1685
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult8
+  xpos 1685
+  ypos -726
+ }
+ Transform {
+  center {2520 2640}
+  name Transform8
+  xpos 1685
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud10/exr/lavaPupEast_cloud10_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud10/exr_proxy/lavaPupEast_cloud10_v001.%04d.exr
+  name Read34
+  xpos 2015
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult11
+  xpos 2015
+  ypos -726
+ }
+ Transform {
+  center {1860 2120}
+  name Transform11
+  xpos 2015
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud11/exr/lavaPupEast_cloud11_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud11/exr_proxy/lavaPupEast_cloud11_v001.%04d.exr
+  name Read35
+  xpos 2125
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult12
+  xpos 2125
+  ypos -726
+ }
+ Transform {
+  center {600 2160}
+  name Transform12
+  xpos 2125
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud12/exr/lavaPupEast_cloud12_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud12/exr_proxy/lavaPupEast_cloud12_v001.%04d.exr
+  name Read36
+  xpos 2235
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult13
+  xpos 2235
+  ypos -726
+ }
+ Transform {
+  center {4220 1540}
+  name Transform13
+  xpos 2235
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud13/exr/lavaPupEast_cloud13_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud13/exr_proxy/lavaPupEast_cloud13_v001.%04d.exr
+  name Read37
+  xpos 2345
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult14
+  xpos 2345
+  ypos -726
+ }
+ Transform {
+  center {10320 1480}
+  name Transform14
+  xpos 2345
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud14/exr/lavaPupEast_cloud14_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud14/exr_proxy/lavaPupEast_cloud14_v001.%04d.exr
+  name Read38
+  xpos 2455
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult15
+  xpos 2455
+  ypos -726
+ }
+ Transform {
+  center {7860 1520}
+  name Transform15
+  xpos 2455
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud15/exr/lavaPupEast_cloud15_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud15/exr_proxy/lavaPupEast_cloud15_v001.%04d.exr
+  name Read39
+  xpos 2565
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult16
+  xpos 2565
+  ypos -726
+ }
+ Transform {
+  center {7120 1320}
+  name Transform16
+  xpos 2565
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud16/exr/lavaPupEast_cloud16_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud16/exr_proxy/lavaPupEast_cloud16_v001.%04d.exr
+  name Read40
+  xpos 2675
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult17
+  xpos 2675
+  ypos -726
+ }
+ Transform {
+  center {6940 1360}
+  name Transform17
+  xpos 2675
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud17/exr/lavaPupEast_cloud17_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud17/exr_proxy/lavaPupEast_cloud17_v001.%04d.exr
+  name Read41
+  xpos 2785
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult18
+  xpos 2785
+  ypos -726
+ }
+ Transform {
+  center {8740 1360}
+  name Transform18
+  xpos 2785
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud18/exr/lavaPupEast_cloud18_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud18/exr_proxy/lavaPupEast_cloud18_v001.%04d.exr
+  name Read42
+  xpos 2895
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult19
+  xpos 2895
+  ypos -726
+ }
+ Transform {
+  center {2920 1220}
+  name Transform19
+  xpos 2895
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud19/exr/lavaPupEast_cloud19_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud19/exr_proxy/lavaPupEast_cloud19_v001.%04d.exr
+  name Read43
+  xpos 3005
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult20
+  xpos 3005
+  ypos -726
+ }
+ Transform {
+  center {2920 1260}
+  name Transform20
+  xpos 3005
+  ypos -702
+ }
+push 0
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud21/exr/lavaPupEast_cloud21_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud21/exr_proxy/lavaPupEast_cloud21_v001.%04d.exr
+  name Read45
+  xpos 3225
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult22
+  xpos 3225
+  ypos -726
+ }
+ Transform {
+  center {9180 1260}
+  name Transform22
+  xpos 3225
+  ypos -702
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud20/exr/lavaPupEast_cloud20_v001.%04d.exr
+  proxy P:/projects/supclashspring_7606P/assets/2D/mattePainting/lavaPupEast/steps/mattePainting/_renders/nuke/lavaPupEast_mattepainting_v001/cloud20/exr_proxy/lavaPupEast_cloud20_v001.%04d.exr
+  name Read44
+  xpos 3115
+  ypos -810
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "clashVRAnim\tClash VR Anim" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Premult {
+  name Premult21
+  xpos 3115
+  ypos -726
+ }
+ Transform {
+  center {9060 1260}
+  name Transform21
+  xpos 3115
+  ypos -702
+ }
+ Merge2 {
+  inputs 22+1
+  name Merge1
+  xpos 2132
+  ypos -616
+ }
+ Grade {
+  inputs 1+1
+  white {0.2748333812 0.4373333454 0.7998333573 1}
+  mix 0.85
+  name Grade7
+  xpos 2132
+  ypos -462
+ }
+push $N522a5e80
+ Dot {
+  name Dot11
+  xpos 690
+  ypos -330
+ }
+set Nca08ca60 [stack 0]
+ Dot {
+  name Dot13
+  xpos 840
+  ypos -330
+ }
+set Nca08cdd0 [stack 0]
+ Dot {
+  name Dot15
+  xpos 1727
+  ypos -330
+ }
+set Nca08d140 [stack 0]
+ Dot {
+  name Dot14
+  xpos 1938
+  ypos -330
+ }
+add_layer {stars stars.red stars.green stars.blue stars.alpha}
+ Shuffle {
+  in stars
+  name Shuffle12
+  label stars
+  xpos 1904
+  ypos -263
+ }
+ Crop {
+  box {0 5000 12000 1000}
+  name Crop12
+  xpos 1904
+  ypos -193
+ }
+push $N4a445270
+push $Nca08d140
+add_layer {far_wisps far_wisps.red far_wisps.green far_wisps.blue far_wisps.alpha}
+ Shuffle {
+  in far_wisps
+  name Shuffle13
+  label far_wisps
+  xpos 1693
+  ypos -262
+ }
+ Crop {
+  box {0 3824 12000 1227}
+  name Crop13
+  xpos 1693
+  ypos -194
+ }
+ Grade {
+  inputs 1+1
+  white {0.2748333812 0.4373333454 0.7998333573 1}
+  mix 0.85
+  name Grade12
+  xpos 1693
+  ypos -136
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "12000 5000 0 0 12000 5000 1 "
+  name Constant2
+  xpos 1175
+  ypos -289
+ }
+set N97b8a590 [stack 0]
+ RotoPaint {
+  replace true
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 512}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Rectangle1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {0 xc3270190}
+        {xc3c0fff1 x4465a094}
+        {x45891556 0}
+        {xc5891558 0}
+        {x4647d801 x4455a09c}
+        {0 xc3270190}
+        {0 x432701b8}
+        {x4647d801 x44245f48}
+        {xc5891558 0}
+        {x45891556 0}
+        {xc3be0001 x441d9f4d}
+        {0 x432701b8}}}
+      {cc
+       {f 8192}
+       {px 1
+        {0 xc32701a0}
+        {xc42d6de8 x44a5825c}
+        {x45891555 0}
+        {xc5891558 0}
+        {x435caf00 x44ac02de}
+        {0 xc32701a0}
+        {0 x432701a8}
+        {x4403ebc0 xc41cc5b6}
+        {xc5891558 0}
+        {x45891551 0}
+        {xc3ee5d1a xc4248422}
+        {0 x432701a0}}}}
+     {tx 1 x45bf9000 x44cf8000}
+     {a osw x41200000 osf 0 str 1 spx x44700000 spy x44070000 sb 1 tt x41000000}}}}}}
+  toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {960 540}
+  colorOverlay {0 0 0 0}
+  lifetime_type "all frames"
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint2
+  xpos 1346
+  ypos -130
+ }
+push $N4a445270
+ Roto {
+  output alpha
+  premultiply alpha
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x45bb8000 x451c4000}
+    {a}
+    {curvegroup Rectangle1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {0 xc4d2299c}
+        {xc3e10000 x45b31f9a}
+        {x458adaab 0}
+        {xc58adaac 0}
+        {x46494000 x45b31f9a}
+        {0 xc4d2299c}
+        {0 x44d2299a}
+        {x46494000 x442c0330}
+        {xc58adaac 0}
+        {x458adaab 0}
+        {xc3e10000 x442c0330}
+        {0 x44d2299a}}}
+      {cc
+       {f 8192}
+       {px 1
+        {0 xc4d2299c}
+        {0 0}
+        {x458adaab 0}
+        {xc58adaac 0}
+        {0 0}
+        {0 xc4d2299c}
+        {0 x44d2299a}
+        {xc2280100 x43c40000}
+        {xc58adaac 0}
+        {x458adaab 0}
+        {0 x44088004}
+        {0 x44d2299a}}}}
+     {tx 1 x45c23800 x4548a000}
+     {a bm x40000000 osw x41200000 osf 0 str 1 spx x45bb8000 spy x451c4000 sb 1 tt x41000000}}}}}}
+  toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 tt 4 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {6000 2500}
+  colorOverlay {0 0 0 0}
+  blending_mode multiply
+  lifetime_type "all frames"
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name Roto1
+  xpos 936
+  ypos -438
+ }
+ Grade {
+  channels rgba
+  gamma 1.38
+  name Grade5
+  xpos 936
+  ypos -402
+ }
+set N97b8afe0 [stack 0]
+push $N97b8a590
+ RotoPaint {
+  replace true
+  curves {{{v x3f99999a}
+  {f 0}
+  {n
+   {layer Root
+    {f 0}
+    {t x44700000 x44070000}
+    {a}
+    {curvegroup Rectangle1 512 bezier
+     {{cc
+       {f 8192}
+       {px 1
+        {0 xc3270190}
+        {xc3e10000 x44d6d04e}
+        {x45891555 0}
+        {xc5891558 0}
+        {x4646d800 x44ced052}
+        {0 xc3270190}
+        {0 x432701b8}
+        {x4646d800 x44b62fa8}
+        {xc5891558 0}
+        {x45891555 0}
+        {xc3d60000 x44c4cfaa}
+        {0 x432701b8}}}
+      {cc
+       {f 8192}
+       {px 1
+        {0 xc32701b0}
+        {xc3b2dbd8 x4544c12f}
+        {x45891554 0}
+        {xc5891558 0}
+        {x44072ba0 x45490171}
+        {0 xc32701b0}
+        {0 x432701a8}
+        {x4403ebc0 xc41cc5b6}
+        {xc5891558 0}
+        {x45891550 0}
+        {xc3ee5d1a xc4248422}
+        {0 x432701a8}}}}
+     {tx 1 x45bf9000 x44cf8000}
+     {a osw x41200000 osf 0 str 1 spx x44700000 spy x44070000 sb 1 tt x41000000}}}}}}
+  toolbox {selectAll {
+  { selectAll str 1 ssx 1 ssy 1 sf 1 }
+  { createBezier str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBezierCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createBSpline str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createEllipse str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { createRectangle str 1 ssx 1 ssy 1 sf 1 sb 1 tt 8 }
+  { createRectangleCusped str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { brush str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { eraser src 2 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { clone src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { reveal src 3 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { dodge src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { burn src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { blur src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { sharpen src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+  { smear src 1 str 1 ssx 1 ssy 1 sf 1 sb 1 }
+} }
+  toolbar_brush_hardness 0.200000003
+  toolbar_source_transform_scale {1 1}
+  toolbar_source_transform_center {960 540}
+  colorOverlay {0 0 0 0}
+  lifetime_type "all frames"
+  motionblur_shutter_offset_type centred
+  source_black_outside true
+  createNewTrack {{-1} "-1\t(none)\t-1" "1000\tNew Track Layer\t1000"}
+  name RotoPaint1
+  xpos 1175
+  ypos -217
+ }
+ Grade {
+  channels rgba
+  white 1.98
+  name Grade14
+  xpos 1175
+  ypos -193
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge6
+  xpos 1041
+  ypos -173
+ }
+push $N97b8afe0
+ Constant {
+  inputs 0
+  color {0.00737971114 0.1140722036 0.2161827683 1}
+  name Constant3
+  xpos 654
+  ypos 91
+ }
+push $N97b8afe0
+ Constant {
+  inputs 0
+  color {0.006641834509 0.05144468322 0.07302069664 1}
+  name Constant1
+  xpos 651
+  ypos -3
+ }
+push $Nca08cdd0
+add_layer {bgDetail bgDetail.red bgDetail.green bgDetail.blue bgDetail.alpha}
+ Shuffle {
+  in bgDetail
+  name Shuffle11
+  label bgDetail
+  xpos 806
+  ypos -264
+ }
+set N97b8c480 [stack 0]
+ Ramp {
+  replace true
+  p0 {{p1.x x1 215} 1640}
+  p1 {230 1040}
+  type plinear
+  name Ramp1
+  xpos 725
+  ypos -204
+ }
+set N97b8c7f0 [stack 0]
+push $N97b8c7f0
+push $N97b8c480
+ HueCorrect {
+  inputs 1+1
+  hue {sat {curve 1 0.6661691666 1 1 1 1 1}
+    lum {}
+    red {curve 1 0.5840796232 1 1 1 1 1}
+    green {curve 1 x0.6463236213 1 x1 1.443283558 x1.325735331 1 x2 1 x3 1 1 1 1}
+    blue {}
+    r_sup {}
+    g_sup {}
+    b_sup {}
+    sat_thrsh {}}
+  name HueCorrect1
+  xpos 806
+  ypos -182
+ }
+ Grade {
+  inputs 1+1
+  gamma 0.79
+  name Grade3
+  xpos 806
+  ypos -158
+ }
+push $Nca08ca60
+add_layer {BG BG.red BG.green BG.blue BG.alpha}
+ Shuffle {
+  in BG
+  name Shuffle10
+  label BG
+  xpos 656
+  ypos -264
+ }
+ Crop {
+  box {0 5000 12000 683}
+  name Crop10
+  xpos 656
+  ypos -152
+ }
+ Dot {
+  name Dot12
+  xpos 690
+  ypos -51
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge9
+  note_font "Bitstream Vera Sans"
+  xpos 806
+  ypos -54
+  maskChannelInput none
+ }
+ Merge2 {
+  inputs 2+1
+  name Merge3
+  xpos 806
+  ypos 21
+ }
+ Merge2 {
+  inputs 2+1
+  operation soft-light
+  mix 0.815
+  name Merge4
+  xpos 806
+  ypos 115
+ }
+ Grade {
+  inputs 1+1
+  white {0.7244445086 1.526507974 1.629999995 1}
+  maskChannelMask rgba.red
+  name Grade13
+  xpos 1041
+  ypos 115
+ }
+ Grade {
+  inputs 1+1
+  white {1.56225872 1.077258706 0.7922587395 1.700000048}
+  name Grade15
+  xpos 1346
+  ypos 115
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge11
+  note_font "Bitstream Vera Sans"
+  xpos 1693
+  ypos 115
+  maskChannelInput none
+ }
+ PSDMerge {
+  inputs 2
+  name PSDMerge10
+  note_font "Bitstream Vera Sans"
+  xpos 1904
+  ypos 115
+  operation screen
+  maskChannelInput none
+ }
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos 2132
+  ypos 115
+ }
+ Output {
+  name Output1
+  xpos 2132
+  ypos 190
+ }
+end_group

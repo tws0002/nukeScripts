@@ -1,0 +1,1220 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Group {
+ name REBUILD1
+ knobChanged "n=nuke.thisNode() \nk=nuke.thisKnob() \nif k.name() == \"inputChange\": \n import mlPipeline\n from mlPipeline import ml_pipelineTools\n reload(mlPipeline.ml_pipelineTools)\n mlPipeline.ml_pipelineTools.matchAovs()"
+ label "\[lindex \[split \[lindex \[split \[value input0.file] /] end] .] 0]\n\[lindex \[split \[lindex \[split \[value input1.file] /] end] .] 0]"
+ selected true
+ xpos -1780
+ ypos -4103
+ addUserKnob {20 rebuild}
+ addUserKnob {22 match l matchAovs T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.matchAovs()" +STARTLINE}
+ addUserKnob {20 info}
+ addUserKnob {22 addAssetGizmos -STARTLINE T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.addAssetGizmos(\"Lavapup\")"}
+ addUserKnob {22 printCryptoInfo T "import mlPipeline\nfrom mlPipeline import ml_pipelineTools\nreload(mlPipeline.ml_pipelineTools)\nmlPipeline.ml_pipelineTools.showData()" +STARTLINE}
+ addUserKnob {43 assetList l "" +STARTLINE}
+ addUserKnob {43 existList l "" -STARTLINE}
+ existList "Existing:\n"
+ addUserKnob {43 matList l "" -STARTLINE}
+ addUserKnob {26 spacer l "" -STARTLINE T "\t"}
+ addUserKnob {20 endGroup n -1}
+}
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/diffuse_color/archerVr_fg_lAll_diffuse_color_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name diffuse_color
+  xpos -2119
+  ypos -1063
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Clamp {
+  minimum 0.001
+  name Clamp1
+  xpos -2119
+  ypos -969
+ }
+ Reformat {
+  name Reformat3
+  xpos -2119
+  ypos -933
+ }
+ Input {
+  inputs 0
+  name lAll
+  xpos -2125
+  ypos -1216
+ }
+ Reformat {
+  name Reformat1
+  xpos -2125
+  ypos -1131
+ }
+ Input {
+  inputs 0
+  name uBasic
+  xpos -3153
+  ypos -1585
+  number 1
+ }
+ Reformat {
+  name Reformat13
+  xpos -3153
+  ypos -1469
+ }
+set N4bc9a3f0 [stack 0]
+ Read {
+  inputs 0
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 100
+  last 144
+  origfirst 100
+  origlast 144
+  origset true
+  name uAO
+  xpos -1871
+  ypos -1700
+  disable true
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat2
+  xpos -1871
+  ypos -1615
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uUVI/archerVr_fg_uBasic_uUVI_v004.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 30
+  last 1920
+  origfirst 100
+  origlast 199
+  origset true
+  name uUVI
+  xpos -1981
+  ypos -1699
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat22
+  xpos -1981
+  ypos -1615
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uPRef/archerVr_fg_uBasic_uPRef_v004.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 30
+  last 1920
+  origfirst 100
+  origlast 199
+  origset true
+  name uPRef
+  xpos -2099
+  ypos -1701
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat21
+  xpos -2099
+  ypos -1617
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uPointWorld/archerVr_fg_uBasic_uPointWorld_v004.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 30
+  last 1920
+  origfirst 100
+  origlast 199
+  origset true
+  name uPointWorld
+  xpos -2208
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat14
+  xpos -2208
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uPointCamera/archerVr_fg_uBasic_uPointCamera_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name uPointCamera
+  xpos -2318
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat15
+  xpos -2318
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uNormalWorld/archerVr_fg_uBasic_uNormalWorld_v004.%04d.exr
+  first 30
+  last 1920
+  name uNormalWorld
+  xpos -2428
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat17
+  xpos -2428
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uNormalCamera/archerVr_fg_uBasic_uNormalCamera_v004.%04d.exr
+  first 30
+  last 1920
+  name uNormalCamera
+  xpos -2538
+  ypos -1703
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat18
+  xpos -2538
+  ypos -1619
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uCryptoMaterial/archerVr_fg_uBasic_uCryptoMaterial_v004.%04d.exr
+  first 30
+  last 1920
+  origfirst 101
+  origlast 160
+  origset true
+  name uCryptoMaterial
+  xpos -2700
+  ypos -2084
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+set N4bc9d780 [stack 0]
+ Reformat {
+  name Reformat19
+  xpos -2700
+  ypos -2000
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_uBasic/v004/exr/uCryptoAsset/archerVr_fg_uBasic_uCryptoAsset_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name uCryptoAsset
+  xpos -2912
+  ypos -2085
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+set N4bc9de60 [stack 0]
+ Reformat {
+  name Reformat20
+  xpos -2912
+  ypos -2001
+ }
+push $N4bc9a3f0
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy2
+  xpos -2912
+  ypos -1481
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy1
+  xpos -2700
+  ypos -1481
+ }
+add_layer {uNormalCamera uNormalCamera.red uNormalCamera.green uNormalCamera.blue uNormalCamera.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uNormalCamera
+  name ShuffleCopy25
+  label "\[value out2]"
+  xpos -2538
+  ypos -1475
+ }
+add_layer {uNormalWorld uNormalWorld.red uNormalWorld.green uNormalWorld.blue uNormalWorld.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uNormalWorld
+  name ShuffleCopy26
+  label "\[value out2]"
+  xpos -2428
+  ypos -1475
+ }
+add_layer {uPointCamera uPointCamera.red uPointCamera.green uPointCamera.blue uPointCamera.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPointCamera
+  name ShuffleCopy28
+  label "\[value out2]"
+  xpos -2318
+  ypos -1475
+ }
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPointWorld
+  name ShuffleCopy29
+  label "\[value out2]"
+  xpos -2208
+  ypos -1475
+ }
+add_layer {uPRef uPRef.red uPRef.green uPRef.blue uPRef.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uPRef
+  name ShuffleCopy10
+  label "\[value out2]"
+  xpos -2098
+  ypos -1475
+ }
+add_layer {uUVI uUVI.red uUVI.green uUVI.blue uUVI.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uUVI
+  name ShuffleCopy15
+  label "\[value out2]"
+  xpos -1981
+  ypos -1475
+ }
+add_layer {uAO uAO.red uAO.green uAO.blue uAO.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 uAO
+  name ShuffleCopy9
+  label "\[value out2]"
+  xpos -1871
+  ypos -1475
+ }
+ CopyBBox {
+  inputs 2
+  name CopyBBox2
+  xpos -1871
+  ypos -1370
+ }
+add_layer {startRGBA startRGBA.red startRGBA.green startRGBA.blue startRGBA.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 startRGBA
+  name ShuffleCopy4
+  label "\[value out2]"
+  xpos -1871
+  ypos -1137
+ }
+add_layer {diffuse_color diffuse_color.red diffuse_color.green diffuse_color.blue diffuse_color.alpha}
+ ShuffleCopy {
+  inputs 2
+  black red
+  white green
+  red2 blue
+  out none
+  out2 diffuse_color
+  name ShuffleCopy2
+  label "\[value out2]"
+  xpos -1871
+  ypos -939
+ }
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle8
+  label "\[value in]"
+  xpos -1871
+  ypos -816
+ }
+set N4bca0e80 [stack 0]
+ Shuffle {
+  in diffuse_color
+  in2 startRGBA
+  alpha alpha2
+  name Shuffle9
+  label "\[value in]"
+  xpos -1540
+  ypos -816
+ }
+set N4bca11f0 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle3
+  label "\[value in]"
+  xpos -1229
+  ypos -816
+ }
+set N4bca1560 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle4
+  label "\[value in]"
+  xpos -898
+  ypos -816
+ }
+set N4bca18d0 [stack 0]
+ Shuffle {
+  in diffuse_color
+  name Shuffle11
+  label "\[value in]"
+  xpos -446
+  ypos -816
+ }
+set N4bca1c40 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle10
+  label "\[value in]"
+  xpos 49
+  ypos -816
+ }
+set N4bca1fb0 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle12
+  label "\[value in]"
+  xpos 549
+  ypos -816
+ }
+set N4bca2320 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle13
+  label "\[value in]"
+  xpos 892
+  ypos -816
+ }
+set N4bca2690 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle14
+  label "\[value in]"
+  xpos 1324
+  ypos -816
+ }
+set N4bca2a00 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle15
+  label "\[value in]"
+  xpos 1724
+  ypos -816
+ }
+set N4bca2d70 [stack 0]
+ Shuffle {
+  in startRGBA
+  name Shuffle23
+  label "\[value in]"
+  xpos 2064
+  ypos -816
+ }
+set N4bca30e0 [stack 0]
+ Shuffle {
+  in uPointCamera
+  in2 startRGBA
+  red blue
+  green blue
+  alpha alpha2
+  name Shuffle17
+  label "\[value in]"
+  xpos 2454
+  ypos -816
+ }
+ Unpremult {
+  name Shuffle9_unpremult
+  xpos 2454
+  ypos -765
+ }
+ ml_AtmosControl {
+  name ml_AtmosControl
+  xpos 2454
+  ypos -681
+ }
+ NoOp {
+  name atmos_OUT
+  note_font_size 20
+  xpos 2454
+  ypos 284
+ }
+push $N4bca30e0
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/indirect_backlight/archerVr_fg_lAll_indirect_backlight_v004.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 30
+  last 1920
+  origfirst 101
+  origlast 160
+  origset true
+  name indirect_backlight
+  xpos -765
+  ypos -782
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat16
+  xpos -765
+  ypos -698
+ }
+set N4bca56b0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/direct_backlight/archerVr_fg_lAll_direct_backlight_v004.%04d.exr
+  format "1920 1080 0 0 1920 1080 1 HD"
+  first 30
+  last 1920
+  origfirst 101
+  origlast 160
+  origset true
+  name direct_backlight
+  xpos -1119
+  ypos -785
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat12
+  xpos -1119
+  ypos -701
+ }
+set N4bca5a20 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/direct_diffuse/archerVr_fg_lAll_direct_diffuse_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name direct_diffuse
+  xpos -1761
+  ypos -785
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat4
+  xpos -1761
+  ypos -701
+ }
+set N4bca6100 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/indirect_diffuse/archerVr_fg_lAll_indirect_diffuse_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name indirect_diffuse
+  xpos -1407
+  ypos -782
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat8
+  xpos -1407
+  ypos -698
+ }
+set N4bca67e0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/sss/archerVr_fg_lAll_sss_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name sss
+  xpos 159
+  ypos -792
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat24
+  xpos 159
+  ypos -708
+ }
+set N4bca6ec0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/direct_specular_2/archerVr_fg_lAll_direct_specular_2_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name direct_specular_2
+  xpos 757
+  ypos -777
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat6
+  xpos 757
+  ypos -693
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/direct_specular/archerVr_fg_lAll_direct_specular_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name direct_specular
+  xpos 647
+  ypos -780
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat5
+  xpos 647
+  ypos -696
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge6
+  xpos 647
+  ypos -653
+ }
+set N4bca7ff0 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/indirect_specular_2/archerVr_fg_lAll_indirect_specular_2_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name indirect_specular_2
+  xpos 1103
+  ypos -776
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat10
+  xpos 1103
+  ypos -692
+ }
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/indirect_specular/archerVr_fg_lAll_indirect_specular_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name indirect_specular
+  xpos 993
+  ypos -775
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat9
+  xpos 993
+  ypos -691
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge7
+  xpos 993
+  ypos -652
+ }
+set N4bca9120 [stack 0]
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/refraction/archerVr_fg_lAll_refraction_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name refraction
+  xpos 1497
+  ypos -783
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat11
+  xpos 1497
+  ypos -699
+ }
+set N4bca9800 [stack 0]
+push 0
+push 0
+push 0
+ Read {
+  inputs 0
+  file P:/projects/supclashspring_7606P/sequences/clashConVr/shots/archerVr/publish/image/lighting/fg_lAll/v004/exr/emission/archerVr_fg_lAll_emission_v004.%04d.exr
+  first 30
+  last 1920
+  origlast 495
+  origset true
+  name emission
+  xpos 1855
+  ypos -784
+  addUserKnob {20 submit_tab l Submit}
+  addUserKnob {4 submission_preset l "Submission Preset" +DISABLED M {"to-qt\t1/4 Res Quicktime" "dailies\tDailies" "test\tTest" "test-rvio\tTest RVIO"}}
+  submission_preset dailies
+  addUserKnob {22 submit_gui l "Submit (GUI)" -STARTLINE +DISABLED T NodeSubmission.do_submission_gui()}
+  addUserKnob {22 submit l Submit -STARTLINE +DISABLED T NodeSubmission.do_submission()}
+  addUserKnob {6 pass_frange l "Pass frame range to transgen" +DISABLED +STARTLINE}
+  addUserKnob {43 description l Description +DISABLED}
+  description "Polaris could not be loaded."
+ }
+ Reformat {
+  name Reformat7
+  xpos 1855
+  ypos -700
+ }
+set N4bca9ee0 [stack 0]
+ Merge2 {
+  inputs 11+1
+  name CombineAll
+  xpos 2241
+  ypos -755
+  hide_input true
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 2241
+  ypos -674
+ }
+push $N4bca30e0
+ Merge2 {
+  inputs 2
+  operation from
+  name Merge11
+  xpos 2064
+  ypos -674
+ }
+ NoOp {
+  name remainder_OUT
+  note_font_size 20
+  xpos 2064
+  ypos 284
+ }
+push $N4bca9ee0
+push $N4bca2d70
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy3
+  xpos 1724
+  ypos -700
+ }
+ Unpremult {
+  name Shuffle8_unpremult
+  selected true
+  xpos 1724
+  ypos -676
+ }
+ NoOp {
+  name emission_OUT
+  note_font_size 20
+  xpos 1724
+  ypos 284
+ }
+push $N4bca9800
+push $N4bca2a00
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy5
+  xpos 1324
+  ypos -699
+ }
+ Unpremult {
+  name Shuffle7_unpremult
+  xpos 1324
+  ypos -675
+ }
+ NoOp {
+  name refr_OUT
+  note_font_size 20
+  xpos 1324
+  ypos 284
+ }
+push $N4bca9120
+push $N4bca2690
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy6
+  xpos 892
+  ypos -652
+ }
+ Unpremult {
+  name Shuffle6_unpremult
+  xpos 892
+  ypos -616
+ }
+ Dot {
+  name Dot1
+  xpos 926
+  ypos -301
+ }
+push $N4bca7ff0
+push $N4bca2320
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy7
+  xpos 549
+  ypos -654
+ }
+ Unpremult {
+  name Shuffle5_unpremult
+  xpos 549
+  ypos -606
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge9
+  xpos 549
+  ypos -304
+ }
+ NoOp {
+  name spec_OUT
+  note_font_size 20
+  xpos 549
+  ypos 284
+ }
+push $N4bca6ec0
+push $N4bca1fb0
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  alpha alpha2
+  name ShuffleCopy8
+  xpos 49
+  ypos -708
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 49
+  ypos -684
+ }
+ NoOp {
+  name sss_OUT
+  note_font_size 20
+  xpos 49
+  ypos 282
+ }
+push $N4bca1c40
+ Unpremult {
+  name Shuffle4_unpremult
+  xpos -446
+  ypos -780
+ }
+ NoOp {
+  name color_OUT
+  note_font_size 20
+  xpos -446
+  ypos 284
+ }
+push $N4bca56b0
+push $N4bca18d0
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge13
+  xpos -898
+  ypos -698
+ }
+ Dot {
+  name Dot4
+  xpos -864
+  ypos -304
+ }
+push $N4bca5a20
+push $N4bca1560
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge14
+  xpos -1229
+  ypos -701
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge15
+  xpos -1229
+  ypos -307
+ }
+ NoOp {
+  name backlight_OUT
+  note_font_size 20
+  xpos -1229
+  ypos 284
+ }
+push $N4bca67e0
+push $N4bca11f0
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge3
+  xpos -1540
+  ypos -698
+ }
+ Dot {
+  name Dot2
+  xpos -1506
+  ypos -307
+ }
+push $N4bca6100
+push $N4bca0e80
+ Merge2 {
+  inputs 2
+  operation divide
+  output rgb
+  name Merge4
+  xpos -1871
+  ypos -701
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge5
+  xpos -1871
+  ypos -310
+ }
+ NoOp {
+  name lighting_OUT
+  note_font_size 20
+  xpos -1871
+  ypos 287
+ }
+ Dot {
+  name Dot3
+  xpos -1837
+  ypos 321
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE1
+  xpos -1229
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  name color_MERGE
+  xpos -446
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE
+  xpos 49
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name spec_MERGE
+  xpos 549
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name refr_MERGE
+  xpos 1324
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE
+  xpos 1724
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE2
+  xpos 2064
+  ypos 318
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name atmos_MERGE
+  xpos 2454
+  ypos 318
+  disable true
+ }
+ Crop {
+  box {{uBasic.bbox.x} {uBasic.bbox.y} {uBasic.bbox.r} {uBasic.bbox.t}}
+  name setBbox
+  xpos 2454
+  ypos 583
+ }
+ Premult {
+  name rebuildPremult
+  xpos 2454
+  ypos 616
+ }
+ Remove {
+  operation keep
+  channels rgba
+  channels2 uPointWorld
+  channels3 uNormalWorld
+  channels4 uPointCamera
+  name Remove1
+  xpos 2454
+  ypos 657
+ }
+ Output {
+  name Output1
+  xpos 2454
+  ypos 824
+ }
+push $N4bc9d780
+add_layer {uCryptoMaterial uCryptoMaterial.red uCryptoMaterial.green uCryptoMaterial.blue uCryptoMaterial.alpha}
+add_layer {uCryptoMaterial00 uCryptoMaterial00.red uCryptoMaterial00.green uCryptoMaterial00.blue uCryptoMaterial00.alpha}
+ cryptomatte_multi {
+  name cryptomatte_multi1
+  xpos -2700
+  ypos -2206
+  matteList ""
+  expression ""
+  keyedName ""
+  previewChannel uCryptoMaterial
+  in00 uCryptoMaterial00
+ }
+push $N4bc9de60
+add_layer {uCryptoAsset uCryptoAsset.red uCryptoAsset.green uCryptoAsset.blue uCryptoAsset.alpha}
+add_layer {uCryptoAsset00 uCryptoAsset00.red uCryptoAsset00.green uCryptoAsset00.blue uCryptoAsset00.alpha}
+ cryptomatte_multi {
+  name cryptomatte_multi2
+  xpos -2912
+  ypos -2208
+  matteList ""
+  expression ""
+  keyedName ""
+  previewChannel uCryptoAsset
+  in00 uCryptoAsset00
+ }
+end_group
