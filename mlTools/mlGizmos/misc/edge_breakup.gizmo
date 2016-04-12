@@ -1,0 +1,96 @@
+#! C:/Program Files/Nuke7.0v4/Nuke7.0.exe -nx
+version 7.0 v4
+Gizmo {
+ inputs 2
+ tile_color 0xff2f2fff
+ addUserKnob {20 User l controls}
+ addUserKnob {4 viewChoice l view M {bty "edge matte" "expon blur"}}
+ addUserKnob {26 expoBlur l "expon blur"}
+ addUserKnob {41 size T L_ExponBlur_v03_2.size}
+ addUserKnob {41 Multiplier l multiplier T L_ExponBlur_v03_2.Multiplier}
+ addUserKnob {26 edgeDetect l "edge detect     "}
+ addUserKnob {41 size_1 l smoothness T edge_detect10.size_1}
+ addUserKnob {41 edgeMatSize l "edge size" T edge_detect10.edgeMatSize}
+}
+ Input {
+  inputs 0
+  name MATTE
+  xpos 200
+  ypos -45
+ }
+ Dot {
+  name Dot108
+  xpos 231
+  ypos 131
+ }
+set N56d7b2a0 [stack 0]
+ L_ExponBlur_v03 {
+  name L_ExponBlur_v03_2
+  xpos 200
+  ypos 200
+  size -3
+ }
+set N5659e3d0 [stack 0]
+ Dot {
+  name Dot3
+  xpos 231
+  ypos 271
+ }
+push $N56d7b2a0
+ AdjBBox {
+  numpixels 100
+  name AdjBBox1
+  xpos 520
+  ypos 130
+ }
+ edge_detect {
+  name edge_detect10
+  note_font Verdana
+  xpos 520
+  ypos 201
+  size_1 14
+ }
+set N5659e820 [stack 0]
+ Dot {
+  name Dot2
+  xpos 551
+  ypos 271
+ }
+set N56d7f080 [stack 0]
+push $N5659e820
+ Input {
+  inputs 0
+  name Texture
+  xpos 360
+  ypos -45
+  number 1
+ }
+push $N5659e3d0
+ ChannelMerge {
+  inputs 2+1
+  operation multiply
+  bbox B
+  name ChannelMerge64
+  xpos 360
+  ypos 186
+ }
+ Switch {
+  inputs 3
+  which {{viewChoice}}
+  name Switch1
+  xpos 360
+  ypos 339
+ }
+ Output {
+  name Output1
+  xpos 360
+  ypos 410
+ }
+push $N56d7f080
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 520
+  ypos 431
+ }
+end_group

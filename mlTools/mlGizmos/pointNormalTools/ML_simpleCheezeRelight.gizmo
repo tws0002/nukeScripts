@@ -1,0 +1,166 @@
+add_layer {normals normals.red normals.green normals.blue normals.alpha}
+add_layer {PW PW.red PW.green PW.blue PW.alpha}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 normals T Shuffle18.in}
+ addUserKnob {41 in_1 l point T Shuffle1.in}
+ addUserKnob {41 color l lightPosition T Constant8.color}
+ addUserKnob {41 lightRadius T Expression5.lightRadius}
+ addUserKnob {41 multiply l lightIntensity T Grade48.multiply}
+ addUserKnob {41 gamma l lightFalloff T Grade48.gamma}
+ addUserKnob {41 viewPoint l viewPosition T Switch1.viewPoint}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  color {630.0873413 1507.179291 -14.46044922 1}
+  name Constant8
+  xpos -849
+  ypos 39
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -862
+  ypos -139
+ }
+ Dot {
+  name Dot1
+  xpos -828
+  ypos -67
+ }
+set N37c74e70 [stack 0]
+add_layer {horizon.matte}
+add_layer {rgba rgba.beta redguard1.glow}
+ Shuffle {
+  in PW
+  name Shuffle1
+  xpos -678
+  ypos 18
+ }
+ Unpremult {
+  name Unpremult2
+  selected true
+  xpos -678
+  ypos 42
+ }
+set N94b2e40 [stack 0]
+ Expression {
+  temp_name0 xdif
+  temp_expr0 (refPoint.x-r)
+  temp_name1 ydif
+  temp_expr1 (refPoint.y-g)
+  temp_name2 zdif
+  temp_expr2 (refPoint.z-b)
+  temp_name3 length
+  temp_expr3 sqrt(xdif*xdif+ydif*ydif+zdif*zdif)
+  channel0 rgb
+  expr0 1-(length/lightRadius)
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  channel3 {none none none -rgba.alpha}
+  name Expression5
+  label pointDistance
+  xpos -618
+  ypos 127
+  addUserKnob {20 User}
+  addUserKnob {7 lightRadius R 0 1000}
+  lightRadius 2070
+  addUserKnob {13 refPoint}
+  refPoint {{parent.Constant8.color x135 -20.20000076} {parent.Constant8.color x135 50.59999847} {parent.Constant8.color x135 -131.3999939}}
+ }
+ Grade {
+  multiply 2.1
+  gamma 0.275
+  name Grade48
+  xpos -618
+  ypos 184
+ }
+push $N94b2e40
+ Expression {
+  temp_name0 xdif
+  temp_expr0 (refPoint.x-r)
+  temp_name1 ydif
+  temp_expr1 (refPoint.y-g)
+  temp_name2 zdif
+  temp_expr2 (refPoint.z-b)
+  temp_name3 length
+  temp_expr3 sqrt(xdif*xdif+ydif*ydif+zdif*zdif)
+  expr0 xdif/length
+  expr1 ydif/length
+  expr2 zdif/length
+  name Expression1
+  label lightingDirVector
+  xpos -786
+  ypos 129
+  addUserKnob {20 User}
+  addUserKnob {13 refPoint}
+  refPoint {{parent.Constant8.color x135 -20.20000076} {parent.Constant8.color x135 50.59999847} {parent.Constant8.color x135 -131.3999939}}
+ }
+push $N37c74e70
+ Shuffle {
+  in normals
+  name Shuffle18
+  xpos -1047
+  ypos 16
+ }
+ Unpremult {
+  name Unpremult1
+  xpos -1047
+  ypos 59
+ }
+ Grade {
+  multiply 2
+  black_clamp false
+  name Grade1
+  xpos -1047
+  ypos 115
+ }
+ Grade {
+  add -1
+  black_clamp false
+  name Grade2
+  xpos -1047
+  ypos 151
+ }
+ MergeExpression {
+  inputs 2
+  channel0 rgb
+  expr0 (Ar*Br)+(Ag*Bg)+(Ab*Bb)
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  channel3 {none none none -rgba.alpha}
+  name MergeExpression1
+  xpos -786
+  ypos 197
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge54
+  xpos -671
+  ypos 267
+ }
+push $N94b2e40
+ Dot {
+  name Dot2
+  xpos -305
+  ypos 33
+ }
+ Switch {
+  inputs 2
+  which {{1-viewPoint i}}
+  name Switch1
+  xpos -578
+  ypos 356
+  addUserKnob {20 User}
+  addUserKnob {6 viewPoint +STARTLINE}
+ }
+set N37cb3a10 [stack 0]
+ Output {
+  name Output1
+  xpos -578
+  ypos 408
+ }
+push $N37cb3a10
+end_group

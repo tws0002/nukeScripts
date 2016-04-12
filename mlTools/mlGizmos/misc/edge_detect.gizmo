@@ -1,0 +1,79 @@
+#! C:/Program Files/Nuke7.0v4/Nuke7.0.exe -nx
+version 7.0 v4
+Gizmo {
+ addUserKnob {20 edge_detect l "edge detect"}
+ addUserKnob {41 size l "EdgeMat Smoothness" T Blur_edgeMat.size}
+ addUserKnob {41 strength l "EdgeMat Strength" T Multiply_edgeMat.value}
+ addUserKnob {41 edgeMat_size l "EdgeMat Size" T FilterErode_edgeMat.size}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 802
+  ypos -464
+ }
+ Grade {
+  channels alpha
+  blackpoint 0.2
+  whitepoint 0.9
+  name Grade1
+  xpos 802
+  ypos -424
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle_edgeMat
+  xpos 802
+  ypos -322
+ }
+ Blur {
+  name Blur_edgeMat
+  xpos 802
+  ypos -232
+ }
+set N12fa84d0 [stack 0]
+ Invert {
+  name Invert_edgeMat
+  xpos 912
+  ypos -232
+ }
+ FilterErode {
+  channels all
+  size 0
+  filter gaussian
+  name FilterErode_edgeMat
+  xpos 912
+  ypos -159
+ }
+ set C12fa8bb0 [stack 0]
+push $N12fa84d0
+clone $C12fa8bb0 {
+  xpos 802
+  ypos -159
+  selected false
+ }
+ Merge2 {
+  inputs 2
+  operation difference
+  name Merge_edgeMat
+  xpos 802
+  ypos -82
+ }
+ Invert {
+  name Invert_edgeMat2
+  xpos 802
+  ypos -16
+ }
+ Multiply {
+  name Multiply_edgeMat
+  xpos 802
+  ypos 56
+ }
+ Output {
+  name Output1
+  xpos 802
+  ypos 156
+ }
+end_group

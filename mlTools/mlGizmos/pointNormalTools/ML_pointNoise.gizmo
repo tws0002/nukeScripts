@@ -1,0 +1,88 @@
+add_layer {_pointWorld _pointWorld.red _pointWorld.green _pointWorld.blue _pointWorld.alpha}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 in l "in 1" T Shuffle23.in}
+ addUserKnob {41 pos T HueNoise_controls.pos}
+ addUserKnob {41 globalScale T HueNoise_controls.globalScale}
+ addUserKnob {41 yScale T HueNoise_controls.yScale}
+ addUserKnob {41 xScale T HueNoise_controls.xScale}
+ addUserKnob {41 oct T HueNoise_controls.oct}
+ addUserKnob {41 zScale T HueNoise_controls.zScale}
+ addUserKnob {41 lac T HueNoise_controls.lac}
+ addUserKnob {41 gain T HueNoise_controls.gain}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 blackpoint T Grade4.blackpoint}
+ addUserKnob {41 whitepoint T Grade4.whitepoint}
+ addUserKnob {41 multiply T Grade4.multiply}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 476
+  ypos 219
+ }
+set Nef7ecc50 [stack 0]
+push $Nef7ecc50
+ Shuffle {
+  in _pointWorld
+  name Shuffle23
+  label "\[value in]"
+  xpos 376
+  ypos 326
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 376
+  ypos 375
+ }
+ Expression {
+  channel0 rgb
+  expr0 fBm(r*xScale/globalScale+pos.x,g*yScale/globalScale+pos.y,b*zScale/globalScale+pos.z,oct,lac,gain)
+  name HueNoise_controls
+  xpos 376
+  ypos 415
+  addUserKnob {20 User}
+  addUserKnob {13 pos}
+  addUserKnob {7 globalScale R 0 10}
+  globalScale 2.15
+  addUserKnob {7 yScale R 0 5}
+  yScale 0.56
+  addUserKnob {7 xScale R 0 5}
+  xScale 0.56
+  addUserKnob {7 zScale R 0 5}
+  zScale 0.58
+  addUserKnob {7 oct R 0 10}
+  oct 8.85
+  addUserKnob {7 lac R 0 5}
+  lac 2.04
+  addUserKnob {7 gain R 0 2}
+  gain 0.45
+ }
+ Grade {
+  blackpoint -1
+  whitepoint 2.65
+  white 2.45
+  gamma 0.42
+  name Grade4
+  xpos 376
+  ypos 449
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 476
+  ypos 524
+ }
+ Premult {
+  name Premult1
+  selected true
+  xpos 476
+  ypos 548
+  disable true
+ }
+ Output {
+  name Output1
+  xpos 476
+  ypos 607
+ }
+end_group

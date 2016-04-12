@@ -1,0 +1,32 @@
+#! C:/Temp/psyop_cache/apps/nuke/win64/8.0v6/nuke-8.0.v6.dll -nx
+version 8.0 v6
+Gizmo {
+ addUserKnob {20 percentBlur l "Percent Blur"}
+ addUserKnob {41 xpercent l xPercent T Blur120.xpercent}
+ addUserKnob {41 ypercent l yPercent T Blur120.ypercent}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 514
+  ypos -229
+ }
+ Blur {
+  size {{width/3*(xpercent/100) x1001 6.826666667e+010} {height/3*(ypercent/100)}}
+  crop false
+  name Blur120
+  selected true
+  xpos 514
+  ypos -162
+  addUserKnob {20 User}
+  addUserKnob {7 xpercent l xPercent R 0 100}
+  xpercent 1
+  addUserKnob {7 ypercent l yPercent R 0 100}
+  ypercent 1
+ }
+ Output {
+  name Output1
+  xpos 514
+  ypos -89
+ }
+end_group

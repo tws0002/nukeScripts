@@ -1,0 +1,40 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke8.0v5/nuke-8.0.v5.dll -nx
+version 8.0 v5
+Gizmo {
+ addUserKnob {20 User l DepthControl}
+ addUserKnob {41 whitepoint T DepthRange.whitepoint}
+ addUserKnob {41 atmos_Grade_gamma l falloff T atmos_Grade.gamma}
+ addUserKnob {41 AtmosColor_white l color T AtmosColor.white}
+ addUserKnob {41 AtmosColor_multiply l amount T AtmosColor.multiply}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 461
+  ypos -609
+ }
+ Grade {
+  whitepoint -5000
+  name DepthRange
+  xpos 461
+  ypos -535
+ }
+ Grade {
+  gamma 0.51
+  name atmos_Grade
+  xpos 461
+  ypos -495
+ }
+ Grade {
+  white {0.2290262282 0.4961231053 0.7880066633 1}
+  multiply 0.3
+  name AtmosColor
+  xpos 461
+  ypos -450
+ }
+ Output {
+  name Output1
+  xpos 461
+  ypos -350
+ }
+end_group

@@ -1,0 +1,3410 @@
+Gizmo {
+ inputs 3
+ tile_color 0x15ffff
+ note_font Verdana
+ note_font_size 10
+ note_font_color 0xff850000
+ addUserKnob {20 Look}
+ addUserKnob {6 Use_alpha l "Use Input alpha (needs alpha to work)" -STARTLINE}
+ addUserKnob {41 tileSize l "Number of Tiles" T TileMarcm.tileSize}
+ addUserKnob {41 spacing T TileMarcm.spacing}
+ addUserKnob {41 filter T TileMarcm.filter}
+ addUserKnob {6 TextOverlay -STARTLINE}
+ TextOverlay true
+ addUserKnob {20 blink n 1}
+ blink 0
+ addUserKnob {6 blink_on l on/off -STARTLINE}
+ blink_on true
+ addUserKnob {3 duration}
+ addUserKnob {3 start_1 l start}
+ addUserKnob {3 end}
+ addUserKnob {20 endGroup_1 l endGroup n -1}
+ addUserKnob {20 Led l "Led Look" n 1}
+ Led 0
+ addUserKnob {4 led_shape l "led shape" M {circles squares triangles squares2 circles2 Mixte Mixte2}}
+ led_shape triangles
+ addUserKnob {41 mix_1 l "Grid mix" T Multiply_Grid.mix}
+ addUserKnob {41 mix_2 l "Image mix back" T Merge5.mix}
+ addUserKnob {26 "" l Resolution_Mix T "Simple dissolve between original image and LED shape pixel size.\n(0 value = original image) 1 value = image pixelted base of led size"}
+ addUserKnob {41 which l RezMix T Dissolve1.which}
+ addUserKnob {20 endGroup n -1}
+ addUserKnob {20 TransChroma_look n 1}
+ TransChroma_look 0
+ addUserKnob {6 Chroma_mattte l "Use Chroma mattte" -STARTLINE}
+ addUserKnob {41 value l "Chroma matte value" T Multiply_chroma.value}
+ addUserKnob {7 TransChroma_size R 0.8 1.2}
+ TransChroma_size 0.94
+ addUserKnob {6 transchroma_on l on -STARTLINE}
+ transchroma_on true
+ addUserKnob {7 fx_size R 0 7}
+ fx_size 1
+ addUserKnob {41 mix T Merge_widetrans.mix}
+ addUserKnob {20 endGroup_2 l endGroup n -1}
+}
+ BackdropNode {
+  inputs 0
+  name BackdropNode12
+  label "CHROMATIC SHAPE"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 3096
+  ypos 3792
+  bdwidth 526
+  bdheight 207
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode13
+  label "MAIN ALPHA"
+  note_font "Luxi Sans Bold Bold Bold"
+  note_font_size 50
+  xpos 3575
+  ypos 2093
+  bdwidth 291
+  bdheight 566
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode5
+  label "TEXT & LOGO OVERLAY"
+  note_font "Helvetica bold"
+  note_font_size 100
+  note_font_color 0xff0000
+  xpos -1727
+  ypos 2632
+  bdwidth 1188
+  bdheight 304
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode19
+  label "GRID CONTROL"
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_size 85
+  xpos 980
+  ypos 3396
+  bdwidth 680
+  bdheight 552
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode20
+  label "BLINK IMAGE"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 2257
+  ypos 3317
+  bdwidth 526
+  bdheight 207
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode6
+  label "PIXELS SHAPE  CIRCLES"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 3526
+  ypos 681
+  bdwidth 628
+  bdheight 943
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode8
+  label "PIXELS SHAPE SQARES"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 2131
+  ypos 689
+  bdwidth 612
+  bdheight 874
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode1
+  label "PIXELS SHAPE TRIANGLES"
+  note_font "Helvetica bold"
+  note_font_size 45
+  xpos 1262
+  ypos 701
+  bdwidth 596
+  bdheight 686
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode9
+  label "IMAGE INPUT 1\n"
+  note_font "Helvetica bold"
+  note_font_size 100
+  note_font_color 0xff0000
+  xpos -481
+  ypos 741
+  bdwidth 963
+  bdheight 365
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode4
+  label "IMAGE \nRESOLUTION \nCONTROL"
+  note_font "Helvetica bold"
+  note_font_size 30
+  xpos 3365
+  ypos 2774
+  bdwidth 470
+  bdheight 140
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode14
+  label "TRANSCHROMA FX"
+  note_font "Helvetica bold"
+  note_font_size 100
+  xpos -566
+  ypos 3551
+  bdwidth 1132
+  bdheight 1394
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode15
+  label "PIXELS SHAPE  MIXTE"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 4876
+  ypos 677
+  bdwidth 628
+  bdheight 943
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode10
+  label "PIXELS SHAPE AND TILING\nSQARES"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 2088
+  ypos 2776
+  bdwidth 625
+  bdheight 496
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode16
+  label "CHROMA MATTE\n"
+  note_font "Helvetica bold"
+  note_font_size 100
+  note_font_color 0xff0000
+  xpos 3795
+  ypos 3772
+  bdwidth 858
+  bdheight 200
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode3
+  label "PIXELS SHAPE SQARES 2"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 2814
+  ypos 679
+  bdwidth 650
+  bdheight 867
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode11
+  label "PIXELS SHAPE  CIRCLES 2"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 4180
+  ypos 684
+  bdwidth 673
+  bdheight 927
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode17
+  label "PIXELS SHAPE  MIXTE 2"
+  note_font "Helvetica bold"
+  note_font_size 50
+  xpos 5526
+  ypos 675
+  bdwidth 628
+  bdheight 943
+ }
+ BackdropNode {
+  inputs 0
+  name BackdropNode2
+  label "IMAGE \nRESOLUTION \nCONTROL"
+  note_font "Helvetica bold"
+  note_font_size 30
+  xpos -778
+  ypos 3115
+  bdwidth 470
+  bdheight 140
+ }
+ Input {
+  inputs 0
+  name image
+  tile_color 0xff0000
+  note_font_size 20
+  xpos -160
+  ypos 1008
+ }
+ Dot {
+  name Dot1
+  xpos -126
+  ypos 1210
+ }
+set N40e17760 [stack 0]
+ Dot {
+  name Dot2
+  xpos -303
+  ypos 1210
+ }
+ Shuffle {
+  alpha white
+  name Shuffle3
+  xpos -337
+  ypos 1286
+ }
+push $N40e17760
+ Switch {
+  inputs 2
+  which {{!Use_alpha}}
+  name Switch1
+  xpos -160
+  ypos 1286
+ }
+ Dot {
+  name Dot4
+  xpos -126
+  ypos 2406
+ }
+set N40e181b0 [stack 0]
+ Dot {
+  name Dot29
+  xpos -126
+  ypos 2623
+ }
+set N40e18520 [stack 0]
+ Input {
+  inputs 0
+  name text
+  tile_color 0xff0000
+  note_font_size 20
+  xpos -1246
+  ypos 2837
+  number 1
+ }
+ Dot {
+  name Dot28
+  xpos -425
+  ypos 2845
+ }
+set N40e18c00 [stack 0]
+ CopyBBox {
+  inputs 2
+  name CopyBBox1
+  xpos -385
+  ypos 2773
+ }
+push $N40e181b0
+ Dot {
+  name Dot3
+  xpos 2538
+  ypos 2429
+ }
+set N40e192e0 [stack 0]
+ Dot {
+  name Dot5
+  xpos 2538
+  ypos 3090
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant3
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos 5627
+  ypos 798
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant1
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos 5390
+  ypos 793
+ }
+set N40e19d30 [stack 0]
+ Dot {
+  name Dot6
+  xpos 5424
+  ypos 926
+ }
+set N40e1a0a0 [stack 0]
+ Bezier {
+  output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  points {{
+{128 128}
+{384 128}
+{256 384}
+}}
+  shape {{curve L x28 0}}
+  translate {150 0}
+  rotate {{PIXELRED5.rotate-180}}
+  scale {{PIXELRED5.scale}}
+  center {{width/2} {height/2}}
+  name PIXELBLUE5
+  tile_color 0x6d3f00
+  label triangle
+  xpos 5390
+  ypos 980
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type triangle
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+push $N40e19d30
+ Bezier {
+  output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  falloff 0.29
+  points {{
+{128 128}
+{384 128}
+{384 384}
+{128 384}
+}}
+  shape {{curve L x10 -18}}
+  scale 0.5
+  center {{width/2} {height/2}}
+  name PIXELRED5
+  tile_color 0x6d3f00
+  label square
+  xpos 5030
+  ypos 800
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type square
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[value this.type]\nin PIXELGREEN \{BezierGeoProc \[value this.type]\}\nin PIXELBLUE \{BezierGeoProc \[value this.type]\}"}
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type_1 l type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  addUserKnob {32 knob_1 l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+push $N40e1a0a0
+ Bezier {
+  output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  points {{
+{256 128 70.1 0 70.1}
+{384 256 70.1 1.57 70.1}
+{256 384 70.1 3.14 70.1}
+{128 256 70.1 -1.57 70.1}
+}}
+  shape {{curve L x28 0}}
+  translate {-150 0}
+  rotate {{PIXELRED5.rotate-180}}
+  scale {{PIXELRED5.scale}}
+  center {{width/2} {height/2}}
+  name PIXELGREEN5
+  tile_color 0x6d3f00
+  label circle
+  xpos 5270
+  ypos 908
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus11
+  xpos 5030
+  ypos 922
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus12
+  xpos 5030
+  ypos 994
+ }
+set N40e1b1d0 [stack 0]
+ Paint {
+  inputs 2
+  srcgrid {
+   3 0 0 0
+   { 1 4 0 0
+    { 1 1 1 0 0
+     { 1 1 0 
+      407 416 0.855327 6.40379 -0.660263 -7.90931 0.815489 0
+     }
+     { 2 1 1 1 1 1 145 1 1 0 1 0 300 150 0 }
+     1115 { 1 1 0 
+      407 416 0.855327 6.40379 -0.660263 -7.90931 0.815489 0
+     }
+     1115 { 2 1 1 1 1 1 145 1 1 0 1 0 300 150 0 }
+    }
+    { 1 1 1 0 0
+     { 1 1 0 
+      116 413 0.673509 -2.91409e-008 -0.666667 8.74228e-008 2 0
+     }
+     { 2 1 1 1 1 1 204 1 1 0 1 0 -150 150 0 }
+     1115 { 1 1 0 
+      116 413 0.673509 -2.91409e-008 -0.666667 8.74228e-008 2 0
+     }
+     1115 { 2 1 1 1 1 1 204 1 1 0 1 0 -150 150 0 }
+    }
+    { 1 1 1 0 0
+     { 1 1 0 
+      257 422 0.713587 1.19122 0.159525 -2.08953 -0.279826 0
+     }
+     { 2 1 1 1 1 1 172 1 1 0 1 0 -150 150 0 }
+     1115 { 1 1 0 
+      257 422 0.713587 1.19122 0.159525 -2.08953 -0.279826 0
+     }
+     1115 { 2 1 1 1 1 1 172 1 1 0 1 0 -150 150 0 }
+    }
+    { 1 0 0 0 0
+     { 1 14 0 
+      142 294 0.521994 -1.19088 -0.162017 1.19088 0.162017 0
+      144 297 0.774194 0.308477 -1.16159 -0.191309 0.720386 0
+      142 298 0.772238 0.644666 -0.374114 -1.03949 0.603241 0
+      139 300 0.769306 1.03949 -0.603241 -1.28933 0.748228 0
+      135 302 0.766373 1.37724 -0.570471 -1.94771 0.806767 0
+      129 304 0.764418 1.89381 -0.926234 -2.15928 1.05607 0
+      123 308 0.760508 2.12733 -1.11904 -1.58866 0.835685 0
+      118 310 0.749756 1.78229 -0.213651 -2.34027 0.280537 0
+      111 309 0.73607 2.35109 0.167087 -3.65744 -0.259926 0
+      100 309 0.692082 3.65417 0.302429 -2.02068 -0.167237 0
+      94 308 0.622678 1.87325 0.775924 -2.64917 -1.09732 0
+      87 303 0.505376 2.73065 0.875078 -0.634864 -0.203452 0
+      85 303 0.0752688 0.471405 0.471405 -0 -0 0
+      85 303 0.0752688 -0 -0 0 0 0
+     }
+     { 2 1 1 1 1 1 48 1 1 0 1 0 0 0 0 }
+    }
+   }
+  }
+  bl_color {1 1 1 1}
+  name Paint1
+  xpos 5627
+  ypos 1053
+ }
+set N40e1b540 [stack 0]
+ Transform {
+  translate {0 -300}
+  scale {1 1}
+  center {256 256}
+  name Transform34
+  xpos 5794
+  ypos 1126
+ }
+push $N40e1b540
+ Merge {
+  inputs 2
+  name Merge22
+  xpos 5627
+  ypos 1126
+ }
+ Crop {
+  box {31 29 482 481}
+  name Crop6
+  xpos 5627
+  ypos 1409
+  addUserKnob {20 "" l "Viewer Roi"}
+  addUserKnob {1 source_viewer l "Source Viewer"}
+  source_viewer Viewer1
+  addUserKnob {32 "crop to roi" -STARTLINE T " if !\[exists \[value source_viewer]] \{message \"source viewer doesn't exist\";return\}\n if \[exists this.input] \{\n set InWidth \[value input.width]\n set InHeight \[value input.height]\n set InAspect \[value input.pixel_aspect] \n\} else \{\n set InWidth \[value root.width]\n set InHeight \[value root.height]\n set InAspect \[value root.pixel_aspect]\n \}\n if \{\[value \[value source_viewer].ignore_pixel_aspect] == \"true\"\} \{ set aspect 1 \} else \{ set aspect \$InAspect \}\n\n knob box.x \[expression (\[value \[value source_viewer].roi.x]+1)/2*\$InWidth]\n knob box.y \[ expression (\[value \[value source_viewer].roi.y]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ]\n knob box.r \[expression (\[value \[value source_viewer].roi.r]+1)/2*\$InWidth]\n knob box.t \[ expression (\[value \[value source_viewer].roi.t]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ] \n\tknob reformat 1\n\t"}
+ }
+ Transform {
+  scale 1.15
+  center {256 256}
+  name Transform35
+  xpos 5627
+  ypos 1445
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  name Reformat4
+  xpos 5627
+  ypos 1510
+ }
+ Dot {
+  name Dot79
+  xpos 5661
+  ypos 1931
+ }
+ Dot {
+  name Dot7
+  xpos 2704
+  ypos 1931
+ }
+push $N40e1b1d0
+ Dot {
+  name Dot10
+  xpos 5064
+  ypos 1106
+ }
+set N40e1d0c0 [stack 0]
+ Dot {
+  name Dot11
+  xpos 5184
+  ypos 1106
+ }
+ Transform {
+  translate {0 -720}
+  scale {1 -1}
+  center {960 540}
+  name Transform29
+  xpos 5150
+  ypos 1138
+ }
+push $N40e1d0c0
+ Merge {
+  inputs 2
+  name Merge6
+  xpos 5030
+  ypos 1138
+ }
+ Dot {
+  name Dot12
+  xpos 5064
+  ypos 1214
+ }
+set N40e1de80 [stack 0]
+ Dot {
+  name Dot13
+  xpos 5184
+  ypos 1214
+ }
+ Transform {
+  translate {0 -420}
+  scale {1 -1}
+  center {960 540}
+  name Transform30
+  xpos 5150
+  ypos 1246
+ }
+push $N40e1de80
+ Merge {
+  inputs 2
+  name Merge8
+  xpos 5030
+  ypos 1244
+ }
+ Dot {
+  name Dot21
+  xpos 5064
+  ypos 1286
+ }
+set N40e1e8d0 [stack 0]
+ Dot {
+  name Dot44
+  xpos 5184
+  ypos 1286
+ }
+ Transform {
+  translate {0 -275}
+  scale {1 -1}
+  center {960 540}
+  name Transform31
+  xpos 5150
+  ypos 1318
+ }
+push $N40e1e8d0
+ Merge {
+  inputs 2
+  name Merge18
+  xpos 5030
+  ypos 1320
+  disable true
+ }
+ Dot {
+  name Dot45
+  xpos 5064
+  ypos 1358
+ }
+set N40e1fa00 [stack 0]
+ Dot {
+  name Dot46
+  xpos 5184
+  ypos 1358
+ }
+ Transform {
+  translate {450 -870}
+  scale {1 -1}
+  center {960 540}
+  name Transform32
+  xpos 5150
+  ypos 1390
+ }
+push $N40e1fa00
+ Merge {
+  inputs 2
+  name Merge19
+  xpos 5030
+  ypos 1390
+  disable true
+ }
+ Crop {
+  box {31 29 482 481}
+  name Crop5
+  xpos 5030
+  ypos 1426
+  addUserKnob {20 "" l "Viewer Roi"}
+  addUserKnob {1 source_viewer l "Source Viewer"}
+  source_viewer Viewer1
+  addUserKnob {32 "crop to roi" -STARTLINE T " if !\[exists \[value source_viewer]] \{message \"source viewer doesn't exist\";return\}\n if \[exists this.input] \{\n set InWidth \[value input.width]\n set InHeight \[value input.height]\n set InAspect \[value input.pixel_aspect] \n\} else \{\n set InWidth \[value root.width]\n set InHeight \[value root.height]\n set InAspect \[value root.pixel_aspect]\n \}\n if \{\[value \[value source_viewer].ignore_pixel_aspect] == \"true\"\} \{ set aspect 1 \} else \{ set aspect \$InAspect \}\n\n knob box.x \[expression (\[value \[value source_viewer].roi.x]+1)/2*\$InWidth]\n knob box.y \[ expression (\[value \[value source_viewer].roi.y]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ]\n knob box.r \[expression (\[value \[value source_viewer].roi.r]+1)/2*\$InWidth]\n knob box.t \[ expression (\[value \[value source_viewer].roi.t]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ] \n\tknob reformat 1\n\t"}
+ }
+ Transform {
+  scale 1.15
+  center {256 256}
+  name Transform33
+  xpos 5030
+  ypos 1462
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  name Reformat2
+  xpos 5030
+  ypos 1527
+ }
+ Dot {
+  name Dot47
+  xpos 5064
+  ypos 1857
+ }
+ Dot {
+  name Dot8
+  xpos 2763
+  ypos 1857
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant8
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos 4714
+  ypos 787
+ }
+set Nab9a1f00 [stack 0]
+ Dot {
+  name Dot63
+  xpos 4748
+  ypos 920
+ }
+set Nab9a2270 [stack 0]
+ Bezier {
+  output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  points {{
+{256 128 70.1 0 70.1}
+{384 256 70.1 1.57 70.1}
+{256 384 70.1 3.14 70.1}
+{128 256 70.1 -1.57 70.1}
+}}
+  shape {{curve L x28 0}}
+  translate {150 0}
+  rotate {{PIXELRED4.rotate-180}}
+  scale {{PIXELRED4.scale}}
+  center {{width/2} {height/2}}
+  name PIXELBLUE4
+  tile_color 0x6d3f00
+  label circle
+  xpos 4714
+  ypos 974
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+push $Nab9a1f00
+ Bezier {
+  output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  falloff 0.29
+  points {{
+{256 128 70.1 0 70.1}
+{384 256 70.1 1.57 70.1}
+{256 384 70.1 3.14 70.1}
+{128 256 70.1 -1.57 70.1}
+}}
+  shape {{curve L x10 -18}}
+  scale 0.5
+  center {{width/2} {height/2}}
+  name PIXELRED4
+  tile_color 0x6d3f00
+  label circle
+  xpos 4354
+  ypos 794
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[value this.type]\nin PIXELGREEN \{BezierGeoProc \[value this.type]\}\nin PIXELBLUE \{BezierGeoProc \[value this.type]\}"}
+ }
+push $Nab9a2270
+ Bezier {
+  output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  points {{
+{256 128 70.1 0 70.1}
+{384 256 70.1 1.57 70.1}
+{256 384 70.1 3.14 70.1}
+{128 256 70.1 -1.57 70.1}
+}}
+  shape {{curve L x28 0}}
+  translate {-150 0}
+  rotate {{PIXELRED4.rotate-180}}
+  scale {{PIXELRED4.scale}}
+  center {{width/2} {height/2}}
+  name PIXELGREEN4
+  tile_color 0x6d3f00
+  label circle
+  xpos 4594
+  ypos 902
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus9
+  xpos 4354
+  ypos 916
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus10
+  xpos 4354
+  ypos 988
+ }
+ Dot {
+  name Dot64
+  xpos 4388
+  ypos 1100
+ }
+set Nab9a3710 [stack 0]
+ Dot {
+  name Dot65
+  xpos 4508
+  ypos 1100
+ }
+ Transform {
+  translate {0 -720}
+  scale {1 -1}
+  center {960 540}
+  name Transform14
+  xpos 4474
+  ypos 1132
+ }
+push $Nab9a3710
+ Merge {
+  inputs 2
+  name Merge14
+  xpos 4354
+  ypos 1132
+ }
+ Dot {
+  name Dot66
+  xpos 4388
+  ypos 1208
+ }
+set Nab9a44d0 [stack 0]
+ Dot {
+  name Dot73
+  xpos 4508
+  ypos 1208
+ }
+ Transform {
+  translate {0 -420}
+  scale {1 -1}
+  center {960 540}
+  name Transform23
+  xpos 4474
+  ypos 1240
+ }
+push $Nab9a44d0
+ Merge {
+  inputs 2
+  name Merge32
+  xpos 4354
+  ypos 1240
+ }
+ Dot {
+  name Dot74
+  xpos 4388
+  ypos 1280
+ }
+set Nab9a5290 [stack 0]
+ Dot {
+  name Dot75
+  xpos 4508
+  ypos 1280
+ }
+ Transform {
+  translate {0 -275}
+  scale {1 -1}
+  center {960 540}
+  name Transform24
+  xpos 4474
+  ypos 1312
+ }
+push $Nab9a5290
+ Merge {
+  inputs 2
+  name Merge33
+  xpos 4354
+  ypos 1312
+ }
+ Dot {
+  name Dot76
+  xpos 4388
+  ypos 1352
+ }
+set Nab9a6050 [stack 0]
+ Dot {
+  name Dot77
+  xpos 4508
+  ypos 1352
+ }
+ Transform {
+  translate {450 -870}
+  scale {1 -1}
+  center {960 540}
+  name Transform27
+  xpos 4474
+  ypos 1384
+ }
+push $Nab9a6050
+ Merge {
+  inputs 2
+  name Merge34
+  xpos 4354
+  ypos 1384
+ }
+ Crop {
+  box {31 29 482 481}
+  name Crop4
+  xpos 4354
+  ypos 1420
+  addUserKnob {20 "" l "Viewer Roi"}
+  addUserKnob {1 source_viewer l "Source Viewer"}
+  source_viewer Viewer1
+  addUserKnob {32 "crop to roi" -STARTLINE T " if !\[exists \[value source_viewer]] \{message \"source viewer doesn't exist\";return\}\n if \[exists this.input] \{\n set InWidth \[value input.width]\n set InHeight \[value input.height]\n set InAspect \[value input.pixel_aspect] \n\} else \{\n set InWidth \[value root.width]\n set InHeight \[value root.height]\n set InAspect \[value root.pixel_aspect]\n \}\n if \{\[value \[value source_viewer].ignore_pixel_aspect] == \"true\"\} \{ set aspect 1 \} else \{ set aspect \$InAspect \}\n\n knob box.x \[expression (\[value \[value source_viewer].roi.x]+1)/2*\$InWidth]\n knob box.y \[ expression (\[value \[value source_viewer].roi.y]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ]\n knob box.r \[expression (\[value \[value source_viewer].roi.r]+1)/2*\$InWidth]\n knob box.t \[ expression (\[value \[value source_viewer].roi.t]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ] \n\tknob reformat 1\n\t"}
+ }
+ Transform {
+  scale 1.15
+  center {256 256}
+  name Transform28
+  xpos 4354
+  ypos 1456
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  name Reformat12
+  xpos 4354
+  ypos 1521
+ }
+ Dot {
+  name Dot78
+  xpos 4388
+  ypos 1801
+ }
+ Dot {
+  name Dot9
+  xpos 2894
+  ypos 1801
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant6
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos 3200
+  ypos 773
+ }
+set Nab9a7f40 [stack 0]
+ Dot {
+  name Dot22
+  xpos 3234
+  ypos 894
+ }
+set Nab9a82b0 [stack 0]
+ Bezier {
+  output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  points {{
+{128 128}
+{384 128}
+{384 384}
+{128 384}
+}}
+  shape {{curve L x28 0}}
+  translate {150 {PIXELRED1.translate.y}}
+  rotate {{PIXELRED3.rotate-180}}
+  scale {{PIXELRED3.scale}}
+  center {{width/2} {height/2}}
+  name PIXELBLUE3
+  tile_color 0x6d3f00
+  label square
+  xpos 3200
+  ypos 964
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type square
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+push $Nab9a7f40
+ Bezier {
+  output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  falloff 0.29
+  points {{
+{128 128}
+{384 128}
+{384 384}
+{128 384}
+}}
+  shape {{curve L x10 -18}}
+  scale 0.5
+  center {{width/2} {height/2}}
+  name PIXELRED3
+  tile_color 0x6d3f00
+  label square
+  xpos 2960
+  ypos 780
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type square
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[value this.type]\nin PIXELGREEN1 \{BezierGeoProc \[value this.type]\}\nin PIXELBLUE1 \{BezierGeoProc \[value this.type]\}"}
+ }
+push $Nab9a82b0
+ Bezier {
+  output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  falloff 0.315
+  points {{
+{128 128}
+{384 128}
+{384 384}
+{128 384}
+}}
+  shape {{curve L x28 0}}
+  translate {-150 0}
+  rotate {{PIXELRED3.rotate-180}}
+  scale {{PIXELRED3.scale}}
+  center {{width/2} {height/2}}
+  name PIXELGREEN3
+  tile_color 0x6d3f00
+  label square
+  xpos 3080
+  ypos 876
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type square
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Dot {
+  name Dot27
+  xpos 3114
+  ypos 930
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus7
+  xpos 2960
+  ypos 926
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus8
+  xpos 2960
+  ypos 978
+ }
+ Dot {
+  name Dot31
+  xpos 2994
+  ypos 1038
+ }
+set Nab9a9ac0 [stack 0]
+ Dot {
+  name Dot62
+  xpos 3114
+  ypos 1038
+ }
+ Transform {
+  translate {0 -720}
+  scale {1 -1}
+  center {960 540}
+  name Transform4
+  xpos 3080
+  ypos 1070
+ }
+push $Nab9a9ac0
+ Merge {
+  inputs 2
+  name Merge4
+  xpos 2960
+  ypos 1070
+ }
+ Dot {
+  name Dot67
+  xpos 2994
+  ypos 1146
+ }
+set Nab9aa880 [stack 0]
+ Dot {
+  name Dot68
+  xpos 3114
+  ypos 1146
+ }
+ Transform {
+  translate {0 -420}
+  scale {1 -1}
+  center {960 540}
+  name Transform5
+  xpos 3080
+  ypos 1178
+ }
+push $Nab9aa880
+ Merge {
+  inputs 2
+  name Merge24
+  xpos 2960
+  ypos 1178
+ }
+ Dot {
+  name Dot69
+  xpos 2994
+  ypos 1218
+ }
+set Nab9ab640 [stack 0]
+ Dot {
+  name Dot70
+  xpos 3114
+  ypos 1218
+ }
+ Transform {
+  translate {-450 -275}
+  scale {1 -1}
+  center {960 540}
+  name Transform13
+  xpos 3080
+  ypos 1250
+ }
+push $Nab9ab640
+ Merge {
+  inputs 2
+  name Merge25
+  xpos 2960
+  ypos 1250
+ }
+ Dot {
+  name Dot71
+  xpos 2994
+  ypos 1290
+ }
+set Nab9ac400 [stack 0]
+ Dot {
+  name Dot72
+  xpos 3114
+  ypos 1290
+ }
+ Transform {
+  translate {450 -870}
+  scale {1 -1}
+  center {960 540}
+  name Transform25
+  xpos 3080
+  ypos 1322
+ }
+push $Nab9ac400
+ Merge {
+  inputs 2
+  name Merge31
+  xpos 2960
+  ypos 1322
+ }
+ Crop {
+  box {31 29 482 481}
+  name Crop1
+  xpos 2960
+  ypos 1358
+  addUserKnob {20 "" l "Viewer Roi"}
+  addUserKnob {1 source_viewer l "Source Viewer"}
+  source_viewer Viewer1
+  addUserKnob {32 "crop to roi" -STARTLINE T " if !\[exists \[value source_viewer]] \{message \"source viewer doesn't exist\";return\}\n if \[exists this.input] \{\n set InWidth \[value input.width]\n set InHeight \[value input.height]\n set InAspect \[value input.pixel_aspect] \n\} else \{\n set InWidth \[value root.width]\n set InHeight \[value root.height]\n set InAspect \[value root.pixel_aspect]\n \}\n if \{\[value \[value source_viewer].ignore_pixel_aspect] == \"true\"\} \{ set aspect 1 \} else \{ set aspect \$InAspect \}\n\n knob box.x \[expression (\[value \[value source_viewer].roi.x]+1)/2*\$InWidth]\n knob box.y \[ expression (\[value \[value source_viewer].roi.y]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ]\n knob box.r \[expression (\[value \[value source_viewer].roi.r]+1)/2*\$InWidth]\n knob box.t \[ expression (\[value \[value source_viewer].roi.t]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ] \n\tknob reformat 1\n\t"}
+ }
+ Transform {
+  scale 1.15
+  center {256 256}
+  name Transform26
+  xpos 2960
+  ypos 1430
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  name Reformat1
+  xpos 2960
+  ypos 1459
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant7
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos 1640
+  ypos 797
+ }
+set Nab9adc10 [stack 0]
+ Dot {
+  name Dot23
+  xpos 1674
+  ypos 930
+ }
+set Nab9adf80 [stack 0]
+ Bezier {
+  output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  points {{
+{128 128}
+{384 128}
+{256 384}
+}}
+  shape {{curve L x28 0}}
+  translate {150 0}
+  rotate {{PIXELRED2.rotate-180}}
+  scale {{PIXELRED2.scale}}
+  center {{width/2} {height/2}}
+  name PIXELBLUE2
+  tile_color 0x6d3f00
+  label triangle
+  xpos 1640
+  ypos 984
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type {{PIXELRED2.type}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+push $Nab9adc10
+ Bezier {
+  output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  falloff 0.29
+  points {{
+{128 128}
+{384 128}
+{256 384}
+}}
+  shape {{curve L x10 -18}}
+  scale 0.8
+  center {{width/2} {height/2}}
+  name PIXELRED2
+  tile_color 0x6d3f00
+  label triangle
+  xpos 1280
+  ypos 804
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type triangle
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[value this.type]\nin PIXELGREEN2 \{BezierGeoProc \[value this.type]\}\nin PIXELBLUE2 \{BezierGeoProc \[value this.type]\}"}
+ }
+push $Nab9adf80
+ Bezier {
+  output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  points {{
+{128 128}
+{384 128}
+{256 384}
+}}
+  shape {{curve L x28 0}}
+  translate {-150 0}
+  rotate {{PIXELRED2.rotate-180}}
+  scale {{PIXELRED2.scale}}
+  center {{width/2} {height/2}}
+  name PIXELGREEN2
+  tile_color 0x6d3f00
+  label triangle
+  xpos 1520
+  ypos 912
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type {{PIXELRED2.type}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus5
+  xpos 1280
+  ypos 926
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus6
+  xpos 1280
+  ypos 998
+ }
+ Dot {
+  name Dot24
+  xpos 1314
+  ypos 1074
+ }
+set Nab9af420 [stack 0]
+ Dot {
+  name Dot25
+  xpos 1554
+  ypos 1074
+ }
+ Transform {
+  scale {1 -1}
+  center {{width/2} {height/2}}
+  name Transform12
+  xpos 1520
+  ypos 1178
+ }
+ Transform {
+  translate {0 {height/4}}
+  center {{width/2} {height/2}}
+  name Transform16
+  xpos 1400
+  ypos 1178
+ }
+push $Nab9af420
+ Transform {
+  translate {0 {height/4*-1}}
+  center {{width/2} {height/2}}
+  name Transform15
+  xpos 1280
+  ypos 1142
+ }
+ Merge {
+  inputs 2
+  name Merge13
+  xpos 1280
+  ypos 1178
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  name Reformat3
+  xpos 1280
+  ypos 1216
+ }
+ Dot {
+  name Dot26
+  xpos 1314
+  ypos 1686
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant2
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos 2517
+  ypos 771
+ }
+set Nab9b0fa0 [stack 0]
+ Dot {
+  name Dot19
+  xpos 2551
+  ypos 904
+ }
+set Nab9b1310 [stack 0]
+ Bezier {
+  output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  points {{
+{128 128}
+{384 128}
+{384 384}
+{128 384}
+}}
+  shape {{curve L x28 0}}
+  translate {150 {PIXELRED1.translate.y}}
+  rotate {{PIXELRED1.rotate-180}}
+  scale {{PIXELRED1.scale}}
+  center {{width/2} {height/2}}
+  name PIXELBLUE1
+  tile_color 0x6d3f00
+  label square
+  xpos 2517
+  ypos 958
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type {{PIXELRED1.type}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+push $Nab9b0fa0
+ Bezier {
+  output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  falloff 0.29
+  points {{
+{128 128}
+{384 128}
+{384 384}
+{128 384}
+}}
+  shape {{curve L x10 -18}}
+  scale 0.5
+  center {{width/2} {height/2}}
+  name PIXELRED1
+  tile_color 0x6d3f00
+  label square
+  xpos 2277
+  ypos 778
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type square
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[value this.type]\nin PIXELGREEN1 \{BezierGeoProc \[value this.type]\}\nin PIXELBLUE1 \{BezierGeoProc \[value this.type]\}"}
+ }
+push $Nab9b1310
+ Bezier {
+  output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  falloff 0.315
+  points {{
+{128 128}
+{384 128}
+{384 384}
+{128 384}
+}}
+  shape {{curve L x28 0}}
+  translate {-150 {PIXELRED1.translate.y}}
+  rotate {{PIXELRED1.rotate-180}}
+  scale {{PIXELRED1.scale}}
+  center {{width/2} {height/2}}
+  name PIXELGREEN1
+  tile_color 0x6d3f00
+  label square
+  xpos 2397
+  ypos 886
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type {{PIXELRED1.type x11 0 x21 0}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Dot {
+  name Dot14
+  xpos 2431
+  ypos 940
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus3
+  xpos 2277
+  ypos 934
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus4
+  xpos 2277
+  ypos 972
+ }
+ Dot {
+  name Dot20
+  xpos 2311
+  ypos 1048
+ }
+set Nab9b2b20 [stack 0]
+ Dot {
+  name Dot15
+  xpos 2431
+  ypos 1048
+ }
+ Transform {
+  translate {-150 -720}
+  scale {1 -1}
+  center {960 540}
+  name Transform2
+  xpos 2397
+  ypos 1080
+ }
+push $Nab9b2b20
+ Merge {
+  inputs 2
+  name Merge1
+  xpos 2277
+  ypos 1080
+ }
+ Dot {
+  name Dot48
+  xpos 2311
+  ypos 1156
+ }
+set Nab9b38e0 [stack 0]
+ Dot {
+  name Dot49
+  xpos 2431
+  ypos 1156
+ }
+ Transform {
+  translate {150 -420}
+  scale {1 -1}
+  center {960 540}
+  name Transform9
+  xpos 2397
+  ypos 1188
+ }
+push $Nab9b38e0
+ Merge {
+  inputs 2
+  name Merge15
+  xpos 2277
+  ypos 1188
+ }
+ Dot {
+  name Dot50
+  xpos 2311
+  ypos 1228
+ }
+set Nab9b46a0 [stack 0]
+ Dot {
+  name Dot51
+  xpos 2431
+  ypos 1228
+ }
+ Transform {
+  translate {-450 -275}
+  scale {1 -1}
+  center {960 540}
+  name Transform10
+  xpos 2397
+  ypos 1260
+ }
+push $Nab9b46a0
+ Merge {
+  inputs 2
+  name Merge16
+  xpos 2277
+  ypos 1260
+ }
+ Dot {
+  name Dot52
+  xpos 2311
+  ypos 1300
+ }
+set Nab9b5460 [stack 0]
+ Dot {
+  name Dot53
+  xpos 2431
+  ypos 1300
+ }
+ Transform {
+  translate {450 -870}
+  scale {1 -1}
+  center {960 540}
+  name Transform17
+  xpos 2397
+  ypos 1332
+ }
+push $Nab9b5460
+ Merge {
+  inputs 2
+  name Merge20
+  xpos 2277
+  ypos 1332
+ }
+ Crop {
+  box {31 29 482 481}
+  name Crop2
+  xpos 2277
+  ypos 1368
+  addUserKnob {20 "" l "Viewer Roi"}
+  addUserKnob {1 source_viewer l "Source Viewer"}
+  source_viewer Viewer1
+  addUserKnob {32 "crop to roi" -STARTLINE T " if !\[exists \[value source_viewer]] \{message \"source viewer doesn't exist\";return\}\n if \[exists this.input] \{\n set InWidth \[value input.width]\n set InHeight \[value input.height]\n set InAspect \[value input.pixel_aspect] \n\} else \{\n set InWidth \[value root.width]\n set InHeight \[value root.height]\n set InAspect \[value root.pixel_aspect]\n \}\n if \{\[value \[value source_viewer].ignore_pixel_aspect] == \"true\"\} \{ set aspect 1 \} else \{ set aspect \$InAspect \}\n\n knob box.x \[expression (\[value \[value source_viewer].roi.x]+1)/2*\$InWidth]\n knob box.y \[ expression (\[value \[value source_viewer].roi.y]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ]\n knob box.r \[expression (\[value \[value source_viewer].roi.r]+1)/2*\$InWidth]\n knob box.t \[ expression (\[value \[value source_viewer].roi.t]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ] \n\tknob reformat 1\n\t"}
+ }
+ Transform {
+  scale 1.15
+  center {256 256}
+  name Transform11
+  xpos 2277
+  ypos 1440
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  name Reformat13
+  xpos 2277
+  ypos 1469
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  format "512 512 0 0 512 512 1 square_512"
+  name Constant5
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos 4040
+  ypos 797
+ }
+set Nab9b6c70 [stack 0]
+ Dot {
+  name Dot16
+  xpos 4074
+  ypos 930
+ }
+set Nab9b6fe0 [stack 0]
+ Bezier {
+  output {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  points {{
+{256 128 70.1 0 70.1}
+{384 256 70.1 1.57 70.1}
+{256 384 70.1 3.14 70.1}
+{128 256 70.1 -1.57 70.1}
+}}
+  shape {{curve L x28 0}}
+  translate {150 {PIXELRED.translate.y}}
+  rotate {{PIXELRED.rotate-180}}
+  scale {{PIXELRED.scale}}
+  center {{width/2} {height/2}}
+  name PIXELBLUE
+  tile_color 0x6d3f00
+  label circle
+  xpos 4040
+  ypos 984
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type {{PIXELRED.type}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+push $Nab9b6c70
+ Bezier {
+  output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  falloff 0.29
+  points {{
+{256 128 70.1 0 70.1}
+{384 256 70.1 1.57 70.1}
+{256 384 70.1 3.14 70.1}
+{128 256 70.1 -1.57 70.1}
+}}
+  shape {{curve L x10 -18}}
+  scale 0.5
+  center {{width/2} {height/2}}
+  name PIXELRED
+  tile_color 0x6d3f00
+  label circle
+  xpos 3680
+  ypos 804
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[value this.type]\nin PIXELGREEN \{BezierGeoProc \[value this.type]\}\nin PIXELBLUE \{BezierGeoProc \[value this.type]\}"}
+ }
+push $Nab9b6fe0
+ Bezier {
+  output {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  points {{
+{256 128 70.1 0 70.1}
+{384 256 70.1 1.57 70.1}
+{256 384 70.1 3.14 70.1}
+{128 256 70.1 -1.57 70.1}
+}}
+  shape {{curve L x28 0}}
+  translate {-150 0}
+  rotate {{PIXELRED.rotate-180}}
+  scale {{PIXELRED.scale}}
+  center {{width/2} {height/2}}
+  name PIXELGREEN
+  tile_color 0x6d3f00
+  label circle
+  xpos 3920
+  ypos 912
+  addUserKnob {20 "" l Geo}
+  addUserKnob {4 type t "set the shape of the bezier" M {circle square oval rectangle triangle}}
+  type {{PIXELRED.type}}
+  addUserKnob {32 knob l set t "sets the shape of this bezier to what is set in 'type'" -STARTLINE T "BezierGeoProc \[knob this.type]"}
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus1
+  xpos 3680
+  ypos 926
+ }
+ Merge {
+  inputs 2
+  operation diagonal
+  name Plus2
+  xpos 3680
+  ypos 998
+ }
+ Dot {
+  name Dot54
+  xpos 3714
+  ypos 1110
+ }
+set Nab9b8480 [stack 0]
+ Dot {
+  name Dot55
+  xpos 3834
+  ypos 1110
+ }
+ Transform {
+  translate {-150 -720}
+  scale {1 -1}
+  center {960 540}
+  name Transform18
+  xpos 3800
+  ypos 1142
+ }
+push $Nab9b8480
+ Merge {
+  inputs 2
+  name Merge21
+  xpos 3680
+  ypos 1142
+ }
+ Dot {
+  name Dot56
+  xpos 3714
+  ypos 1218
+ }
+set Nab9b9240 [stack 0]
+ Dot {
+  name Dot57
+  xpos 3834
+  ypos 1218
+ }
+ Transform {
+  translate {150 -420}
+  scale {1 -1}
+  center {960 540}
+  name Transform19
+  xpos 3800
+  ypos 1250
+ }
+push $Nab9b9240
+ Merge {
+  inputs 2
+  name Merge23
+  xpos 3680
+  ypos 1250
+ }
+ Dot {
+  name Dot58
+  xpos 3714
+  ypos 1290
+ }
+set Nab9ba000 [stack 0]
+ Dot {
+  name Dot59
+  xpos 3834
+  ypos 1290
+ }
+ Transform {
+  translate {-450 -275}
+  scale {1 -1}
+  center {960 540}
+  name Transform20
+  xpos 3800
+  ypos 1322
+ }
+push $Nab9ba000
+ Merge {
+  inputs 2
+  name Merge29
+  xpos 3680
+  ypos 1322
+ }
+ Dot {
+  name Dot60
+  xpos 3714
+  ypos 1362
+ }
+set Nab9badc0 [stack 0]
+ Dot {
+  name Dot61
+  xpos 3714
+  ypos 1362
+ }
+ Transform {
+  translate {450 -870}
+  scale {1 -1}
+  center {960 540}
+  name Transform21
+  xpos 3680
+  ypos 1394
+ }
+push $Nab9badc0
+ Merge {
+  inputs 2
+  name Merge30
+  xpos 3680
+  ypos 1394
+ }
+ Crop {
+  box {31 29 482 481}
+  name Crop3
+  xpos 3680
+  ypos 1430
+  addUserKnob {20 "" l "Viewer Roi"}
+  addUserKnob {1 source_viewer l "Source Viewer"}
+  source_viewer Viewer1
+  addUserKnob {32 "crop to roi" -STARTLINE T " if !\[exists \[value source_viewer]] \{message \"source viewer doesn't exist\";return\}\n if \[exists this.input] \{\n set InWidth \[value input.width]\n set InHeight \[value input.height]\n set InAspect \[value input.pixel_aspect] \n\} else \{\n set InWidth \[value root.width]\n set InHeight \[value root.height]\n set InAspect \[value root.pixel_aspect]\n \}\n if \{\[value \[value source_viewer].ignore_pixel_aspect] == \"true\"\} \{ set aspect 1 \} else \{ set aspect \$InAspect \}\n\n knob box.x \[expression (\[value \[value source_viewer].roi.x]+1)/2*\$InWidth]\n knob box.y \[ expression (\[value \[value source_viewer].roi.y]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ]\n knob box.r \[expression (\[value \[value source_viewer].roi.r]+1)/2*\$InWidth]\n knob box.t \[ expression (\[value \[value source_viewer].roi.t]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ] \n\tknob reformat 1\n\t"}
+ }
+ Transform {
+  scale 1.15
+  center {256 256}
+  name Transform22
+  xpos 3680
+  ypos 1502
+ }
+ Reformat {
+  format "512 512 0 0 512 512 1 square_512"
+  name Reformat23
+  xpos 3680
+  ypos 1531
+ }
+ Dot {
+  name Dot17
+  xpos 3714
+  ypos 1686
+ }
+ Switch {
+  inputs 7
+  which {{parent.led_shape x51 3}}
+  name Switch_led_shape
+  tile_color 0xffb81300
+  xpos 2360
+  ypos 1682
+ }
+ Reformat {
+  type "to box"
+  box_width {{input.width+parent.spacing}}
+  box_height {{box_width}}
+  resize none
+  name Reformat7
+  label "padding / spacing"
+  xpos 2360
+  ypos 1775
+ }
+ Dot {
+  name Dot18
+  xpos 2394
+  ypos 2754
+ }
+ Group {
+  inputs 2
+  name TileMarcm
+  xpos 2360
+  ypos 3086
+  addUserKnob {20 User}
+  addUserKnob {3 tileSize l "tile size"}
+  tileSize 100
+  addUserKnob {3 spacing}
+  addUserKnob {41 filter T STMap1.filter}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -257
+   ypos -254
+   number 1
+  }
+set Nab9bd020 [stack 0]
+  Expression {
+   expr0 "x%(width*pixel_aspect/parent.tileSize) / (width*pixel_aspect/parent.tileSize)"
+   expr1 "y%(width*pixel_aspect/parent.tileSize) / (width*pixel_aspect/parent.tileSize)"
+   expr2 0
+   channel3 none
+   name Expression1
+   label relative
+   xpos -257
+   ypos -184
+  }
+set Nab9bd390 [stack 0]
+  Input {
+   inputs 0
+   name pattern
+   xpos -398
+   ypos -162
+  }
+  Transform {
+   center {25 25}
+   name Transform1
+   xpos -398
+   ypos -91
+   disable true
+  }
+  Dot {
+   name Dot1
+   xpos -364
+   ypos -44
+  }
+  STMap {
+   inputs 2
+   uv rgb
+   filter Impulse
+   name STMap1
+   xpos -257
+   ypos -55
+  }
+  Output {
+   name Output1
+   xpos -257
+   ypos 45
+  }
+push $Nab9bd020
+  Expression {
+   expr0 "x%(parent.tileSize+1+parent.spacing) /width*width/parent.tileSize"
+   expr1 "y%(parent.tileSize+1+parent.spacing) / height*height/parent.tileSize"
+   name Expression2
+   xpos -336
+   ypos -211
+  }
+push $Nab9bd390
+  Viewer {
+   frame_range 1000,1250
+   ignore_pixel_aspect true
+   name Viewer1
+   xpos -403
+   ypos -254
+  }
+ end_group
+set Nb3a34790 [stack 0]
+ Dot {
+  name Dot33
+  tile_color 0xff0000
+  xpos 1314
+  ypos 3090
+ }
+ Dot {
+  name Dot34
+  tile_color 0xff0000
+  xpos 1314
+  ypos 3604
+ }
+ Dot {
+  name Dot36
+  tile_color 0xff0000
+  xpos 1074
+  ypos 3604
+ }
+ Dot {
+  name Dot37
+  tile_color 0xff0000
+  xpos 1074
+  ypos 3666
+ }
+set Nab9bf5f0 [stack 0]
+ Dot {
+  name Dot39
+  tile_color 0xff0000
+  xpos 1074
+  ypos 3738
+ }
+set Nab9bf960 [stack 0]
+ Dot {
+  name Dot40
+  xpos 1074
+  ypos 3810
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle26
+  tile_color 0xff000000
+  xpos 1160
+  ypos 3806
+ }
+push $Nab9bf960
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle7
+  tile_color 0xff0000
+  xpos 1160
+  ypos 3734
+ }
+push $Nab9bf5f0
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle19
+  tile_color 0xff00
+  xpos 1160
+  ypos 3662
+ }
+ Dot {
+  name Dot41
+  xpos 1314
+  ypos 3666
+ }
+ Merge {
+  inputs 2
+  also_merge all
+  name Merge7
+  tile_color 0x98a8a800
+  xpos 1280
+  ypos 3734
+ }
+ Merge {
+  inputs 2
+  also_merge all
+  name Merge12
+  tile_color 0x98a8a800
+  xpos 1280
+  ypos 3806
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle20
+  tile_color 0x98a8a800
+  xpos 1280
+  ypos 3878
+ }
+set Nab9c14e0 [stack 0]
+ Dot {
+  name Dot43
+  xpos 1314
+  ypos 5502
+ }
+ Blur {
+  size 2
+  name Blur1
+  xpos -331
+  ypos 5500
+ }
+push $N40e18c00
+push $N40e18520
+ Merge {
+  inputs 2
+  mix {{parent.TextOverlay}}
+  name Merge26
+  xpos -160
+  ypos 2841
+ }
+set Nab9c1f30 [stack 0]
+ Reformat {
+  type "to box"
+  box_width {{parent.tileSize}}
+  box_height {{this.box_width}}
+  filter Impulse
+  name Reformat5
+  xpos -463
+  ypos 3163
+ }
+ set Cab9c22a0 [stack 0]
+ Reformat {
+  type "to box"
+  box_width {{parent.input.width}}
+  box_height {{parent.input.height}}
+  box_fixed true
+  box_pixel_aspect {{parent.input.pixel_aspect}}
+  center false
+  filter Impulse
+  name Reformat6
+  xpos -463
+  ypos 3201
+ }
+ set Cab9c2610 [stack 0]
+push $Nab9c1f30
+ Dissolve {
+  inputs 2
+  name Dissolve1
+  xpos -160
+  ypos 3194
+ }
+ set Cab9c2980 [stack 0]
+ Dot {
+  name Dot30
+  xpos -126
+  ypos 3450
+ }
+set Nab9c2cf0 [stack 0]
+ Dot {
+  name Dot42
+  xpos -1326
+  ypos 3450
+ }
+ Premult {
+  name Premult1
+  tile_color 0x98a8a800
+  xpos -1360
+  ypos 5064
+ }
+ Glow {
+  brightness 0.1
+  size 100
+  name Glow3
+  tile_color 0xffb20000
+  xpos -1360
+  ypos 5102
+ }
+ Dot {
+  name Dot32
+  xpos -712
+  ypos 5106
+ }
+set Nab9c3ab0 [stack 0]
+push $Nab9c3ab0
+ Dot {
+  name Dot35
+  xpos -712
+  ypos 5031
+ }
+ Input {
+  inputs 0
+  name chroma_mask
+  tile_color 0xff0000
+  xpos 3924
+  ypos 3910
+  number 2
+ }
+ Multiply {
+  name Multiply_chroma
+  xpos 3804
+  ypos 3903
+ }
+push $N40e192e0
+ Dot {
+  name Dot38
+  xpos 3354
+  ypos 2429
+ }
+set Nab9c4870 [stack 0]
+ Dot {
+  name Dot80
+  xpos 3354
+  ypos 3527
+ }
+set Nab9c4be0 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle11
+  xpos 3684
+  ypos 3523
+ }
+ ChannelMerge {
+  inputs 2
+  operation in
+  name ChannelMerge5
+  xpos 3684
+  ypos 3896
+ }
+push $Nab9c4be0
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy1
+  xpos 3506
+  ypos 3903
+ }
+push $Nab9c4be0
+ Switch {
+  inputs 2
+  which {{Chroma_mattte}}
+  name SwitchChroma_matte
+  xpos 3320
+  ypos 3910
+ }
+ Dot {
+  name Dot81
+  tile_color 0x98a8a800
+  xpos 3354
+  ypos 4254
+ }
+set Nab9c59a0 [stack 0]
+ Dot {
+  name Dot82
+  tile_color 0x98a8a800
+  xpos 3354
+  ypos 4566
+ }
+set Nab9c5d10 [stack 0]
+ Dot {
+  name Dot83
+  xpos 3354
+  ypos 4798
+ }
+ Transform {
+  center {{width/2} {height/2}}
+  name Transform8
+  tile_color 0x98a8a800
+  xpos 3200
+  ypos 4794
+ }
+ Grade {
+  channels alpha
+  white 0.25
+  name Grade13
+  tile_color 0x98a8a800
+  xpos 3080
+  ypos 4787
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle6
+  xpos 2960
+  ypos 4794
+  disable true
+ }
+push $Nab9c4870
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle1
+  xpos 3680
+  ypos 2425
+ }
+ Posterize {
+  Colors 2
+  name Posterize1
+  tile_color 0x98a8a800
+  xpos 3680
+  ypos 2490
+ }
+set Nab9c71b0 [stack 0]
+clone $Cab9c22a0 {
+  xpos 3680
+  ypos 2817
+  selected false
+ }
+clone $Cab9c2610 {
+  xpos 3680
+  ypos 2855
+  selected false
+ }
+push $Nab9c71b0
+clone $Cab9c2980 {
+  inputs 2
+  xpos 3961
+  ypos 2845
+  selected false
+ }
+ Dot {
+  name Dot84
+  xpos 3995
+  ypos 3198
+ }
+push $Nb3a34790
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge2
+  tile_color 0x98a8a800
+  xpos 2360
+  ypos 3194
+ }
+ Multiply {
+  value {{(range?basecurve(frame-start):1)*(parent.blink_on)}}
+  name Multiply2
+  tile_color 0xffb81300
+  xpos 2360
+  ypos 3439
+  addUserKnob {20 User}
+  addUserKnob {3 duration}
+  duration {{parent.duration}}
+  addUserKnob {7 range}
+  range {{inrange(frame,start,end) x25 0}}
+  addUserKnob {3 basecurve}
+  basecurve {{((sin((frame*pi/duration)-pi)+1)/2)}}
+  addUserKnob {3 start}
+  start {{parent.start_1}}
+  addUserKnob {3 end}
+  end {{parent.end}}
+ }
+ Dot {
+  name Dot85
+  xpos 2394
+  ypos 3882
+ }
+ Dot {
+  name Dot86
+  tile_color 0x98a8a800
+  xpos 2394
+  ypos 3954
+ }
+set Nab9c8d30 [stack 0]
+ Dot {
+  name Dot87
+  tile_color 0x98a8a800
+  xpos 2394
+  ypos 4503
+ }
+set Nab9c90a0 [stack 0]
+ Dot {
+  name Dot88
+  xpos 2394
+  ypos 4746
+ }
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle10
+  tile_color 0xff00
+  xpos 181
+  ypos 4742
+ }
+ ChannelMerge {
+  inputs 2
+  operation in
+  mix {{ChannelMerge1.mix}}
+  name ChannelMerge3
+  tile_color 0xff00
+  xpos 181
+  ypos 4780
+ }
+push $Nab9c2cf0
+ Dot {
+  name Dot89
+  xpos -126
+  ypos 3710
+ }
+set Nab9c9e60 [stack 0]
+ Dot {
+  name Dot90
+  xpos -126
+  ypos 3774
+ }
+set Nab9ca1d0 [stack 0]
+ Dot {
+  name Dot91
+  tile_color 0xff0000
+  xpos -126
+  ypos 4514
+ }
+set Nab9ca540 [stack 0]
+ Dot {
+  name Dot92
+  tile_color 0xff00
+  xpos -126
+  ypos 4746
+ }
+ Grade {
+  channels {-rgba.red -rgba.green rgba.blue}
+  white 0.62
+  multiply {{Grade21.multiply+1}}
+  name Grade22
+  tile_color 0xff00
+  xpos 47
+  ypos 4735
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy15
+  tile_color 0xff00
+  xpos 47
+  ypos 4787
+ }
+ Premult {
+  name Premult5
+  tile_color 0xff00
+  xpos 47
+  ypos 4850
+ }
+ Group {
+  name TransChroma_Blue
+  tile_color 0xff00
+  xpos 47
+  ypos 4886
+  disable {{!parent.transchroma_on}}
+  addUserKnob {20 "" l TransChroma}
+  addUserKnob {7 tr l " rotate" R -180 180}
+  addUserKnob {26 ""}
+  addUserKnob {14 ts l scale R 0 100}
+  ts {{(parent.TransChroma_size+parent.TransChroma_size*.05)}}
+  addUserKnob {26 ""}
+  addUserKnob {7 tx l x R -200 200}
+  addUserKnob {7 ty l y R -200 200}
+  addUserKnob {26 ""}
+  addUserKnob {12 centerg l center}
+  centerg {{format.width/2} {format.height/2}}
+  addUserKnob {26 ""}
+  addUserKnob {7 bias}
+  addUserKnob {7 steps2 l steps R 8 21}
+  steps2 5
+  addUserKnob {26 ""}
+  addUserKnob {32 knob l help t "opens example script" -STARTLINE T "script_open /job/HOME/plambert/nukeshow/fluke.nk"}
+  addUserKnob {20 "" l colour}
+  addUserKnob {18 c1}
+  c1 {1 0 0}
+  addUserKnob {6 c1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c2}
+  c2 {0 1 0}
+  addUserKnob {6 c2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c3}
+  c3 {0 0 1}
+  addUserKnob {6 c3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -240
+   ypos -74
+  }
+set Nab9cb670 [stack 0]
+  TimeWarp {
+   lookup {{dude2}}
+   length 0
+   filter nearest
+   name TimeWarp1
+   xpos -240
+   ypos -48
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipshit}
+   dipshit {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 dude3}
+   dude3 {{((dude(((x-1)*ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 dude2}
+   dude2 {{((dude(((x-1)/ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 ratio3}
+   ratio3 {{steps3/1 i}}
+   addUserKnob {7 dude}
+   dude {{curve i l x1 0 1}}
+   addUserKnob {7 steps3 l steps R 5 21}
+   steps3 {{int(steps2) i}}
+  }
+  Grade {
+   whitepoint {{1/21 i}}
+   multiply {{reda*colour1.r(x/TimeWarp1.steps3)+colour2.r(x/TimeWarp1.steps3)*greena+colour3.r(x/TimeWarp1.steps3)*bluea i} {greena*colour2.g(x/TimeWarp1.steps3)+colour1.g(x/TimeWarp1.steps3)*reda+colour3.g(x/TimeWarp1.steps3)*bluea i} {bluea*colour3.b(x/TimeWarp1.steps3)+colour1.b(x/TimeWarp1.steps3)*reda+colour2.b(x/TimeWarp1.steps3)*greena i} {curve i}}
+   black_clamp false
+   name Grade11
+   tile_color 0x7aa9ff00
+   label ChromaEngine
+   xpos -240
+   ypos -22
+   disable {{1-chromatic i}}
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipsh}
+   dipsh {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 redb}
+   redb {{curve(((x-1)/ratio)+1) i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greenb}
+   greenb {{curve(((x-1)/ratio)+1) i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 blueb}
+   blueb {{curve(((x-1)/ratio)+1) i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 reda}
+   reda {{"(frame<1) ? redb : redb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greena}
+   greena {{"(frame<1) ? greenb : greenb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 bluea}
+   bluea {{"(frame<1) ? blueb : blueb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 ratio}
+   ratio {{TimeWarp1.steps3/21 i}}
+   addUserKnob {26 ""}
+   addUserKnob {18 colour1}
+   colour1 {{c1.r i} {c1.g i} {c1.b i}}
+   addUserKnob {6 colour1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour2}
+   colour2 {{c2.r i} {c2.g i} {c2.b i}}
+   addUserKnob {6 colour2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour3}
+   colour3 {{c3.r i} {c3.g i} {c3.b i}}
+   addUserKnob {6 colour3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  }
+  Transform {
+   translate {{tx*(bias(x/steps2)-1) i} {ty*(bias(x/steps2)-1) i}}
+   rotate {{tr*(bias(x/steps2)-1) i}}
+   scale {{(1/ts*(1-(bias(x/steps2)))+((bias(x/steps2))))}}
+   center {{centerg.x i} {centerg.y i}}
+   name Transform2
+   xpos -240
+   ypos 18
+  }
+  Transform {
+   translate {{movexb i} {moveyb i}}
+   rotate {{rotb i}}
+   scale {{"scalexb " i} {scaleyb i}}
+   center {{centerg.x i} {centerg.y i}}
+   name Transform1
+   xpos -240
+   ypos 44
+   addUserKnob {20 "" l User}
+   addUserKnob {7 scalexb}
+   scalexb {{pow(((ts.w(x/steps2)-1)+1),(dud.scale.w(((x-1)/ratio2)+1))) i}}
+   addUserKnob {7 scaleyb}
+   scaleyb {{pow(((ts.h(x/steps2)-1)+1),(dud.scale.h(((x-1)/ratio2)+1))) i}}
+   addUserKnob {7 movexb}
+   movexb {{(dud.translate.x(((x-1)/ratio2)+1))*tx(x/steps2) i}}
+   addUserKnob {7 moveyb}
+   moveyb {{(dud.translate.y(((x-1)/ratio2)+1))*ty(x/steps2) i}}
+   addUserKnob {7 rotb}
+   rotb {{(dud.rotate(((x-1)/ratio2)+1))*tr(x/steps2) i}}
+   addUserKnob {7 ratio2}
+   ratio2 {{TimeWarp1.steps3/1 i}}
+  }
+  TimeWarp {
+   lookup {{TimeWarp1.dude3 i C x1 1 x71 71}}
+   length {{TimeWarp1.steps3 i}}
+   name TimeWarp2
+   xpos -240
+   ypos 70
+  }
+  Grade {
+   multiply {0.9209 1.0388 1.151 1}
+   black_clamp false
+   mix {{1-(int(steps2)-8)/13 i}}
+   name Grade5
+   xpos -240
+   ypos 96
+   disable {{1-chromatic i}}
+  }
+  Grade {
+   multiply {{1/(c1.r+c2.r+c3.r) i} {1/(c1.g+c2.g+c3.g) i} {1/(c1.b+c2.b+c3.b) i} 1}
+   black_clamp false
+   name Grade4
+   xpos -240
+   ypos 122
+   disable {{1-chromatic}}
+  }
+  Output {
+   name Output1
+   xpos -240
+   ypos 148
+  }
+push $Nab9cb670
+  Transform {
+   translate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   rotate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   scale {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   skewX {{curve i x1 0 0}}
+   center {1024 554}
+   name dud
+   xpos -130
+   ypos -74
+  }
+ end_group
+ Grade {
+  white 4
+  multiply 4
+  gamma 1.55
+  name Grade15
+  tile_color 0xffb20000
+  xpos -400
+  ypos 4886
+ }
+ set Cab9cd8d0 [stack 0]
+push $Nab9c5d10
+ Transform {
+  scale 1.25
+  center {{width/2} {height/2}}
+  name Transform7
+  tile_color 0x98a8a800
+  xpos 3200
+  ypos 4562
+ }
+ Grade {
+  channels alpha
+  white 0.5
+  name Grade12
+  tile_color 0x98a8a800
+  xpos 3080
+  ypos 4555
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle5
+  xpos 2960
+  ypos 4562
+  disable true
+ }
+push $Nab9c90a0
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle9
+  tile_color 0xff0000
+  xpos 178
+  ypos 4499
+ }
+ ChannelMerge {
+  inputs 2
+  operation in
+  mix 0.5
+  name ChannelMerge2
+  tile_color 0xff0000
+  xpos 178
+  ypos 4548
+ }
+push $Nab9ca540
+ Grade {
+  channels {-rgba.red rgba.green -rgba.blue}
+  white 0.96
+  multiply {{Grade21.multiply+.5}}
+  name Grade18
+  tile_color 0xff0000
+  xpos 46
+  ypos 4503
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy13
+  tile_color 0xff0000
+  xpos 46
+  ypos 4555
+ }
+ Premult {
+  name Premult4
+  tile_color 0xff0000
+  xpos 46
+  ypos 4607
+ }
+ Group {
+  name TransChroma_Green
+  tile_color 0xff0000
+  xpos 46
+  ypos 4643
+  disable {{!parent.transchroma_on}}
+  addUserKnob {20 "" l TransChroma}
+  addUserKnob {7 tr l " rotate" R -180 180}
+  addUserKnob {26 ""}
+  addUserKnob {14 ts l scale R 0 100}
+  ts {{(parent.TransChroma_size+parent.TransChroma_size*.1)}}
+  addUserKnob {26 ""}
+  addUserKnob {7 tx l x R -200 200}
+  addUserKnob {7 ty l y R -200 200}
+  addUserKnob {26 ""}
+  addUserKnob {12 centerg l center}
+  centerg {{format.width/2 x1 836} {format.height/2 x1 524}}
+  addUserKnob {26 ""}
+  addUserKnob {7 bias}
+  addUserKnob {7 steps2 l steps R 8 21}
+  steps2 8
+  addUserKnob {26 ""}
+  addUserKnob {32 knob l help t "opens example script" -STARTLINE T "script_open /job/HOME/plambert/nukeshow/fluke.nk"}
+  addUserKnob {20 "" l colour}
+  addUserKnob {18 c1}
+  c1 {1 0 0}
+  addUserKnob {6 c1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c2}
+  c2 {0 1 0}
+  addUserKnob {6 c2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c3}
+  c3 {0 0 1}
+  addUserKnob {6 c3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -240
+   ypos -74
+  }
+set Nab9cf7c0 [stack 0]
+  TimeWarp {
+   lookup {{dude2}}
+   length 0
+   filter nearest
+   name TimeWarp1
+   xpos -240
+   ypos -48
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipshit}
+   dipshit {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 dude3}
+   dude3 {{((dude(((x-1)*ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 dude2}
+   dude2 {{((dude(((x-1)/ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 ratio3}
+   ratio3 {{steps3/1 i}}
+   addUserKnob {7 dude}
+   dude {{curve i l x1 0 1}}
+   addUserKnob {7 steps3 l steps R 5 21}
+   steps3 {{int(steps2) i}}
+  }
+  Grade {
+   whitepoint {{1/21 i}}
+   multiply {{reda*colour1.r(x/TimeWarp1.steps3)+colour2.r(x/TimeWarp1.steps3)*greena+colour3.r(x/TimeWarp1.steps3)*bluea i} {greena*colour2.g(x/TimeWarp1.steps3)+colour1.g(x/TimeWarp1.steps3)*reda+colour3.g(x/TimeWarp1.steps3)*bluea i} {bluea*colour3.b(x/TimeWarp1.steps3)+colour1.b(x/TimeWarp1.steps3)*reda+colour2.b(x/TimeWarp1.steps3)*greena i} {curve i}}
+   black_clamp false
+   name Grade11
+   tile_color 0x7aa9ff00
+   label ChromaEngine
+   xpos -240
+   ypos -22
+   disable {{1-chromatic i}}
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipsh}
+   dipsh {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 redb}
+   redb {{curve(((x-1)/ratio)+1) i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greenb}
+   greenb {{curve(((x-1)/ratio)+1) i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 blueb}
+   blueb {{curve(((x-1)/ratio)+1) i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 reda}
+   reda {{"(frame<1) ? redb : redb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greena}
+   greena {{"(frame<1) ? greenb : greenb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 bluea}
+   bluea {{"(frame<1) ? blueb : blueb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 ratio}
+   ratio {{TimeWarp1.steps3/21 i}}
+   addUserKnob {26 ""}
+   addUserKnob {18 colour1}
+   colour1 {{c1.r i} {c1.g i} {c1.b i}}
+   addUserKnob {6 colour1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour2}
+   colour2 {{c2.r i} {c2.g i} {c2.b i}}
+   addUserKnob {6 colour2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour3}
+   colour3 {{c3.r i} {c3.g i} {c3.b i}}
+   addUserKnob {6 colour3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  }
+  Transform {
+   translate {{tx*(bias(x/steps2)-1) i} {ty*(bias(x/steps2)-1) i}}
+   rotate {{tr*(bias(x/steps2)-1) i}}
+   scale {{(1/ts*(1-(bias(x/steps2)))+((bias(x/steps2))))}}
+   center {{centerg.x i} {centerg.y i}}
+   name Transform2
+   xpos -240
+   ypos 18
+  }
+  Transform {
+   translate {{movexb i} {moveyb i}}
+   rotate {{rotb i}}
+   scale {{"scalexb " i} {scaleyb i}}
+   center {{centerg.x i} {centerg.y i}}
+   name Transform1
+   xpos -240
+   ypos 44
+   addUserKnob {20 "" l User}
+   addUserKnob {7 scalexb}
+   scalexb {{pow(((ts.w(x/steps2)-1)+1),(dud.scale.w(((x-1)/ratio2)+1))) i}}
+   addUserKnob {7 scaleyb}
+   scaleyb {{pow(((ts.h(x/steps2)-1)+1),(dud.scale.h(((x-1)/ratio2)+1))) i}}
+   addUserKnob {7 movexb}
+   movexb {{(dud.translate.x(((x-1)/ratio2)+1))*tx(x/steps2) i}}
+   addUserKnob {7 moveyb}
+   moveyb {{(dud.translate.y(((x-1)/ratio2)+1))*ty(x/steps2) i}}
+   addUserKnob {7 rotb}
+   rotb {{(dud.rotate(((x-1)/ratio2)+1))*tr(x/steps2) i}}
+   addUserKnob {7 ratio2}
+   ratio2 {{TimeWarp1.steps3/1 i}}
+  }
+  TimeWarp {
+   lookup {{TimeWarp1.dude3 i C x1 1 x71 71}}
+   length {{TimeWarp1.steps3 i}}
+   name TimeWarp2
+   xpos -240
+   ypos 70
+  }
+  Grade {
+   multiply {0.9209 1.0388 1.151 1}
+   black_clamp false
+   mix {{1-(int(steps2)-8)/13 i}}
+   name Grade5
+   xpos -240
+   ypos 96
+   disable {{1-chromatic i}}
+  }
+  Grade {
+   multiply {{1/(c1.r+c2.r+c3.r) i} {1/(c1.g+c2.g+c3.g) i} {1/(c1.b+c2.b+c3.b) i} 1}
+   black_clamp false
+   name Grade4
+   xpos -240
+   ypos 122
+   disable {{1-chromatic}}
+  }
+  Output {
+   name Output1
+   xpos -240
+   ypos 148
+  }
+push $Nab9cf7c0
+  Transform {
+   translate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   rotate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   scale {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   skewX {{curve i x1 0 0}}
+   center {1024 554}
+   name dud
+   xpos -130
+   ypos -74
+  }
+ end_group
+clone $Cab9cd8d0 {
+  xpos -400
+  ypos 4643
+  selected false
+ }
+push $Nab9c59a0
+ Transform {
+  scale 1.5
+  center {{width/2} {height/2}}
+  name Transform6
+  tile_color 0x98a8a800
+  xpos 3200
+  ypos 4250
+ }
+ Grade {
+  channels alpha
+  name Grade11
+  tile_color 0x98a8a800
+  xpos 3080
+  ypos 4243
+  disable true
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle4
+  xpos 2960
+  ypos 4250
+  disable true
+ }
+set Nab9d2470 [stack 0]
+ Dot {
+  name Dot93
+  xpos 2994
+  ypos 4120
+ }
+push $Nab9c8d30
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle8
+  tile_color 0xff000000
+  xpos 440
+  ypos 3950
+ }
+set Nab9d2b50 [stack 0]
+ ChannelMerge {
+  inputs 2
+  operation in
+  mix {{ChannelMerge1.mix}}
+  name ChannelMerge6
+  tile_color 0xff000000
+  xpos 440
+  ypos 4102
+ }
+push $Nab9ca1d0
+ Dot {
+  name Dot94
+  xpos 211
+  ypos 3774
+ }
+ Grade {
+  black 0.1
+  gamma 0.47
+  name Grade21
+  tile_color 0x98a8a800
+  xpos 177
+  ypos 3842
+  disable true
+ }
+set Nab9d35a0 [stack 0]
+ Dot {
+  name Dot95
+  xpos -126
+  ypos 3846
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy4
+  tile_color 0xff000000
+  xpos -160
+  ypos 4109
+ }
+ Dot {
+  name Dot96
+  tile_color 0xff000000
+  xpos -231
+  ypos 4120
+ }
+ Premult {
+  name Premult6
+  tile_color 0xff000000
+  xpos -265
+  ypos 4418
+ }
+ Group {
+  name TransChroma_Red
+  tile_color 0xff000000
+  xpos -265
+  ypos 4456
+  addUserKnob {20 "" l TransChroma}
+  addUserKnob {7 tr l " rotate" R -180 180}
+  addUserKnob {26 ""}
+  addUserKnob {14 ts l scale R 0 100}
+  ts {{(parent.TransChroma_size+parent.TransChroma_size*.025)*(parent.TransChroma_value)+(parent.TransChroma_on_off)}}
+  addUserKnob {26 ""}
+  addUserKnob {7 tx l x R -200 200}
+  addUserKnob {7 ty l y R -200 200}
+  addUserKnob {26 ""}
+  addUserKnob {12 centerg l center}
+  centerg {{format.width/2} {format.height/2}}
+  addUserKnob {26 ""}
+  addUserKnob {7 bias}
+  addUserKnob {7 steps2 l steps R 8 21}
+  steps2 8
+  addUserKnob {26 ""}
+  addUserKnob {32 knob l help t "opens example script" -STARTLINE T "script_open /job/HOME/plambert/nukeshow/fluke.nk"}
+  addUserKnob {20 "" l colour}
+  addUserKnob {18 c1}
+  c1 {1 0 0}
+  addUserKnob {6 c1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c2}
+  c2 {0 1 0}
+  addUserKnob {6 c2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c3}
+  c3 {0 0 1}
+  addUserKnob {6 c3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -240
+   ypos -74
+  }
+set Nab9d46d0 [stack 0]
+  TimeWarp {
+   lookup {{dude2}}
+   length 0
+   filter nearest
+   name TimeWarp1
+   xpos -240
+   ypos -48
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipshit}
+   dipshit {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 dude3}
+   dude3 {{((dude(((x-1)*ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 dude2}
+   dude2 {{((dude(((x-1)/ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 ratio3}
+   ratio3 {{steps3/1 i}}
+   addUserKnob {7 dude}
+   dude {{curve i l x1 0 1}}
+   addUserKnob {7 steps3 l steps R 5 21}
+   steps3 {{int(steps2) i}}
+  }
+  Grade {
+   whitepoint {{1/21 i}}
+   multiply {{reda*colour1.r(x/TimeWarp1.steps3)+colour2.r(x/TimeWarp1.steps3)*greena+colour3.r(x/TimeWarp1.steps3)*bluea i} {greena*colour2.g(x/TimeWarp1.steps3)+colour1.g(x/TimeWarp1.steps3)*reda+colour3.g(x/TimeWarp1.steps3)*bluea i} {bluea*colour3.b(x/TimeWarp1.steps3)+colour1.b(x/TimeWarp1.steps3)*reda+colour2.b(x/TimeWarp1.steps3)*greena i} {curve i}}
+   black_clamp false
+   name Grade11
+   tile_color 0x7aa9ff00
+   label ChromaEngine
+   xpos -240
+   ypos -22
+   disable {{1-chromatic i}}
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipsh}
+   dipsh {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 redb}
+   redb {{curve(((x-1)/ratio)+1) i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greenb}
+   greenb {{curve(((x-1)/ratio)+1) i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 blueb}
+   blueb {{curve(((x-1)/ratio)+1) i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 reda}
+   reda {{"(frame<1) ? redb : redb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greena}
+   greena {{"(frame<1) ? greenb : greenb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 bluea}
+   bluea {{"(frame<1) ? blueb : blueb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 ratio}
+   ratio {{TimeWarp1.steps3/21 i}}
+   addUserKnob {26 ""}
+   addUserKnob {18 colour1}
+   colour1 {{c1.r i} {c1.g i} {c1.b i}}
+   addUserKnob {6 colour1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour2}
+   colour2 {{c2.r i} {c2.g i} {c2.b i}}
+   addUserKnob {6 colour2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour3}
+   colour3 {{c3.r i} {c3.g i} {c3.b i}}
+   addUserKnob {6 colour3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  }
+  Transform {
+   translate {{tx*(bias(x/steps2)-1)} {ty*(bias(x/steps2)-1)}}
+   rotate {{tr*(bias(x/steps2)-1)}}
+   scale {{(1/ts*(1-(bias(x/steps2)))+((bias(x/steps2))))}}
+   center {{centerg.x} {centerg.y}}
+   name Transform2
+   xpos -240
+   ypos 18
+  }
+  Transform {
+   translate {{movexb} {moveyb}}
+   rotate {{rotb}}
+   scale {{"scalexb "} {scaleyb}}
+   center {{centerg.x} {centerg.y}}
+   name Transform1
+   selected true
+   xpos -240
+   ypos 44
+   addUserKnob {20 "" l User}
+   addUserKnob {7 scalexb}
+   scalexb {{pow(((ts.w(x/steps2)-1)+1),(dud.scale.w(((x-1)/ratio2)+1)))}}
+   addUserKnob {7 scaleyb}
+   scaleyb {{pow(((ts.h(x/steps2)-1)+1),(dud.scale.h(((x-1)/ratio2)+1)))}}
+   addUserKnob {7 movexb}
+   movexb {{(dud.translate.x(((x-1)/ratio2)+1))*tx(x/steps2)}}
+   addUserKnob {7 moveyb}
+   moveyb {{(dud.translate.y(((x-1)/ratio2)+1))*ty(x/steps2)}}
+   addUserKnob {7 rotb}
+   rotb {{(dud.rotate(((x-1)/ratio2)+1))*tr(x/steps2)}}
+   addUserKnob {7 ratio2}
+   ratio2 {{TimeWarp1.steps3/1}}
+  }
+  TimeWarp {
+   lookup {{TimeWarp1.dude3 i C x1 1 x71 71}}
+   length {{TimeWarp1.steps3 i}}
+   name TimeWarp2
+   xpos -240
+   ypos 70
+  }
+  Grade {
+   multiply {0.9209 1.0388 1.151 1}
+   black_clamp false
+   mix {{1-(int(steps2)-8)/13 i}}
+   name Grade5
+   xpos -240
+   ypos 96
+   disable {{1-chromatic i}}
+  }
+  Grade {
+   multiply {{1/(c1.r+c2.r+c3.r) i} {1/(c1.g+c2.g+c3.g) i} {1/(c1.b+c2.b+c3.b) i} 1}
+   black_clamp false
+   name Grade4
+   xpos -240
+   ypos 122
+   disable {{1-chromatic}}
+  }
+  Output {
+   name Output1
+   xpos -240
+   ypos 148
+  }
+push $Nab9d46d0
+  Transform {
+   translate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   rotate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   scale {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   skewX {{curve i x1 0 0}}
+   center {1024 554}
+   name dud
+   xpos -130
+   ypos -74
+  }
+ end_group
+ Grade {
+  white 2
+  multiply 2
+  gamma 1.55
+  name Grade1
+  tile_color 0xffb20000
+  xpos -400
+  ypos 4456
+ }
+push $Nab9d2470
+ Dot {
+  name Dot97
+  xpos 525
+  ypos 4254
+ }
+push $Nab9d2b50
+push $Nab9d35a0
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy5
+  xpos 177
+  ypos 3943
+ }
+set Nab9d7010 [stack 0]
+ Dot {
+  name Dot98
+  xpos 57
+  ypos 3954
+ }
+ Group {
+  name TransChroma_wide
+  tile_color 0x2095a800
+  xpos 23
+  ypos 4184
+  disable {{!parent.transchroma_on}}
+  addUserKnob {20 "" l TransChroma}
+  addUserKnob {7 tr l " rotate" R -180 180}
+  addUserKnob {26 ""}
+  addUserKnob {14 ts l scale R 0 100}
+  ts {{(parent.TransChroma_size+parent.TransChroma_size*.1)}}
+  addUserKnob {26 ""}
+  addUserKnob {7 tx l x R -200 200}
+  tx {{width/6.5*fx_size}}
+  addUserKnob {7 ty l y R -200 200}
+  addUserKnob {26 ""}
+  addUserKnob {12 centerg l center}
+  centerg {{format.width/2} {format.height/2}}
+  addUserKnob {26 ""}
+  addUserKnob {7 bias}
+  bias 1
+  addUserKnob {7 steps2 l steps R 8 21}
+  steps2 8
+  addUserKnob {26 ""}
+  addUserKnob {32 knob l help t "opens example script" -STARTLINE T "script_open /job/HOME/plambert/nukeshow/fluke.nk"}
+  addUserKnob {20 "" l colour}
+  addUserKnob {18 c1}
+  c1 {1 0 0}
+  addUserKnob {6 c1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c2}
+  c2 {0 1 0}
+  addUserKnob {6 c2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {18 c3}
+  c3 {0 0 1}
+  addUserKnob {6 c3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+ }
+  Input {
+   inputs 0
+   name Input1
+   xpos -240
+   ypos -74
+  }
+set Nab9d76f0 [stack 0]
+  TimeWarp {
+   lookup {{dude2}}
+   length 0
+   filter nearest
+   name TimeWarp1
+   xpos -240
+   ypos -48
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipshit}
+   dipshit {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 dude3}
+   dude3 {{((dude(((x-1)*ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 dude2}
+   dude2 {{((dude(((x-1)/ratio3)+1))*(1))+1 i}}
+   addUserKnob {7 ratio3}
+   ratio3 {{steps3/1 i}}
+   addUserKnob {7 dude}
+   dude {{curve i l x1 0 1}}
+   addUserKnob {7 steps3 l steps R 5 21}
+   steps3 {{int(steps2) i}}
+  }
+  Grade {
+   whitepoint {{1/21 i}}
+   multiply {{reda*colour1.r(x/TimeWarp1.steps3)+colour2.r(x/TimeWarp1.steps3)*greena+colour3.r(x/TimeWarp1.steps3)*bluea i} {greena*colour2.g(x/TimeWarp1.steps3)+colour1.g(x/TimeWarp1.steps3)*reda+colour3.g(x/TimeWarp1.steps3)*bluea i} {bluea*colour3.b(x/TimeWarp1.steps3)+colour1.b(x/TimeWarp1.steps3)*reda+colour2.b(x/TimeWarp1.steps3)*greena i} {curve i}}
+   black_clamp false
+   name Grade11
+   tile_color 0x7aa9ff00
+   label ChromaEngine
+   xpos -240
+   ypos -22
+   disable {{1-chromatic i}}
+   addUserKnob {20 "" l User}
+   addUserKnob {7 dipsh}
+   dipsh {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   addUserKnob {7 redb}
+   redb {{curve(((x-1)/ratio)+1) i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greenb}
+   greenb {{curve(((x-1)/ratio)+1) i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 blueb}
+   blueb {{curve(((x-1)/ratio)+1) i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 reda}
+   reda {{"(frame<1) ? redb : redb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0.125 0.122 0.118 0.114 0.1080000028 0.102 0.094 0.082 0.071 0.051 0 0 0 0 0 0 0 0 0 0 0}}
+   addUserKnob {7 greena}
+   greena {{"(frame<1) ? greenb : greenb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0.01600000076 0.027 0.035 0.043 0.04949999973 0.055 0.063 0.071 0.078 0.08600000292 0.078 0.071 0.063 0.05700000003 0.051 0.043 0.035 0.027 0.01649999991 0}}
+   addUserKnob {7 bluea}
+   bluea {{"(frame<1) ? blueb : blueb(((frame-1)%(TimeWarp1.steps3))+1)" i x1 0 0 0 0 0 0 0 0 0 0 0 0.051 0.071 0.082 0.094 0.102 0.1084999964 0.114 0.118 0.122 0.125}}
+   addUserKnob {7 ratio}
+   ratio {{TimeWarp1.steps3/21 i}}
+   addUserKnob {26 ""}
+   addUserKnob {18 colour1}
+   colour1 {{c1.r i} {c1.g i} {c1.b i}}
+   addUserKnob {6 colour1_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour2}
+   colour2 {{c2.r i} {c2.g i} {c2.b i}}
+   addUserKnob {6 colour2_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+   addUserKnob {18 colour3}
+   colour3 {{c3.r i} {c3.g i} {c3.b i}}
+   addUserKnob {6 colour3_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  }
+  Transform {
+   translate {{tx*(bias(x/steps2)-1)} {ty*(bias(x/steps2)-1)}}
+   rotate {{tr*(bias(x/steps2)-1)}}
+   scale {{(1/ts*(1-(bias(x/steps2)))+((bias(x/steps2))))}}
+   center {{centerg.x} {centerg.y}}
+   name Transform2
+   xpos -240
+   ypos 18
+  }
+  Transform {
+   translate {{movexb i} {moveyb i}}
+   rotate {{rotb i}}
+   scale {{"scalexb " i} {scaleyb i}}
+   center {{centerg.x i} {centerg.y i}}
+   name Transform1
+   xpos -240
+   ypos 44
+   addUserKnob {20 "" l User}
+   addUserKnob {7 scalexb}
+   scalexb {{pow(((ts.w(x/steps2)-1)+1),(dud.scale.w(((x-1)/ratio2)+1))) i}}
+   addUserKnob {7 scaleyb}
+   scaleyb {{pow(((ts.h(x/steps2)-1)+1),(dud.scale.h(((x-1)/ratio2)+1))) i}}
+   addUserKnob {7 movexb}
+   movexb {{(dud.translate.x(((x-1)/ratio2)+1))*tx(x/steps2) i}}
+   addUserKnob {7 moveyb}
+   moveyb {{(dud.translate.y(((x-1)/ratio2)+1))*ty(x/steps2) i}}
+   addUserKnob {7 rotb}
+   rotb {{(dud.rotate(((x-1)/ratio2)+1))*tr(x/steps2) i}}
+   addUserKnob {7 ratio2}
+   ratio2 {{TimeWarp1.steps3/1 i}}
+  }
+  TimeWarp {
+   lookup {{TimeWarp1.dude3 C x1 1 x71 71}}
+   length {{TimeWarp1.steps3}}
+   name TimeWarp2
+   xpos -240
+   ypos 70
+  }
+  Grade {
+   multiply {0.9209 1.0388 1.151 1}
+   black_clamp false
+   mix {{1-(int(steps2)-8)/13 i}}
+   name Grade5
+   xpos -240
+   ypos 97
+   disable {{1-chromatic i}}
+  }
+  Grade {
+   multiply {{1/(c1.r+c2.r+c3.r) i} {1/(c1.g+c2.g+c3.g) i} {1/(c1.b+c2.b+c3.b) i} 1}
+   black_clamp false
+   name Grade4
+   xpos -240
+   ypos 125
+   disable {{1-chromatic}}
+  }
+  Output {
+   name Output1
+   selected true
+   xpos -240
+   ypos 148
+  }
+  Viewer {
+   frame_range 1000,1300
+   ignore_pixel_aspect true
+   name Viewer1
+   xpos -399
+   ypos -50
+  }
+push $Nab9d76f0
+  Transform {
+   translate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   rotate {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   scale {{"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1} {"(frame<1) ? (curve) : curve(((frame-1)%(2-1))+1)" i x1 0 1}}
+   skewX {{curve i x1 0 0}}
+   center {1024 554}
+   name dud
+   xpos -130
+   ypos -74
+  }
+ end_group
+set Nb3a36320 [stack 0]
+push $Nab9d7010
+ Blur {
+  channels alpha
+  size 68
+  name Blur2
+  tile_color 0x2095a800
+  xpos 177
+  ypos 4012
+ }
+ Grade {
+  channels alpha
+  white 4
+  multiply 2
+  name Grade4
+  tile_color 0x2095a800
+  xpos 177
+  ypos 4054
+ }
+ ChannelMerge {
+  inputs 2
+  operation in
+  name ChannelMerge4
+  tile_color 0x2095a800
+  xpos 177
+  ypos 4170
+ }
+ ChannelMerge {
+  inputs 2
+  operation in
+  name ChannelMerge1
+  tile_color 0x2095a800
+  xpos 177
+  ypos 4236
+ }
+push $Nb3a36320
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy3
+  tile_color 0x2095a800
+  xpos 25
+  ypos 4243
+ }
+ Premult {
+  name Premult3
+  tile_color 0x2095a800
+  xpos 25
+  ypos 4295
+ }
+clone $Cab9cd8d0 {
+  xpos -400
+  ypos 4295
+  selected false
+ }
+push $Nab9c14e0
+push $Nab9c9e60
+ Shuffle {
+  red black
+  green black
+  blue black
+  alpha black
+  name Shuffle2
+  xpos -345
+  ypos 3706
+ }
+set Nab9db160 [stack 0]
+ Grade {
+  black {0.015 0.01 0 0}
+  white 0
+  name Grade2
+  xpos -345
+  ypos 3766
+ }
+ Copy {
+  inputs 2
+  from0 rgba.alpha
+  to0 rgba.alpha
+  name Copy2
+  xpos -345
+  ypos 3871
+ }
+ Premult {
+  name Premult2
+  xpos -345
+  ypos 3950
+ }
+push $Nab9db160
+ Dot {
+  name Dot99
+  xpos -486
+  ypos 3710
+ }
+ Dot {
+  name Dot100
+  xpos -486
+  ypos 3874
+ }
+ Merge {
+  inputs 2
+  name Merge17
+  xpos -520
+  ypos 3950
+ }
+ Merge {
+  inputs 2
+  mix 0.25
+  name Merge_widetrans
+  tile_color 0x98a8a800
+  xpos -520
+  ypos 4295
+ }
+ Merge {
+  inputs 2
+  name Merge3
+  tile_color 0x98a8a800
+  xpos -520
+  ypos 4456
+ }
+ Merge {
+  inputs 2
+  name Merge11
+  tile_color 0x98a8a800
+  xpos -520
+  ypos 4643
+ }
+ Merge {
+  inputs 2
+  name Merge10
+  tile_color 0x98a8a800
+  xpos -520
+  ypos 4886
+ }
+ Merge {
+  inputs 2
+  operation overlay
+  mix 0.735
+  name Merge9
+  tile_color 0xffb20000
+  xpos -520
+  ypos 5027
+ }
+ Merge {
+  inputs 2
+  mix 0.5
+  name Merge5
+  tile_color 0xffb20000
+  xpos -520
+  ypos 5102
+ }
+ Merge {
+  inputs 2
+  operation mult
+  mix 0.5
+  name Multiply_Grid
+  note_font "Helvetica bold italics Bold Italic"
+  note_font_color 0xb2d9df00
+  xpos -520
+  ypos 5498
+ }
+ Crop {
+  box {0 0 {parent.width} {parent.height}}
+  crop false
+  name Crop7
+  xpos -520
+  ypos 5775
+  addUserKnob {20 "" l "Viewer Roi"}
+  addUserKnob {1 source_viewer l "Source Viewer"}
+  source_viewer Viewer1
+  addUserKnob {32 "crop to roi" -STARTLINE T " if !\[exists \[value source_viewer]] \{message \"source viewer doesn't exist\";return\}\n if \[exists this.input] \{\n set InWidth \[value input.width]\n set InHeight \[value input.height]\n set InAspect \[value input.pixel_aspect] \n\} else \{\n set InWidth \[value root.width]\n set InHeight \[value root.height]\n set InAspect \[value root.pixel_aspect]\n \}\n if \{\[value \[value source_viewer].ignore_pixel_aspect] == \"true\"\} \{ set aspect 1 \} else \{ set aspect \$InAspect \}\n\n knob box.x \[expression (\[value \[value source_viewer].roi.x]+1)/2*\$InWidth]\n knob box.y \[ expression (\[value \[value source_viewer].roi.y]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ]\n knob box.r \[expression (\[value \[value source_viewer].roi.r]+1)/2*\$InWidth]\n knob box.t \[ expression (\[value \[value source_viewer].roi.t]*\$aspect+\$InHeight/\$InWidth)/2*\$InWidth ] \n\tknob reformat 1\n\t"}
+ }
+ Output {
+  name Output1
+  tile_color 0xff000000
+  xpos -520
+  ypos 5926
+ }
+ Viewer {
+  frame_range 1000,1117
+  ignore_pixel_aspect true
+  input_process false
+  name Viewer1
+  xpos -463
+  ypos 3239
+ }
+end_group

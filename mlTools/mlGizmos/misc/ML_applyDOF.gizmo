@@ -1,0 +1,302 @@
+add_layer {_pointCamera _pointCamera.red _pointCamera.green _pointCamera.blue _pointCamera.alpha}
+Gizmo {
+ addUserKnob {20 selection_multipliers}
+ addUserKnob {41 DepthChannel T Shuffle1.in}
+ addUserKnob {41 color T SampleColor.color}
+ addUserKnob {41 pos T SampleColor.pos}
+ addUserKnob {41 sampleValue -STARTLINE T SampleColor.sampleValue}
+ addUserKnob {41 multiply_2 l globalMult T FocusMult1.multiply}
+ addUserKnob {41 gamma l fallOff T FocusFalloff.gamma}
+ addUserKnob {41 multiply_1 l rear_Multiplier T RearMult.multiply}
+ addUserKnob {41 multiply l front_Multiplier T FrontMult.multiply}
+ addUserKnob {41 size T ZDefocus1.size}
+ addUserKnob {41 max_size l maximum T ZDefocus1.max_size}
+ addUserKnob {20 DOF l DOF_Settings}
+ addUserKnob {26 "" l " "}
+ addUserKnob {26 "" l "Local GPU"}
+ addUserKnob {41 useGPUIfAvailable l "Use GPU if available" T ZDefocus1.useGPUIfAvailable}
+ addUserKnob {26 ""}
+ addUserKnob {41 interactKnob T ZDefocus1.interactKnob}
+ addUserKnob {41 serializeKnob T ZDefocus1.serializeKnob}
+ addUserKnob {41 show_image l "show image" T ZDefocus1.show_image}
+ addUserKnob {41 dof l "depth of field" T ZDefocus1.dof}
+ addUserKnob {41 blur_dof l "blur inside" T ZDefocus1.blur_dof}
+ addUserKnob {26 ""}
+ addUserKnob {41 autoLayerSpacing l "automatic layer spacing" T ZDefocus1.autoLayerSpacing}
+ addUserKnob {41 layers l "depth layers" T ZDefocus1.layers}
+ addUserKnob {41 layerCurve l "layer curve" T ZDefocus1.layerCurve}
+ addUserKnob {26 ""}
+ addUserKnob {41 filter_type l "filter type" T ZDefocus1.filter_type}
+ addUserKnob {41 filter_channel l "filter channel" T ZDefocus1.filter_channel}
+ addUserKnob {41 use_input_channels l "use input channels" T ZDefocus1.use_input_channels}
+ addUserKnob {41 filter_bounds l "filter bounds" T ZDefocus1.filter_bounds}
+ addUserKnob {41 shape l "filter shape" T ZDefocus1.shape}
+ addUserKnob {41 aspect l "aspect ratio" T ZDefocus1.aspect}
+ addUserKnob {41 blades T ZDefocus1.blades}
+ addUserKnob {41 roundness T ZDefocus1.roundness}
+ addUserKnob {41 rotation T ZDefocus1.rotation}
+ addUserKnob {41 inner_size l "inner size" T ZDefocus1.inner_size}
+ addUserKnob {41 inner_feather l "inner feather" T ZDefocus1.inner_feather}
+ addUserKnob {41 inner_brightness l "inner brightness" T ZDefocus1.inner_brightness}
+ addUserKnob {41 catadioptric_size l "catadioptric size" T ZDefocus1.catadioptric_size}
+ addUserKnob {41 catadioptric T ZDefocus1.catadioptric}
+ addUserKnob {26 ""}
+ addUserKnob {41 bloom_gamma l "gamma correction" T ZDefocus1.bloom_gamma}
+ addUserKnob {41 bloom T ZDefocus1.bloom}
+ addUserKnob {41 bloom_threshold l "bloom threshold" T ZDefocus1.bloom_threshold}
+ addUserKnob {41 bloom_gain l "bloom gain" T ZDefocus1.bloom_gain}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask l "" -STARTLINE T ZDefocus1.maskChannelMask}
+ addUserKnob {41 maskChannelInput l "" -STARTLINE T ZDefocus1.maskChannelInput}
+ addUserKnob {41 inject T ZDefocus1.inject}
+ addUserKnob {41 invert_mask l invert T ZDefocus1.invert_mask}
+ addUserKnob {41 fringe T ZDefocus1.fringe}
+ addUserKnob {41 mix T ZDefocus1.mix}
+ addUserKnob {20 depthMatte}
+ addUserKnob {41 size_2 l extendEdges T ExtendBlur.size}
+ addUserKnob {41 size_1 l edgeSoften T BlurSoften.size}
+ addUserKnob {41 chBox l viewDepthMatte T Switch1.chBox}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 356
+  ypos -18
+ }
+set N12aae630 [stack 0]
+ Shuffle {
+  in _pointCamera
+  name Shuffle1
+  label "\[value in]"
+  xpos 488
+  ypos -24
+ }
+ Unpremult {
+  name Unpremult3
+  xpos 488
+  ypos 19
+ }
+set N12aaed10 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  name Zpos
+  label "\[value in]"
+  xpos 488
+  ypos 52
+ }
+set N12aaf080 [stack 0]
+ Expression {
+  channel0 rgb
+  expr0 r==0
+  channel1 {-rgba.red -rgba.green -rgba.blue}
+  channel2 {-rgba.red -rgba.green -rgba.blue}
+  name Expression1
+  xpos 620
+  ypos 58
+ }
+push $N12aaf080
+ Constant {
+  inputs 0
+  channels rgb
+  color {{parent.SampleColor.color} {parent.SampleColor.color} {parent.SampleColor.color} 1}
+  name refValue
+  xpos 839
+  ypos 58
+ }
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle2
+  label "\[value in]"
+  xpos 839
+  ypos 138
+ }
+ Merge2 {
+  inputs 2+1
+  operation minus
+  Bchannels rgb
+  output rgb
+  name Merge1
+  xpos 620
+  ypos 168
+ }
+set N1377b0c0 [stack 0]
+ Grade {
+  gamma {{parent.FocusFalloff.gamma}}
+  name FrontMult
+  xpos 620
+  ypos 204
+ }
+push $N1377b0c0
+ Grade {
+  multiply -1
+  black_clamp false
+  name Grade3
+  xpos 488
+  ypos 168
+ }
+ Grade {
+  multiply 0
+  gamma {{parent.FocusFalloff.gamma}}
+  name RearMult
+  xpos 488
+  ypos 203
+ }
+ Grade {
+  multiply -1
+  black_clamp false
+  name Grade4
+  xpos 488
+  ypos 257
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge2
+  xpos 620
+  ypos 257
+ }
+set N1377c1f0 [stack 0]
+ Grade {
+  multiply 0.01
+  black_clamp false
+  name FocusMult
+  xpos 620
+  ypos 281
+ }
+ Grade {
+  multiply 0.62
+  black_clamp false
+  name FocusMult1
+  xpos 620
+  ypos 305
+ }
+set N1377c8d0 [stack 0]
+push $N12aaf080
+push $N1377c8d0
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos 620
+  ypos 400
+ }
+ Blur {
+  channels rgba
+  size 29.5
+  name ExtendBlur
+  xpos 620
+  ypos 433
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 620
+  ypos 467
+ }
+ Merge2 {
+  inputs 2
+  name Merge9
+  xpos 730
+  ypos 467
+ }
+ Blur {
+  channels rgba
+  size 11
+  name BlurSoften
+  xpos 730
+  ypos 522
+ }
+set N1377da00 [stack 0]
+ Expression {
+  expr0 abs(r)
+  expr1 abs(g)
+  expr2 abs(b)
+  name Expression2
+  xpos 730
+  ypos 554
+ }
+push $N1377da00
+push $N12aae630
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 _pointCamera
+  name ShuffleCopy2
+  xpos 356
+  ypos 522
+ }
+ ZDefocus2 {
+  serializeKnob ""
+  z_channel _pointCamera.blue
+  math direct
+  focal_point {1179 787}
+  blur_dof false
+  size 1
+  max_size 10.6
+  inner_brightness 0.39
+  name ZDefocus1
+  xpos 356
+  ypos 587
+ }
+ Crop {
+  box {0 0 1280 720}
+  crop false
+  name Crop1
+  xpos 356
+  ypos 623
+ }
+ Switch {
+  inputs 2
+  which {{chBox}}
+  name Switch1
+  xpos 478
+  ypos 678
+  addUserKnob {20 User}
+  addUserKnob {6 chBox +STARTLINE}
+ }
+set N654c4d00 [stack 0]
+ Output {
+  name Output1
+  xpos 478
+  ypos 726
+ }
+push $N1377c1f0
+ Grade {
+  gamma 0.3
+  black_clamp false
+  name FocusFalloff
+  xpos 823
+  ypos 295
+ }
+push $N12aaed10
+ Group {
+  name SampleColor
+  xpos 703
+  ypos 19
+  addUserKnob {20 User}
+  addUserKnob {12 pos}
+  pos {699 240}
+  addUserKnob {22 sampleValue -STARTLINE T "sel=nuke.thisNode()\nx,y=sel\['pos'].value()\[0],sel\['pos'].value()\[1]\nr,g,b=nuke.sample(sel,'r',x,y),nuke.sample(sel,'g',x,y),nuke.sample(sel,'b',x,y)\nsel\['color'].setValue(r,0)\nsel\['color'].setValue(g,1)\nsel\['color'].setValue(b,2)"}
+  addUserKnob {18 color}
+  color {12.71875 -25.46875 -131.75}
+ }
+  Input {
+   inputs 0
+   name Input1
+   selected true
+   xpos 376
+   ypos 17
+  }
+  Output {
+   name Output1
+   xpos 376
+   ypos 173
+  }
+ end_group
+push $N654c4d00
+end_group

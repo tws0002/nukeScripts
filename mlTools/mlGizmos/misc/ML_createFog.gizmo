@@ -1,0 +1,297 @@
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 translate l origin T Center.translate}
+ addUserKnob {41 box_width l width/height T Reformat1.box_width}
+ addUserKnob {41 box_height l "" -STARTLINE T Reformat1.box_height}
+ addUserKnob {41 sceneSize T NoOp1.sceneSize}
+ addUserKnob {41 cardScale T NoOp1.cardScale}
+ addUserKnob {41 gamma T Grade4.gamma}
+ addUserKnob {41 gamma_1 l gamma T Grade2.gamma}
+ addUserKnob {41 gamma_2 l gamma T Grade3.gamma}
+ addUserKnob {41 size l x/ysize T Noise1.size}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {22 createInstances T "import random\n\ngrp= nuke.thisGroup()\nwith grp:\n    for n in nuke.allNodes(\"TimeOffset\"):\n        nuke.delete(n)\n    for n in nuke.allNodes(\"TransformGeo\"):\n        nuke.delete(n)\n    for n in nuke.allNodes(\"Scene\"):\n        nuke.delete(n)\n    cam=nuke.toNode('Camera')\n    scene=nuke.nodes.Scene()\n    card=nuke.toNode('NoiseCard')\n    center=nuke.toNode('Center')\n    scan=nuke.toNode('ScanlineRender')\n    scan.setInput(1,scene)\n    for i in range(grp\['instanceCount'].value()):\n        t=nuke.nodes.TimeOffset()\n        t\['time_offset'].setValue(int(random.random()*1000))\n        t.setInput(0,card)\n        tr=nuke.nodes.TransformGeo()\n        tr\['translate'].setExpression(\"(random(\"+str(int(random.random()*1000))+\",1)-.5)*NoOp1.sceneSize.x\",0)\n        tr\['translate'].setExpression(\"(random(\"+str(int(random.random()*1000))+\",1)-.5)*NoOp1.sceneSize.y\",1)\n        tr\['translate'].setExpression(\"(random(\"+str(int(random.random()*1000))+\",1)-.5)*NoOp1.sceneSize.z\",2)\n        tr\['uniform_scale'].setExpression(\"NoOp1.cardScale\")\n        tr.setInput(0,t)\n        tr.setInput(1,center)\n        tr.setInput(2,cam)\n        scene.setInput(i,tr)" +STARTLINE}
+ addUserKnob {41 instanceCount T NoOp1.instanceCount}
+ addUserKnob {41 speed T NoOp1.speed}
+}
+ Input {
+  inputs 0
+  name Camera
+  xpos 169
+  ypos 956
+ }
+set N385f9d00 [stack 0]
+push $N385f9d00
+ Axis2 {
+  inputs 0
+  translate {229.5 5 -37}
+  name Center
+  xpos 144
+  ypos 610
+ }
+set N386037b0 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 424
+  ypos 183
+ }
+ Reformat {
+  type "to box"
+  box_width 2600
+  box_height 800
+  box_fixed true
+  name Reformat1
+  xpos 424
+  ypos 295
+ }
+set N385fd090 [stack 0]
+ Expression {
+  channel0 rgb
+  expr0 (y/height)*9
+  name Expression3
+  xpos 328
+  ypos 341
+ }
+ Grade {
+  gamma 0.2
+  white_clamp true
+  name Grade4
+  xpos 328
+  ypos 365
+ }
+push 0
+push $N385fd090
+ Expression {
+  channel0 rgb
+  expr0 (.5-abs((x-(width/2))/width))*2
+  name Expression2
+  xpos 524
+  ypos 341
+ }
+ Grade {
+  gamma 0.42
+  white_clamp true
+  name Grade3
+  xpos 524
+  ypos 374
+ }
+push $N385fd090
+ Expression {
+  channel0 rgb
+  expr0 1-(y/height)
+  name Expression1
+  xpos 424
+  ypos 342
+ }
+ Grade {
+  gamma 0.265
+  name Grade2
+  xpos 424
+  ypos 376
+ }
+ Merge2 {
+  inputs 3+1
+  operation multiply
+  name Merge8
+  xpos 424
+  ypos 418
+ }
+ Noise {
+  premult rgba
+  maskChannelInput rgba.red
+  size 280
+  zoffset {{frame/NoOp1.speed}}
+  center {640 360}
+  name Noise1
+  xpos 424
+  ypos 463
+ }
+ Card2 {
+  selectable false
+  uniform_scale 100
+  control_points {3 3 3 6 
+
+1 {-0.5 -0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0 0 0} 
+1 {0 -0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {0.5 0 0} 
+1 {0.5 -0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666865 0} 0 {0 0 0} 0 {1 0 0} 
+1 {-0.5 0 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0 0.5 0} 
+1 {0 0 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {0.5 0.5 0} 
+1 {0.5 0 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0.1666666716 0} 0 {0 -0.1666666716 0} 0 {1 0.5 0} 
+1 {-0.5 0.5 0} 0 {0.1666666865 0 0} 0 {0 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0 1 0} 
+1 {0 0.5 0} 0 {0.1666666716 0 0} 0 {-0.1666666716 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {0.5 1 0} 
+1 {0.5 0.5 0} 0 {0 0 0} 0 {-0.1666666865 0 0} 0 {0 0 0} 0 {0 -0.1666666865 0} 0 {1 1 0} }
+  name NoiseCard
+  xpos 392
+  ypos 523
+ }
+set N38600420 [stack 0]
+ TimeOffset {
+  time_offset 187
+  name TimeOffset10
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(703,1)-.5)*NoOp1.sceneSize.x} {(random(781,1)-.5)*NoOp1.sceneSize.y} {(random(295,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo10
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 312
+  name TimeOffset9
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(20,1)-.5)*NoOp1.sceneSize.x} {(random(252,1)-.5)*NoOp1.sceneSize.y} {(random(580,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo9
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 651
+  name TimeOffset8
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(653,1)-.5)*NoOp1.sceneSize.x} {(random(5,1)-.5)*NoOp1.sceneSize.y} {(random(119,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo8
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 914
+  name TimeOffset7
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(604,1)-.5)*NoOp1.sceneSize.x} {(random(832,1)-.5)*NoOp1.sceneSize.y} {(random(372,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo7
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 276
+  name TimeOffset6
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(605,1)-.5)*NoOp1.sceneSize.x} {(random(143,1)-.5)*NoOp1.sceneSize.y} {(random(506,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo6
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 202
+  name TimeOffset5
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(844,1)-.5)*NoOp1.sceneSize.x} {(random(538,1)-.5)*NoOp1.sceneSize.y} {(random(910,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo5
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 151
+  name TimeOffset4
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(781,1)-.5)*NoOp1.sceneSize.x} {(random(842,1)-.5)*NoOp1.sceneSize.y} {(random(278,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo4
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 931
+  name TimeOffset3
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(700,1)-.5)*NoOp1.sceneSize.x} {(random(271,1)-.5)*NoOp1.sceneSize.y} {(random(683,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo3
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 747
+  name TimeOffset2
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(920,1)-.5)*NoOp1.sceneSize.x} {(random(776,1)-.5)*NoOp1.sceneSize.y} {(random(212,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo2
+ }
+push $N385f9d00
+push $N386037b0
+push $N38600420
+ TimeOffset {
+  time_offset 621
+  name TimeOffset1
+ }
+ TransformGeo {
+  inputs 3
+  translate {{(random(636,1)-.5)*NoOp1.sceneSize.x} {(random(462,1)-.5)*NoOp1.sceneSize.y} {(random(914,1)-.5)*NoOp1.sceneSize.z}}
+  uniform_scale {{NoOp1.cardScale}}
+  name TransformGeo1
+ }
+ Scene {
+  inputs 10
+  name Scene1
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant2
+  xpos 236
+  ypos 1114
+ }
+add_layer {_pointWorld _pointWorld.red _pointWorld.green _pointWorld.blue _pointWorld.alpha}
+ ScanlineRender {
+  inputs 3
+  motion_vectors_type distance
+  output_shader_vectors true
+  P_channel _pointWorld
+  name ScanlineRender
+  xpos 424
+  ypos 1138
+ }
+ NoOp {
+  name NoOp1
+  xpos 424
+  ypos 1193
+  addUserKnob {20 User}
+  addUserKnob {7 speed R 24 1000}
+  speed 275
+  addUserKnob {13 sceneSize}
+  sceneSize {290 1 400}
+  addUserKnob {7 cardScale R 1 10}
+  cardScale 3.2
+  addUserKnob {3 instanceCount}
+  instanceCount 10
+ }
+ Output {
+  name Output1
+  xpos 424
+  ypos 1247
+ }
+end_group

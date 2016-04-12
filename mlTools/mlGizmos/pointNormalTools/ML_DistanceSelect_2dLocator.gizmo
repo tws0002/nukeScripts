@@ -1,0 +1,180 @@
+#! C:/Temp/psyop_cache/apps/nuke/win64/9.0v8/nuke-9.0.8.dll -nx
+version 9.0 v8
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+Gizmo {
+ addUserKnob {20 LaVoyDistance_locationPoint}
+ addUserKnob {41 in l "in 1" T Shuffle1.in}
+ addUserKnob {41 location T Shuffle1.location}
+ addUserKnob {41 color T relightValue.color}
+ addUserKnob {41 color_1 l offset T offsetColor.color}
+ addUserKnob {41 color_2 l scale T ScaleVals.color}
+ addUserKnob {41 radius T Constant2.radius}
+ addUserKnob {41 multiply T LightingMult.multiply}
+ addUserKnob {41 gamma l falloff T LightingMult.gamma}
+ addUserKnob {41 viewPoint T Switch1.viewPoint}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  color {0 0 0 0}
+  name offsetColor
+  xpos 215
+  ypos -135
+ }
+ Constant {
+  inputs 0
+  color {0 0 0 1}
+  name relightValue
+  xpos 57
+  ypos -215
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge2
+  xpos 57
+  ypos -112
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -507
+  ypos -153
+ }
+ Shuffle {
+  in uPointWorld
+  name Shuffle1
+  knobChanged "n=nuke.thisNode()\nc=nuke.toNode(\"relightValue\")\nk=nuke.thisKnob()\nif k.name() == \"location\":\n chan=n\[\"in\"].value()\n loc=n\[\"location\"].value()\n x=nuke.sample(n,\"rgba.red\",loc\[0],loc\[1],1,1)\n y=nuke.sample(n,\"rgba.green\",loc\[0],loc\[1],1,1)\n z=nuke.sample(n,\"rgba.blue\",loc\[0],loc\[1],1,1)\n c\[\"color\"].setValue(x,0)\n c\[\"color\"].setValue(y,1)\n c\[\"color\"].setValue(z,2)"
+  xpos -507
+  ypos -40
+  addUserKnob {20 User}
+  addUserKnob {18 color}
+  color {0 0 0}
+  addUserKnob {6 color_panelDropped l "panel dropped state" -STARTLINE +HIDDEN}
+  addUserKnob {12 location}
+  location {960 540}
+ }
+set N7f748400 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos 57
+  ypos -40
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 1 1 1}
+  name ScaleVals
+  xpos 215
+  ypos -14
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge3
+  xpos 57
+  ypos 10
+ }
+set Nae6bb800 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle4
+  label "\[value in]"
+  xpos 57
+  ypos 155
+ }
+push 0
+push $Nae6bb800
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle2
+  label "\[value in]"
+  xpos -108
+  ypos 70
+ }
+push $Nae6bb800
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle3
+  label "\[value in]"
+  xpos -15
+  ypos 101
+ }
+ Merge2 {
+  inputs 3+1
+  operation hypot
+  name PointDistance
+  xpos -108
+  ypos 161
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {{radius}}
+  name Constant2
+  xpos 28
+  ypos 217
+  addUserKnob {20 User}
+  addUserKnob {7 radius R 0 100}
+  radius 10
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge4
+  xpos -108
+  ypos 241
+ }
+ Invert {
+  channels rgb
+  name Invert1
+  xpos -108
+  ypos 265
+ }
+ Grade {
+  gamma 0.2
+  name LightingMult
+  xpos -108
+  ypos 296
+ }
+push $N7f748400
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  name ShuffleCopy1
+  xpos -354
+  ypos 340
+ }
+push $N7f748400
+ Switch {
+  inputs 2
+  which {{1-viewPoint}}
+  name Switch1
+  xpos -507
+  ypos 408
+  addUserKnob {20 User}
+  addUserKnob {6 viewPoint +STARTLINE}
+ }
+ Output {
+  name Output1
+  xpos -507
+  ypos 490
+ }
+push $N7f748400
+ Viewer {
+  frame_range 101-214
+  name Viewer1
+  xpos -635
+  ypos 73
+ }
+end_group

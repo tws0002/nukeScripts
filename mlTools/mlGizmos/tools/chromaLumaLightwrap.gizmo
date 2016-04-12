@@ -1,0 +1,156 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke8.0v5/nuke-8.0.v5.dll -nx
+version 8.0 v5
+Gizmo {
+ inputs 2
+ addUserKnob {20 User l LightWrap}
+ addUserKnob {41 size_1 l bgBlur T Blur25.size}
+ addUserKnob {41 size l falloffSize T FilterErode1.size}
+ addUserKnob {41 gamma l erodeFalloff T FallOff.gamma}
+ addUserKnob {41 mix l Chroma T Chroma.mix}
+ addUserKnob {41 mix_1 l Luma T Luma.mix}
+ addUserKnob {41 Crop1_box l Crop T Crop1.box}
+}
+ Input {
+  inputs 0
+  name Image
+  xpos -533
+  ypos -283
+ }
+ Crop {
+  box {0 0 1920 1080}
+  crop false
+  name Crop1
+  selected true
+  xpos -533
+  ypos -244
+ }
+ Dot {
+  name Dot8
+  xpos -499
+  ypos -199
+ }
+set N848d5c00 [stack 0]
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle117
+  xpos -421
+  ypos -49
+ }
+push $N848d5c00
+ FilterErode {
+  size 100
+  filter gaussian
+  name FilterErode1
+  xpos -535
+  ypos -89
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle118
+  xpos -535
+  ypos -40
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge78
+  xpos -421
+  ypos -4
+ }
+ Grade {
+  channels rgba
+  gamma 0.275
+  name FallOff
+  xpos -421
+  ypos 47
+ }
+set N848d6d30 [stack 0]
+ Input {
+  inputs 0
+  name BG
+  xpos -757
+  ypos -239
+  number 1
+ }
+ Dot {
+  name Dot9
+  xpos -723
+  ypos -199
+ }
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace20
+  xpos -757
+  ypos 11
+ }
+ Blur {
+  size 64
+  name Blur25
+  xpos -757
+  ypos 41
+ }
+ Shuffle {
+  alpha white
+  name Shuffle1
+  label "\[value in]"
+  xpos -757
+  ypos 77
+ }
+set N848d7e60 [stack 0]
+push $N848d5c00
+ Colorspace {
+  colorspace_out YCbCr
+  name Colorspace19
+  xpos -641
+  ypos 12
+ }
+set N848d81d0 [stack 0]
+ Merge2 {
+  inputs 2+1
+  Achannels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  Bchannels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  output {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  mix 0.18
+  name Luma
+  xpos -757
+  ypos 153
+ }
+push $N848d6d30
+push $N848d7e60
+push $N848d81d0
+ Merge2 {
+  inputs 2+1
+  Achannels {-rgba.red rgba.green rgba.blue rgba.alpha}
+  Bchannels {-rgba.red rgba.green rgba.blue rgba.alpha}
+  output {-rgba.red rgba.green rgba.blue rgba.alpha}
+  mix 0.09
+  name Chroma
+  xpos -573
+  ypos 157
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  Bchannels {-rgba.red rgba.green rgba.blue rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge81
+  xpos -685
+  ypos 208
+ }
+ Colorspace {
+  colorspace_in YCbCr
+  name Colorspace21
+  xpos -685
+  ypos 243
+ }
+ Output {
+  name Output1
+  xpos -685
+  ypos 315
+ }
+end_group

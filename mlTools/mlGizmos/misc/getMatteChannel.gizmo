@@ -1,0 +1,27 @@
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 queryPosition T NoOp1.queryPosition}
+ addUserKnob {1 matteChannel}
+ matteChannel _m_humanLaunchPad_D.red
+ addUserKnob {22 getMatteChannel t "\n" T "from __future__ import with_statement\ngrp= nuke.thisGroup()\nfound=''\nwith grp:\n    n=nuke.toNode('NoOp1')\n    x,y=n\['queryPosition'].value()\n    for ch in n.channels():\n        if ch.startswith('_m_') and not 'alpha' in ch and not 'all' in ch:\n            result= ch,nuke.sample(n,ch,int(x),int(y))\n            if result\[1]==1:\n                found=result\[0]\ngrp\['matteChannel'].setValue(found)" +STARTLINE}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 378
+  ypos 199
+ }
+ NoOp {
+  name NoOp1
+  xpos 378
+  ypos 270
+  addUserKnob {20 User}
+  addUserKnob {12 queryPosition}
+  queryPosition {843 606}
+ }
+ Output {
+  name Output1
+  xpos 378
+  ypos 339
+ }
+end_group

@@ -1,0 +1,279 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke8.0v5/nuke-8.0.v5.dll -nx
+version 8.0 v5
+Gizmo {
+ inputs 3
+ addUserKnob {20 User}
+ addUserKnob {41 white l globalMultiplier T blurMult.white}
+ addUserKnob {41 Crop1_box l Crop T Crop1.box}
+ addUserKnob {26 distortion}
+ addUserKnob {41 distort l scale T IDistort_green.distort}
+ addUserKnob {41 chromaSpread T IDistort_green.chromaSpread}
+ addUserKnob {26 ve l vectorBlur}
+ addUserKnob {41 scale l blurAmt T distorionBlur.scale}
+ addUserKnob {41 size l vectorMatteBlur T VectorBlur_vectorsBlur.size}
+ addUserKnob {26 distortionMatte}
+ addUserKnob {41 size_1 l kernelSize T kernelSize.size}
+ addUserKnob {41 softness T Radial_softness.softness}
+ addUserKnob {41 gamma l kernelFalloff T kernel_falloff.gamma}
+ addUserKnob {41 viewMatte T Switch1.viewMatte}
+}
+ Input {
+  inputs 0
+  name holdoutMatte
+  xpos 101
+  ypos -106
+  number 1
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant2
+  xpos 569
+  ypos -14
+ }
+ Reformat {
+  type "to box"
+  box_width {{box_height}}
+  box_height {{size}}
+  box_fixed true
+  name kernelSize
+  xpos 569
+  ypos 58
+  addUserKnob {20 User}
+  addUserKnob {7 size R 1 500}
+  size 80
+ }
+ Expression {
+  expr0 (x-(pos.x))*1/width*2
+  expr1 (y-(pos.y))*1/height*2
+  name Expression1
+  xpos 569
+  ypos 94
+  addUserKnob {20 User}
+  addUserKnob {12 pos}
+  pos {{width/2} {height/2}}
+ }
+set N7a4a4c50 [stack 0]
+ Radial {
+  replace true
+  area {0 0 {width} {height}}
+  softness 0.7
+  plinear true
+  name Radial_softness
+  xpos 787
+  ypos 115
+ }
+ Grade {
+  channels rgba
+  gamma 0.5
+  name kernel_falloff
+  xpos 787
+  ypos 174
+ }
+push $N7a4a4c50
+ Grade {
+  inputs 1+1
+  multiply 0
+  invert_mask true
+  name Grade2
+  xpos 569
+  ypos 174
+ }
+set N7a4a56a0 [stack 0]
+ Input {
+  inputs 0
+  name threshold
+  xpos 385
+  ypos -103
+  number 2
+ }
+ Shuffle {
+  red alpha
+  green alpha
+  blue alpha
+  name Shuffle12
+  label "\[value in]"
+  xpos 385
+  ypos 178
+ }
+set N7a4a5d80 [stack 0]
+ Convolve2 {
+  inputs 2
+  channels rgb
+  filter_channel rgba.red
+  name Convolve1
+  xpos 463
+  ypos 250
+ }
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name Shuffle13
+  label "\[value in]"
+  xpos 184
+  ypos 262
+ }
+push $N7a4a56a0
+push $N7a4a5d80
+ Convolve2 {
+  inputs 2
+  channels rgb
+  filter_channel rgba.green
+  name Convolve2
+  xpos 670
+  ypos 256
+ }
+ Shuffle {
+  red black
+  blue black
+  alpha black
+  name Shuffle2
+  label "\[value in]"
+  xpos 305
+  ypos 284
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge17
+  xpos 218
+  ypos 330
+ }
+ Grade {
+  multiply 4
+  black_clamp false
+  name blurMult
+  xpos 218
+  ypos 446
+ }
+ Merge2 {
+  inputs 2
+  operation stencil
+  name Merge1
+  xpos 101
+  ypos 446
+ }
+set N7a4a7590 [stack 0]
+push $N7a4a7590
+ Input {
+  inputs 0
+  name image
+  xpos -17
+  ypos -108
+ }
+add_layer {dist dist.red dist.green dist.blue dist.alpha}
+ ShuffleCopy {
+  inputs 2
+  red red
+  green green
+  blue blue
+  out dist
+  name ShuffleCopy2
+  xpos -17
+  ypos 446
+ }
+set N7a4a7c70 [stack 0]
+ IDistort {
+  channels {rgba.red -rgba.green -rgba.blue rgba.alpha}
+  uv dist
+  uv_scale {{IDistort_green.distort-IDistort_green.chromaSpread}}
+  name IDistort2
+  xpos -211
+  ypos 510
+ }
+ Shuffle {
+  green black
+  blue black
+  alpha black
+  name Shuffle3
+  label "\[value in]"
+  xpos -211
+  ypos 550
+ }
+push 0
+push $N7a4a7c70
+ IDistort {
+  channels {-rgba.red rgba.green -rgba.blue rgba.alpha}
+  uv dist
+  uv_scale {{distort}}
+  name IDistort_green
+  xpos -122
+  ypos 511
+  addUserKnob {20 User}
+  addUserKnob {7 distort R -20 20}
+  distort 15
+  addUserKnob {7 chromaSpread R 0 10}
+  chromaSpread 3
+ }
+ Shuffle {
+  red black
+  blue black
+  alpha black
+  name Shuffle4
+  label "\[value in]"
+  xpos -122
+  ypos 554
+ }
+push $N7a4a7c70
+ IDistort {
+  channels {-rgba.red -rgba.green rgba.blue rgba.alpha}
+  uv dist
+  uv_scale {{IDistort_green.distort+IDistort_green.chromaSpread}}
+  name IDistort4
+  xpos -31
+  ypos 514
+ }
+ Shuffle {
+  red black
+  green black
+  alpha black
+  name Shuffle17
+  label "\[value in]"
+  xpos -31
+  ypos 550
+ }
+ Merge2 {
+  inputs 3+1
+  operation plus
+  name Merge18
+  xpos -64
+  ypos 594
+ }
+ Crop {
+  box {0 0 1920 1080}
+  crop false
+  name Crop1
+  xpos -64
+  ypos 631
+ }
+ Blur {
+  channels dist
+  size 50
+  name VectorBlur_vectorsBlur
+  xpos -64
+  ypos 655
+ }
+ VectorBlur {
+  channels rgb
+  uv dist
+  scale 50
+  name distorionBlur
+  xpos -64
+  ypos 691
+ }
+ Switch {
+  inputs 2
+  which {{viewMatte}}
+  name Switch1
+  xpos -64
+  ypos 752
+  addUserKnob {20 User}
+  addUserKnob {6 viewMatte +STARTLINE}
+ }
+ Output {
+  name Output1
+  xpos -64
+  ypos 952
+ }
+end_group

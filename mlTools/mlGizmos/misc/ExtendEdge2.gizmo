@@ -1,0 +1,295 @@
+Group {
+ inputs 1
+ help "This will expand the RGB channels out from the alpha channel.  Useful for dealing with images with bright halation around edges."
+ addUserKnob {20 "" l User}
+ addUserKnob {7 erodePixels l "erode pixels" t "erode input" R 0 20}
+ addUserKnob {26 ""}
+ addUserKnob {3 iterations t "how many times to blur/unpremult and stack. a value from 1 to 5 is valid.  more iterations will give a nicer result, but will be slower."}
+ iterations 3
+ addUserKnob {7 blurAmt l "blur amount" t "sets the initial blur level" R 0 10}
+ blurAmt 2
+ addUserKnob {7 blurStep l "blur step" t "sets the exponent for the blur step from one iteration to the next based upon the initial blur amount" R 1.1 2}
+ blurStep 1.5
+ addUserKnob {26 ""}
+ addUserKnob {41 size l "extra blur" T Blur6.size}
+ addUserKnob {4 alpha t "returns either the original alpha channel of the input or the extended alpha." M {original expanded}}
+ alpha expanded
+ name ExtendEdge
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 84
+  ypos -558
+ }
+set N6836a70 [stack 0]
+add_layer {alpha rgba.alpha}
+ FilterErode {
+  channels alpha
+  size {{parent.erodePixels i}}
+  name FilterErode1
+  xpos 221
+  ypos -485
+  disable {{parent.erodePixels==0}}
+ }
+push $N6836a70
+ Merge {
+  inputs 2
+  operation mask
+  name Merge6
+  tile_color 0xc
+  xpos 84
+  ypos -478
+  disable {{parent.erodePixels==0}}
+ }
+ Dot {
+  name Dot4
+  xpos 118
+  ypos -367
+ }
+set N9c3b008 [stack 0]
+ Dot {
+  name Dot1
+  xpos 28
+  ypos -294
+ }
+push $N9c3b008
+ Blur {
+  channels rgba
+  size {{"parent.blurStep * Blur4.size"}}
+  name Blur5
+  xpos 630
+  ypos -97
+ }
+ Expression {
+  expr0 r/a
+  expr1 g/a
+  expr2 b/a
+  expr3 a/a
+  name Expression5
+  xpos 630
+  ypos -71
+ }
+ Clamp {
+  channels alpha
+  maximum_enable false
+  name Clamp5
+  xpos 630
+  ypos -45
+ }
+ Premult {
+  name Premult5
+  xpos 630
+  ypos -5
+ }
+push $N9c3b008
+ Blur {
+  channels rgba
+  size {{"parent.blurStep * Blur3.size"}}
+  name Blur4
+  xpos 491
+  ypos -99
+ }
+ Expression {
+  expr0 r/a
+  expr1 g/a
+  expr2 b/a
+  expr3 a/a
+  name Expression4
+  xpos 491
+  ypos -73
+ }
+ Clamp {
+  channels alpha
+  maximum_enable false
+  name Clamp4
+  xpos 491
+  ypos -47
+ }
+ Premult {
+  name Premult4
+  xpos 491
+  ypos -7
+ }
+push $N9c3b008
+ Blur {
+  channels rgba
+  size {{"parent.blurStep * Blur2.size"}}
+  name Blur3
+  xpos 360
+  ypos -101
+ }
+ Expression {
+  expr0 r/a
+  expr1 g/a
+  expr2 b/a
+  expr3 a/a
+  name Expression3
+  xpos 360
+  ypos -75
+ }
+ Clamp {
+  channels alpha
+  maximum_enable false
+  name Clamp3
+  xpos 360
+  ypos -49
+ }
+ Premult {
+  name Premult3
+  xpos 360
+  ypos -9
+ }
+push $N9c3b008
+ Blur {
+  channels rgba
+  size {{"parent.blurStep * parent.blurAmt"}}
+  name Blur2
+  xpos 221
+  ypos -102
+ }
+ Expression {
+  expr0 r/a
+  expr1 g/a
+  expr2 b/a
+  expr3 a/a
+  name Expression2
+  xpos 221
+  ypos -76
+ }
+ Clamp {
+  channels alpha
+  maximum_enable false
+  name Clamp2
+  xpos 221
+  ypos -50
+ }
+ Premult {
+  name Premult2
+  xpos 221
+  ypos -10
+ }
+push $N9c3b008
+ Blur {
+  channels rgba
+  size {{parent.blurAmt}}
+  name Blur1
+  xpos 84
+  ypos -105
+ }
+ Expression {
+  expr0 r/a
+  expr1 g/a
+  expr2 b/a
+  expr3 a/a
+  name Expression1
+  xpos 84
+  ypos -79
+ }
+ Clamp {
+  channels alpha
+  maximum_enable false
+  name Clamp1
+  xpos 84
+  ypos -53
+ }
+ Premult {
+  name Premult1
+  xpos 84
+  ypos -13
+ }
+ Merge {
+  inputs 2
+  operation under
+  name Merge1
+  tile_color 0xc
+  xpos 84
+  ypos 87
+  disable {{parent.iterations<2}}
+ }
+ Merge {
+  inputs 2
+  operation under
+  name Merge3
+  tile_color 0xc
+  xpos 84
+  ypos 113
+  disable {{parent.iterations<3}}
+ }
+ Merge {
+  inputs 2
+  operation under
+  name Merge4
+  tile_color 0xc
+  xpos 84
+  ypos 139
+  disable {{parent.iterations<4}}
+ }
+ Merge {
+  inputs 2
+  operation under
+  name Merge5
+  tile_color 0xc
+  xpos 84
+  ypos 165
+  disable {{parent.iterations<5}}
+ }
+ Blur {
+  channels rgba
+  name Blur6
+  xpos 84
+  ypos 221
+ }
+ Merge {
+  inputs 2
+  name Merge2
+  tile_color 0xc
+  xpos -6
+  ypos 328
+ }
+set N8128040 [stack 0]
+push $N6836a70
+ Dot {
+  name Dot2
+  xpos -88
+  ypos -451
+ }
+ Dot {
+  name Dot3
+  xpos -88
+  ypos 267
+ }
+set N68c7e58 [stack 0]
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels rgba
+  name Copy2
+  xpos -6
+  ypos 449
+ }
+push $N8128040
+push $N68c7e58
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels rgb
+  name Copy1
+  xpos -122
+  ypos 449
+ }
+ Switch {
+  inputs 2
+  which {{parent.alpha}}
+  name Switch1
+  xpos -68
+  ypos 543
+ }
+ Output {
+  name Output1
+  xpos -68
+  ypos 627
+ }
+end_group

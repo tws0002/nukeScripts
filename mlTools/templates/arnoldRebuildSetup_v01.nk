@@ -1,0 +1,553 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v10/Nuke7.0.exe -nx
+version 7.0 v10
+define_window_layout_xml {<?xml version="1.0" encoding="UTF-8"?>
+<layout version="1.0">
+    <window x="1920" y="0" w="1936" h="1080" screen="0">
+        <splitter orientation="1">
+            <split size="1214"/>
+            <splitter orientation="1">
+                <split size="49"/>
+                <dock id="" hideTitles="1" activePageId="Toolbar.1">
+                    <page id="Toolbar.1"/>
+                </dock>
+                <split size="1161"/>
+                <splitter orientation="2">
+                    <split size="1019"/>
+                    <dock id="" activePageId="DAG.2">
+                        <page id="DAG.1"/>
+                        <page id="Curve Editor.1"/>
+                        <page id="DopeSheet.1"/>
+                        <page id="DAG.2"/>
+                    </dock>
+                </splitter>
+            </splitter>
+            <split size="702"/>
+            <dock id="" activePageId="Properties.1">
+                <page id="Properties.1"/>
+            </dock>
+        </splitter>
+    </window>
+    <window x="0" y="0" w="1937" h="1201" screen="1">
+        <splitter orientation="2">
+            <split size="1167"/>
+            <dock id="" activePageId="Viewer.1">
+                <page id="Viewer.2"/>
+                <page id="Viewer.1"/>
+            </dock>
+        </splitter>
+    </window>
+</layout>
+}
+Root {
+ inputs 0
+ name P:/projects/supclashxmas_7254P/code/primary/addons/nuke/templates/arnoldRebuildSetup_v01.nk
+}
+Group {
+ inputs 0
+ name BeautyRebuild
+ tile_color 0x2bffff
+ selected true
+ xpos 0
+ ypos -71
+}
+ BackdropNode {
+  inputs 0
+  name color_BACKDROP
+  tile_color 0x7e5858ff
+  label color
+  note_font_size 42
+  xpos 666
+  ypos -324
+  bdwidth 300
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp color_OUT
+  addUserKnob {1 merge}
+  merge color_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name spec_BACKDROP
+  tile_color 0x4b667fff
+  label spec
+  note_font_size 42
+  xpos 1455
+  ypos -324
+  bdwidth 500
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp spec_OUT
+  addUserKnob {1 merge}
+  merge spec_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name refr_BACKDROP
+  tile_color 0x4b587fff
+  label refr
+  note_font_size 42
+  xpos 2055
+  ypos -324
+  bdwidth 300
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp refr_OUT
+  addUserKnob {1 merge}
+  merge refr_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name atmos_BACKDROP
+  tile_color 0x524c80ff
+  label atmos
+  note_font_size 42
+  xpos 2855
+  ypos -324
+  bdwidth 300
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp atmos_OUT
+  addUserKnob {1 merge}
+  merge atmos_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name emission_BACKDROP
+  tile_color 0x4c4d80ff
+  label emission
+  note_font_size 42
+  xpos 2455
+  ypos -324
+  bdwidth 300
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp emission_OUT
+  addUserKnob {1 merge}
+  merge emission_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name lighting_BACKDROP
+  tile_color 0x666666ff
+  label lighting
+  note_font_size 42
+  xpos -334
+  ypos -324
+  bdwidth 500
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp lighting_OUT
+  addUserKnob {1 merge}
+  merge lighting_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name sss_BACKDROP
+  tile_color 0x7f7f7fff
+  label sss
+  note_font_size 42
+  xpos 266
+  ypos -324
+  bdwidth 300
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp sss_OUT
+  addUserKnob {1 merge}
+  merge sss_MERGE
+ }
+ BackdropNode {
+  inputs 0
+  name sss_BACKDROP1
+  tile_color 0x7f7f7fff
+  label backlight
+  note_font_size 42
+  xpos 1057
+  ypos -322
+  bdwidth 300
+  bdheight 740
+  addUserKnob {20 User}
+  addUserKnob {1 noOp}
+  noOp backlight_OUT
+  addUserKnob {1 merge}
+  merge backlight_MERGE
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -314
+  ypos -476
+ }
+add_layer {direct_diffuse direct_diffuse.red direct_diffuse.green direct_diffuse.blue direct_diffuse.alpha}
+ Shuffle {
+  in direct_diffuse
+  name Shuffle1
+  label "\[value in]"
+  xpos -314
+  ypos -244
+ }
+set N1bb4d000 [stack 0]
+add_layer {indirect_diffuse indirect_diffuse.red indirect_diffuse.green indirect_diffuse.blue indirect_diffuse.alpha}
+ Shuffle {
+  in indirect_diffuse
+  name Shuffle2
+  label "\[value in]"
+  xpos -114
+  ypos -244
+ }
+set N1bd35900 [stack 0]
+add_layer {sss sss.red sss.green sss.blue sss.alpha}
+ Shuffle {
+  in sss
+  name Shuffle3
+  label "\[value in]"
+  xpos 286
+  ypos -244
+ }
+set N1bd35c70 [stack 0]
+add_layer {diffuse_color diffuse_color.red diffuse_color.green diffuse_color.blue diffuse_color.alpha}
+ Shuffle {
+  in diffuse_color
+  name Shuffle4
+  label "\[value in]"
+  xpos 686
+  ypos -244
+ }
+set N1bd35fe0 [stack 0]
+add_layer {direct_backlight direct_backlight.red direct_backlight.green direct_backlight.blue direct_backlight.alpha}
+ Shuffle {
+  in direct_backlight
+  name Shuffle10
+  label "\[value in]"
+  xpos 1080
+  ypos -244
+ }
+set N1bd36350 [stack 0]
+add_layer {indirect_backlight indirect_backlight.red indirect_backlight.green indirect_backlight.blue indirect_backlight.alpha}
+ Shuffle {
+  in indirect_backlight
+  name Shuffle11
+  label "\[value in]"
+  xpos 1214
+  ypos -244
+ }
+set N1bd366c0 [stack 0]
+add_layer {spec spec.red spec.green spec.blue spec.alpha}
+ Shuffle {
+  in spec
+  name Shuffle5
+  label "\[value in]"
+  xpos 1475
+  ypos -244
+ }
+set N1bd36a30 [stack 0]
+add_layer {indirect_spec indirect_spec.red indirect_spec.green indirect_spec.blue indirect_spec.alpha}
+ Shuffle {
+  in indirect_spec
+  name Shuffle6
+  label "\[value in]"
+  xpos 1675
+  ypos -244
+ }
+set N1bd36da0 [stack 0]
+add_layer {refraction refraction.red refraction.green refraction.blue refraction.alpha}
+ Shuffle {
+  in refraction
+  name Shuffle7
+  label "\[value in]"
+  xpos 2075
+  ypos -244
+ }
+set N1bd37110 [stack 0]
+add_layer {emission emission.red emission.green emission.blue emission.alpha}
+ Shuffle {
+  in emission
+  name Shuffle8
+  label "\[value in]"
+  xpos 2475
+  ypos -244
+ }
+set N1bd37480 [stack 0]
+add_layer {uPointCamera uPointCamera.red uPointCamera.green uPointCamera.blue uPointCamera.alpha}
+ Shuffle {
+  in uPointCamera
+  name Shuffle9
+  label "\[value in]"
+  xpos 2875
+  ypos -244
+ }
+ Unpremult {
+  name Shuffle9_unpremult
+  xpos 2875
+  ypos -204
+ }
+ ML_normalizeDepth {
+  name ML_normalizeDepth1
+  xpos 2875
+  ypos -180
+  whitepoint -20000
+ }
+ Grade {
+  gamma 0.6
+  name atmos_Grade
+  xpos 2875
+  ypos -149
+ }
+ Grade {
+  multiply {0.2290262282 0.4961231053 0.7880066633 1}
+  name AtmosColor
+  xpos 2875
+  ypos -83
+ }
+ NoOp {
+  name atmos_OUT
+  xpos 2875
+  ypos 296
+ }
+push $N1bd37480
+ Unpremult {
+  name Shuffle8_unpremult
+  xpos 2475
+  ypos -204
+ }
+ NoOp {
+  name emission_OUT
+  xpos 2475
+  ypos 296
+ }
+push $N1bd37110
+ Unpremult {
+  name Shuffle7_unpremult
+  xpos 2075
+  ypos -191
+ }
+ NoOp {
+  name refr_OUT
+  xpos 2075
+  ypos 296
+ }
+push $N1bd36da0
+ Unpremult {
+  name Shuffle6_unpremult
+  xpos 1675
+  ypos -204
+ }
+push $N1bd36a30
+ Unpremult {
+  name Shuffle5_unpremult
+  xpos 1475
+  ypos -204
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge5
+  xpos 1475
+  ypos -104
+ }
+ NoOp {
+  name spec_OUT
+  xpos 1475
+  ypos 296
+ }
+push $N1bd366c0
+ Unpremult {
+  name Shuffle4_unpremult2
+  xpos 1214
+  ypos -208
+ }
+push $N1bd36350
+ Unpremult {
+  name Shuffle4_unpremult1
+  xpos 1080
+  ypos -208
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge6
+  xpos 1080
+  ypos -106
+ }
+ NoOp {
+  name backlight_OUT
+  xpos 1080
+  ypos 300
+ }
+push $N1bd35fe0
+ Unpremult {
+  name Shuffle4_unpremult
+  xpos 686
+  ypos -204
+ }
+ NoOp {
+  name color_OUT
+  xpos 686
+  ypos 296
+ }
+push $N1bd35c70
+push $N1bd35c70
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge4
+  xpos 286
+  ypos -204
+ }
+ NoOp {
+  name sss_OUT
+  xpos 286
+  ypos 296
+ }
+push $N1bd35900
+push $N1bd35900
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge2
+  xpos -114
+  ypos -204
+ }
+push $N1bb4d000
+push $N1bb4d000
+ Merge2 {
+  inputs 2
+  operation divide
+  Bchannels diffuse_color
+  output rgb
+  name Merge1
+  xpos -314
+  ypos -204
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name Merge3
+  xpos -314
+  ypos -104
+ }
+ NoOp {
+  name lighting_OUT
+  xpos -314
+  ypos 296
+ }
+set N1bed9730 [stack 0]
+push $N1bed9730
+ Merge2 {
+  inputs 2
+  output rgb
+  name lighting_MERGE
+  xpos -314
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name sss_MERGE
+  xpos 286
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  output rgb
+  name color_MERGE
+  xpos 686
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name backlight_MERGE
+  selected true
+  xpos 1080
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name spec_MERGE
+  xpos 1475
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name refr_MERGE
+  xpos 2075
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  name emission_MERGE
+  xpos 2475
+  ypos 386
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  output rgb
+  mix 0.23
+  name atmos_MERGE
+  xpos 2875
+  ypos 386
+ }
+ Premult {
+  name rebuildPremult
+  xpos 2875
+  ypos 502
+ }
+add_layer {startRGBA startRGBA.red startRGBA.green startRGBA.blue startRGBA.alpha}
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+add_layer {uNormalWorld uNormalWorld.red uNormalWorld.green uNormalWorld.blue uNormalWorld.alpha}
+add_layer {uNormalCamera uNormalCamera.red uNormalCamera.green uNormalCamera.blue uNormalCamera.alpha}
+ multiKeepChannels {
+  name multiKeepChannels
+  xpos 2875
+  ypos 542
+  channels rgba
+  channels2 startRGBA
+  channels3 uPointCamera
+  channels4 uPointWorld
+  channels_1 uNormalWorld
+  channels2_1 uNormalCamera
+  channels3_1 emission
+  channels4_1 none
+  channels_2 none
+  channels2_2 none
+  channels3_2 none
+  channels4_2 none
+  channels_3 none
+  channels2_3 none
+  channels3_3 none
+  channels4_3 none
+  channels_4 none
+  channels2_4 none
+  channels3_4 none
+  channels4_4 none
+ }
+ Output {
+  name Output1
+  xpos 2875
+  ypos 590
+ }
+end_group

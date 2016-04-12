@@ -1,0 +1,145 @@
+add_layer {_normalsCamera _normalsCamera.red _normalsCamera.green _normalsCamera.blue _normalsCamera.alpha}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 in l NormalChannel T ShuffleNormal.in}
+ addUserKnob {41 viewNormals T Switch1.viewNormals}
+ addUserKnob {26 normalReference_divider l normalReference}
+ addUserKnob {41 color T normalReference.color}
+ addUserKnob {26 gradeControl_divider l specIntensity}
+ addUserKnob {41 multiply T gradeControl.multiply}
+ addUserKnob {41 gamma T gradeControl.gamma}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 492
+  ypos -54
+ }
+ Shuffle {
+  in _normalsCamera
+  name ShuffleNormal
+  label "\[value in]"
+  xpos 492
+  ypos 93
+ }
+set N95cecfb0 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  color 1
+  name Constant2
+  xpos 328
+  ypos 415
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {-0.08101562 0.16094991 0.9532877803 1}
+  name normalReference
+  xpos 339
+  ypos 99
+ }
+push $N95cecfb0
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos 489
+  ypos 144
+ }
+set N95ced320 [stack 0]
+push $N95ced320
+ MergeExpression {
+  inputs 2
+  expr0 Ar*Br
+  expr1 Ag*Bg
+  expr2 Ab*Bb
+  name MergeExpression1
+  xpos 489
+  ypos 186
+ }
+set N95ced690 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle3
+  label "\[value in]"
+  xpos 625
+  ypos 266
+ }
+push 0
+push $N95ced690
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle2
+  label "\[value in]"
+  xpos 485
+  ypos 262
+ }
+push $N95ced690
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle1
+  label "\[value in]"
+  xpos 364
+  ypos 259
+ }
+ Merge2 {
+  inputs 3+1
+  name Merge6
+  xpos 485
+  ypos 353
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge4
+  xpos 485
+  ypos 439
+ }
+ Grade {
+  gamma {{parent.gradeControl.gamma.FG}}
+  name Grade1
+  xpos 485
+  ypos 471
+ }
+ Grade {
+  gamma {{parent.gradeControl.gamma.FG}}
+  name Grade2
+  xpos 485
+  ypos 501
+ }
+ Grade {
+  gamma {{parent.gradeControl.gamma.FG}}
+  name Grade3
+  xpos 485
+  ypos 525
+ }
+ Grade {
+  multiply 0.8
+  gamma 0.26
+  name gradeControl
+  xpos 485
+  ypos 562
+ }
+ Switch {
+  inputs 2
+  which {{viewNormals}}
+  name Switch1
+  selected true
+  xpos 586
+  ypos 621
+  addUserKnob {20 User}
+  addUserKnob {6 viewNormals +STARTLINE}
+ }
+ Output {
+  name Output1
+  xpos 586
+  ypos 692
+ }
+end_group

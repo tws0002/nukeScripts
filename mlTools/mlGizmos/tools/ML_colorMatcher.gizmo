@@ -1,0 +1,60 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v10/Nuke7.0.exe -nx
+version 7.0 v10
+Gizmo {
+inputs 2
+addUserKnob {20 User}
+addUserKnob {41 lut l "" -STARTLINE T ColorLookup.lut}
+addUserKnob {41 source T ColorLookup.source}
+addUserKnob {41 target T ColorLookup.target}
+addUserKnob {41 pos T Dot1.pos}
+addUserKnob {22 matchPosition T "from __future__ import with_statement\ngrp= nuke.thisGroup()\n#grp=nuke.selectedNode()\nfrm=nuke.frame()\n\nwith grp:\n        src=nuke.toNode('SourceRgb')\['color'].value()\n        tar=nuke.toNode('TargetRgb')\['color'].value()\n        print src\n        cl=nuke.toNode('ColorLookup')\n        cl\['source'].setValue(src)\n        cl\['target'].setValue(tar)\n        cl\['setRGB'].execute()" +STARTLINE}
+addUserKnob {22 generatePoints T "from __future__ import with_statement\nimport random\ngrp= nuke.thisGroup()\n#grp=nuke.selectedNode()\nfrm=nuke.frame()\n\nw=nuke.root().width()\nh=nuke.root().height()\n\nwith grp:\n    for i in range(100):\n        x=random.random()*w\n        y=random.random()*h\n        pos=nuke.toNode('Dot1')\['pos'].setValue(\[x,y])\n        src=nuke.toNode('SourceRgb')\['color'].value()\n        tar=nuke.toNode('TargetRgb')\['color'].value()\n        print src\n        cl=nuke.toNode('ColorLookup')\n        cl\['source'].setValue(src)\n        cl\['target'].setValue(tar)\n        cl\['setRGB'].execute()" +STARTLINE}
+}
+Input {
+inputs 0
+name input
+xpos 230
+ypos -156
+number 1
+}
+ColorLookup {
+name ColorLookup
+selected true
+xpos 230
+ypos 21
+}
+Output {
+name Output1
+xpos 230
+ypos 85
+}
+Input {
+inputs 0
+name dest
+xpos 43
+ypos -154
+}
+Dot {
+name Dot1
+xpos 77
+ypos -34
+addUserKnob {20 User}
+addUserKnob {12 pos}
+}
+Constant {
+inputs 0
+channels rgb
+color {{"\[sample dest red Dot1.pos.x Dot1.pos.y 5 5]"} {"\[sample dest green Dot1.pos.x Dot1.pos.y 5 5]"} {"\[sample dest blue Dot1.pos.x Dot1.pos.y 5 5]"} {"\[sample dest alpha Dot1.pos.x Dot1.pos.y 5 5]"}}
+name TargetRgb
+xpos -68
+ypos -127
+}
+Constant {
+inputs 0
+channels rgb
+color {{"\[sample input red Dot1.pos.x Dot1.pos.y 5 5]"} {"\[sample input green Dot1.pos.x Dot1.pos.y 5 5]"} {"\[sample input blue Dot1.pos.x Dot1.pos.y 5 5]"} {"\[sample input alpha Dot1.pos.x Dot1.pos.y 5 5]"}}
+name SourceRgb
+xpos 350
+ypos -105
+}
+end_group

@@ -1,0 +1,20 @@
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {12 pos}
+ pos {605 442}
+ addUserKnob {18 color}
+ color {0 0 0}
+}
+ Input {
+  inputs 0
+  name Input1
+  selected true
+  xpos 376
+  ypos 17
+ }
+ Output {
+  name Output1
+  xpos 376
+  ypos 173
+ }
+end_group

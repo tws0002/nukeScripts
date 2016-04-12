@@ -1,0 +1,47 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v10/Nuke7.0.exe -nx
+version 7.0 v10
+Gizmo {
+ addUserKnob {20 User l normalizeDepth}
+ addUserKnob {22 script l normalizeDepth T "from __future__ import with_statement\ngrp= nuke.thisGroup()\nfrm=nuke.frame()\nwith grp:\n    ct=nuke.toNode('CurveTool')\n    nuke.execute(ct,frm,frm)\n    g=nuke.toNode('DepthGrade')\n    g\['blackpoint'].setValue(ct\['maxlumapixvalue'].value()\[0],0)\n    g\['whitepoint'].setValue(ct\['minlumapixvalue'].value()\[0],0)" +STARTLINE}
+ addUserKnob {41 blackpoint T DepthGrade.blackpoint}
+ addUserKnob {41 whitepoint T DepthGrade.whitepoint}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 384
+  ypos 47
+ }
+ Shuffle {
+  red blue
+  green blue
+  name Shuffle12
+  label "\[value in]"
+  xpos 384
+  ypos 97
+ }
+set N3b243a10 [stack 0]
+ Grade {
+  whitepoint -500
+  name DepthGrade
+  xpos 384
+  ypos 188
+ }
+ Output {
+  name Output1
+  xpos 384
+  ypos 250
+ }
+push $N3b243a10
+ CurveTool {
+  operation "Max Luma Pixel"
+  ROI {0 0 {width} {height}}
+  autocropdata {480 270 1440 810}
+  maxlumapixvalue {0 0 0}
+  minlumapixdata {1180 317}
+  minlumapixvalue {-157.75 -157.75 -157.75}
+  name CurveTool
+  xpos 495
+  ypos 141
+ }
+end_group

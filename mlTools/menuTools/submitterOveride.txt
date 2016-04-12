@@ -1,0 +1,160 @@
+Group {
+ name Submitter
+ selected true
+ xpos 510
+ ypos 2158
+ addUserKnob {20 tab_basic l Basic}
+ addUserKnob {4 priority M {Lowest Low Normal High Highest}}
+ priority Normal
+ addUserKnob {3 first_frame l "frame range"}
+ first_frame 177
+ addUserKnob {3 last_frame l "" -STARTLINE}
+ last_frame 214
+ addUserKnob {6 limit_frame_range l "limit to range" -STARTLINE}
+ limit_frame_range true
+ addUserKnob {3 step l "" +STARTLINE}
+ step 1
+ addUserKnob {4 ordering l "render order" M {Decreasing Increasing Shuffled}}
+ ordering Increasing
+ addUserKnob {3 chunk_size l "chunk size"}
+ chunk_size 1
+ addUserKnob {26 spacer2 l "" +STARTLINE}
+ addUserKnob {4 cpus l "# cpus" M {2 4 8}}
+ cpus 8
+ addUserKnob {6 limit_threads l "limit threads" -STARTLINE}
+ limit_threads true
+ addUserKnob {3 tasks}
+ tasks 10
+ addUserKnob {26 spacer3 l "" +STARTLINE}
+ addUserKnob {22 execute_farm l Submit -STARTLINE T "\nimport psyq.jobs.nuke.render_job\npsyq.jobs.nuke.render_job.submit(nuke.thisNode())\nmlScripts.shotgun.shotgun_composite_updateStatus.main()\n"}
+ addUserKnob {22 execute_local l "Render Local" -STARTLINE T "\nimport psyq.jobs.nuke.render_job\npsyq.jobs.nuke.render_job.render_local(nuke.thisNode())\n"}
+ addUserKnob {20 tab_advanced l Advanced}
+ addUserKnob {3 memory_req l "memory req"}
+ addUserKnob {6 submit_blocked l "submit blocked" +STARTLINE}
+ addUserKnob {6 debug l "enable debug messages" +STARTLINE}
+ addUserKnob {6 use_command l "use command line rendering" +STARTLINE}
+ addUserKnob {26 spacer4 l "" +STARTLINE}
+ addUserKnob {22 execute_debug l "Print Job Info" T "\nimport psyq.jobs.nuke.render_job\npsyq.jobs.nuke.render_job.print_job_info(nuke.thisNode())\n" +STARTLINE}
+ addUserKnob {20 tab_notes l Notes}
+ addUserKnob {43 notes l "" +STARTLINE}
+}
+ Input {
+  inputs 0
+  name Input1
+ }
+ Input {
+  inputs 0
+  name Input2
+  number 1
+ }
+ Input {
+  inputs 0
+  name Input3
+  number 2
+ }
+ Input {
+  inputs 0
+  name Input4
+  number 3
+ }
+ Input {
+  inputs 0
+  name Input5
+  number 4
+ }
+ Input {
+  inputs 0
+  name Input6
+  number 5
+ }
+ Input {
+  inputs 0
+  name Input7
+  number 6
+ }
+ Input {
+  inputs 0
+  name Input8
+  number 7
+ }
+ Input {
+  inputs 0
+  name Input9
+  number 8
+ }
+ Input {
+  inputs 0
+  name Input10
+  number 9
+ }
+ Input {
+  inputs 0
+  name Input11
+  number 10
+ }
+ Input {
+  inputs 0
+  name Input12
+  number 11
+ }
+ Input {
+  inputs 0
+  name Input13
+  number 12
+ }
+ Input {
+  inputs 0
+  name Input14
+  number 13
+ }
+ Input {
+  inputs 0
+  name Input15
+  number 14
+ }
+ Input {
+  inputs 0
+  name Input16
+  number 15
+ }
+ Input {
+  inputs 0
+  name Input17
+  number 16
+ }
+ Input {
+  inputs 0
+  name Input18
+  number 17
+ }
+ Input {
+  inputs 0
+  name Input19
+  number 18
+ }
+ Input {
+  inputs 0
+  name Input20
+  number 19
+ }
+ Input {
+  inputs 0
+  name Input21
+  number 20
+ }
+ Input {
+  inputs 0
+  name Input22
+  number 21
+ }
+ Input {
+  inputs 0
+  name Input23
+  number 22
+ }
+ Input {
+  inputs 0
+  name Input24
+  number 23
+ }
+end_group

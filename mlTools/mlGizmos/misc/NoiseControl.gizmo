@@ -1,0 +1,58 @@
+#! C:/Program Files/Nuke6.3v6/Nuke6.3.exe -nx
+version 6.3 v6
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {26 OutpUtVal l OutPutValue}
+ addUserKnob {41 value T NoiseCurve.value}
+ addUserKnob {26 noiseControls l noise_Controls}
+ addUserKnob {41 freq l Frequency T NoiseCurve.freq}
+ addUserKnob {41 seed l Seed T NoiseCurve.seed}
+ addUserKnob {41 amp l Amplitude T NoiseCurve.amp}
+ addUserKnob {41 timeOffset l "Time Offset" T NoiseCurve.timeOffset}
+ addUserKnob {41 amount l Amount T NoiseCurve.amount}
+ addUserKnob {26 Mix l mixxxxx}
+ addUserKnob {41 mix T NoiseCurve.mix}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 462
+  ypos 200
+ }
+add_layer {rgba rgba.beta redguard1.glow}
+ Multiply {
+  value {{"(1*(noise((frame+(timeOffset*100))*freq, (seed*5), 0)*2-1)*amp+(amp*.7))+amount"}}
+  maskChannelMask -rgba.alpha
+  name NoiseCurve
+  selected true
+  xpos 462
+  ypos 240
+  addUserKnob {20 parameters l Parameters}
+  addUserKnob {7 freq l Frequency}
+  freq 0.37
+  addUserKnob {7 seed l Seed t "\t\t\t\t\t\t" R 0 100}
+  seed 2.5
+  addUserKnob {7 amp l Amplitude}
+  amp 0.435
+  addUserKnob {7 timeOffset l "Time Offset" R 0 100}
+  addUserKnob {7 amount l Amount}
+  amount 0.66
+  addUserKnob {26 ""}
+  addUserKnob {41 channels_1 l channels T Noise.channels}
+  addUserKnob {41 value_1 l value T Noise.value}
+  addUserKnob {26 "" l mask T ""}
+  addUserKnob {41 maskChannelMask_1 l "" -STARTLINE T Noise.maskChannelMask}
+  addUserKnob {41 maskChannelInput_1 l "" -STARTLINE T Noise.maskChannelInput}
+  addUserKnob {41 inject_1 l inject -STARTLINE T Noise.inject}
+  addUserKnob {41 invert_mask_1 l invert -STARTLINE T Noise.invert_mask}
+  addUserKnob {41 fringe_1 l fringe -STARTLINE T Noise.fringe}
+  addUserKnob {41 unpremult_1 l "(un)premult by" T Noise.unpremult}
+  addUserKnob {41 invert_unpremult_1 l invert -STARTLINE T Noise.invert_unpremult}
+  addUserKnob {41 mix_1 l mix T Noise.mix}
+ }
+ Output {
+  name Output1
+  xpos 462
+  ypos 340
+ }
+end_group

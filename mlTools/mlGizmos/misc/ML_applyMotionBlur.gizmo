@@ -1,0 +1,225 @@
+add_layer {uMV_Aliased uMV_Aliased.red uMV_Aliased.green uMV_Aliased.blue uMV_Aliased.alpha}
+Gizmo {
+ addUserKnob {20 VectorBlur}
+ addUserKnob {41 channels T VectorBlur1.channels}
+ addUserKnob {41 uv l "uv channels" T VectorBlur1.uv}
+ addUserKnob {41 scale l multiply T VectorBlur1.scale}
+ addUserKnob {41 offset T VectorBlur1.offset}
+ addUserKnob {26 motionVectors}
+ addUserKnob {41 in l vectorChannel T Shuffle11.in}
+ addUserKnob {41 size_1 l edgeExtend T Blur2.size}
+ addUserKnob {41 size l soften T Blur1.size}
+ addUserKnob {41 maximum l velocityValueClamp T Clamp1.maximum}
+ addUserKnob {41 chBox l viewVectors T Switch1.chBox}
+ addUserKnob {26 edgeArtifacts}
+ addUserKnob {41 size_3 l AverageVelocityAmt T AverageValuesForEdges.size}
+ addUserKnob {41 threshold l EdgeDetectThreshold T EdgeDetect_forEdges.threshold}
+ addUserKnob {41 size_2 l edgeBlur T BlurEdgeDetection.size}
+ addUserKnob {41 gamma l edgeFalloffGamma T EdgeFalloff.gamma}
+ addUserKnob {41 mix l replaceValuesMix T EdgeReplace.mix}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 382
+  ypos 9
+ }
+set N53547bd0 [stack 0]
+ Reformat {
+  black_outside true
+  name Reformat1
+  xpos 382
+  ypos 122
+ }
+set N5354ce50 [stack 0]
+ Shuffle {
+  in uMV_Aliased
+  name Shuffle11
+  label "\[value in]"
+  xpos 382
+  ypos 220
+ }
+set N535482b0 [stack 0]
+ Clamp {
+  minimum {{-maximum}}
+  maximum 60
+  name Clamp1
+  xpos 259
+  ypos 220
+ }
+set N53548620 [stack 0]
+push $N53548620
+ Blur {
+  channels rgba
+  size 40
+  name Blur2
+  xpos 133
+  ypos 284
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop3
+  xpos 133
+  ypos 308
+ }
+ Unpremult {
+  name Unpremult1
+  xpos 133
+  ypos 335
+ }
+ Merge2 {
+  inputs 2
+  name Merge9
+  xpos 203
+  ypos 364
+ }
+ Blur {
+  channels rgba
+  size 2.4
+  name Blur1
+  xpos 203
+  ypos 388
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop4
+  xpos 203
+  ypos 412
+ }
+set N53549ac0 [stack 0]
+push $N535482b0
+ Dot {
+  name Dot1
+  xpos 414
+  ypos 407
+ }
+push $N53549ac0
+ EdgeDetectWrapper {
+  threshold 5
+  name EdgeDetect_forEdges
+  xpos 34
+  ypos 419
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop5
+  xpos 34
+  ypos 455
+ }
+ Blur {
+  size 8.6
+  name BlurEdgeDetection
+  xpos 34
+  ypos 479
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop6
+  xpos 34
+  ypos 515
+ }
+ Grade {
+  channels alpha
+  gamma 1.04
+  name EdgeFalloff
+  xpos 34
+  ypos 556
+ }
+push $N53549ac0
+ Blur {
+  size 100
+  name AverageValuesForEdges
+  xpos 138
+  ypos 478
+ }
+ Crop {
+  box {0 0 1920 1080}
+  name Crop7
+  xpos 138
+  ypos 514
+ }
+ Grade {
+  inputs 1+1
+  channels rgba
+  multiply 0
+  invert_mask true
+  name Grade1
+  xpos 138
+  ypos 611
+ }
+ Grade {
+  inputs 1+1
+  channels rgba
+  multiply 0
+  invert_mask true
+  name Grade3
+  xpos 207
+  ypos 659
+ }
+push $N53549ac0
+ Merge2 {
+  inputs 2
+  name EdgeReplace
+  xpos 431
+  ypos 659
+ }
+push $N5354ce50
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 {{{Shuffle11.in}}}
+  name ShuffleCopy1
+  xpos 596
+  ypos 485
+ }
+set N5354c090 [stack 0]
+ Reformat {
+  pbb true
+  name Reformat2
+  xpos 596
+  ypos 669
+ }
+ VectorBlur {
+  uv uMV_Aliased
+  scale 2
+  name VectorBlur1
+  xpos 596
+  ypos 693
+ }
+set N5354c770 [stack 0]
+ Switch {
+  inputs 2
+  which {{chBox}}
+  name Switch1
+  xpos 384
+  ypos 787
+  addUserKnob {20 User}
+  addUserKnob {6 chBox +STARTLINE}
+ }
+ Output {
+  name Output1
+  xpos 384
+  ypos 830
+ }
+push $N5354c770
+push $N5354c090
+ Crop {
+  box {0 0 1920 1080}
+  reformat true
+  crop false
+  name Crop1
+  xpos 780
+  ypos 586
+ }
+push $N53547bd0
+ Crop {
+  box {0 0 1920 1080}
+  name Crop2
+  xpos 584
+  ypos 90
+ }
+end_group

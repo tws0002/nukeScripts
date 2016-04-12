@@ -1,0 +1,227 @@
+
+Gizmo {
+ knobChanged "n=nuke.thisNode()\nk=nuke.thisKnob()\nif k.name() == \"location\":\n chan=n\[\"in_1\"].value()\n loc=n\[\"location\"].value()\n x=nuke.sample(n,chan+\".red\",loc\[0],loc\[1],1,1)\n y=nuke.sample(n,chan+\".green\",loc\[0],loc\[1],1,1)\n z=nuke.sample(n,chan+\".blue\",loc\[0],loc\[1],1,1)\n n\[\"color\"].setValue(x,0)\n n\[\"color\"].setValue(y,1)\n n\[\"color\"].setValue(z,2)"
+ addUserKnob {20 LaVoyRelight_locationPoint}
+ addUserKnob {41 in_1 l point T Shuffle1.in}
+ addUserKnob {41 normals T Shuffle18.in}
+ addUserKnob {41 tog l normalized T Switch2.tog}
+ addUserKnob {12 location}
+ location {360 480}
+ addUserKnob {41 color T relightValue.color}
+ addUserKnob {41 color_1 l color T offsetColor.color}
+ addUserKnob {41 radius T Constant2.radius}
+ addUserKnob {41 multiply T LightingMult.multiply}
+ addUserKnob {41 gamma l falloff T LightingMult.gamma}
+ addUserKnob {41 viewPoint T Switch1.viewPoint}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  color {0.3 0 0 0}
+  name offsetColor
+  xpos 210
+  ypos -136
+ }
+ Constant {
+  inputs 0
+  color {-86.71588135 15.37849808 4.915223122 1}
+  name relightValue
+  xpos 57
+  ypos -231
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  name Merge2
+  xpos 57
+  ypos -112
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos -862
+  ypos -139
+ }
+ Dot {
+  name Dot1
+  xpos -828
+  ypos -67
+ }
+set N3bcd05e0 [stack 0]
+ Shuffle {
+  in uPointWorld
+  name Shuffle1
+  xpos -507
+  ypos -23
+ }
+set N3bcd0cc0 [stack 0]
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos 57
+  ypos -40
+ }
+set N3bcd2160 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 1 1 1}
+  name ScaleVals
+  xpos 221
+  ypos -14
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge3
+  xpos 57
+  ypos 10
+ }
+set N3bccedd0 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle4
+  label "\[value in]"
+  xpos 57
+  ypos 155
+ }
+push 0
+push $N3bccedd0
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle2
+  label "\[value in]"
+  xpos -108
+  ypos 70
+ }
+push $N3bccedd0
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle3
+  label "\[value in]"
+  xpos -15
+  ypos 101
+ }
+ Merge2 {
+  inputs 3+1
+  operation hypot
+  name PointDistance
+  xpos -108
+  ypos 161
+ }
+set N3bcd2bb0 [stack 0]
+ Constant {
+  inputs 0
+  channels rgb
+  color {{radius}}
+  name Constant2
+  xpos 28
+  ypos 217
+  addUserKnob {20 User}
+  addUserKnob {7 radius R 0 100}
+  radius 100
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge4
+  xpos -108
+  ypos 241
+ }
+ Invert {
+  channels rgb
+  name Invert1
+  xpos -108
+  ypos 265
+ }
+ Grade {
+  multiply 0.82
+  gamma 0.2
+  name LightingMult
+  xpos -108
+  ypos 296
+ }
+push $N3bcd2160
+push $N3bcd2bb0
+ Merge2 {
+  inputs 2
+  operation divide
+  name LightingDirection
+  xpos -437
+  ypos 65
+ }
+push $N3bcd05e0
+ Shuffle {
+  in uNormalWorld
+  name Shuffle18
+  xpos -987
+  ypos 48
+ }
+set N3bcd1710 [stack 0]
+push $N3bcd1710
+ Grade {
+  add -0.5
+  black_clamp false
+  name Grade1
+  xpos -1061
+  ypos 130
+ }
+ Grade {
+  channels {-rgba.red -rgba.green -rgba.blue none}
+  multiply -1
+  black_clamp false
+  name Grade2
+  xpos -1061
+  ypos 160
+ }
+ Switch {
+  inputs 2
+  which {{1-tog}}
+  name Switch2
+  xpos -962
+  ypos 207
+  addUserKnob {20 User}
+  addUserKnob {6 tog l normalized +STARTLINE}
+ }
+ MergeExpression {
+  inputs 2
+  channel0 rgb
+  expr0 (Ar*Br)+(Ag*Bg)+(Ab*Bb)
+  channel1 {-rgba.red -rgba.green -rgba.blue none}
+  channel2 {-rgba.red -rgba.green -rgba.blue none}
+  channel3 {none none none -rgba.alpha}
+  name MergeExpression1
+  xpos -962
+  ypos 254
+ }
+ Merge2 {
+  inputs 2
+  operation multiply
+  name Merge54
+  xpos -604
+  ypos 296
+ }
+push $N3bcd0cc0
+ Switch {
+  inputs 2
+  which {{1-viewPoint}}
+  name Switch1
+  xpos -507
+  ypos 357
+  addUserKnob {20 User}
+  addUserKnob {6 viewPoint +STARTLINE}
+ }
+ Output {
+  name Output1
+  selected true
+  xpos -507
+  ypos 443
+ }
+end_group

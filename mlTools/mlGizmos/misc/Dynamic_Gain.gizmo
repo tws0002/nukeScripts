@@ -1,0 +1,93 @@
+Gizmo {
+ inputs 3
+ tile_color 0xff5f00ff
+ note_font "Verdana Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold Bold"
+ addUserKnob {20 User}
+ addUserKnob {7 G l gain R 1 10}
+ G 2
+ addUserKnob {26 ""}
+ addUserKnob {41 bbox l "set bbox to " T Multiply6.bbox}
+ addUserKnob {41 metainput l "metadata from" T Multiply6.metainput}
+ addUserKnob {26 ""}
+ addUserKnob {41 Achannels l "A channels" T Multiply6.Achannels}
+ addUserKnob {41 Bchannels l "B channels" T Multiply6.Bchannels}
+ addUserKnob {41 output T Multiply6.output}
+ addUserKnob {41 also_merge l "also merge" T Multiply6.also_merge}
+ addUserKnob {26 ""}
+ addUserKnob {26 "" l mask}
+ addUserKnob {41 maskChannelMask l "" -STARTLINE T Multiply6.maskChannelMask}
+ addUserKnob {41 maskChannelInput l "" -STARTLINE T Multiply6.maskChannelInput}
+ addUserKnob {41 inject T Multiply6.inject}
+ addUserKnob {41 invert_mask l invert T Multiply6.invert_mask}
+ addUserKnob {41 fringe T Multiply6.fringe}
+ addUserKnob {41 mix T Multiply6.mix}
+}
+ Input {
+  inputs 0
+  name mask
+  xpos 840
+  ypos 447
+  number 2
+ }
+ Dot {
+  name Dot2
+  xpos 874
+  ypos 690
+ }
+ Input {
+  inputs 0
+  name A
+  xpos 730
+  ypos 447
+  number 1
+ }
+ Dot {
+  name Dot92
+  xpos 764
+  ypos 498
+ }
+ Grade {
+  white {{G}}
+  black_clamp false
+  name Grade13
+  xpos 730
+  ypos 567
+ }
+ Add {
+  channels rgba
+  value 1
+  name Add1
+  xpos 730
+  ypos 615
+ }
+ Input {
+  inputs 0
+  name B
+  xpos 620
+  ypos 447
+ }
+ Dot {
+  name Dot90
+  xpos 654
+  ypos 498
+ }
+ Dot {
+  name Dot91
+  xpos 654
+  ypos 690
+ }
+ Merge2 {
+  inputs 2+1
+  operation multiply
+  name Multiply6
+  label "\[expr \[value mix] * 100]%"
+  selected true
+  xpos 730
+  ypos 681
+ }
+ Output {
+  name Output1
+  xpos 730
+  ypos 783
+ }
+end_group

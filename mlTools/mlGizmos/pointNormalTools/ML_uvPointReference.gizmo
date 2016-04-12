@@ -1,0 +1,98 @@
+add_layer {_uv _uv.red _uv.green _uv.blue _uv.alpha}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 in l uvChannel T Shuffle43.in}
+ addUserKnob {41 viewUV T Switch1.viewUV}
+ addUserKnob {41 uvReference T Radial3.uvReference}
+ addUserKnob {41 w l width T Radial3.w}
+ addUserKnob {41 h l height T Radial3.h}
+ addUserKnob {41 box_width l width/height T Reformat1.box_width}
+ addUserKnob {41 box_height l "" -STARTLINE T Reformat1.box_height}
+ addUserKnob {41 positionRef T Radial3.positionRef}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant3
+  xpos 562
+  ypos 69
+ }
+ Reformat {
+  type "to box"
+  box_width 3000
+  box_height 3000
+  box_fixed true
+  name Reformat1
+  xpos 562
+  ypos 154
+ }
+ Radial {
+  area {{uvReference.r*width-(w/2) x190 312} {uvReference.g*height-(h/2) x190 692.4337078} {uvReference.r*width+(w/2) x190 807.2167968} {uvReference.g*height+(h/2) x190 832.4337078}}
+  name Radial3
+  xpos 562
+  ypos 237
+  addUserKnob {20 User}
+  addUserKnob {12 positionRef}
+  positionRef {{(area.x+area.r)/2} {(area.y+area.t)/2}}
+  addUserKnob {18 uvReference}
+  uvReference {0.5 0.5 0}
+  addUserKnob {7 w l width R 0 1000}
+  w 500
+  addUserKnob {7 h l height R 0 1000}
+  h 500
+ }
+set N30627870 [stack 0]
+ Viewer {
+  input_process false
+  name Viewer1
+  xpos 572
+  ypos 356
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 412
+  ypos -6
+ }
+ Shuffle {
+  in _uv
+  name Shuffle43
+  label "\[value in]"
+  xpos 412
+  ypos 114
+ }
+set N30627190 [stack 0]
+push $N30627190
+push $N30627870
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap2
+  xpos 429
+  ypos 231
+ }
+ Reformat {
+  type "to box"
+  box_width {{parent.Reformat1.box_width}}
+  box_height {{parent.Reformat1.box_height}}
+  box_fixed true
+  name Reformat2
+  xpos 429
+  ypos 280
+ }
+ Switch {
+  inputs 2
+  which {{viewUV}}
+  name Switch1
+  xpos 334
+  ypos 338
+  addUserKnob {20 User}
+  addUserKnob {6 viewUV +STARTLINE}
+ }
+ Output {
+  name Output1
+  selected true
+  xpos 334
+  ypos 415
+ }
+end_group

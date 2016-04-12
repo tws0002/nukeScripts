@@ -1,0 +1,49 @@
+#! C:/Temp/psyop_cache/apps/nuke/win64/9.0v8/nuke-9.0.8.dll -nx
+version 9.0 v8
+add_layer {spec spec.red spec.green spec.blue spec.alpha}
+Gizmo {
+addUserKnob {20 aovCompare}
+addUserKnob {41 in l aov T Shuffle1.in}
+addUserKnob {26 clamp}
+addUserKnob {41 clampValues T Clamp.clampValues}
+addUserKnob {41 mix l clamp_mix T Clamp.mix}
+}
+Input {
+inputs 0
+name Input1
+xpos -559
+ypos 140
+}
+set N8bd8f800 [stack 0]
+push $N8bd8f800
+Shuffle {
+in spec
+name Shuffle1
+label "\[value in]"
+xpos -452
+ypos 185
+}
+Clamp {
+channels rgb
+name Clamp
+selected true
+xpos -452
+ypos 238
+disable {{!clampValues}}
+addUserKnob {20 User}
+addUserKnob {6 clampValues +STARTLINE}
+}
+Merge2 {
+inputs 2
+operation minus
+output rgb
+name Merge1
+xpos -559
+ypos 238
+}
+Output {
+name Output1
+xpos -559
+ypos 309
+}
+end_group

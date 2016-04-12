@@ -1,0 +1,69 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v8/Nuke7.0.exe -nx
+version 7.0 v8
+add_layer {uDepth uDepth.red uDepth.green uDepth.blue uDepth.alpha}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 in l uvChannel T Shuffle43.in}
+ addUserKnob {41 viewUV T Switch1.viewUV}
+ addUserKnob {41 uvReference T Radial3.uvReference}
+ addUserKnob {41 w l width T Radial3.w}
+ addUserKnob {41 h l height T Radial3.h}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 384
+  ypos 82
+ }
+ Shuffle {
+  in uDepth
+  name Shuffle43
+  label "\[value in]"
+  xpos 384
+  ypos 161
+ }
+set N2ea240e0 [stack 0]
+push $N2ea240e0
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant3
+  xpos 562
+  ypos 126
+ }
+ Radial {
+  area {{uvReference.r*width-(w/2)} {uvReference.g*height-(h/2)} {uvReference.r*width+(w/2)} {uvReference.g*height+(h/2)}}
+  name Radial3
+  xpos 562
+  ypos 237
+  addUserKnob {20 User}
+  addUserKnob {18 uvReference}
+  uvReference {0.3548583984 0.3812168539 29.99609375}
+  addUserKnob {7 w l width R 0 1000}
+  w 195
+  addUserKnob {7 h l height R 0 1000}
+  h 140
+ }
+ STMap {
+  inputs 2
+  uv rgb
+  name STMap2
+  xpos 384
+  ypos 231
+ }
+ Switch {
+  inputs 2
+  which {{viewUV}}
+  name Switch1
+  selected true
+  xpos 293
+  ypos 319
+  addUserKnob {20 User}
+  addUserKnob {6 viewUV +STARTLINE}
+ }
+ Output {
+  name Output1
+  xpos 293
+  ypos 370
+ }
+end_group

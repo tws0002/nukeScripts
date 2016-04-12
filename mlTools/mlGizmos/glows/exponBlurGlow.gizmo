@@ -1,0 +1,370 @@
+Gizmo {
+ tile_color 0xffa40dff
+ addUserKnob {20 exponBlur l "expon blur"}
+ addUserKnob {41 channels T CHANNELS.channels}
+ addUserKnob {41 blurAmt l "blur amount" T controls.blurAmt}
+ addUserKnob {41 blurExp l "blur exponent" T controls.blurExp}
+ addUserKnob {41 multMain l "Intensity Overall" T controls.multMain}
+ addUserKnob {41 multSub l "Intensity Sub" T controls.multSub}
+ addUserKnob {41 multSubExp l "Intensity Sub Exponent" T controls.multSubExp}
+ addUserKnob {26 ""}
+ addUserKnob {41 tint T controls.tint}
+ addUserKnob {41 disable_2 l disable -STARTLINE T TINT.disable}
+ addUserKnob {41 tolerance T controls.tolerance}
+ addUserKnob {41 which l mix T Dissolve1.which}
+ addUserKnob {41 effect_only l "effect only" -STARTLINE T EFFECT.disable}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 345
+  ypos 19
+ }
+ Dot {
+  name Dot3
+  xpos 378
+  ypos 83
+ }
+set N67445ee0 [stack 0]
+ Dot {
+  name Dot4
+  xpos 158
+  ypos 83
+ }
+ Remove {
+  channels {{{CHANNELS.channels}}}
+  name CHANNELS1
+  xpos 125
+  ypos 139
+ }
+ Dot {
+  name Dot5
+  xpos 158
+  ypos 893
+ }
+push $N67445ee0
+ Remove {
+  operation keep
+  channels rgb
+  name CHANNELS
+  xpos 345
+  ypos 109
+ }
+set N67447010 [stack 0]
+ Gamma {
+  value {{parent.controls.tint} {parent.controls.tint} {parent.controls.tint} {parent.controls.tint}}
+  name TINT
+  xpos 345
+  ypos 160
+  disable true
+ }
+set N67447380 [stack 0]
+ Group {
+  name threshold
+  xpos 345
+  ypos 229
+  addUserKnob {20 User l Threshold}
+  addUserKnob {4 mode M {binary over under}}
+  mode over
+  addUserKnob {19 Threshold l threshold}
+  Threshold {{parent.controls.tolerance}}
+ }
+  Input {
+   inputs 0
+   name Input
+   xpos -264
+   ypos -90
+  }
+set N674476f0 [stack 0]
+  Expression {
+   temp_name0 rc
+   temp_expr0 parent.Threshold.r
+   temp_name1 gc
+   temp_expr1 parent.Threshold.g
+   temp_name2 bc
+   temp_expr2 parent.Threshold.b
+   temp_name3 ac
+   temp_expr3 parent.Threshold.a
+   expr0 "(r>rc)? 0: r"
+   expr1 "(g>gc)? 0: g"
+   expr2 "(b>bc)? 0: b"
+   channel3 alpha
+   expr3 "(a>ac)? 0: a"
+   name Expression1
+   xpos -63
+   ypos -62
+  }
+push $N674476f0
+  Expression {
+   temp_name0 rc
+   temp_expr0 parent.Threshold.r
+   temp_name1 gc
+   temp_expr1 parent.Threshold.g
+   temp_name2 bc
+   temp_expr2 parent.Threshold.b
+   temp_name3 ac
+   temp_expr3 parent.Threshold.a
+   expr0 "(r>rc)? r: 0"
+   expr1 "(g>gc)? g: 0"
+   expr2 "(b>bc)? b: 0"
+   channel3 alpha
+   expr3 "(a>ac)? a: 0"
+   name Expression3
+   xpos -162
+   ypos -63
+  }
+push $N674476f0
+  Expression {
+   temp_name0 rc
+   temp_expr0 parent.Threshold.r
+   temp_name1 gc
+   temp_expr1 parent.Threshold.g
+   temp_name2 bc
+   temp_expr2 parent.Threshold.b
+   temp_name3 ac
+   temp_expr3 parent.Threshold.a
+   expr0 "(r>rc)? 0: 1"
+   expr1 "(g>gc)? 0: 1"
+   expr2 "(b>bc)? 0: 1"
+   channel3 alpha
+   expr3 "(a>ac)? 0: 1"
+   name Expression2
+   xpos -264
+   ypos -64
+  }
+  Switch {
+   inputs 3
+   which {{parent.mode i}}
+   name Switch1
+   xpos -264
+   ypos -38
+  }
+  Output {
+   name Output
+   xpos -264
+   ypos -12
+  }
+ end_group
+ Multiply {
+  value {{parent.controls.multMain}}
+  name Multiply_main
+  xpos 345
+  ypos 250
+ }
+ Invert {
+  channels rgb
+  name Invert1
+  xpos 345
+  ypos 349
+  disable {{"controls.blurAmt>=0 ? 1 : 0"}}
+ }
+ Dot {
+  name Dot18
+  xpos 378
+  ypos 443
+ }
+set N67448f00 [stack 0]
+ Dot {
+  name Dot17
+  xpos 378
+  ypos 563
+ }
+set N67449270 [stack 0]
+ Dot {
+  name Dot16
+  xpos 378
+  ypos 623
+ }
+set N674495e0 [stack 0]
+ Dot {
+  name Dot19
+  xpos 378
+  ypos 683
+ }
+set N67449950 [stack 0]
+ Dot {
+  name Dot21
+  xpos 378
+  ypos 743
+ }
+ Blur {
+  size {{"Blur_04.size * controls.blurExp"}}
+  name Blur_05
+  label "\[value size]"
+  xpos 455
+  ypos 722
+ }
+ Multiply {
+  value {{Multiply_04.value/controls.multSubExp}}
+  name Multiply_05
+  xpos 565
+  ypos 730
+ }
+push $N67449950
+ Blur {
+  size {{"Blur_03.size * controls.blurExp"}}
+  name Blur_04
+  label "\[value size]"
+  xpos 455
+  ypos 662
+ }
+ Multiply {
+  value {{Multiply_03.value/controls.multSubExp}}
+  name Multiply_04
+  xpos 565
+  ypos 670
+ }
+push $N674495e0
+ Blur {
+  size {{"Blur_02.size * controls.blurExp"}}
+  name Blur_03
+  label "\[value size]"
+  xpos 455
+  ypos 602
+ }
+ Multiply {
+  value {{Multiply_02.value/controls.multSubExp}}
+  name Multiply_03
+  xpos 565
+  ypos 610
+ }
+push $N67449270
+ Blur {
+  size {{"Blur_01.size * controls.blurExp"}}
+  name Blur_02
+  label "\[value size]"
+  xpos 455
+  ypos 542
+ }
+ Multiply {
+  value {{Multiply_01.value/controls.multSubExp}}
+  name Multiply_02
+  xpos 565
+  ypos 550
+ }
+push $N67447380
+ Dot {
+  name Dot22
+  xpos 708
+  ypos 173
+ }
+ Invert {
+  name Invert3
+  xpos 675
+  ypos 310
+  disable {{"controls.blurAmt>=0 ? 1 : 0" x1 1}}
+ }
+push $N67448f00
+ Blur {
+  size {{controls.blurAmt}}
+  name Blur_01
+  label "\[value size]"
+  xpos 455
+  ypos 422
+ }
+ Multiply {
+  value {{parent.controls.multSub}}
+  name Multiply_01
+  xpos 565
+  ypos 430
+ }
+set N6744c600 [stack 0]
+ Merge2 {
+  inputs 2
+  operation under
+  also_merge all
+  name EFFECT
+  xpos 675
+  ypos 439
+ }
+ Merge2 {
+  inputs 2
+  also_merge all
+  name Merge8
+  xpos 675
+  ypos 559
+ }
+ Merge2 {
+  inputs 2
+  also_merge all
+  name Merge7
+  xpos 675
+  ypos 619
+ }
+ Merge2 {
+  inputs 2
+  also_merge all
+  name Merge6
+  xpos 675
+  ypos 679
+ }
+ Merge2 {
+  inputs 2
+  also_merge all
+  name Merge5
+  xpos 675
+  ypos 739
+ }
+ Invert {
+  name Invert2
+  xpos 675
+  ypos 820
+  disable {{"controls.blurAmt>=0 ? 1 : 0" x1 0}}
+ }
+ Copy {
+  inputs 2
+  from0 -rgba.alpha
+  to0 -rgba.alpha
+  channels all
+  name Copy1
+  xpos 675
+  ypos 872
+ }
+push $N67447010
+ Dot {
+  name Dot2
+  xpos 268
+  ypos 113
+ }
+ Dot {
+  name Dot1
+  xpos 268
+  ypos 953
+ }
+ Dissolve {
+  inputs 2
+  which 1
+  name Dissolve1
+  xpos 675
+  ypos 940
+ }
+set N6744e860 [stack 0]
+ Output {
+  name Output1
+  xpos 675
+  ypos 1039
+ }
+push $N6744c600
+push $N6744e860
+ NoOp {
+  inputs 0
+  name controls
+  xpos 510
+  ypos 229
+  addUserKnob {20 expnBlur l "expn blur"}
+  addUserKnob {7 tolerance}
+  tolerance 0.33
+  addUserKnob {19 tint}
+  tint {0.6050667167 1.374866843 2.145066738 1}
+  addUserKnob {7 blurAmt l "blur amount" R 0 30}
+  blurAmt 4
+  addUserKnob {7 blurExp l "blur exponent" R 0 10}
+  blurExp 1.55
+  addUserKnob {7 multMain l "Intensity Overall" R 1 16}
+  multMain 1.5
+  addUserKnob {7 multSub l "Intensity Sub"}
+  multSub 0.3333333333
+  addUserKnob {7 multSubExp l "Intensity Sub Exponent" R 1 5}
+  multSubExp 2
+ }
+end_group

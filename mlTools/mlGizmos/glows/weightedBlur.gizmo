@@ -1,0 +1,744 @@
+Gizmo {
+ tile_color 0xbf7f3fff
+ addUserKnob {20 WeightedBlur l "Weighted Blur"}
+ addUserKnob {4 weightedBlurType l "Weighted Blur Type" M {fibonacci "multiples of 2" squared}}
+ addUserKnob {4 BlurLayerType l "Blur Layer Type" M {Mix Screen}}
+ addUserKnob {26 ""}
+ addUserKnob {41 blurSize l "blur size" t "blur size must be a value above 1 or below -1 if in 'squared' mode.\nToo high of a value in 'squared' mode will cause slowness." T BlurControl.size}
+ addUserKnob {41 blurValue l "gain value" t "Only works in 'Screen' mode." T MultiplyControl.value}
+ addUserKnob {26 WeightedBlurByPK l "" +STARTLINE T "\nWeightedBlur by PK"}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -673
+  ypos -468
+ }
+ Dot {
+  name Dot5
+  xpos -639
+  ypos -257
+ }
+set N2c2ea4e0 [stack 0]
+ Dot {
+  name Dot2
+  xpos 779
+  ypos 40
+ }
+set N2c2ea850 [stack 0]
+ Blur {
+  size {{BlurControl.size i}}
+  name Blur1
+  xpos 492
+  ypos 113
+ }
+set N2c2eabc0 [stack 0]
+ Multiply {
+  value {{MultiplyControl.value i}}
+  name Multiply8
+  xpos 492
+  ypos 151
+ }
+push $N2c2ea850
+ Blur {
+  size {{Blur1.size*Blur1.size i}}
+  name Blur2
+  xpos 618
+  ypos 111
+ }
+set N2c2eb2a0 [stack 0]
+ Multiply {
+  value {{Multiply8.value/2 i}}
+  name Multiply5
+  xpos 618
+  ypos 149
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn
+  xpos 618
+  ypos 248
+ }
+push $N2c2ea850
+ Blur {
+  size {{Blur2.size*Blur2.size i}}
+  name Blur3
+  xpos 745
+  ypos 113
+ }
+set N2c2ebcf0 [stack 0]
+ Multiply {
+  value {{Multiply5.value/2 i}}
+  name Multiply4
+  xpos 745
+  ypos 151
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn1
+  xpos 745
+  ypos 248
+ }
+push $N2c2ea850
+ Blur {
+  size {{Blur3.size*Blur3.size i}}
+  name Blur4
+  xpos 877
+  ypos 99
+ }
+set N2c2ec740 [stack 0]
+ Multiply {
+  value {{Multiply4.value/2 i}}
+  name Multiply6
+  xpos 877
+  ypos 153
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn2
+  xpos 877
+  ypos 248
+ }
+set N2c2ece20 [stack 0]
+push $N2c2eabc0
+push $N2c2eb2a0
+push $N2c2ec740
+push $N2c2ebcf0
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve20
+  xpos 821
+  ypos 553
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve22
+  xpos 640
+  ypos 553
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve23
+  xpos 492
+  ypos 553
+ }
+ Switch {
+  inputs 2
+  which {{Switch_ScreeOrMix.which i}}
+  name Switch4
+  xpos 360
+  ypos 590
+ }
+push $N2c2ea4e0
+ Dot {
+  name Dot3
+  xpos -639
+  ypos 55
+ }
+set N2c2edbe0 [stack 0]
+ Blur {
+  size {{BlurControl.size i}}
+  name Blur17
+  xpos -1058
+  ypos 150
+ }
+set N2c2edf50 [stack 0]
+ Multiply {
+  value {{MultiplyControl.value i}}
+  name Multiply20
+  xpos -1058
+  ypos 188
+ }
+push $N2c2edbe0
+ Blur {
+  size {{Blur17.size*2 i}}
+  name Blur18
+  xpos -932
+  ypos 148
+ }
+set N2c2ee630 [stack 0]
+ Multiply {
+  value {{Multiply20.value/2 i}}
+  name Multiply21
+  xpos -932
+  ypos 186
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn14
+  xpos -932
+  ypos 285
+ }
+push $N2c2edbe0
+ Blur {
+  size {{Blur18.size*2 i}}
+  name Blur19
+  xpos -805
+  ypos 150
+ }
+set N2c2ef080 [stack 0]
+ Multiply {
+  value {{Multiply21.value/2 i}}
+  name Multiply22
+  xpos -805
+  ypos 188
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn15
+  xpos -805
+  ypos 285
+ }
+push $N2c2edbe0
+ Blur {
+  size {{Blur19.size*2 i}}
+  name Blur20
+  xpos -673
+  ypos 152
+ }
+set N2c2efad0 [stack 0]
+ Multiply {
+  value {{Multiply22.value/2 i}}
+  name Multiply23
+  xpos -673
+  ypos 190
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn16
+  xpos -673
+  ypos 285
+ }
+push $N2c2edbe0
+ Blur {
+  size {{Blur20.size*2 i}}
+  name Blur21
+  xpos -532
+  ypos 156
+ }
+set N2c2f0520 [stack 0]
+ Multiply {
+  value {{Multiply23.value/2 i}}
+  name Multiply24
+  xpos -532
+  ypos 194
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn17
+  xpos -532
+  ypos 285
+ }
+push $N2c2edbe0
+ Blur {
+  size {{Blur21.size*2 i}}
+  name Blur22
+  xpos -374
+  ypos 152
+ }
+set N2c2f0f70 [stack 0]
+ Multiply {
+  value {{Multiply24.value/2 i}}
+  name Multiply25
+  xpos -374
+  ypos 190
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn18
+  xpos -374
+  ypos 285
+ }
+push $N2c2edbe0
+ Blur {
+  size {{Blur22.size*2 i}}
+  name Blur23
+  xpos -215
+  ypos 156
+ }
+set N2c2f19c0 [stack 0]
+ Multiply {
+  value {{Multiply25.value/2 i}}
+  name Multiply26
+  xpos -215
+  ypos 194
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn19
+  xpos -215
+  ypos 285
+ }
+push $N2c2edbe0
+ Blur {
+  size {{Blur23.size*2 i}}
+  name Blur24
+  xpos -58
+  ypos 156
+ }
+set N2c2f2410 [stack 0]
+ Multiply {
+  value {{Multiply26.value/2 i}}
+  name Multiply1
+  xpos -58
+  ypos 194
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn4
+  xpos -58
+  ypos 285
+ }
+push $N2c2edf50
+push $N2c2ee630
+push $N2c2ef080
+push $N2c2efad0
+push $N2c2f0520
+push $N2c2f0f70
+push $N2c2f19c0
+push $N2c2f2410
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve24
+  xpos -129
+  ypos 474
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve25
+  xpos -271
+  ypos 474
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve26
+  xpos -445
+  ypos 474
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve27
+  xpos -581
+  ypos 464
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve28
+  xpos -774
+  ypos 464
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve29
+  xpos -913
+  ypos 464
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve30
+  xpos -1038
+  ypos 464
+ }
+ Switch {
+  inputs 2
+  which {{Switch_ScreeOrMix.which i}}
+  name Switch3
+  xpos -58
+  ypos 593
+ }
+push $N2c2ea4e0
+ Dot {
+  name Dot4
+  xpos -2148
+  ypos -22
+ }
+set N2c2f4670 [stack 0]
+ Blur {
+  size {{BlurControl.size i x10285 12}}
+  name Blur6
+  xpos -2848
+  ypos 74
+ }
+set N2c2f49e0 [stack 0]
+ Multiply {
+  value {{MultiplyControl.value i}}
+  name Multiply27
+  xpos -2848
+  ypos 211
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur6.size+Blur6.size i}}
+  name Blur7
+  xpos -2722
+  ypos 72
+ }
+set N2c2f5430 [stack 0]
+ Multiply {
+  value {{Multiply27.value/2 i}}
+  name Multiply28
+  xpos -2722
+  ypos 210
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn20
+  xpos -2722
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur6.size+Blur7.size i}}
+  name Blur8
+  xpos -2595
+  ypos 74
+ }
+set N2c2f5b10 [stack 0]
+ Multiply {
+  value {{Multiply28.value/2 i}}
+  name Multiply29
+  xpos -2595
+  ypos 212
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn21
+  xpos -2595
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur7.size+Blur8.size i}}
+  name Blur9
+  xpos -2463
+  ypos 76
+ }
+set N2c2f6560 [stack 0]
+ Multiply {
+  value {{Multiply29.value/2 i}}
+  name Multiply30
+  xpos -2463
+  ypos 214
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn22
+  xpos -2463
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur8.size+Blur9.size i}}
+  name Blur10
+  xpos -2322
+  ypos 77
+ }
+set N2c2f6fb0 [stack 0]
+ Multiply {
+  value {{Multiply30.value/2 i}}
+  name Multiply31
+  xpos -2322
+  ypos 215
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn23
+  xpos -2322
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur9.size+Blur10.size i}}
+  name Blur11
+  xpos -2182
+  ypos 81
+ }
+set N2c2f7a00 [stack 0]
+ Multiply {
+  value {{Multiply31.value/2 i}}
+  name Multiply32
+  xpos -2182
+  ypos 223
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn24
+  xpos -2178
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur10.size+Blur11.size i}}
+  name Blur12
+  xpos -2044
+  ypos 85
+ }
+set N2cc08790 [stack 0]
+ Multiply {
+  value {{Multiply32.value/2 i}}
+  name Multiply33
+  xpos -2043
+  ypos 223
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn25
+  xpos -2043
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur11.size+Blur12.size i}}
+  name Blur13
+  xpos -1925
+  ypos 86
+ }
+set N2cc091e0 [stack 0]
+ Multiply {
+  value {{Multiply33.value/2 i}}
+  name Multiply34
+  xpos -1925
+  ypos 224
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn26
+  xpos -1925
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur12.size+Blur13.size i}}
+  name Blur14
+  xpos -1788
+  ypos 88
+ }
+set N2cc09c30 [stack 0]
+ Multiply {
+  value {{Multiply34.value/2 i}}
+  name Multiply35
+  xpos -1788
+  ypos 226
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn27
+  xpos -1788
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur13.size+Blur14.size i}}
+  name Blur15
+  xpos -1643
+  ypos 96
+ }
+set N2cc0a680 [stack 0]
+ Multiply {
+  value {{Multiply35.value/2 i}}
+  name Multiply36
+  xpos -1643
+  ypos 234
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn28
+  xpos -1643
+  ypos 320
+ }
+push $N2c2f4670
+ Blur {
+  size {{Blur14.size+Blur15.size i}}
+  name Blur16
+  xpos -1491
+  ypos 98
+ }
+set N2cc0b0d0 [stack 0]
+ Multiply {
+  value {{Multiply36.value*.02 i}}
+  name Multiply37
+  xpos -1491
+  ypos 236
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn29
+  xpos -1491
+  ypos 320
+ }
+push $N2c2f49e0
+push $N2c2f5430
+push $N2c2f5b10
+push $N2c2f6560
+push $N2c2f6fb0
+push $N2c2f7a00
+push $N2cc08790
+push $N2cc091e0
+push $N2cc09c30
+push $N2cc0a680
+push $N2cc0b0d0
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve10
+  xpos -1491
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve9
+  xpos -1643
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve8
+  xpos -1788
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve7
+  xpos -1925
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve6
+  xpos -2044
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve5
+  xpos -2182
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve4
+  xpos -2322
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve3
+  xpos -2463
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve2
+  xpos -2595
+  ypos 524
+ }
+ Dissolve {
+  inputs 2
+  which 0.5
+  name Dissolve1
+  xpos -2724
+  ypos 524
+ }
+ Switch {
+  inputs 2
+  which {{Switch_ScreeOrMix.which i}}
+  name Switch2
+  xpos -1343
+  ypos 613
+ }
+ Switch {
+  inputs 3
+  which {{weightedBlurType i x10285 1.15}}
+  name Switch1
+  xpos 20
+  ypos 685
+ }
+set N2a27d570 [stack 0]
+ Output {
+  name Output1
+  xpos 20
+  ypos 785
+ }
+push $N2c2ece20
+push $N2c2ea850
+ Blur {
+  size {{Blur4.size*Blur4.size i}}
+  name Blur5
+  xpos 1018
+  ypos 119
+ }
+ Multiply {
+  value {{Multiply6.value/2 i}}
+  name Multiply7
+  xpos 1018
+  ypos 157
+ }
+ Merge2 {
+  inputs 2
+  operation screen
+  name Scrn3
+  xpos 1018
+  ypos 248
+ }
+push $N2c2ea4e0
+ Blur {
+  size 200
+  name BlurControl
+  xpos -559
+  ypos -210
+ }
+ Multiply {
+  name MultiplyControl
+  xpos -559
+  ypos -172
+ }
+set N2cc0eeb0 [stack 0]
+push $N2cc0eeb0
+ Switch {
+  inputs 2
+  which {{BlurLayerType i}}
+  name Switch_ScreeOrMix
+  xpos -559
+  ypos -79
+ }
+push $N2a27d570
+push $N2a27d570
+end_group

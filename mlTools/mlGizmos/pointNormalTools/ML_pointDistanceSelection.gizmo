@@ -1,0 +1,174 @@
+add_layer {_pointWorld _pointWorld.red _pointWorld.green _pointWorld.blue _pointWorld.alpha}
+Gizmo {
+ addUserKnob {20 LaVoyPointDistance}
+ addUserKnob {41 in_1 l point T Shuffle1.in}
+ addUserKnob {41 disable_1 l unpremulted T Unpremult1.disable}
+ addUserKnob {26 ""}
+ addUserKnob {41 color T Constant1.color}
+ addUserKnob {41 color_1 l pointScale T ScaleVals.color}
+ addUserKnob {26 ""}
+ addUserKnob {41 viewPoint T Switch1.viewPoint}
+ addUserKnob {41 radius T Constant2.radius}
+ addUserKnob {41 multiply l exposure T Grade3.multiply}
+ addUserKnob {41 gamma l falloff T Grade3.gamma}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -505
+  ypos -161
+ }
+set Naf7fead0 [stack 0]
+ Shuffle {
+  in uPointWorld
+  name Shuffle1
+  xpos -663
+  ypos -96
+ }
+ Unpremult {
+  name Unpremult1
+  xpos -663
+  ypos -72
+ }
+ Dot {
+  name Dot1
+  xpos -629
+  ypos -1
+ }
+set Naf7ff520 [stack 0]
+ Constant {
+  inputs 0
+  color {3.654188871 3.982864141 30.51547813 1}
+  name Constant1
+  xpos -887
+  ypos -29
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos -751
+  ypos 39
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {1 1 1 1}
+  name ScaleVals
+  xpos -612
+  ypos 82
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge2
+  xpos -751
+  ypos 106
+ }
+set N787dbb30 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle4
+  label "\[value in]"
+  xpos -751
+  ypos 267
+ }
+push 0
+push $N787dbb30
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle2
+  label "\[value in]"
+  xpos -916
+  ypos 132
+ }
+push $N787dbb30
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle3
+  label "\[value in]"
+  xpos -823
+  ypos 163
+ }
+ Merge2 {
+  inputs 3+1
+  operation hypot
+  name Merge3
+  xpos -916
+  ypos 273
+ }
+set N1006eb00 [stack 0]
+ Grade {
+  multiply 0.03
+  black_clamp false
+  name Grade2
+  xpos -1063
+  ypos 170
+ }
+push $Naf7fead0
+push $N1006eb00
+ Constant {
+  inputs 0
+  channels rgb
+  color {{radius}}
+  name Constant2
+  xpos -1144
+  ypos 296
+  addUserKnob {20 User}
+  addUserKnob {7 radius R 0 100}
+  radius 1
+ }
+ Merge2 {
+  inputs 2
+  operation divide
+  name Merge4
+  xpos -1015
+  ypos 320
+ }
+ Invert {
+  channels rgb
+  name Invert1
+  xpos -928
+  ypos 351
+ }
+ Grade {
+  multiply 1.1
+  gamma 0.2
+  name Grade3
+  xpos -928
+  ypos 403
+ }
+push $Naf7ff520
+ Dot {
+  name Dot2
+  xpos -305
+  ypos 33
+ }
+ Switch {
+  inputs 2
+  which {{1-viewPoint i}}
+  name Switch1
+  xpos -808
+  ypos 456
+  addUserKnob {20 User}
+  addUserKnob {6 viewPoint +STARTLINE}
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy2
+  selected true
+  xpos -505
+  ypos 508
+ }
+ Output {
+  name Output1
+  xpos -505
+  ypos 541
+ }
+end_group

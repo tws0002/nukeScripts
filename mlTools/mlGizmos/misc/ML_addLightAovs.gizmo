@@ -1,0 +1,137 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke8.0v5/nuke-8.0.v5.dll -nx
+version 8.0 v5
+Gizmo {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {41 mix l overallMix T domelight_Contribution.mix}
+ addUserKnob {26 multipliers l mults}
+ addUserKnob {41 direct_diffuse_multiply l direct_diffuse T direct_diffuse.multiply}
+ addUserKnob {41 indirect_diffuse_multiply l indirect_diffuse T indirect_diffuse.multiply}
+ addUserKnob {41 sss_multiply l sss T sss.multiply}
+ addUserKnob {41 spec_multiply l spec T spec.multiply}
+ addUserKnob {41 indirect_spec_multiply l indirect_spec T indirect_spec.multiply}
+ addUserKnob {41 refraction_multiply l refraction T refraction.multiply}
+ addUserKnob {41 direct_backlight_multiply l direct_backlight T direct_backlight.multiply}
+ addUserKnob {41 indirect_backlight_multiply l indirect_backlight T indirect_backlight.multiply}
+}
+ Input {
+  inputs 0
+  name mainLight
+  xpos 0
+  ypos -101
+ }
+set N7aa81c70 [stack 0]
+ Input {
+  inputs 0
+  name addLight
+  xpos 175
+  ypos -101
+  number 1
+ }
+add_layer {direct_diffuse direct_diffuse.red direct_diffuse.green direct_diffuse.blue direct_diffuse.alpha}
+add_layer {indirect_diffuse indirect_diffuse.red indirect_diffuse.green indirect_diffuse.blue indirect_diffuse.alpha}
+add_layer {spec spec.red spec.green spec.blue spec.alpha}
+add_layer {indirect_spec indirect_spec.red indirect_spec.green indirect_spec.blue indirect_spec.alpha}
+add_layer {refraction refraction.red refraction.green refraction.blue refraction.alpha}
+add_layer {sss sss.red sss.green sss.blue sss.alpha}
+add_layer {direct_backlight direct_backlight.red direct_backlight.green direct_backlight.blue direct_backlight.alpha}
+add_layer {indirect_backlight indirect_backlight.red indirect_backlight.green indirect_backlight.blue indirect_backlight.alpha}
+add_layer {startRGBA startRGBA.red startRGBA.green startRGBA.blue startRGBA.alpha}
+ multiKeepChannels {
+  name multiKeepChannels1
+  selected true
+  xpos 175
+  ypos -10
+  channels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  channels2 {direct_diffuse.red direct_diffuse.green direct_diffuse.blue -direct_diffuse.alpha}
+  channels3 {indirect_diffuse.red indirect_diffuse.green indirect_diffuse.blue -indirect_diffuse.alpha}
+  channels4 {spec.red spec.green spec.blue -spec.alpha}
+  channels_1 {indirect_spec.red indirect_spec.green indirect_spec.blue -indirect_spec.alpha}
+  channels2_1 {refraction.red refraction.green refraction.blue -refraction.alpha}
+  channels3_1 {sss.red sss.green sss.blue -sss.alpha}
+  channels4_1 {direct_backlight.red direct_backlight.green direct_backlight.blue -direct_backlight.alpha}
+  channels_2 {indirect_backlight.red indirect_backlight.green indirect_backlight.blue -indirect_backlight.alpha}
+  channels2_2 {startRGBA.red startRGBA.green startRGBA.blue -startRGBA.alpha}
+  channels3_2 none
+  channels4_2 none
+  channels_3 none
+  channels2_3 none
+  channels3_3 none
+  channels4_3 none
+  channels_4 none
+  channels2_4 none
+  channels3_4 none
+  channels4_4 none
+ }
+ Grade {
+  channels {spec.red spec.green spec.blue -spec.alpha}
+  name spec
+  xpos 175
+  ypos 41
+ }
+ Grade {
+  channels {indirect_spec.red indirect_spec.green indirect_spec.blue -indirect_spec.alpha}
+  name indirect_spec
+  xpos 175
+  ypos 84
+ }
+ Grade {
+  channels {refraction.red refraction.green refraction.blue -refraction.alpha}
+  name refraction
+  xpos 175
+  ypos 120
+ }
+ Grade {
+  channels {sss.red sss.green sss.blue -sss.alpha}
+  name sss
+  xpos 175
+  ypos 156
+ }
+ Grade {
+  channels {direct_diffuse.red direct_diffuse.green direct_diffuse.blue -direct_diffuse.alpha}
+  name direct_diffuse
+  xpos 175
+  ypos 192
+ }
+ Grade {
+  channels {indirect_diffuse.red indirect_diffuse.green indirect_diffuse.blue -indirect_diffuse.alpha}
+  name indirect_diffuse
+  xpos 175
+  ypos 235
+ }
+ Grade {
+  channels {direct_backlight.red direct_backlight.green direct_backlight.blue -direct_backlight.alpha}
+  name direct_backlight
+  xpos 175
+  ypos 271
+ }
+ Grade {
+  channels {indirect_backlight.red indirect_backlight.green indirect_backlight.blue -indirect_backlight.alpha}
+  name indirect_backlight
+  xpos 175
+  ypos 312
+ }
+push $N7aa81c70
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels rgb
+  Bchannels rgb
+  output rgb
+  also_merge all
+  name domelight_Contribution
+  xpos 0
+  ypos 365
+ }
+ ShuffleCopy {
+  inputs 2
+  name ShuffleCopy1
+  xpos -59
+  ypos 426
+ }
+ Output {
+  name Output1
+  xpos -59
+  ypos 478
+ }
+end_group

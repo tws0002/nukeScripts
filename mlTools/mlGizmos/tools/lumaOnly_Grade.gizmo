@@ -1,0 +1,46 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke8.0v5/nuke-8.0.v5.dll -nx
+version 8.0 v5
+Gizmo {
+ inputs 2
+ addUserKnob {20 User}
+ addUserKnob {26 LumaOnly_Grade_divider l LumaOnly_Grade}
+ addUserKnob {41 LumaOnly_Grade_multiply T LumaOnly_Grade.multiply}
+ addUserKnob {41 LumaOnly_Grade_gamma T LumaOnly_Grade.gamma}
+}
+ Input {
+  inputs 0
+  name mask
+  selected true
+  xpos 130
+  number 1
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 0
+ }
+ Colorspace {
+  colorspace_out HSV
+  name Colorspace1
+  xpos 0
+  ypos 97
+ }
+ Grade {
+  inputs 1+1
+  channels {-rgba.red -rgba.green rgba.blue none}
+  name LumaOnly_Grade
+  xpos 0
+  ypos 130
+ }
+ Colorspace {
+  colorspace_in HSV
+  name Colorspace2
+  xpos 0
+  ypos 180
+ }
+ Output {
+  name Output1
+  xpos 0
+  ypos 300
+ }
+end_group

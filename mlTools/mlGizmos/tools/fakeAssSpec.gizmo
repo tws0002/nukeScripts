@@ -1,0 +1,136 @@
+#! P:/global/apps/TheFoundry/Nuke/win64/Nuke7.0v4/Nuke7.0.exe -nx
+version 7.0 v4
+add_layer {uNormalCamera uNormalCamera.red uNormalCamera.green uNormalCamera.blue uNormalCamera.alpha}
+Gizmo {
+ addUserKnob {20 User}
+ addUserKnob {41 in l NormalChannel T ShuffleNormal.in}
+ addUserKnob {41 color l normalRef T normalReference.color}
+ addUserKnob {41 gradeControl:multiply T gradeControl.multiply}
+ addUserKnob {41 gradeControl:gamma T gradeControl.gamma}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  color 1
+  name Constant2
+  xpos 290
+  ypos 401
+ }
+ Constant {
+  inputs 0
+  channels rgb
+  color {-0.2949092686 0.07644303888 0.9487382174 1}
+  name normalReference
+  xpos 345
+  ypos 99
+ }
+ Input {
+  inputs 0
+  name Input1
+  xpos 492
+  ypos -54
+ }
+ Shuffle {
+  in uNormalCamera
+  name ShuffleNormal
+  label "\[value in]"
+  xpos 492
+  ypos 93
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge1
+  xpos 489
+  ypos 144
+ }
+set N2e112a90 [stack 0]
+push $N2e112a90
+ MergeExpression {
+  inputs 2
+  expr0 Ar*Br
+  expr1 Ag*Bg
+  expr2 Ab*Bb
+  name MergeExpression1
+  xpos 489
+  ypos 186
+ }
+set N2e1153d0 [stack 0]
+ Shuffle {
+  red blue
+  green blue
+  alpha blue
+  name Shuffle3
+  label "\[value in]"
+  xpos 615
+  ypos 262
+ }
+push 0
+push $N2e1153d0
+ Shuffle {
+  red green
+  blue green
+  alpha green
+  name Shuffle2
+  label "\[value in]"
+  xpos 485
+  ypos 278
+ }
+push $N2e1153d0
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle1
+  label "\[value in]"
+  xpos 391
+  ypos 250
+ }
+ Merge2 {
+  inputs 3+1
+  operation hypot
+  name Merge3
+  xpos 485
+  ypos 336
+ }
+ Merge2 {
+  inputs 2
+  operation minus
+  name Merge4
+  xpos 485
+  ypos 439
+ }
+ Grade {
+  gamma {{parent.gradeControl.gamma.FG}}
+  name Grade1
+  xpos 485
+  ypos 463
+ }
+ Grade {
+  gamma {{parent.gradeControl.gamma.FG}}
+  name Grade2
+  xpos 485
+  ypos 501
+ }
+ Grade {
+  gamma {{parent.gradeControl.gamma.FG}}
+  name Grade3
+  xpos 485
+  ypos 525
+ }
+ Grade {
+  multiply 1.1
+  gamma 0.275
+  name gradeControl
+  xpos 485
+  ypos 562
+ }
+set N2e114cf0 [stack 0]
+push $N2e114cf0
+ Output {
+  name Output1
+  selected true
+  xpos 485
+  ypos 698
+ }
+end_group

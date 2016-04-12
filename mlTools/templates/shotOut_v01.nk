@@ -1,0 +1,61 @@
+set cut_paste_input [stack 0]
+version 8.0 v5
+push $cut_paste_input
+Remove {
+ operation keep
+ channels rgba
+ name Remove1
+ selected true
+ xpos -547
+ ypos 1342
+}
+LumaGrain2 {
+ name LumaGrain2_1
+ selected true
+ xpos -547
+ ypos 1366
+}
+Crop {
+ box {0 0 1920 1080}
+ crop false
+ name Crop1
+ selected true
+ xpos -547
+ ypos 1390
+}
+overallCC {
+ name overallCC1
+ selected true
+ xpos -547
+ ypos 1414
+ hue {sat {curve 0.9452736378 0.9343284369 0.9069652557 1 0.8139303923 0.9562189579 0.9452736378 s0.1067163348 t0}
+   lum {}
+   red {}
+   green {}
+   blue {}
+   r_sup {}
+   g_sup {}
+   b_sup {}
+   sat_thrsh {}}
+}
+ApplyDisplayLUT {
+ name ApplyDisplayLUT1
+ selected true
+ xpos -547
+ ypos 1438
+ look Grade
+ displayDevice PC
+}
+Colorspace {
+ colorspace_in sRGB
+ name Colorspace1
+ selected true
+ xpos -547
+ ypos 1462
+}
+BurnIn {
+ name BurnIn1
+ selected true
+ xpos -547
+ ypos 1486
+}

@@ -1,0 +1,94 @@
+Gizmo {
+ help "This gizmo is for adding grain to images that have already been color corrected and the grain level is not evenly spread across the luminance.  Often the grains from the dark becomes more pronounced and the grain in the lights becomes less pronounced.  This gizmo should help match that look.\n \n<font size=5><b>Basic Grain Setup:</b></font>\n<b>Color Variance Controls:</b>\nControls where grain lives in color values. (ie: shadows vs. highlights)\n \n<b>Grain Settings:</b>\nStandard Grain node settings\n\n<b>Overall Grain Mix:</b>\nMix back to original image from input"
+ addUserKnob {20 GrainSettings l "Grain Settings"}
+ addUserKnob {26 ColorVarianceControls l "@b;Color Variance Controls"}
+ addUserKnob {41 contrast T ColorCorrect57.contrast}
+ addUserKnob {41 gamma T ColorCorrect57.gamma}
+ addUserKnob {41 gain T ColorCorrect57.gain}
+ addUserKnob {26 GrainSettings_1 l "@b;Grain Settings"}
+ addUserKnob {41 seed T Grain2_1.seed}
+ addUserKnob {41 presets l "" -STARTLINE T Grain2_1.presets}
+ addUserKnob {26 "" l "@b;Size"}
+ addUserKnob {41 red_size l red T Grain2_1.red_size}
+ addUserKnob {41 green_size l green T Grain2_1.green_size}
+ addUserKnob {41 blue_size l blue T Grain2_1.blue_size}
+ addUserKnob {26 "" l "@b;Irregularity"}
+ addUserKnob {41 red_i l red T Grain2_1.red_i}
+ addUserKnob {41 green_i l green T Grain2_1.green_i}
+ addUserKnob {41 blue_i l blue T Grain2_1.blue_i}
+ addUserKnob {26 "" l "@b;Intensity"}
+ addUserKnob {41 red_m l red T Grain2_1.red_m}
+ addUserKnob {41 green_m l green T Grain2_1.green_m}
+ addUserKnob {41 blue_m l blue T Grain2_1.blue_m}
+ addUserKnob {41 black T Grain2_1.black}
+ addUserKnob {41 minimum T Grain2_1.minimum}
+ addUserKnob {26 "" l "@b;Mask"}
+ addUserKnob {41 maskgrain l "Apply only through alpha" T Grain2_1.maskgrain}
+ addUserKnob {41 maskinvert l "Invert alpha" T Grain2_1.maskinvert}
+ addUserKnob {26 OverallGrainMix l "@b;Overall Grain Mix"}
+ addUserKnob {41 mix T Keymix1.mix}
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos -590
+  ypos -315
+ }
+ Shuffle {
+  name Shuffle1
+  xpos -590
+  ypos -275
+ }
+ Dot {
+  name Dot47
+  xpos -562
+  ypos -236
+ }
+set N4ffc2890 [stack 0]
+ ColorCorrect {
+  saturation 0
+  name ColorCorrect57
+  xpos -712
+  ypos -234
+ }
+ Clamp {
+  name Clamp17
+  xpos -712
+  ypos -208
+ }
+ Shuffle {
+  green red
+  blue red
+  alpha red
+  name Shuffle46
+  xpos -712
+  ypos -153
+ }
+push $N4ffc2890
+ Grain2 {
+  name Grain2_1
+  label "Kodak 5248"
+  xpos -452
+  ypos -240
+  red_size 0.8
+  green_size 0.5
+  blue_size 1.7
+  red_m 0.385
+  black {0 0 0}
+  minimum {0 0 0}
+ }
+push $N4ffc2890
+ Keymix {
+  inputs 3
+  invertMask true
+  mix 0.78
+  name Keymix1
+  xpos -590
+  ypos -159
+ }
+ Output {
+  name Output1
+  xpos -590
+  ypos -59
+ }
+end_group

@@ -1,0 +1,55 @@
+#! C:/Temp/psyop_cache/apps/nuke/win64/9.0v7/nuke-9.0.7.dll -nx
+Gizmo {
+ knobChanged "n=nuke.thisNode() \nb=n\['blackpoint'].value()\nbs=n\['blackpointSlope'].value()\nr=n\['resume'].value()\nrs=n\['resumeSlope'].value()\nw=n\['whitePoint'].value()\nws=n\['whiteSlope'].value()\nmorePoints = \"master \{curve L x\"+str(b)+\" 0 s0 v\"+str(bs)+\" x\"+str(r)+\" \"+str(r)+\"s1 u\"+str(rs)+\"x1 \"+str(w)+\"s\"+str(ws)+\" v1\}\"\nn\['lut'].fromScript(morePoints)"
+ addUserKnob {20 User}
+ addUserKnob {41 channels T customLookup.channels}
+ addUserKnob {41 lut l "" +STARTLINE T customLookup.lut}
+ addUserKnob {7 blackpoint}
+ addUserKnob {7 blackpointSlope R 0 3}
+ blackpointSlope 0.4
+ addUserKnob {7 resume}
+ resume 0.5
+ addUserKnob {7 resumeSlope R 0 3}
+ resumeSlope 1.75
+ addUserKnob {7 whitePoint}
+ whitePoint 0.8
+ addUserKnob {7 whiteSlope}
+ whiteSlope 0.3
+}
+ Input {
+  inputs 0
+  name Input1
+  xpos 378
+  ypos 370
+ }
+ ColorLookup {
+  channels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  lut {master {curve L 0 s0 v0.400000006 x0.5 0.5 s1 u1.75 0.8 s0.3000000119}
+    red {}
+    green {}
+    blue {}
+    alpha {}}
+  name customLookup
+  selected true
+  xpos 378
+  ypos 427
+  addUserKnob {20 User}
+  addUserKnob {7 blackpoint}
+  blackpoint {{parent.blackpoint}}
+  addUserKnob {7 blackSlope}
+  blackSlope {{parent.blackpointSlope}}
+  addUserKnob {7 resume}
+  resume {{parent.resume}}
+  addUserKnob {7 resumeSlope}
+  resumeSlope {{parent.resumeSlope}}
+  addUserKnob {7 whitePoint}
+  whitePoint {{parent.whitePoint}}
+  addUserKnob {7 whiteSlope}
+  whiteSlope {{parent.whiteSlope}}
+ }
+ Output {
+  name Output1
+  xpos 378
+  ypos 489
+ }
+end_group

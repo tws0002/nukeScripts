@@ -1,0 +1,499 @@
+Gizmo {
+ inputs 3
+ addUserKnob {20 User}
+ addUserKnob {7 aberration l Aberration t "Amount of aberration (in pixels of blur distance)." R 0 100}
+ aberration 3
+ addUserKnob {7 extraBlur l "Extra Blur" t "Extra blur to apply to recombined channels." R 0 2}
+ extraBlur 0.2
+ addUserKnob {18 color1 l "Color 1" t "Color to tint color 1."}
+ color1 {1 0 0}
+ addUserKnob {18 color2 l "Color 2" t "Color to tint color 2."}
+ color2 {0.2 0.8 0}
+ addUserKnob {18 color3 l "Color 3" t "Color to tint color 3."}
+ color3 {0 1 0}
+ addUserKnob {18 color4 l "Color 4" t "Color to tint color 4."}
+ color4 {0 0.2 0.8}
+ addUserKnob {18 color5 l "Color 5" t "Color to tint color 5"}
+ color5 {0.2 0 0.8}
+ addUserKnob {6 normalizeColors l "Normalize Colors" t "Normalize channel tint colors to white." +STARTLINE}
+ normalizeColors true
+ addUserKnob {7 innerSeparation l "Inner Separation" t "Amount by which to offset inner channel." R -5 5}
+ innerSeparation -2
+ addUserKnob {7 outerSeparation l "Outer Separation" t "Amount by which to offset outer channel." R -5 5}
+ outerSeparation 2
+ addUserKnob {4 mode l Mode M {Backward Forward}}
+ mode Forward
+ addUserKnob {20 mask}
+ addUserKnob {41 viewMatteCheck T matteSwitch.viewMatteCheck}
+ addUserKnob {41 area T Radial1.area}
+ addUserKnob {41 softness T Radial1.softness}
+ addUserKnob {41 gamma T Gamma.gamma}
+ addUserKnob {41 multiply T Mult.multiply}
+ addUserKnob {41 pos l center T Expression1.pos}
+}
+ Constant {
+  inputs 0
+  channels rgb
+  name Constant1
+  xpos 506
+  ypos -357
+ }
+set Nf1b35ac0 [stack 0]
+ Radial {
+  invert true
+  area {-473 -460 1794 1194}
+  name Radial1
+  xpos 604
+  ypos -260
+ }
+ Grade {
+  gamma 0.255
+  name Gamma
+  xpos 604
+  ypos -236
+ }
+ Grade {
+  name Mult
+  xpos 604
+  ypos -212
+ }
+set Nf1b38400 [stack 0]
+ Input {
+  inputs 0
+  name Input1
+  xpos 3
+  ypos -257
+ }
+set Nf1b35e30 [stack 0]
+ Dot {
+  name Dot1
+  xpos -513
+  ypos -228
+ }
+ Dot {
+  name Dot2
+  xpos -513
+  ypos 384
+ }
+push $Nf1b38400
+ Dot {
+  name Dot3
+  xpos 638
+  ypos -160
+ }
+push $Nf1b35ac0
+ Expression {
+  expr0 (x-(pos.x))*1/width*2
+  expr1 (y-(pos.y))*1/height*2
+  name Expression1
+  xpos 422
+  ypos -256
+  addUserKnob {20 User}
+  addUserKnob {12 pos}
+  pos {661 363}
+ }
+ Multiply {
+  inputs 1+1
+  value 0
+  maskChannelMask rgba.red
+  invert_mask true
+  name Multiply1
+  selected true
+  xpos 422
+  ypos -141
+ }
+push $Nf1b35e30
+ ShuffleCopy {
+  inputs 2
+  alpha alpha2
+  black red
+  white green
+  red2 black
+  green2 black
+  out2 motion
+  name ShuffleCopy1
+  xpos 3
+  ypos -135
+ }
+set Nadcfe610 [stack 0]
+ Dot {
+  name Dot16
+  xpos 37
+  ypos -45
+ }
+set Nadcfe980 [stack 0]
+ Dot {
+  name Dot17
+  xpos 147
+  ypos -45
+ }
+set Nadcfecf0 [stack 0]
+ Dot {
+  name Dot12
+  xpos 256
+  ypos -44
+ }
+set Nadcff060 [stack 0]
+ Dot {
+  name Dot13
+  xpos 374
+  ypos -44
+ }
+set Nadcff3d0 [stack 0]
+ Dot {
+  name Dot7
+  xpos 517
+  ypos -44
+ }
+set Nadcff740 [stack 0]
+ Dot {
+  name Dot8
+  xpos 626
+  ypos -44
+ }
+set Nadcffab0 [stack 0]
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale i}}
+  offset {{"parent.VectorBlur_1.offset + (parent.VectorBlur_5.offset - parent.VectorBlur_1.offset) * 3 / 4" i}}
+  method forward
+  name VectorBlur_8
+  xpos 592
+  ypos -22
+ }
+ Dot {
+  name Dot6
+  xpos 626
+  ypos 26
+ }
+push $Nadcff740
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale i}}
+  offset {{"parent.VectorBlur_1.offset + (parent.VectorBlur_5.offset - parent.VectorBlur_1.offset) * 3 / 4" i}}
+  name VectorBlur_4
+  xpos 483
+  ypos -26
+ }
+ Switch {
+  inputs 2
+  which {{parent.Switch7.which i}}
+  name Switch4
+  xpos 483
+  ypos 22
+ }
+ ColorCorrect {
+  gain {{"parent.color4.r / parent.ColorCorrect1.colorNormalization.r" i} {"parent.color4.g / parent.ColorCorrect1.colorNormalization.g" i} {"parent.color4.b / parent.ColorCorrect1.colorNormalization.b" i} 1}
+  name ColorCorrect_4
+  xpos 483
+  ypos 52
+ }
+push $Nadcff3d0
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.aberration i}}
+  offset {{"parent.VectorBlur_1.offset + (parent.VectorBlur_5.offset - parent.VectorBlur_1.offset) * 2 / 4" i}}
+  method forward
+  name VectorBlur_9
+  xpos 340
+  ypos -26
+  addUserKnob {20 User}
+ }
+ Dot {
+  name Dot11
+  xpos 374
+  ypos 30
+ }
+push $Nadcff060
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.aberration i}}
+  offset {{"parent.VectorBlur_1.offset + (parent.VectorBlur_5.offset - parent.VectorBlur_1.offset) * 2 / 4" i}}
+  name VectorBlur_3
+  xpos 222
+  ypos -26
+  addUserKnob {20 User}
+ }
+ Switch {
+  inputs 2
+  which {{parent.Switch7.which i}}
+  name Switch5
+  xpos 222
+  ypos 26
+ }
+ ColorCorrect {
+  gain {{"parent.color3.r / parent.ColorCorrect1.colorNormalization.r" i} {"parent.color3.g / parent.ColorCorrect1.colorNormalization.g" i} {"parent.color3.b / parent.ColorCorrect1.colorNormalization.b" i} 1}
+  name ColorCorrect_3
+  xpos 222
+  ypos 52
+ }
+push $Nadcfecf0
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale i}}
+  offset {{"parent.VectorBlur_1.offset + (parent.VectorBlur_5.offset - parent.VectorBlur_1.offset) * 1 / 4" i}}
+  method forward
+  name VectorBlur_11
+  xpos 112
+  ypos -27
+ }
+ Dot {
+  name Dot15
+  xpos 146
+  ypos 27
+ }
+push $Nadcfe980
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale i}}
+  offset {{"parent.VectorBlur_1.offset + (parent.VectorBlur_5.offset - parent.VectorBlur_1.offset) * 1 / 4" i}}
+  name VectorBlur_2
+  xpos 3
+  ypos -26
+ }
+ Switch {
+  inputs 2
+  which {{parent.Switch7.which i}}
+  name Switch6
+  xpos 3
+  ypos 23
+ }
+ ColorCorrect {
+  gain {{"parent.color2.r / parent.ColorCorrect1.colorNormalization.r" i} {"parent.color2.g / parent.ColorCorrect1.colorNormalization.g" i} {"parent.color2.b / parent.ColorCorrect1.colorNormalization.b" i} 1}
+  name ColorCorrect_2
+  xpos 3
+  ypos 52
+ }
+push $Nadcfe980
+ Dot {
+  name Dot18
+  xpos -73
+  ypos -45
+ }
+set Nadd02760 [stack 0]
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale i}}
+  offset {{"-.5 + (parent.innerSeparation / 2)" i}}
+  method forward
+  name VectorBlur_10
+  xpos -120
+  ypos -29
+ }
+ Dot {
+  name Dot14
+  xpos -86
+  ypos 16
+ }
+push $Nadd02760
+ Dot {
+  name Dot19
+  xpos -194
+  ypos -49
+ }
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale}}
+  offset {{"-.5 + (parent.innerSeparation / 2)"}}
+  name VectorBlur_1
+  xpos -228
+  ypos -31
+ }
+ Switch {
+  inputs 2
+  which {{parent.mode}}
+  name Switch7
+  xpos -227
+  ypos 12
+ }
+ ColorCorrect {
+  gain {{"parent.color1.r / parent.ColorCorrect1.colorNormalization.r" i} {"parent.color1.g / parent.ColorCorrect1.colorNormalization.g" i} {"parent.color1.b / parent.ColorCorrect1.colorNormalization.b" i} 1}
+  name ColorCorrect_1
+  xpos -228
+  ypos 39
+ }
+push $Nadcfe610
+ ColorCorrect {
+  gain 0
+  name ColorCorrect1
+  xpos -446
+  ypos -89
+  addUserKnob {20 User}
+  addUserKnob {18 colorNormalization l "Color Normalization"}
+  colorNormalization {{"(normalizeColors == 1) * (color1.r + color2.r + color3.r + color4.r + color5.r) + (normalizeColors != 1)" i} {"(normalizeColors == 1) * (color1.g + color2.g + color3.g + color4.g + color5.g) + (normalizeColors != 1)" i} {"(normalizeColors == 1) * (color1.b + color2.b + color3.b + color4.b + color5.b) + (normalizeColors != 1)" i}}
+ }
+ Switch {
+  inputs 2
+  which {{"!((parent.color1.r == 0) && (parent.color1.g == 0) && (parent.color1.b == 0))" i}}
+  name Switch1
+  xpos -446
+  ypos 39
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge_Color2
+  xpos -446
+  ypos 89
+  disable {{"(parent.color2.r == 0) && (parent.color2.g == 0) && (parent.color2.b == 0)" i}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge_Color3
+  xpos -446
+  ypos 148
+  disable {{"(parent.color3.r == 0) && (parent.color3.g == 0) && (parent.color3.b == 0)" i}}
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge_Color4
+  xpos -446
+  ypos 211
+  disable {{"(parent.color4.r == 0) && (parent.color4.g == 0) && (parent.color4.b == 0)" i}}
+ }
+push $Nadcffab0
+ Dot {
+  name Dot9
+  xpos 782
+  ypos -44
+ }
+set Nadd049c0 [stack 0]
+ Dot {
+  name Dot10
+  xpos 890
+  ypos -43
+ }
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale i}}
+  offset {{"-.5 + (parent.outerSeparation / 2)" i}}
+  method forward
+  name VectorBlur_7
+  xpos 856
+  ypos -25
+ }
+ Dot {
+  name Dot5
+  xpos 890
+  ypos 26
+ }
+push $Nadd049c0
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{parent.VectorBlur_3.scale i}}
+  offset {{"-.5 + (parent.outerSeparation / 2)" i}}
+  name VectorBlur_5
+  xpos 748
+  ypos -25
+ }
+ Switch {
+  inputs 2
+  which {{parent.Switch7.which i}}
+  name Switch3
+  xpos 748
+  ypos 22
+ }
+ ColorCorrect {
+  gain {{"parent.color5.r / parent.ColorCorrect1.colorNormalization.r" i} {"parent.color5.g / parent.ColorCorrect1.colorNormalization.b" i} {"parent.color5.b / parent.ColorCorrect1.colorNormalization.b" i} 1}
+  name ColorCorrect_5
+  xpos 748
+  ypos 53
+ }
+ Merge2 {
+  inputs 2
+  operation plus
+  Achannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  Bchannels {rgba.red rgba.green rgba.blue -rgba.alpha}
+  output {rgba.red rgba.green rgba.blue -rgba.alpha}
+  name Merge_Color5
+  xpos -446
+  ypos 275
+  disable {{"(parent.color5.r == 0) && (parent.color5.g == 0) && (parent.color5.b == 0)" i}}
+ }
+set Nadd05e60 [stack 0]
+ Dot {
+  name Dot21
+  xpos -288
+  ypos 279
+ }
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{"parent.extraBlur * parent.aberration"}}
+  method forward
+  name VectorBlur_12
+  xpos -322
+  ypos 332
+  addUserKnob {20 User}
+ }
+ Dot {
+  name Dot20
+  xpos -288
+  ypos 358
+ }
+push $Nadd05e60
+ VectorBlur {
+  channels rgb
+  uv motion
+  scale {{"parent.extraBlur * parent.aberration"}}
+  name VectorBlur_6
+  xpos -446
+  ypos 327
+  addUserKnob {20 User}
+ }
+ Switch {
+  inputs 2
+  which {{parent.Switch7.which}}
+  name Switch8
+  xpos -446
+  ypos 354
+ }
+ ShuffleCopy {
+  inputs 2
+  in motion
+  alpha alpha2
+  black red
+  white green
+  red2 blue
+  green2 alpha
+  out2 motion
+  name ShuffleCopy2
+  xpos -446
+  ypos 380
+ }
+ Switch {
+  inputs 2
+  which {{viewMatteCheck}}
+  name matteSwitch
+  xpos -446
+  ypos 427
+  addUserKnob {20 User}
+  addUserKnob {6 viewMatteCheck +STARTLINE}
+ }
+ Output {
+  name Output1
+  xpos -446
+  ypos 605
+ }
+end_group

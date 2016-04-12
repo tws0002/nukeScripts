@@ -1,0 +1,176 @@
+#! C:/Temp/psyop_cache/apps/nuke/win64/8.0v6/nuke-8.0.v6.dll -nx
+
+add_layer {uPointWorld uPointWorld.red uPointWorld.green uPointWorld.blue uPointWorld.alpha}
+Gizmo {
+ inputs 2
+ label "\[value cameraFrame]"
+ addUserKnob {20 User l ML_stickyCamProjection}
+ addUserKnob {41 in_1 l worldPosition T Shuffle1.in}
+ addUserKnob {3 cameraFrame}
+ cameraFrame 100
+ addUserKnob {22 getSticky l setSticky -STARTLINE T "cam=nuke.thisNode().input(1)\n\ntrans=nuke.toNode(\"transExpr\")\nrot=nuke.toNode(\"ColorMatrix\")\ncamMatrix=cam\['world_matrix'].getValue()\nscreen=nuke.toNode(\"screenSpace\")\n\ntrans\['temp_expr0'].setValue(str(camMatrix\[3]))\ntrans\['temp_expr1'].setValue(str(camMatrix\[7]))\ntrans\['temp_expr2'].setValue(str(camMatrix\[11]))\nrot\['matrix'].clearAnimated()\nrot\['matrix'].setValue(camMatrix\[0],0)\nrot\['matrix'].setValue(camMatrix\[1],1)\nrot\['matrix'].setValue(camMatrix\[2],2)\nrot\['matrix'].setValue(camMatrix\[4],3)\nrot\['matrix'].setValue(camMatrix\[5],4)\nrot\['matrix'].setValue(camMatrix\[6],5)\nrot\['matrix'].setValue(camMatrix\[8],6)\nrot\['matrix'].setValue(camMatrix\[9],7)\nrot\['matrix'].setValue(camMatrix\[10],8)\nscreen\['focal'].clearAnimated()\nscreen\['h_apert'].clearAnimated()\nscreen\['v_apert'].clearAnimated()\nscreen\['focal'].setValue(cam\['focal'].value())\nscreen\['h_apert'].setValue(cam\['haperture'].value())\nscreen\['v_apert'].setValue(cam\['vaperture'].value())\nnuke.thisNode()\['cameraFrame'].setValue(nuke.frame())"}
+ addUserKnob {20 projectionData}
+ addUserKnob {41 temp_expr0 l = T transExpr.temp_expr0}
+ addUserKnob {41 temp_expr1 l = T transExpr.temp_expr1}
+ addUserKnob {41 temp_expr2 l = T transExpr.temp_expr2}
+ addUserKnob {41 matrix T ColorMatrix.matrix}
+ addUserKnob {41 focal l "focal length" T screenSpace.focal}
+ addUserKnob {41 h_apert l "horiz aperture" T screenSpace.h_apert}
+ addUserKnob {41 v_apert l "vert aperture" T screenSpace.v_apert}
+}
+ Input {
+  inputs 0
+  name Cam
+  xpos -317
+  ypos -833
+  number 1
+ }
+ Axis2 {
+  matrix {
+      {0.03881313652 -0.007507786155 0.9992182255 -76.80277252}
+      {-0.01843571849 0.9997961521 0.008228236809 15.08117104}
+      {-0.9990763664 -0.01874066889 0.03866681829 2.531093597}
+      {0 0 0 1}
+    }
+  name Axis1
+  xpos -307
+  ypos -659
+  addUserKnob {20 User}
+  addUserKnob {7 focal}
+  focal {{"\[input \[node this.parent] 1].focal"}}
+  addUserKnob {7 h_apert}
+  h_apert {{"\[input \[node this.parent] 1].haperture"}}
+  addUserKnob {7 v_apert}
+  v_apert {{"\[input \[node this.parent] 1].vaperture"}}
+ }
+ Input {
+  inputs 0
+  name aovs
+  xpos -536
+  ypos -835
+ }
+ Shuffle {
+  in uPointWorld
+  name Shuffle1
+  label "\[value in]"
+  xpos -536
+  ypos -795
+ }
+ Unpremult {
+  name Unpremult1
+  xpos -536
+  ypos -733
+ }
+ Expression {
+  temp_name0 R
+  temp_expr0 747.066955566
+  temp_name1 G
+  temp_expr1 10.1519756317
+  temp_name2 B
+  temp_expr2 2.86712622643
+  expr0 r-R
+  expr1 g-G
+  expr2 b-B
+  name transExpr
+  label "translate Pworld to camera"
+  xpos -536
+  ypos -671
+ }
+ ColorMatrix {
+  matrix {
+      {0.0008446672 0.05424094945 0.9985275269}
+      {-0.002387811197 0.9985251427 -0.05423880368}
+      {-0.9999967813 -0.002338481368 0.0009729385492}
+    }
+  invert true
+  name ColorMatrix
+  label "Rotate to camera"
+  xpos -536
+  ypos -616
+ }
+ Multiply {
+  channels {-rgba.red -rgba.green rgba.blue none}
+  value -1
+  name Multiply13
+  label "reverse Z"
+  xpos -536
+  ypos -561
+ }
+ Premult {
+  name Premult7
+  xpos -536
+  ypos -496
+ }
+ Expression {
+  expr2 b<0?0:b
+  name Expression15
+  label "clip Z behind cam"
+  xpos -536
+  ypos -462
+ }
+ Expression {
+  temp_name0 h_tan
+  temp_expr0 "(h_apert /2) / focal"
+  temp_name1 v_tan
+  temp_expr1 "(v_apert /2)  / focal"
+  expr0 "0.5 + 0.5 * r / h_tan / b"
+  expr1 "0.5 + 0.5 * g / v_tan / b"
+  expr2 0
+  channel3 {none none none -rgba.alpha}
+  name screenSpace
+  label CameraUVs
+  selected true
+  xpos -536
+  ypos -426
+  addUserKnob {20 "" l User}
+  addUserKnob {26 "" l "camera settings"}
+  addUserKnob {7 focal l "focal length" t "Link to projecting camera's focal length" R 0 100}
+  focal 29.16655
+  addUserKnob {7 h_apert l "horiz aperture" t "Link to projecting camera's horizontal aperture" R 0 50}
+  h_apert 23.74900055
+  addUserKnob {7 v_apert l "vert aperture" t "Link to projecting camera's vertical aperture" R 0 50}
+  v_apert 13.36465931
+ }
+ Expression {
+  expr3 "(r<0 || r>1 || g<0 || g>1)?0:a"
+  name Expression17
+  label "clamp projection to cam frustum"
+  xpos -536
+  ypos -380
+  disable {{!crop_to_frustum}}
+ }
+ Expression {
+  expr0 isnan(r)?0:r
+  expr1 isnan(g)?0:g
+  name Expression1
+  xpos -536
+  ypos -344
+ }
+set Nea78b10 [stack 0]
+ Output {
+  name Output1
+  xpos -536
+  ypos -216
+ }
+ Expression {
+  inputs 0
+  expr0 x/width
+  expr1 y/height
+  name Expression2
+  xpos -290
+  ypos -342
+ }
+push $Nea78b10
+ Premult {
+  name Premult1
+  xpos -466
+  ypos -305
+ }
+ Merge2 {
+  inputs 2
+  operation under
+  name Merge1
+  xpos -466
+  ypos -265
+ }
+end_group
